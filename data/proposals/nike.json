@@ -1,0 +1,22 @@
+{
+  "brand_name": "Nike",
+  "proposal_title": "Pilot Proposal",
+  "brand_channel_name": "Nike Family Channel",
+  "hero_image_url": "pics/hero_pic.png",
+  "device_rendering_image_url": "pics/visual_pic.png",
+  "content_pillar_1_title": "Basketball Culture",
+  "content_pillar_1_body": "Hoop challenges, finals countdown, youth confidence tips",
+  "content_pillar_2_title": "Running & Weather",
+  "content_pillar_2_body": "Local running index, best training days, easy run reminders",
+  "content_pillar_3_title": "Home Training",
+  "content_pillar_3_body": "5-min family challenges, parent-child drills, evening stretching",
+  "content_pillar_4_title": "Nike Product Stories",
+  "content_pillar_4_body": "Pegasus, Vomero, Air Max series heritage",
+  "content_pillar_5_title": "Athlete Moments",
+  "content_pillar_5_body": "Mindset shorts, game day reminders, new signings",
+  "content_pillar_6_title": "Seasonal Campaigns",
+  "content_pillar_6_body": "Back to School, Holiday gifting, Marathon season specials",
+  "commerce_cta_title": "Commerce CTA",
+  "commerce_cta_body": "Explore Basketball, Join Nike Membership, Open Nike App",
+  "footer_button_url": "#"
+}

@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-proposal-title>Nike Family Channel | Pitch</title>
+  <!-- Premium Fonts: Inter & Roboto Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Roboto+Mono:wght@400;500;700&family=Caveat:wght@700&display=swap"
+    rel="stylesheet">
+
+
+  <style>
+    :root {
+      --bg-dark: #050505;
+      --bg-light: #F7F7F7;
+      --nike-volt: #D8FF2F;
+      --nike-orange: #FF5A1F;
+      --text-main: #FFFFFF;
+      --text-muted: #888888;
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- Typography --- */
+    h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .mono {
+      font-family: 'Roboto Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+    }
+
+    /* --- Layout & Sections --- */
+    section {
+      padding: 8rem 5%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .insights-grid {
+      grid-template-columns: 1.25fr 0.75fr;
+    }
+
+    @media(max-width: 900px) {
+
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 5rem 5%;
+      }
+    }
+
+    /* --- Animations --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    /* --- Hero Section --- */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media(max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero {
+      background: radial-gradient(circle at 80% 50%, rgba(216, 255, 47, 0.05) 0%, transparent 50%), var(--bg-dark);
+      padding-top: 10rem;
+    }
+
+    .tagline {
+      color: var(--nike-volt);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: inline-block;
+      border: 1px solid var(--nike-volt);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+    }
+
+    .hero-img-wrapper {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+      transform: perspective(1000px) rotateY(-5deg);
+      transition: transform 0.5s ease;
+    }
+
+    .hero-img-wrapper:hover {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+
+    .hero-img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* --- The Opportunity --- */
+    .opportunity-cards .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .opportunity-cards .card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-10px);
+    }
+
+    .big-number {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--nike-volt);
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    /* --- Solution Section --- */
+    .solution {
+      background-color: var(--bg-light);
+      color: #000;
+    }
+
+    .solution p {
+      color: #555;
+    }
+
+    .solution .border-color {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .feature-list li {
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+    }
+
+    .feature-list li::before {
+      content: '→';
+      color: var(--nike-orange);
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+
+    /* --- Data & Pilot Section --- */
+    .data-section {
+      background: #000;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 3rem 0;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 800px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      font-family: 'Roboto Mono', monospace;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--nike-volt);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    td strong {
+      font-size: 1.2rem;
+      display: block;
+    }
+
+    /* Table Row Hover Effect */
+    .pricing-table tbody tr {
+      transition: background-color 0.3s;
+    }
+
+    .pricing-table tbody tr:hover {
+      background-color: rgba(216, 255, 47, 0.1);
+      /* Nike Volt with low opacity */
+    }
+
+    /* --- Funnel Animation --- */
+    .funnel-container {
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .funnel-row {
+      display: grid;
+      grid-template-columns: 180px 1fr 100px;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .funnel-bar-wrapper {
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      /* Centers the animated bar */
+    }
+
+    .funnel-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--nike-orange), var(--nike-volt));
+      width: 0;
+      /* Animated via JS */
+      border-radius: 8px;
+      /* Slightly squared off for a structured funnel look */
+      transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .funnel-label {
+      font-weight: 600;
+      text-align: right;
+      color: var(--text-muted);
+    }
+
+    .funnel-value {
+      font-family: 'Roboto Mono';
+      font-weight: 700;
+      color: #FFF;
+    }
+
+    /* --- Footer --- */
+    .cta-footer {
+      text-align: center;
+      padding: 10rem 5%;
+      background: var(--nike-volt);
+      color: #000;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #000;
+      color: var(--nike-volt);
+      padding: 1.25rem 3rem;
+      font-size: 1.25rem;
+      font-weight: 800;
+      border-radius: 50px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.3s;
+      margin-top: 2rem;
+    }
+
+    .btn:hover {
+      background: #222;
+      color: #FFF;
+      transform: scale(1.05);
+    }
+
+    .calculator-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 3rem;
+    }
+
+    .calc-input-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      align-items: flex-end;
+    }
+
+    .calc-input {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .calc-input label {
+      font-family: 'Roboto Mono', monospace;
+      color: var(--nike-volt);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+
+    .calc-input input {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      color: #FFF;
+      font-size: 2.5rem;
+      font-weight: bold;
+      padding: 0.5rem 0;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .calc-input input:focus {
+      border-bottom-color: var(--nike-volt);
+    }
+
+    .calc-btn {
+      background: var(--nike-volt);
+      color: #000;
+      border: none;
+      padding: 1.25rem 3rem;
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      white-space: nowrap;
+      height: fit-content;
+    }
+
+    .calc-btn:hover {
+      transform: scale(1.05);
+      background: #FFF;
+    }
+
+    .calc-results {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: none;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+    }
+
+    .total-price-box {
+      background: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid var(--nike-volt);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .breakdown-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .breakdown-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+      align-items: baseline;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+    }
+
+    .breakdown-label {
+      color: var(--nike-orange);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    .calc-guide {
+      text-align: center;
+      padding: 1rem 0;
+      animation: float 3s ease-in-out infinite;
+      width: 100%;
+    }
+
+    .handdrawn-text {
+      font-family: 'Caveat', cursive;
+      font-size: 1.75rem;
+      color: var(--nike-volt);
+      margin-bottom: 1rem;
+    }
+
+    .arrows-row {
+      display: flex;
+      gap: 2rem;
+      width: 100%;
+      align-items: flex-end;
+    }
+
+    .arrow-box {
+      flex: 1;
+      text-align: center;
+      min-width: 200px;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-img-wrapper reveal delay-2">
+        <img data-proposal-image="hero_image_url" src="pics/hero_pic.png" alt="Nike Fridge Channel Hero">
+      </div>
+      <div class="hero-content reveal">
+        <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem);">FridgeChannel<br>× <span
+            style="color:var(--nike-volt)" data-proposal-text="brand_name">Nike</span><br><span data-proposal-text="proposal_title">Pilot Proposal</span></h1>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITY SECTION -->
+  <section class="opportunity">
+    <div class="container">
+      <div class="reveal" style="max-width: 800px; margin: 0 auto 4rem; text-align: center;">
+        <span class="mono">01 // The Opportunity</span>
+        <h2>Only FridgeChannel does all three.</h2>
+      </div>
+
+      <div class="grid-3 opportunity-cards">
+        <div class="card reveal delay-1">
+          <div class="big-number">0</div>
+          <h3>Algorithm & Ad-Blockers</h3>
+          <p>No Meta algorithm changes, no Google policy shifts, no AI summaries. A hardware-based touchpoint brands
+            fully control.</p>
+        </div>
+        <div class="card reveal delay-2">
+          <div class="big-number">25+</div>
+          <h3>Daily Family Impressions</h3>
+          <p>US households open the fridge 20-40 times daily. 25,000+ annualized impressions per household without
+            disrupting daily life.</p>
+        </div>
+        <div class="card reveal delay-3">
+          <div class="big-number">3x</div>
+          <h3>Cross-Generational Reach</h3>
+          <p>Unlike a phone, a fridge is a shared interface. Reach younger household members, purchase decision-makers,
+            and the broader family in one high-frequency environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION SECTION -->
+  <section class="solution" style="background-color: var(--bg-light); color: #000; padding: 8rem 5%;">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+        <span class="mono"
+          style="color: var(--nike-orange); border: 1px solid var(--nike-orange); padding: 0.5rem 1rem; border-radius: 50px;">02
+          // The Solution</span>
+        <h2 style="margin-top: 1.5rem; font-size: clamp(2rem, 5vw, 3.5rem);"><span data-proposal-text="brand_channel_name">Nike Family Channel</span> Solution</h2>
+      </div>
+
+      <!-- 3.1 设备 -->
+      <div class="grid-2" style="margin-bottom: 6rem; align-items: center;">
+        <div class="reveal">
+          <div
+            style="background: #111; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+            <img data-proposal-image="device_rendering_image_url" src="pics/visual_pic.png" alt="Visual: Device Rendering" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <div class="solution-text reveal delay-1">
+          <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem;">DEVICE // HARDWARE</div>
+          <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 900;">Exclusive <span data-proposal-text="brand_name">Nike</span> Touchpoint</h3>
+          <ul class="feature-list" style="margin-top: 2rem; list-style: none; padding: 0;">
+            <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+              <span><strong>Custom <span data-proposal-text="brand_name">Nike</span> ID:</strong> Deep integration of industrial design, UI, and brand identity.</span>
+            </li>
+            <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+              <span><strong>High-Frequency Context:</strong> Dominate 25+ daily household interactions at the fridge.</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span><strong>Zero-Friction Setup:</strong> Magnetic installation, rapid deployment into target households.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3.2 内容引擎 -->
+      <div class="grid-2" style="margin-bottom: 6rem; align-items: center;">
+        <div class="solution-text reveal">
+          <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem;">CONTENT // CONTENT</div>
+          <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 900;">Brand Content & Consumer Engagement</h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem;">
+            <div
+              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
+              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_1_title">Basketball Culture</h4>
+              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_1_body">Hoop challenges, finals countdown, youth confidence tips</p>
+            </div>
+            <div
+              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
+              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_2_title">Running & Weather</h4>
+              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_2_body">Local running index, best training days, easy run reminders</p>
+            </div>
+            <div
+              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
+              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_3_title">Home Training</h4>
+              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_3_body">5-min family challenges, parent-child drills, evening stretching</p>
+            </div>
+            <div
+              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
+              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_4_title">Nike Product Stories</h4>
+              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_4_body">Pegasus, Vomero, Air Max series heritage</p>
+            </div>
+            <div
+              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
+              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_5_title">Athlete Moments</h4>
+              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_5_body">Mindset shorts, game day reminders, new signings</p>
+            </div>
+            <div
+              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
+              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_6_title">Seasonal Campaigns</h4>
+              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_6_body">Back to School, Holiday gifting, Marathon season specials</p>
+            </div>
+            <div
+              style="background: var(--nike-orange); padding: 1.25rem; border-radius: 12px; grid-column: span 2; color: #FFF;">
+              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="commerce_cta_title">Commerce CTA</h4>
+              <p style="font-size: 0.85rem; color: #FFF;" data-proposal-text="commerce_cta_body">Explore Basketball, Join Nike Membership, Open Nike App</p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal delay-1">
+          <div style="background: #111; padding: 3rem 2rem; border-radius: 24px; text-align: center;">
+            <h3 style="color: #FFF; margin-bottom: 1rem;">[Visual: Playback Sample]</h3>
+            <div
+              style="width: 50px; height: 50px; background: var(--nike-volt); border-radius: 50%; margin: 1.5rem auto; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+              <span style="color: #000; font-weight: bold; font-size: 1.2rem; margin-left: 3px;">▶</span>
+            </div>
+            <p style="color: #888; font-size: 0.85rem;">Feel the motion, rhythm, and CTA loop</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3.3 数据闭环 -->
+      <div class="grid-2 insights-grid" style="align-items: center;">
+        <div class="reveal">
+          <div
+            style="background: #111; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+            <img src="pics/dashboard_pic.jpeg" alt="Visual: Data Dashboard" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <div class="solution-text reveal delay-1">
+          <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem;">INSIGHTS // DATA</div>
+          <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 900;">Full-Funnel Behavioral Insights</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div
+              style="border: 1px solid #ddd; padding: 1.5rem 1rem; border-radius: 8px; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 80px;">
+              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Installation & Activation Rate</strong>
+            </div>
+            <div
+              style="border: 1px solid #ddd; padding: 1.5rem 1rem; border-radius: 8px; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 80px;">
+              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Playback & CTA Engagement</strong>
+            </div>
+            <div
+              style="border: 1px solid #ddd; padding: 1.5rem 1rem; border-radius: 8px; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 80px;">
+              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Product / Campaign Heat Analysis</strong>
+            </div>
+            <div
+              style="border: 1px solid #ddd; padding: 1.5rem 1rem; border-radius: 8px; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 80px;">
+              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Consideration & Purchase Intent Tracking</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DATA & PILOT SECTION -->
+  <section class="data-section" style="background: #000; padding: 8rem 5%; color: #FFF;">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+        <span class="mono"
+          style="color: var(--nike-volt); border: 1px solid var(--nike-volt); padding: 0.5rem 1rem; border-radius: 50px;">03
+          // The ROI & Pilot</span>
+      </div>
+
+      <!-- 3.1 试点方案及价格 -->
+      <div class="reveal" style="margin-bottom: 6rem;">
+        <div class="calculator-box">
+          <!-- Initial Guide: Precisely Aligned Arrows -->
+          <div id="calc-guide" class="calc-guide">
+            <div class="handdrawn-text">Enter parameters (min 4 weeks / 100 households) to unlock ROI estimation</div>
+            <div class="arrows-row">
+              <div class="arrow-box">
+                <!-- Points to Weeks -->
+                <svg width="40" height="50" viewBox="0 0 100 100" fill="none">
+                  <path d="M50 10C55 30 45 50 50 85M50 85L40 70M50 85L60 70" stroke="var(--nike-volt)" stroke-width="6"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="arrow-box">
+                <!-- Points to Households -->
+                <svg width="40" height="50" viewBox="0 0 100 100" fill="none">
+                  <path d="M50 10C45 30 55 50 50 85M50 85L40 70M50 85L60 70" stroke="var(--nike-volt)" stroke-width="6"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <!-- Invisible spacer to match the button's space -->
+              <div style="width: 230px; opacity: 0;"></div>
+            </div>
+          </div>
+
+          <div class="calc-input-group">
+            <div class="calc-input">
+              <label>Pilot Duration (4 weeks min)</label>
+              <input type="number" id="calc-weeks" min="4" value="4" placeholder="Min 4 weeks">
+            </div>
+            <div class="calc-input">
+              <label>Pilot Households (100 min)</label>
+              <input type="number" id="calc-hh" min="100" value="100" step="50" placeholder="Min 100 households">
+            </div>
+            <button class="calc-btn" onclick="calculateROI()">Calculate Pricing & ROI</button>
+          </div>
+
+          <div class="calc-results" id="calc-results" style="display: none;">
+
+            <!-- Pricing Header -->
+            <div style="margin-bottom: 2rem;">
+              <h4 style="font-size: 1.5rem; color: #FFF;">Pricing</h4>
+            </div>
+
+            <!-- 1. Financials (Full Width Row) -->
+            <div class="result-grid" style="grid-template-columns: 1fr 2fr; margin-bottom: 5rem;">
+              <div class="total-price-box">
+                <p style="color: #888; font-family: 'Roboto Mono', monospace; margin-bottom: 1rem; font-size: 0.85rem;">
+                  ESTIMATED TOTAL INVESTMENT</p>
+                <div style="font-size: 3.5rem; font-weight: 900; color: var(--nike-volt); line-height: 1;"
+                  id="res-total">$190,000</div>
+              </div>
+              <div class="breakdown-box">
+                <!-- Sum Relationship Row -->
+                <div
+                  style="display: flex; align-items: center; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; margin-bottom: 2rem;">
+                  <!-- Hardware -->
+                  <div style="flex: 1;">
+                    <div class="breakdown-label" style="margin-bottom: 0.5rem;">HARDWARE FEES</div>
+                    <strong style="font-size: 1.5rem; display: block;" id="res-hw-total">$150,000</strong>
+                    <span style="color: #aaa; font-size: 0.85rem;" id="res-hw-math">($1,500 / unit × 100 units)</span>
+                  </div>
+
+                  <!-- Plus Sign -->
+                  <div style="font-size: 2rem; color: var(--nike-volt); font-weight: 900; opacity: 0.5;">+</div>
+
+                  <!-- Ops -->
+                  <div style="flex: 1;">
+                    <div class="breakdown-label" style="margin-bottom: 0.5rem;">CONTENT & OPS</div>
+                    <strong style="font-size: 1.5rem; display: block;" id="res-ops-total">$40,000</strong>
+                    <span style="color: #aaa; font-size: 0.85rem;" id="res-ops-math">($5,000 / week × 8 weeks)</span>
+                  </div>
+                </div>
+
+                <!-- Included Services Row -->
+                <div style="padding-top: 0.5rem;">
+                  <div class="breakdown-label" style="margin-bottom: 0.5rem;">INCLUDED SERVICES</div>
+                  <div style="color: #ccc; font-size: 0.9rem; line-height: 1.5; font-style: italic;">
+                    Exclusive <span data-proposal-text="brand_name">Nike</span> device industrial design, production & deployment, 60+ content modules, daily operations, weekly insights reports
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Returns Dashboard -->
+            <div style="padding-top: 5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+              <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; color: #FFF;">Return</h4>
+              </div>
+
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem;">
+
+                <!-- Header -->
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem;">
+                  <div style="font-size: 11px; color: #777; letter-spacing: 0.08em; text-transform: uppercase;">
+                    Estimated pilot value</div>
+                  <div style="font-size: 12px; color: #aaa;" data-rt="plan">100 households · 4 weeks</div>
+                </div>
+
+                <!-- HEADLINE: Total + Composition -->
+                <div style="background: rgba(255,255,255,0.05); border: 2px solid var(--nike-volt); border-radius: 16px; padding: 1.5rem; margin-bottom: 1rem;">
+                  <div style="font-size: 12px; color: #aaa; margin-bottom: 6px;">Total pilot value</div>
+                  <div style="font-size: clamp(42px, 6vw, 56px); font-weight: 500; color: var(--nike-volt); letter-spacing: -0.02em; line-height: 1; margin-bottom: 12px;" data-rt="totalValue">$19,630</div>
+
+                  <!-- Composition bar -->
+                  <div style="display: flex; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 10px; background: rgba(255,255,255,0.08);">
+                    <div style="flex: 5280; background: #185FA5;"></div>
+                    <div style="flex: 4410; background: #378ADD;"></div>
+                    <div style="flex: 5850; background: #1D9E75;"></div>
+                    <div style="flex: 2100; background: #97C459;"></div>
+                    <div style="flex: 1990; background: #BA7517;"></div>
+                  </div>
+
+                  <!-- Composition legend -->
+                  <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 11px; color: #aaa;">
+                    <span><span style="display:inline-block;width:8px;height:8px;background:#185FA5;border-radius:2px;margin-right:5px;vertical-align:middle;"></span>Revenue <span data-rt="revenue">$5,280</span></span>
+                    <span><span style="display:inline-block;width:8px;height:8px;background:#378ADD;border-radius:2px;margin-right:5px;vertical-align:middle;"></span>Pipeline <span data-rt="pipeline">$4,410</span></span>
+                    <span><span style="display:inline-block;width:8px;height:8px;background:#1D9E75;border-radius:2px;margin-right:5px;vertical-align:middle;"></span>LTV <span data-rt="ltv">$5,850</span></span>
+                    <span><span style="display:inline-block;width:8px;height:8px;background:#97C459;border-radius:2px;margin-right:5px;vertical-align:middle;"></span>Media <span data-rt="mediaValue">$2,100</span></span>
+                    <span><span style="display:inline-block;width:8px;height:8px;background:#BA7517;border-radius:2px;margin-right:5px;vertical-align:middle;"></span>Brand <span data-rt="brandValue">$1,990</span></span>
+                  </div>
+                </div>
+
+                <!-- 3 PROOF METRICS -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 1rem;">
+                  <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 14px;">
+                    <div style="font-size: 11px; color: #aaa; margin-bottom: 4px;">Direct revenue</div>
+                    <div style="font-size: 22px; font-weight: 500;" data-rt="revenue">$5,280</div>
+                    <div style="font-size: 11px; color: #777; margin-top: 2px;"><span data-rt="orders">44</span> orders</div>
+                  </div>
+                  <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 14px;">
+                    <div style="font-size: 11px; color: #aaa; margin-bottom: 4px;">Brand awareness lift</div>
+                    <div style="font-size: 22px; font-weight: 500; color: var(--nike-volt);">+5.2%</div>
+                    <div style="font-size: 11px; color: #777; margin-top: 2px;">Kantar-projected</div>
+                  </div>
+                  <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 14px;">
+                    <div style="font-size: 11px; color: #aaa; margin-bottom: 4px;">Scale @ 5,000 HH</div>
+                    <div style="font-size: 22px; font-weight: 500; color: var(--nike-volt);" data-rt="scale5000">$12.7M</div>
+                    <div style="font-size: 11px; color: #777; margin-top: 2px;">annualized</div>
+                  </div>
+                </div>
+
+                <!-- COMPACT FUNNEL -->
+                <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 14px 16px; margin-bottom: 1rem;">
+                  <div style="font-size: 11px; color: #777; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px;">
+                    Conversion path</div>
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 13px; flex-wrap: wrap;">
+                    <div style="text-align: center; flex: 1 1 80px;">
+                      <div style="font-size: 18px; font-weight: 500;" data-rt="impressionsShort">70k</div>
+                      <div style="font-size: 11px; color: #aaa;">impressions</div>
+                    </div>
+                    <div style="font-size: 11px; color: #777; padding: 0 4px;">7% →</div>
+                    <div style="text-align: center; flex: 1 1 80px;">
+                      <div style="font-size: 18px; font-weight: 500;" data-rt="plays">4,900</div>
+                      <div style="font-size: 11px; color: #aaa;">views</div>
+                    </div>
+                    <div style="font-size: 11px; color: #777; padding: 0 4px;">3% →</div>
+                    <div style="text-align: center; flex: 1 1 80px;">
+                      <div style="font-size: 18px; font-weight: 500;" data-rt="leads">147</div>
+                      <div style="font-size: 11px; color: #aaa;">leads</div>
+                    </div>
+                    <div style="font-size: 11px; color: #777; padding: 0 4px;">30% →</div>
+                    <div style="text-align: center; flex: 1 1 80px;">
+                      <div style="font-size: 18px; font-weight: 500; color: #A5D45A;" data-rt="orders">44</div>
+                      <div style="font-size: 11px; color: #aaa;">orders</div>
+                    </div>
+                    <div style="font-size: 11px; color: #777; padding: 0 4px;">30% →</div>
+                    <div style="text-align: center; flex: 1 1 80px;">
+                      <div style="font-size: 18px; font-weight: 500;" data-rt="retained">13</div>
+                      <div style="font-size: 11px; color: #aaa;">retained</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- METHODOLOGY / FORMULAS -->
+                <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 14px 16px;">
+                  <div style="font-size: 11px; color: #777; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">
+                    How we calculate</div>
+
+                  <div style="font-family: 'Roboto Mono', monospace; font-size: 12px; line-height: 1.8; color: #aaa;">
+                    <div><span style="color: #fff;">Revenue</span> = orders × AOV = <span data-rt="orders">44</span> × $120 = <span style="color: var(--nike-volt);" data-rt="revenue">$5,280</span></div>
+                    <div><span style="color: #fff;">Pipeline</span> = leads × per-lead value = <span data-rt="leads">147</span> × $30 = <span style="color: var(--nike-volt);" data-rt="pipeline">$4,410</span></div>
+                    <div><span style="color: #fff;">LTV captured</span> = retained × CLV = <span data-rt="retained">13</span> × $450 = <span style="color: var(--nike-volt);" data-rt="ltv">$5,850</span></div>
+                    <div><span style="color: #fff;">Media value</span> = impressions × CPM ÷ 1,000 = <span data-rt="impressions">70,000</span> × $30 ÷ 1,000 = <span style="color: var(--nike-volt);" data-rt="mediaValue">$2,100</span></div>
+                    <div><span style="color: #fff;">Brand equity</span> = awareness lift × audience value = <span style="color: var(--nike-volt);" data-rt="brandValue">$1,990</span></div>
+                  </div>
+
+                  <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; color: #777; line-height: 1.6;">
+                    AOV $120 · CLV $450 (<span data-proposal-text="brand_name">Nike</span> 3-yr) · CPM $30 (IAB Connected Home 2025) · Brand lift via Kantar projection model. All inputs replaceable in Pricing Calculator.
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROI Details moved into Dashboard above -->
+
+      <!-- 图表 1 & 2 Removed in favor of interactive calculator layout -->
+
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section class="cta-footer">
+    <div class="container reveal">
+      <h2 style="font-size: clamp(2rem, 6vw, 5rem); color: #000;">SECURE THE SURFACE.</h2>
+      <p style="font-size: 1.5rem; color: #333; margin: 2rem 0;">45-minute working session to align on the pilot scope.
+      </p>
+      <a href="#" class="btn" data-proposal-link="footer_button_url">Schedule Alignment</a>
+    </div>
+  </section>
+
+  <script>
+    const fallbackProposal = {
+      brand_primary_color: '#D8FF2F',
+      brand_second_color: '#FF5A1F',
+      brand_name: 'Nike',
+      proposal_title: 'Pilot Proposal',
+      brand_channel_name: 'Nike Family Channel',
+      hero_image_url: 'pics/hero_pic.png',
+      device_rendering_image_url: 'pics/visual_pic.png',
+      content_pillar_1_title: 'Basketball Culture',
+      content_pillar_1_body: 'Hoop challenges, finals countdown, youth confidence tips',
+      content_pillar_2_title: 'Running & Weather',
+      content_pillar_2_body: 'Local running index, best training days, easy run reminders',
+      content_pillar_3_title: 'Home Training',
+      content_pillar_3_body: '5-min family challenges, parent-child drills, evening stretching',
+      content_pillar_4_title: 'Nike Product Stories',
+      content_pillar_4_body: 'Pegasus, Vomero, Air Max series heritage',
+      content_pillar_5_title: 'Athlete Moments',
+      content_pillar_5_body: 'Mindset shorts, game day reminders, new signings',
+      content_pillar_6_title: 'Seasonal Campaigns',
+      content_pillar_6_body: 'Back to School, Holiday gifting, Marathon season specials',
+      commerce_cta_title: 'Commerce CTA',
+      commerce_cta_body: 'Explore Basketball, Join Nike Membership, Open Nike App',
+      footer_button_url: '#'
+    };
+
+    function getRequestedBrand() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('brand');
+    }
+
+    function setText(field, value) {
+      document.querySelectorAll(`[data-proposal-text="${field}"]`).forEach(el => {
+        el.textContent = value ?? '';
+      });
+    }
+
+    function renderProposal(proposal) {
+      const data = proposal || fallbackProposal;
+
+      Object.entries(data).forEach(([field, value]) => setText(field, value));
+
+      if (data.brand_primary_color) {
+        document.documentElement.style.setProperty('--nike-volt', data.brand_primary_color);
+      }
+
+      if (data.brand_second_color) {
+        document.documentElement.style.setProperty('--nike-orange', data.brand_second_color);
+      }
+
+      document.querySelectorAll('[data-proposal-image]').forEach(img => {
+        const field = img.dataset.proposalImage;
+        if (data[field]) {
+          img.src = data[field];
+          img.style.display = '';
+        } else {
+          img.removeAttribute('src');
+          img.style.display = 'none';
+        }
+      });
+
+      document.querySelectorAll('[data-proposal-link]').forEach(link => {
+        const field = link.dataset.proposalLink;
+        if (data[field]) {
+          link.href = data[field];
+        } else {
+          link.removeAttribute('href');
+        }
+      });
+
+      document.title = data.brand_channel_name ? `${data.brand_channel_name} | Pitch` : 'FridgeChannel Proposal';
+    }
+
+    async function loadProposal() {
+      const requestedBrand = getRequestedBrand();
+      const brandQuery = requestedBrand ? `?brand=${encodeURIComponent(requestedBrand)}` : '';
+      try {
+        const response = await fetch(`/api/proposal${brandQuery}`);
+        if (!response.ok) throw new Error(`Proposal API returned ${response.status}`);
+        const proposal = await response.json();
+        renderProposal(proposal);
+      } catch (error) {
+        renderProposal(fallbackProposal);
+      }
+    }
+
+    loadProposal();
+
+    // Scroll Reveal Animation Observer
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add('active');
+
+          // Trigger Funnel Animation when visible
+          if (entry.target.id === 'funnel') {
+            // Now handled by ECharts rendering
+          }
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, revealOptions);
+
+    revealElements.forEach(el => {
+      revealOnScroll.observe(el);
+    });
+
+    // ROI Calculator Logic
+    function calculateROI() {
+      const weeksInput = document.getElementById('calc-weeks');
+      const hhInput = document.getElementById('calc-hh');
+
+      let weeks = parseInt(weeksInput.value) || 4;
+      let hh = parseInt(hhInput.value) || 100;
+
+      // enforce minimums
+      if (weeks < 4) { weeks = 4; weeksInput.value = 4; }
+      if (hh < 100) { hh = 100; hhInput.value = 100; }
+
+      // --- 4.1 Pricing Constants ---
+      const hwPerUnit = 1500;
+      const baseOpsPerWeek = 5000;
+      const additionalOpsPerHh = 12.5;
+
+      // --- 4.1 Cost Calculation ---
+      const hwTotal = hh * hwPerUnit;
+      const opsPerWeek = baseOpsPerWeek + Math.max(0, (hh - 100) * additionalOpsPerHh);
+      const opsTotal = opsPerWeek * weeks;
+      const grandTotal = hwTotal + opsTotal;
+
+      // Formatting
+      const fmt = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+      const numFmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+
+      // Update 4.1 DOM
+      document.getElementById('res-total').innerText = fmt.format(grandTotal);
+      document.getElementById('res-hw-total').innerText = fmt.format(hwTotal);
+      document.getElementById('res-hw-math').innerText = `(${fmt.format(hwPerUnit)} / unit × ${hh} units)`;
+      document.getElementById('res-ops-total').innerText = fmt.format(opsTotal);
+      document.getElementById('res-ops-math').innerText = `(${fmt.format(opsPerWeek)} / week × ${weeks} weeks)`;
+
+      const resultsDiv = document.getElementById('calc-results');
+      const guideDiv = document.getElementById('calc-guide');
+
+      guideDiv.style.display = 'none';
+      resultsDiv.style.display = 'block';
+      resultsDiv.style.animation = 'none';
+      resultsDiv.offsetHeight; /* trigger reflow */
+      resultsDiv.style.animation = null;
+
+      // --- 4.2 Return Calculation ---
+      // Formula: Impressions = hh * 25 per day * (weeks * 7 days)
+      const impressions = hh * 25 * (weeks * 7);
+      const plays = impressions * 0.07;
+      const clicks = plays * 0.10;
+      const leads = clicks * 0.30;
+      const orders = leads * 0.30;
+      const repeats = orders * 0.30;
+
+      // Dollar values
+      const aov = 120;
+      const ltvPerCustomer = 450;
+      const cpmEquiv = 30; // $30 CPM equivalent for brand impressions
+      const mediaValue = (impressions / 1000) * cpmEquiv;
+      const pipelineValue = leads * aov * 0.5; // 50% of potential AOV
+      const directRevenue = orders * aov;
+      const ltvCaptured = Math.round(repeats) * ltvPerCustomer;
+      const brandValue = 1990 * (hh / 100) * (weeks / 4);
+      const totalPilotValue = Math.round(mediaValue + pipelineValue + directRevenue + ltvCaptured + brandValue);
+
+      const formatShort = (value) => {
+        if (value >= 1000000) return `$${(value / 1000000).toFixed(1)}M`;
+        if (value >= 1000) return `$${(value / 1000).toFixed(1)}k`;
+        return fmt.format(value);
+      };
+
+      const countShort = (value) => value >= 1000 ? `${numFmt.format(Math.round(value / 1000))}k` : numFmt.format(value);
+      const setRt = (key, value) => {
+        document.querySelectorAll(`[data-rt="${key}"]`).forEach(el => {
+          el.innerText = value;
+        });
+      };
+
+      setRt('plan', `${hh} households · ${weeks} weeks`);
+      setRt('totalValue', fmt.format(totalPilotValue));
+      setRt('impressions', numFmt.format(impressions));
+      setRt('impressionsShort', countShort(impressions));
+      setRt('plays', numFmt.format(plays));
+      setRt('leads', numFmt.format(leads));
+      setRt('orders', numFmt.format(orders));
+      setRt('retained', numFmt.format(Math.round(repeats)));
+      setRt('mediaValue', fmt.format(mediaValue));
+      setRt('pipeline', fmt.format(pipelineValue));
+      setRt('revenue', fmt.format(directRevenue));
+      setRt('ltv', fmt.format(ltvCaptured));
+      setRt('brandValue', fmt.format(brandValue));
+      setRt('scale5000', formatShort(totalPilotValue * 50 * 13));
+    }
+
+    // Initialize values on page load (Wait for user action)
+    // document.addEventListener('DOMContentLoaded', calculateROI);
+  </script>
+</body>
+
+</html>
