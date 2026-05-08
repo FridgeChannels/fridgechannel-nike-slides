@@ -44,7 +44,6 @@ const FIELD_NAMES = [
   'brand_primary_color',
   'brand_second_color',
   'brand_name',
-  'proposal_title',
   'brand_channel_name',
   'hero_image_url',
   'device_rendering_image_url',
