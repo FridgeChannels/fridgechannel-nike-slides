@@ -47,6 +47,9 @@ const FIELD_NAMES = [
   'brand_channel_name',
   'hero_image_url',
   'device_rendering_image_url',
+  'act1_example_1',
+  'act1_example_2',
+  'act1_example_3',
   'content_pillar_1_title',
   'content_pillar_1_body',
   'content_pillar_2_title',
@@ -59,8 +62,6 @@ const FIELD_NAMES = [
   'content_pillar_5_body',
   'content_pillar_6_title',
   'content_pillar_6_body',
-  'commerce_cta_title',
-  'commerce_cta_body',
   'footer_button_url'
 ];
 

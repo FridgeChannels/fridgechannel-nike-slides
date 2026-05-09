@@ -638,44 +638,6 @@ Estimated pilot value
 {HOUSEHOLDS} households · {PILOT_DURATION} weeks
 ```
 
-### Total Pilot Value
-
-Current copy:
-
-```text
-Total pilot value
-$19,630
-```
-
-Template:
-
-```text
-Total pilot value
-{TOTAL_PILOT_VALUE}
-```
-
-### Value Composition Legend
-
-Current copy:
-
-```text
-Revenue $5,280
-Pipeline $4,410
-LTV $5,850
-Media $2,100
-Brand $1,990
-```
-
-Template:
-
-```text
-Revenue {REVENUE_VALUE}
-Pipeline {PIPELINE_VALUE}
-LTV {LTV_VALUE}
-Media {MEDIA_VALUE}
-Brand {BRAND_VALUE}
-```
-
 ### Proof Metric Cards
 
 Current copy:
@@ -697,31 +659,8 @@ Direct revenue
 Current copy:
 
 ```text
-Brand awareness lift
-+5.2%
-Kantar-projected
-```
-
-Template:
-
-```text
-Brand awareness lift
-{BRAND_AWARENESS_LIFT}
-{AWARENESS_MODEL_SOURCE}
-```
-
-Nike defaults:
-
-```text
-{BRAND_AWARENESS_LIFT} = +5.2%
-{AWARENESS_MODEL_SOURCE} = Kantar-projected
-```
-
-Current copy:
-
-```text
 Scale @ 5,000 HH
-$12.7M
+$7.2M
 annualized
 ```
 
@@ -796,32 +735,26 @@ Current formulas:
 
 ```text
 Revenue = orders × AOV = 44 × $120 = $5,280
-Pipeline = leads × per-lead value = 147 × $30 = $4,410
 LTV captured = retained × CLV = 13 × $450 = $5,850
-Media value = impressions × CPM ÷ 1,000 = 70,000 × $30 ÷ 1,000 = $2,100
-Brand equity = awareness lift × audience value = $1,990
 ```
 
 Template formulas:
 
 ```text
 Revenue = orders × AOV = {ORDERS} × {AOV} = {REVENUE_VALUE}
-Pipeline = leads × per-lead value = {LEADS} × {PER_LEAD_VALUE} = {PIPELINE_VALUE}
 LTV captured = retained × CLV = {RETAINED_CUSTOMERS} × {CLV} = {LTV_VALUE}
-Media value = impressions × CPM ÷ 1,000 = {IMPRESSIONS} × {CPM} ÷ 1,000 = {MEDIA_VALUE}
-Brand equity = awareness lift × audience value = {BRAND_VALUE}
 ```
 
 Current assumptions:
 
 ```text
-AOV $120 · CLV $450 (Nike 3-yr) · CPM $30 (IAB Connected Home 2025) · Brand lift via Kantar projection model. All inputs replaceable in Pricing Calculator.
+AOV $120 · CLV $450 (Nike 3-yr). All inputs replaceable in Pricing Calculator.
 ```
 
 Template assumptions:
 
 ```text
-AOV {AOV} · CLV {CLV} ({BRAND} {CLV_PERIOD}) · CPM {CPM} ({CPM_SOURCE}) · Brand lift via {AWARENESS_MODEL_SOURCE}. All inputs replaceable in Pricing Calculator.
+AOV {AOV} · CLV {CLV} ({BRAND} {CLV_PERIOD}). All inputs replaceable in Pricing Calculator.
 ```
 
 Nike defaults:
@@ -830,9 +763,6 @@ Nike defaults:
 {AOV} = $120
 {CLV} = $450
 {CLV_PERIOD} = 3-yr
-{CPM} = $30
-{CPM_SOURCE} = IAB Connected Home 2025
-{AWARENESS_MODEL_SOURCE} = Kantar projection model
 ```
 
 ---
@@ -905,8 +835,6 @@ Schedule Alignment
 {COMMERCE_CTA_EXAMPLES}
 {AOV}
 {CLV}
-{CPM}
-{BRAND_AWARENESS_LIFT}
 ```
 
 ## Usually Keep
@@ -1047,22 +975,12 @@ Exclusive Nike device industrial design, production & deployment, 60+ content mo
 Return
 Estimated pilot value
 100 households · 4 weeks
-Total pilot value
-$19,630
-Revenue $5,280
-Pipeline $4,410
-LTV $5,850
-Media $2,100
-Brand $1,990
 
 Direct revenue
 $5,280
 44 orders
-Brand awareness lift
-+5.2%
-Kantar-projected
 Scale @ 5,000 HH
-$12.7M
+$7.2M
 annualized
 
 Conversion path
@@ -1078,11 +996,8 @@ Conversion path
 
 How we calculate
 Revenue = orders × AOV = 44 × $120 = $5,280
-Pipeline = leads × per-lead value = 147 × $30 = $4,410
 LTV captured = retained × CLV = 13 × $450 = $5,850
-Media value = impressions × CPM ÷ 1,000 = 70,000 × $30 ÷ 1,000 = $2,100
-Brand equity = awareness lift × audience value = $1,990
-AOV $120 · CLV $450 (Nike 3-yr) · CPM $30 (IAB Connected Home 2025) · Brand lift via Kantar projection model. All inputs replaceable in Pricing Calculator.
+AOV $120 · CLV $450 (Nike 3-yr). All inputs replaceable in Pricing Calculator.
 ```
 
 ## Footer CTA

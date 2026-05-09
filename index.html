@@ -224,11 +224,11 @@
     }
 
     .solution p {
-      color: #555;
+      color: #aaa;
     }
 
     .solution .border-color {
-      border-color: rgba(0, 0, 0, 0.1);
+      border-color: rgba(255, 255, 255, 0.1);
     }
 
     .feature-list {
@@ -238,7 +238,7 @@
 
     .feature-list li {
       padding: 1.5rem 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
       align-items: center;
     }
@@ -384,6 +384,17 @@
       padding: 3rem;
     }
 
+    .roi-hover-card {
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .roi-hover-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 90, 31, 0.45) !important;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.14) !important;
+      background: #FFF !important;
+    }
+
     .calc-input-group {
       display: flex;
       flex-wrap: wrap;
@@ -402,7 +413,7 @@
 
     .calc-input label {
       font-family: 'Roboto Mono', monospace;
-      color: var(--nike-volt);
+      color: var(--nike-orange);
       font-size: 0.85rem;
       text-transform: uppercase;
     }
@@ -410,8 +421,8 @@
     .calc-input input {
       background: transparent;
       border: none;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-      color: #FFF;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+      color: #000;
       font-size: 2.5rem;
       font-weight: bold;
       padding: 0.5rem 0;
@@ -420,7 +431,7 @@
     }
 
     .calc-input input:focus {
-      border-bottom-color: var(--nike-volt);
+      border-bottom-color: var(--nike-orange);
     }
 
     .calc-btn {
@@ -440,13 +451,14 @@
 
     .calc-btn:hover {
       transform: scale(1.05);
-      background: #FFF;
+      background: #111;
+      color: #FFF;
     }
 
     .calc-results {
       margin-top: 3rem;
       padding-top: 3rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
       display: none;
       animation: fadeIn 0.5s ease forwards;
     }
@@ -491,7 +503,7 @@
       grid-template-columns: 120px 1fr;
       gap: 1rem;
       align-items: baseline;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       padding-bottom: 1rem;
     }
 
@@ -511,7 +523,7 @@
     .handdrawn-text {
       font-family: 'Caveat', cursive;
       font-size: 1.75rem;
-      color: var(--nike-volt);
+      color: var(--nike-orange);
       margin-bottom: 1rem;
     }
 
@@ -540,8 +552,112 @@
       }
     }
 
-    @media (max-width: 768px) {
-      .result-grid {
+    .annotation-orange {
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem;
+      color: var(--nike-orange);
+    }
+
+    .pointer-arrow {
+      stroke: var(--nike-orange);
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .story-act-card {
+      background: var(--story-accent-bg, rgba(255, 255, 255, 0.05));
+      padding: 1.5rem;
+      border: 1px solid var(--story-accent-border, rgba(255, 255, 255, 0.08));
+      border-radius: 12px;
+      border-top: 4px solid var(--story-accent, var(--nike-orange));
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      cursor: default;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .story-act-card:hover {
+      background: var(--story-accent-bg-hover, rgba(255, 255, 255, 0.09));
+      transform: translateY(-3px);
+    }
+
+    .story-accent-hook {
+      --story-accent: #F26A21;
+      --story-accent-bg: rgba(242, 106, 33, 0.12);
+      --story-accent-bg-hover: rgba(242, 106, 33, 0.18);
+      --story-accent-border: rgba(242, 106, 33, 0.28);
+    }
+
+    .story-accent-themes {
+      --story-accent: #1D9E75;
+      --story-accent-bg: rgba(29, 158, 117, 0.12);
+      --story-accent-bg-hover: rgba(29, 158, 117, 0.18);
+      --story-accent-border: rgba(29, 158, 117, 0.28);
+    }
+
+    .story-accent-commerce {
+      --story-accent: var(--nike-volt);
+      --story-accent-bg: rgba(216, 255, 47, 0.1);
+      --story-accent-bg-hover: rgba(216, 255, 47, 0.16);
+      --story-accent-border: rgba(216, 255, 47, 0.26);
+    }
+
+    .story-switch-panel {
+      display: none;
+      animation: fadeIn 0.2s ease forwards;
+    }
+
+    .story-switch-panel.is-active {
+      display: block;
+    }
+
+    .story-theme-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .story-commerce-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .story-architecture-section {
+      background: #F7F7F7;
+      color: #111;
+      width: 100vw;
+      box-sizing: border-box;
+      margin-left: calc(50% - 50vw);
+      padding: 5rem max(5vw, calc((100vw - 1400px) / 2));
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .story-architecture-section h3,
+    .story-architecture-section h4 {
+      color: #111 !important;
+    }
+
+    .story-architecture-section p {
+      color: #555 !important;
+    }
+
+    .story-architecture-section .story-switch-panel [style*="background: rgba(255,255,255,0.05)"] {
+      background: #FFF !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .story-architecture-section .story-commerce-grid>div>div:first-child {
+      color: #777 !important;
+    }
+
+    @media (max-width: 900px) {
+
+      .story-theme-grid,
+      .story-commerce-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -549,6 +665,14 @@
 </head>
 
 <body>
+  <!-- Global SVG Definitions -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <marker id="arrowhead-orange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#000" />
+      </marker>
+    </defs>
+  </svg>
 
   <!-- HERO SECTION -->
   <section class="hero">
@@ -557,8 +681,8 @@
         <img data-proposal-image="hero_image_url" src="pics/hero_pic.png" alt="Nike Fridge Channel Hero">
       </div>
       <div class="hero-content reveal">
-        <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem);">FridgeChannel<br>× <span
-            style="color:var(--nike-volt)" data-proposal-text="brand_name">Nike</span><br>Pilot Proposal</h1>
+        <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem);">FridgeChannel<br>× <span style="color:var(--nike-volt)"
+            data-proposal-text="brand_name">Nike</span><br>Pilot Proposal</h1>
 
       </div>
     </div>
@@ -596,88 +720,226 @@
   </section>
 
   <!-- SOLUTION SECTION -->
-  <section class="solution" style="background-color: var(--bg-light); color: #000; padding: 8rem 5%;">
+  <section class="solution" style="background-color: #000; color: #FFF; padding: 8rem 5%;">
     <div class="container">
       <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
         <span class="mono"
-          style="color: var(--nike-orange); border: 1px solid var(--nike-orange); padding: 0.5rem 1rem; border-radius: 50px;">02
+          style="color: var(--nike-volt); border: 1px solid var(--nike-volt); padding: 0.5rem 1rem; border-radius: 50px;">02
           // The Solution</span>
-        <h2 style="margin-top: 1.5rem; font-size: clamp(2rem, 5vw, 3.5rem);"><span data-proposal-text="brand_channel_name">Nike Family Channel</span> Solution</h2>
+        <h2 style="margin-top: 1.5rem; font-size: clamp(2rem, 5vw, 3.5rem);"><span
+            data-proposal-text="brand_channel_name">Nike Family Channel</span> Solution</h2>
       </div>
 
       <!-- 3.1 设备 -->
       <div class="grid-2" style="margin-bottom: 6rem; align-items: center;">
         <div class="reveal">
-          <div
-            style="background: #111; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
-            <img data-proposal-image="device_rendering_image_url" src="pics/visual_pic.png" alt="Visual: Device Rendering" style="width: 100%; height: auto; display: block;">
+          <div style="background: #111; border-radius: 12px; overflow: hidden;">
+            <img data-proposal-image="device_rendering_image_url" src="pics/visual_pic.png"
+              alt="Visual: Device Rendering" style="width: 100%; height: auto; display: block;">
           </div>
         </div>
         <div class="solution-text reveal delay-1">
           <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem;">DEVICE // HARDWARE</div>
-          <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 900;">Exclusive <span data-proposal-text="brand_name">Nike</span> Touchpoint</h3>
+          <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 900;">Exclusive <span
+              data-proposal-text="brand_name">Nike</span> Touchpoint</h3>
           <ul class="feature-list" style="margin-top: 2rem; list-style: none; padding: 0;">
             <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-              <span><strong>Custom <span data-proposal-text="brand_name">Nike</span> ID:</strong> Deep integration of industrial design, UI, and brand identity.</span>
+              <span><strong>Custom <span data-proposal-text="brand_name">Nike</span> ID:</strong> Deep integration of
+                industrial design, UI, and brand identity.</span>
             </li>
             <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-              <span><strong>High-Frequency Context:</strong> Dominate 25+ daily household interactions at the fridge.</span>
+              <span><strong>High-Frequency Context:</strong> Dominate 25+ daily household interactions at the
+                fridge.</span>
             </li>
             <li style="display: flex; align-items: center; gap: 1rem;">
-              <span><strong>Zero-Friction Setup:</strong> Magnetic installation, rapid deployment into target households.</span>
+              <span><strong>Zero-Friction Setup:</strong> Magnetic installation, rapid deployment into target
+                households.</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <!-- 3.2 内容引擎 -->
-      <div class="grid-2" style="margin-bottom: 6rem; align-items: center;">
+      <div class="grid-2 story-architecture-section"
+        style="margin-bottom: 10rem; align-items: stretch; grid-template-columns: 1.4fr 0.6fr; position: relative;">
         <div class="solution-text reveal">
-          <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem;">CONTENT // CONTENT</div>
-          <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 900;">Brand Content & Consumer Engagement</h3>
+          <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem;">CONTENT // STORY ARCHITECTURE</div>
+          <h3 style="font-size: 2rem; margin-bottom: 1rem; font-weight: 900;">Every 60 seconds is a three-act story.
+          </h3>
+          <p style="font-size: 1rem; color: #aaa; margin-bottom: 2.5rem; font-style: italic;">Earn the ear. Deliver the
+            value. Guide the action. — No interruption, no ad fatigue, just a story Nike fans choose to play.</p>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem;">
-            <div
-              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
-              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_1_title">Basketball Culture</h4>
-              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_1_body">Hoop challenges, finals countdown, youth confidence tips</p>
+          <!-- 60-Second Arc: Three-Act Timeline -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="story-act-card story-accent-hook" data-story-trigger="hook" tabindex="0">
+              <div
+                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                Act 1 · 0–10 s</div>
+              <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Earn attention with a familiar Nike
+                voice</h4>
             </div>
-            <div
-              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
-              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_2_title">Running & Weather</h4>
-              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_2_body">Local running index, best training days, easy run reminders</p>
+            <div class="story-act-card story-accent-themes" data-story-trigger="themes" tabindex="0">
+              <div
+                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                Act 2 · 10–45 s</div>
+              <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Deliver something the listener
+                actually wants</h4>
             </div>
-            <div
-              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
-              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_3_title">Home Training</h4>
-              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_3_body">5-min family challenges, parent-child drills, evening stretching</p>
+            <div class="story-act-card story-accent-commerce" data-story-trigger="commerce" tabindex="0">
+              <div
+                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                Act 3 · 45–60 s</div>
+              <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Convert listening into commercial
+                actions</h4>
             </div>
-            <div
-              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
-              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_4_title">Nike Product Stories</h4>
-              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_4_body">Pegasus, Vomero, Air Max series heritage</p>
+          </div>
+
+          <div class="story-switch-panel story-accent-hook" data-story-panel="hook">
+            <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem; font-size: 0.75rem;">HOOK EXAMPLE
             </div>
-            <div
-              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
-              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_5_title">Athlete Moments</h4>
-              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_5_body">Mindset shorts, game day reminders, new signings</p>
+            <div style="display: grid; gap: 0.9rem;">
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <p data-proposal-text="act1_example_1"
+                  style="font-size: 1.05rem; color: #ddd; margin: 0; line-height: 1.55; font-style: italic;">
+                  "Hey, this is Nike. 30 seconds before your morning run…"</p>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <p data-proposal-text="act1_example_2"
+                  style="font-size: 1.05rem; color: #ddd; margin: 0; line-height: 1.55; font-style: italic;">"Hey,
+                  this is Nike. Game's tonight — and there's a 60-second story your kid's gonna want to hear before
+                  school."</p>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <p data-proposal-text="act1_example_3"
+                  style="font-size: 1.05rem; color: #ddd; margin: 0; line-height: 1.55; font-style: italic;">"Hey,
+                  this is Nike. It's 62°F, zero wind — that's a Pegasus kind of morning."</p>
+              </div>
             </div>
-            <div
-              style="background: #f9f9f9; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--nike-orange);">
-              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="content_pillar_6_title">Seasonal Campaigns</h4>
-              <p style="font-size: 0.85rem; color: #666;" data-proposal-text="content_pillar_6_body">Back to School, Holiday gifting, Marathon season specials</p>
+          </div>
+
+          <div class="story-switch-panel story-accent-themes is-active" data-story-panel="themes">
+            <!-- Content Themes for Nike -->
+            <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem; font-size: 0.75rem;">CONTENT THEMES
+              FOR NIKE</div>
+            <div class="story-theme-grid">
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
+                  data-proposal-text="content_pillar_1_title">Basketball Culture</h4>
+                <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 0; line-height: 1.5;"
+                  data-proposal-text="content_pillar_1_body">Hoop challenges, finals countdown, youth confidence tips
+                </p>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
+                  data-proposal-text="content_pillar_2_title">Running & Weather</h4>
+                <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 0; line-height: 1.5;"
+                  data-proposal-text="content_pillar_2_body">Local running index, best training days, easy run reminders
+                </p>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
+                  data-proposal-text="content_pillar_3_title">Home Training</h4>
+                <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 0; line-height: 1.5;"
+                  data-proposal-text="content_pillar_3_body">5-min family challenges, parent-child drills, evening
+                  stretching</p>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
+                  data-proposal-text="content_pillar_4_title">Nike Product Stories</h4>
+                <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 0; line-height: 1.5;"
+                  data-proposal-text="content_pillar_4_body">Pegasus, Vomero, Air Max series heritage</p>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
+                  data-proposal-text="content_pillar_5_title">Athlete Moments</h4>
+                <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 0; line-height: 1.5;"
+                  data-proposal-text="content_pillar_5_body">Mindset shorts, game day reminders, new signings</p>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
+                  data-proposal-text="content_pillar_6_title">Seasonal Campaigns</h4>
+                <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 0; line-height: 1.5;"
+                  data-proposal-text="content_pillar_6_body">Back to School, Holiday gifting, Marathon season specials
+                </p>
+              </div>
             </div>
-            <div
-              style="background: var(--nike-orange); padding: 1.25rem; border-radius: 12px; grid-column: span 2; color: #FFF;">
-              <h4 style="margin-bottom: 0.25rem; font-size: 1rem;" data-proposal-text="commerce_cta_title">Commerce CTA</h4>
-              <p style="font-size: 0.85rem; color: #FFF;" data-proposal-text="commerce_cta_body">Explore Basketball, Join Nike Membership, Open Nike App, etc.</p>
-              <p style="font-size: 0.8rem; color: rgba(255,255,255,0.86); margin: 0.5rem 0 0;">Every content moment can connect directly to <span data-proposal-text="brand_name">Nike</span>’s online store, product detail pages, membership sign-up page, or campaign landing page — moving users from “seeing the content” to “viewing products, joining membership, adding to cart, or placing an order.”</p>
+          </div>
+
+          <div class="story-switch-panel story-accent-commerce" data-story-panel="commerce">
+            <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem;">COMMERCE // 8 WAYS THE LAST 15
+              SECONDS BECOME REVENUE</div>
+            <div class="story-commerce-grid">
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                <div
+                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
+                  01</div>
+                <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Boost Product Usage</h4>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                <div
+                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
+                  02</div>
+                <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Trigger Repurchase</h4>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                <div
+                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
+                  03</div>
+                <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Replenishment Cues</h4>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                <div
+                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
+                  04</div>
+                <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Membership Onboarding</h4>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                <div
+                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
+                  05</div>
+                <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Flash Drops</h4>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                <div
+                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
+                  06</div>
+                <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Cart Recovery</h4>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                <div
+                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
+                  07</div>
+                <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">New Launch Drops</h4>
+              </div>
+              <div
+                style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                <div
+                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
+                  08</div>
+                <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Habit Reminders</h4>
+              </div>
             </div>
           </div>
         </div>
-        <div class="reveal delay-1">
-          <div style="background: #111; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
-            <img src="pics/visual_play_sample.png" alt="Visual: Playback Sample" style="width: 100%; height: auto; display: block;">
+        <div class="reveal delay-1" style="position: relative;">
+          <div style="background: #111; border-radius: 12px; overflow: hidden; height: 100%;">
+            <img src="pics/visual_play_sample.png" alt="Visual: Playback Sample"
+              style="width: 100%; height: 100%; object-fit: cover; display: block;">
           </div>
         </div>
       </div>
@@ -685,9 +947,9 @@
       <!-- 3.3 数据闭环 -->
       <div class="grid-2 insights-grid" style="align-items: center;">
         <div class="reveal">
-          <div
-            style="background: #111; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
-            <img src="pics/dashboard_pic.jpeg" alt="Visual: Data Dashboard" style="width: 100%; height: auto; display: block;">
+          <div style="background: #111; border-radius: 12px; overflow: hidden;">
+            <img src="pics/dashboard_pic.jpeg" alt="Visual: Data Dashboard"
+              style="width: 100%; height: auto; display: block;">
           </div>
         </div>
         <div class="solution-text reveal delay-1">
@@ -695,20 +957,24 @@
           <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 900;">Full-Funnel Behavioral Insights</h3>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div
-              style="border: 1px solid #ddd; padding: 1.5rem 1rem; border-radius: 8px; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 80px;">
-              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Installation & Activation Rate</strong>
+              style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
+              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Installation & Activation
+                Rate</strong>
             </div>
             <div
-              style="border: 1px solid #ddd; padding: 1.5rem 1rem; border-radius: 8px; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 80px;">
-              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Playback & CTA Engagement</strong>
+              style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
+              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Playback & CTA
+                Engagement</strong>
             </div>
             <div
-              style="border: 1px solid #ddd; padding: 1.5rem 1rem; border-radius: 8px; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 80px;">
-              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Product / Campaign Heat Analysis</strong>
+              style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
+              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Product / Campaign Heat
+                Analysis</strong>
             </div>
             <div
-              style="border: 1px solid #ddd; padding: 1.5rem 1rem; border-radius: 8px; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 80px;">
-              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Consideration & Purchase Intent Tracking</strong>
+              style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
+              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Consideration & Purchase
+                Intent Tracking</strong>
             </div>
           </div>
         </div>
@@ -718,17 +984,18 @@
   </section>
 
   <!-- DATA & PILOT SECTION -->
-  <section class="data-section" style="background: #000; padding: 8rem 5%; color: #FFF;">
+  <section class="data-section" style="background: #F7F7F7; padding: 8rem 5%; color: #000;">
     <div class="container">
       <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
         <span class="mono"
-          style="color: var(--nike-volt); border: 1px solid var(--nike-volt); padding: 0.5rem 1rem; border-radius: 50px;">03
+          style="color: var(--nike-orange); border: 1px solid var(--nike-orange); padding: 0.5rem 1rem; border-radius: 50px;">03
           // The ROI & Pilot</span>
       </div>
 
       <!-- 3.1 试点方案及价格 -->
       <div class="reveal" style="margin-bottom: 6rem;">
-        <div class="calculator-box">
+        <div class="calculator-box"
+          style="background: #FFF; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 24px 70px rgba(0,0,0,0.08);">
           <!-- Initial Guide: Precisely Aligned Arrows -->
           <div id="calc-guide" class="calc-guide">
             <div class="handdrawn-text">Enter parameters (min 4 weeks / 100 households) to unlock ROI estimation</div>
@@ -736,15 +1003,15 @@
               <div class="arrow-box">
                 <!-- Points to Weeks -->
                 <svg width="40" height="50" viewBox="0 0 100 100" fill="none">
-                  <path d="M50 10C55 30 45 50 50 85M50 85L40 70M50 85L60 70" stroke="var(--nike-volt)" stroke-width="6"
-                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M50 10C55 30 45 50 50 85M50 85L40 70M50 85L60 70" stroke="var(--nike-orange)"
+                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </div>
               <div class="arrow-box">
                 <!-- Points to Households -->
                 <svg width="40" height="50" viewBox="0 0 100 100" fill="none">
-                  <path d="M50 10C45 30 55 50 50 85M50 85L40 70M50 85L60 70" stroke="var(--nike-volt)" stroke-width="6"
-                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M50 10C45 30 55 50 50 85M50 85L40 70M50 85L60 70" stroke="var(--nike-orange)"
+                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </div>
               <!-- Invisible spacer to match the button's space -->
@@ -768,156 +1035,238 @@
 
             <!-- Pricing Header -->
             <div style="margin-bottom: 2rem;">
-              <h4 style="font-size: 1.5rem; color: #FFF;">Pricing</h4>
+              <h3 style="font-size: clamp(2rem, 4vw, 3rem); color: #111; font-weight: 900; margin-bottom: 0.75rem;">
+                Pricing</h3>
+              <p style="font-size: 1.25rem; color: #6B7280; line-height: 1.65; max-width: 720px;">Pilot cost is driven
+                by household deployment scale and weekly content operations.</p>
             </div>
 
             <!-- 1. Financials (Full Width Row) -->
             <div class="result-grid" style="grid-template-columns: 1fr 2fr; margin-bottom: 5rem;">
-              <div class="total-price-box">
+              <div class="total-price-box roi-hover-card" style="background: #FFF; border: 1px solid var(--nike-orange);">
                 <p style="color: #888; font-family: 'Roboto Mono', monospace; margin-bottom: 1rem; font-size: 0.85rem;">
                   ESTIMATED TOTAL INVESTMENT</p>
-                <div style="font-size: 3.5rem; font-weight: 900; color: var(--nike-volt); line-height: 1;"
+                <div style="font-size: 3.5rem; font-weight: 900; color: var(--nike-orange); line-height: 1;"
                   id="res-total">$190,000</div>
               </div>
               <div class="breakdown-box">
                 <!-- Sum Relationship Row -->
                 <div
-                  style="display: flex; align-items: center; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; margin-bottom: 2rem;">
+                  style="display: flex; align-items: center; gap: 2rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2rem; margin-bottom: 2rem;">
                   <!-- Hardware -->
-                  <div style="flex: 1;">
+                  <div class="roi-hover-card" style="flex: 1; background: #FFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 1rem;">
                     <div class="breakdown-label" style="margin-bottom: 0.5rem;">HARDWARE FEES</div>
-                    <strong style="font-size: 1.5rem; display: block;" id="res-hw-total">$150,000</strong>
-                    <span style="color: #aaa; font-size: 0.85rem;" id="res-hw-math">($1,500 / unit × 100 units)</span>
+                    <strong style="font-size: 1.5rem; display: block; color: #000;" id="res-hw-total">$150,000</strong>
+                    <span style="color: #666; font-size: 0.85rem;" id="res-hw-math">($1,500 / unit × 100 units)</span>
                   </div>
 
                   <!-- Plus Sign -->
-                  <div style="font-size: 2rem; color: var(--nike-volt); font-weight: 900; opacity: 0.5;">+</div>
+                  <div style="font-size: 2rem; color: var(--nike-orange); font-weight: 900; opacity: 0.5;">+</div>
 
                   <!-- Ops -->
-                  <div style="flex: 1;">
+                  <div class="roi-hover-card" style="flex: 1; background: #FFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 1rem;">
                     <div class="breakdown-label" style="margin-bottom: 0.5rem;">CONTENT & OPS</div>
-                    <strong style="font-size: 1.5rem; display: block;" id="res-ops-total">$40,000</strong>
-                    <span style="color: #aaa; font-size: 0.85rem;" id="res-ops-math">($5,000 / week × 8 weeks)</span>
+                    <strong style="font-size: 1.5rem; display: block; color: #000;" id="res-ops-total">$40,000</strong>
+                    <span style="color: #666; font-size: 0.85rem;" id="res-ops-math">($5,000 / week × 8 weeks)</span>
                   </div>
                 </div>
 
                 <!-- Included Services Row -->
-                <div style="padding-top: 0.5rem;">
+                <div class="roi-hover-card" style="padding: 1rem; background: #FFF; border: 1px solid #E5E7EB; border-radius: 14px;">
                   <div class="breakdown-label" style="margin-bottom: 0.5rem;">INCLUDED SERVICES</div>
-                  <div style="color: #ccc; font-size: 0.9rem; line-height: 1.5; font-style: italic;">
-                    Exclusive <span data-proposal-text="brand_name">Nike</span> device industrial design, production & deployment, 60+ content modules, daily operations, weekly insights reports
+                  <div style="color: #555; font-size: 0.9rem; line-height: 1.5; font-style: italic;">
+                    Exclusive <span data-proposal-text="brand_name">Nike</span> device industrial design, production &
+                    deployment, 60+ content modules, daily operations, weekly insights reports
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- 2. Returns Dashboard -->
-            <div style="padding-top: 5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div
+              style="background: #F3F6EF; border: 1px solid rgba(0,0,0,0.08); border-radius: 18px; padding: 2rem; box-shadow: 0 18px 50px rgba(0,0,0,0.08);">
               <div style="margin-bottom: 2rem;">
-                <h4 style="font-size: 1.5rem; color: #FFF;">Return</h4>
+                <h3 style="font-size: clamp(2rem, 4vw, 3rem); color: #111; font-weight: 900; margin-bottom: 0.75rem;">
+                  Return</h3>
+                <p style="font-size: 1.25rem; color: #6B7280; line-height: 1.65; max-width: 720px;">Paid ads earn the
+                  first sale. FridgeChannel earns every one after.</p>
               </div>
 
-              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem;">
+              <div
+                style="background: rgba(255,255,255,0.72); border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 1.5rem;">
 
                 <!-- Header -->
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem;">
-                  <div style="font-size: 11px; color: #777; letter-spacing: 0.08em; text-transform: uppercase;">
+                <div
+                  style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem;">
+                  <div style="font-size: 12px; color: #555; letter-spacing: 0.08em; text-transform: uppercase;">
                     Estimated pilot value</div>
-                  <div style="font-size: 12px; color: #aaa;" data-rt="plan">100 households · 4 weeks</div>
+                  <div style="font-size: 13px; color: #333;" data-rt="plan">100 households · 4 weeks</div>
                 </div>
 
-                <!-- HEADLINE: Total + Composition -->
-                <div style="background: rgba(255,255,255,0.05); border: 2px solid var(--nike-volt); border-radius: 16px; padding: 1.5rem; margin-bottom: 1rem;">
-                  <div style="font-size: 12px; color: #aaa; margin-bottom: 6px;">Total pilot value</div>
-                  <div style="font-size: clamp(42px, 6vw, 56px); font-weight: 500; color: var(--nike-volt); letter-spacing: -0.02em; line-height: 1; margin-bottom: 12px;" data-rt="totalValue">$19,630</div>
-
-                  <!-- Composition bar -->
-                  <div style="display: flex; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 10px; background: rgba(255,255,255,0.08);">
-                    <div style="flex: 5280; background: #185FA5;"></div>
-                    <div style="flex: 4410; background: #378ADD;"></div>
-                    <div style="flex: 5850; background: #1D9E75;"></div>
-                    <div style="flex: 2100; background: #97C459;"></div>
-                    <div style="flex: 1990; background: #BA7517;"></div>
+                <!-- CoreMetricsGrid: 2×2 -->
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 1.5rem;">
+                  <div class="roi-hover-card" style="background: #FFF; padding: 2rem; border-radius: 16px; border: 1px solid #E5E7EB;">
+                    <div style="font-size: 13px; color: #6B7280; margin-bottom: 8px;">Direct Revenue</div>
+                    <div style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #111;" data-rt="revenue">
+                      $5,280</div>
+                    <div style="font-size: 13px; color: #6B7280; margin-top: 8px;"><span data-rt="orders">44</span>
+                      orders × $120 AOV</div>
                   </div>
-
-                  <!-- Composition legend -->
-                  <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 11px; color: #aaa;">
-                    <span><span style="display:inline-block;width:8px;height:8px;background:#185FA5;border-radius:2px;margin-right:5px;vertical-align:middle;"></span>Revenue <span data-rt="revenue">$5,280</span></span>
-                    <span><span style="display:inline-block;width:8px;height:8px;background:#378ADD;border-radius:2px;margin-right:5px;vertical-align:middle;"></span>Pipeline <span data-rt="pipeline">$4,410</span></span>
-                    <span><span style="display:inline-block;width:8px;height:8px;background:#1D9E75;border-radius:2px;margin-right:5px;vertical-align:middle;"></span>LTV <span data-rt="ltv">$5,850</span></span>
-                    <span><span style="display:inline-block;width:8px;height:8px;background:#97C459;border-radius:2px;margin-right:5px;vertical-align:middle;"></span>Media <span data-rt="mediaValue">$2,100</span></span>
-                    <span><span style="display:inline-block;width:8px;height:8px;background:#BA7517;border-radius:2px;margin-right:5px;vertical-align:middle;"></span>Brand <span data-rt="brandValue">$1,990</span></span>
+                  <div class="roi-hover-card"
+                    style="background: #FFF; padding: 2rem; border-radius: 16px; border: 1px solid #E5E7EB; border-left: 4px solid var(--nike-orange);">
+                    <div style="font-size: 13px; color: #6B7280; margin-bottom: 8px;">LTV Captured</div>
+                    <div style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #111;" data-rt="ltv">$5,850
+                    </div>
+                    <div style="font-size: 13px; color: #6B7280; margin-top: 8px;"><span data-rt="retained">13</span>
+                      retained × $450 CLV (Nike 3-yr)</div>
                   </div>
-                </div>
-
-                <!-- 3 PROOF METRICS -->
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 1rem;">
-                  <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 14px;">
-                    <div style="font-size: 11px; color: #aaa; margin-bottom: 4px;">Direct revenue</div>
-                    <div style="font-size: 22px; font-weight: 500;" data-rt="revenue">$5,280</div>
-                    <div style="font-size: 11px; color: #777; margin-top: 2px;"><span data-rt="orders">44</span> orders</div>
+                  <div class="roi-hover-card"
+                    style="background: #FFF; padding: 2rem; border-radius: 16px; border: 1px solid #E5E7EB; border-left: 4px solid var(--nike-orange);">
+                    <div style="font-size: 13px; color: #6B7280; margin-bottom: 8px;">Repeat Purchase Rate <span
+                        style="color: var(--nike-orange);">↑</span></div>
+                    <div style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #111;">+12%</div>
+                    <div style="font-size: 13px; color: #6B7280; margin-top: 8px;">vs. paid-channel cohort baseline
+                    </div>
                   </div>
-                  <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 14px;">
-                    <div style="font-size: 11px; color: #aaa; margin-bottom: 4px;">Brand awareness lift</div>
-                    <div style="font-size: 22px; font-weight: 500; color: var(--nike-volt);">+5.2%</div>
-                    <div style="font-size: 11px; color: #777; margin-top: 2px;">Kantar-projected</div>
-                  </div>
-                  <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 14px;">
-                    <div style="font-size: 11px; color: #aaa; margin-bottom: 4px;">Scale @ 5,000 HH</div>
-                    <div style="font-size: 22px; font-weight: 500; color: var(--nike-volt);" data-rt="scale5000">$12.7M</div>
-                    <div style="font-size: 11px; color: #777; margin-top: 2px;">annualized</div>
+                  <div class="roi-hover-card"
+                    style="background: #FFF; padding: 2rem; border-radius: 16px; border: 1px solid #E5E7EB; border-left: 4px solid var(--nike-orange);">
+                    <div style="font-size: 13px; color: #6B7280; margin-bottom: 8px;">CAC Payback <span
+                        style="color: var(--nike-orange);">↓</span></div>
+                    <div style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #111;">6 mo → 2.4 mo</div>
+                    <div style="font-size: 13px; color: #6B7280; margin-top: 8px;">compressed by post-purchase retention
+                    </div>
                   </div>
                 </div>
 
                 <!-- COMPACT FUNNEL -->
-                <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 14px 16px; margin-bottom: 1rem;">
-                  <div style="font-size: 11px; color: #777; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px;">
+                <div
+                  style="background: transparent; border-top: 1px solid rgba(0,0,0,0.12); border-bottom: 1px solid rgba(0,0,0,0.12); padding: 18px 0; margin: 1.5rem 0;">
+                  <div
+                    style="font-size: 12px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px;">
                     Conversion path</div>
-                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 13px; flex-wrap: wrap;">
-                    <div style="text-align: center; flex: 1 1 80px;">
-                      <div style="font-size: 18px; font-weight: 500;" data-rt="impressionsShort">70k</div>
-                      <div style="font-size: 11px; color: #aaa;">impressions</div>
+                  <div
+                    style="display: flex; align-items: stretch; justify-content: space-between; gap: 0; font-size: 14px; flex-wrap: wrap; background: linear-gradient(90deg, rgba(24,95,165,0.08), rgba(29,158,117,0.12)); border-radius: 999px; padding: 10px 12px;">
+                    <div style="text-align: left; flex: 1 1 90px; padding: 0 12px;">
+                      <div style="font-size: 20px; font-weight: 700; color: #111;" data-rt="impressionsShort">70k</div>
+                      <div style="font-size: 12px; color: #555;">impressions</div>
                     </div>
-                    <div style="font-size: 11px; color: #777; padding: 0 4px;">7% →</div>
-                    <div style="text-align: center; flex: 1 1 80px;">
-                      <div style="font-size: 18px; font-weight: 500;" data-rt="plays">4,900</div>
-                      <div style="font-size: 11px; color: #aaa;">views</div>
+                    <div style="display: flex; align-items: center; color: #6F7E3A; font-size: 12px; padding: 0 4px;">7%
+                      →</div>
+                    <div
+                      style="text-align: left; flex: 1 1 90px; padding: 0 12px; border-left: 1px solid rgba(0,0,0,0.1);">
+                      <div style="font-size: 20px; font-weight: 700; color: #111;" data-rt="plays">4,900</div>
+                      <div style="font-size: 12px; color: #555;">views</div>
                     </div>
-                    <div style="font-size: 11px; color: #777; padding: 0 4px;">3% →</div>
-                    <div style="text-align: center; flex: 1 1 80px;">
-                      <div style="font-size: 18px; font-weight: 500;" data-rt="leads">147</div>
-                      <div style="font-size: 11px; color: #aaa;">leads</div>
+                    <div style="display: flex; align-items: center; color: #6F7E3A; font-size: 12px; padding: 0 4px;">3%
+                      →</div>
+                    <div
+                      style="text-align: left; flex: 1 1 90px; padding: 0 12px; border-left: 1px solid rgba(0,0,0,0.1);">
+                      <div style="font-size: 20px; font-weight: 700; color: #111;" data-rt="leads">147</div>
+                      <div style="font-size: 12px; color: #555;">leads</div>
                     </div>
-                    <div style="font-size: 11px; color: #777; padding: 0 4px;">30% →</div>
-                    <div style="text-align: center; flex: 1 1 80px;">
-                      <div style="font-size: 18px; font-weight: 500; color: #A5D45A;" data-rt="orders">44</div>
-                      <div style="font-size: 11px; color: #aaa;">orders</div>
+                    <div style="display: flex; align-items: center; color: #6F7E3A; font-size: 12px; padding: 0 4px;">
+                      30% →</div>
+                    <div
+                      style="text-align: left; flex: 1 1 90px; padding: 0 12px; border-left: 1px solid rgba(0,0,0,0.1);">
+                      <div style="font-size: 20px; font-weight: 700; color: #1D7F60;" data-rt="orders">44</div>
+                      <div style="font-size: 12px; color: #555;">orders</div>
                     </div>
-                    <div style="font-size: 11px; color: #777; padding: 0 4px;">30% →</div>
-                    <div style="text-align: center; flex: 1 1 80px;">
-                      <div style="font-size: 18px; font-weight: 500;" data-rt="retained">13</div>
-                      <div style="font-size: 11px; color: #aaa;">retained</div>
+                    <div style="display: flex; align-items: center; color: #6F7E3A; font-size: 12px; padding: 0 4px;">
+                      30% →</div>
+                    <div
+                      style="text-align: left; flex: 1 1 90px; padding: 0 12px; border-left: 1px solid rgba(0,0,0,0.1);">
+                      <div style="font-size: 20px; font-weight: 700; color: #111;" data-rt="retained">13</div>
+                      <div style="font-size: 12px; color: #555;">retained</div>
                     </div>
+                  </div>
+                  <!-- Funnel Gold Sentence -->
+                  <div style="margin-top: 14px; padding-left: 16px; border-left: 3px solid #5E7F12;">
+                    <p style="font-size: 14px; color: #333; margin: 0; line-height: 1.55; font-style: italic;">Those
+                      <strong style="color: #5E7F12;"><span data-rt="retained">13</span> households</strong>
+                      become the engine. At 5,000 HH scale, that's the LTV layer that compounds into <strong
+                        style="color: #5E7F12;" data-rt="scale5000">$7.2M</strong> annualized.
+                    </p>
                   </div>
                 </div>
 
-                <!-- METHODOLOGY / FORMULAS -->
-                <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 14px 16px;">
-                  <div style="font-size: 11px; color: #777; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">
-                    How we calculate</div>
-
-                  <div style="font-family: 'Roboto Mono', monospace; font-size: 12px; line-height: 1.8; color: #aaa;">
-                    <div><span style="color: #fff;">Revenue</span> = orders × AOV = <span data-rt="orders">44</span> × $120 = <span style="color: var(--nike-volt);" data-rt="revenue">$5,280</span></div>
-                    <div><span style="color: #fff;">Pipeline</span> = leads × per-lead value = <span data-rt="leads">147</span> × $30 = <span style="color: var(--nike-volt);" data-rt="pipeline">$4,410</span></div>
-                    <div><span style="color: #fff;">LTV captured</span> = retained × CLV = <span data-rt="retained">13</span> × $450 = <span style="color: var(--nike-volt);" data-rt="ltv">$5,850</span></div>
-                    <div><span style="color: #fff;">Media value</span> = impressions × CPM ÷ 1,000 = <span data-rt="impressions">70,000</span> × $30 ÷ 1,000 = <span style="color: var(--nike-volt);" data-rt="mediaValue">$2,100</span></div>
-                    <div><span style="color: #fff;">Brand equity</span> = awareness lift × audience value = <span style="color: var(--nike-volt);" data-rt="brandValue">$1,990</span></div>
+                <!-- ChannelComparison: vs SMS/Email -->
+                <div style="margin-top: 2rem;">
+                  <div
+                    style="font-size: 12px; color: #6B7280; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px;">
+                    Incremental Cost per Re-Engagement</div>
+                  <p style="font-size: 14px; color: #444; margin-bottom: 1.25rem; max-width: 640px;">How much it costs
+                    to make an existing customer take action again</p>
+                  <div style="border-radius: 20px; border: 1px solid #E5E7EB;">
+                    <div
+                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; background: #FAFAFA; padding: 20px 24px; border-bottom: 1px solid #E5E7EB;">
+                      <div></div>
+                      <div style="font-size: 13px; color: #6B7280;">SMS / Email</div>
+                      <div
+                        style="font-size: 13px; font-weight: 800; color: var(--nike-orange); background: rgba(255,90,31,0.08); padding: 6px 12px; border-radius: 8px; text-align: center;">
+                        FridgeChannel</div>
+                    </div>
+                    <div class="roi-hover-card"
+                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 18px 24px; border-bottom: 1px solid #F3F4F6; align-items: center;">
+                      <div style="font-size: 14px; color: #111; font-weight: 600;">Cost per re-engagement</div>
+                      <div style="font-size: 14px; color: #6B7280;">$5.00</div>
+                      <div style="font-size: 14px; font-weight: 700; color: var(--nike-orange); text-align: center;">
+                        $1.20</div>
+                    </div>
+                    <div class="roi-hover-card"
+                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 18px 24px; border-bottom: 1px solid #F3F4F6; align-items: center;">
+                      <div style="font-size: 14px; color: #111; font-weight: 600;">Audience decay</div>
+                      <div style="font-size: 14px; color: #6B7280;">−25% / year</div>
+                      <div style="font-size: 14px; font-weight: 700; color: var(--nike-orange); text-align: center;">0%
+                      </div>
+                    </div>
+                    <div class="roi-hover-card"
+                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 18px 24px; border-bottom: 1px solid #F3F4F6; align-items: center;">
+                      <div style="font-size: 14px; color: #111; font-weight: 600;">Saturation risk</div>
+                      <div style="font-size: 14px; color: #6B7280;">High (7+ touches/wk → fatigue)</div>
+                      <div style="font-size: 14px; font-weight: 700; color: var(--nike-orange); text-align: center;">Low
+                        (passive, in-context)</div>
+                    </div>
+                    <div class="roi-hover-card"
+                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 18px 24px; border-bottom: 1px solid #F3F4F6; align-items: center;">
+                      <div style="font-size: 14px; color: #111; font-weight: 600;">iOS / Privacy exposure</div>
+                      <div style="font-size: 14px; color: #6B7280;">High (open-rate broken)</div>
+                      <div style="font-size: 14px; font-weight: 700; color: var(--nike-orange); text-align: center;">
+                        None (hardware-owned)</div>
+                    </div>
+                    <div class="roi-hover-card"
+                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 18px 24px; align-items: center;">
+                      <div style="font-size: 14px; color: #111; font-weight: 600;">Cross-generational reach</div>
+                      <div style="font-size: 14px; color: #6B7280;">1 phone = 1 person</div>
+                      <div style="font-size: 14px; font-weight: 700; color: var(--nike-orange); text-align: center;">1
+                        fridge = whole household</div>
+                    </div>
                   </div>
-
-                  <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; color: #777; line-height: 1.6;">
-                    AOV $120 · CLV $450 (<span data-proposal-text="brand_name">Nike</span> 3-yr) · CPM $30 (IAB Connected Home 2025) · Brand lift via Kantar projection model. All inputs replaceable in Pricing Calculator.
+                  <div
+                    style="margin-top: 2rem; text-align: center; max-width: 720px; margin-left: auto; margin-right: auto;">
+                    <span style="font-size: 2.5rem; color: #D1D5DB; line-height: 1; vertical-align: top;">&ldquo;</span>
+                    <p
+                      style="display: inline; font-size: 1.1rem; color: #374151; font-style: italic; line-height: 1.7;">
+                      SMS/Email costs $5 per send to a list that's losing 25% of itself every year. FridgeChannel costs
+                      $1.20 per engaged moment to a household that doesn't unsubscribe.</p>
+                    <span
+                      style="font-size: 2.5rem; color: #D1D5DB; line-height: 1; vertical-align: bottom;">&rdquo;</span>
                   </div>
                 </div>
+
+                <!-- ClosingTagline -->
+                <div
+                  style="margin-top: 2.5rem; text-align: center; max-width: 720px; margin-left: auto; margin-right: auto;">
+                  <div style="font-size: 1.35rem; font-weight: 700; color: #111; margin: 12px 0;">Paid Ads <span
+                      style="color: var(--nike-orange);">→</span> First Purchase</div>
+                  <div style="border-top: 1px solid #E5E7EB;"></div>
+                  <div style="font-size: 1.35rem; font-weight: 700; color: #111; margin: 12px 0;">FridgeChannel <span
+                      style="color: var(--nike-orange);">→</span> Retention &amp; Profit</div>
+                  <div style="border-top: 1px solid #E5E7EB;"></div>
+                  <div style="font-size: 1.35rem; font-weight: 700; color: #111; margin: 12px 0;">Brand on the Fridge
+                    <span style="color: var(--nike-orange);">→</span> Long-term Durability
+                  </div>
+                </div>
+
 
               </div>
             </div>
@@ -950,6 +1299,9 @@
       brand_channel_name: 'Nike Family Channel',
       hero_image_url: 'pics/hero_pic.png',
       device_rendering_image_url: 'pics/visual_pic.png',
+      act1_example_1: '"Hey, this is Nike. 30 seconds before your morning run…"',
+      act1_example_2: '"Hey, this is Nike. Game\'s tonight — and there\'s a 60-second story your kid\'s gonna want to hear before school."',
+      act1_example_3: '"Hey, this is Nike. It\'s 62°F, zero wind — that\'s a Pegasus kind of morning."',
       content_pillar_1_title: 'Basketball Culture',
       content_pillar_1_body: 'Hoop challenges, finals countdown, youth confidence tips',
       content_pillar_2_title: 'Running & Weather',
@@ -962,8 +1314,6 @@
       content_pillar_5_body: 'Mindset shorts, game day reminders, new signings',
       content_pillar_6_title: 'Seasonal Campaigns',
       content_pillar_6_body: 'Back to School, Holiday gifting, Marathon season specials',
-      commerce_cta_title: 'Commerce CTA',
-      commerce_cta_body: 'Explore Basketball, Join Nike Membership, Open Nike App, etc.',
       footer_button_url: '#'
     };
 
@@ -1058,6 +1408,21 @@
       revealOnScroll.observe(el);
     });
 
+    function showStoryPanel(panelName) {
+      document.querySelectorAll('[data-story-panel]').forEach(panel => {
+        panel.classList.toggle('is-active', panel.dataset.storyPanel === panelName);
+      });
+    }
+
+    document.querySelectorAll('[data-story-trigger]').forEach(trigger => {
+      trigger.addEventListener('mouseenter', () => showStoryPanel(trigger.dataset.storyTrigger));
+      trigger.addEventListener('focus', () => showStoryPanel(trigger.dataset.storyTrigger));
+    });
+
+    document.querySelectorAll('[data-story-panel]').forEach(panel => {
+      panel.addEventListener('mouseenter', () => showStoryPanel(panel.dataset.storyPanel));
+    });
+
     // ROI Calculator Logic
     function calculateROI() {
       const weeksInput = document.getElementById('calc-weeks');
@@ -1113,13 +1478,9 @@
       // Dollar values
       const aov = 120;
       const ltvPerCustomer = 450;
-      const cpmEquiv = 30; // $30 CPM equivalent for brand impressions
-      const mediaValue = (impressions / 1000) * cpmEquiv;
-      const pipelineValue = leads * aov * 0.5; // 50% of potential AOV
       const directRevenue = orders * aov;
       const ltvCaptured = Math.round(repeats) * ltvPerCustomer;
-      const brandValue = 1990 * (hh / 100) * (weeks / 4);
-      const totalPilotValue = Math.round(mediaValue + pipelineValue + directRevenue + ltvCaptured + brandValue);
+      const retainedValue = Math.round(directRevenue + ltvCaptured);
 
       const formatShort = (value) => {
         if (value >= 1000000) return `$${(value / 1000000).toFixed(1)}M`;
@@ -1135,19 +1496,15 @@
       };
 
       setRt('plan', `${hh} households · ${weeks} weeks`);
-      setRt('totalValue', fmt.format(totalPilotValue));
       setRt('impressions', numFmt.format(impressions));
       setRt('impressionsShort', countShort(impressions));
       setRt('plays', numFmt.format(plays));
       setRt('leads', numFmt.format(leads));
       setRt('orders', numFmt.format(orders));
       setRt('retained', numFmt.format(Math.round(repeats)));
-      setRt('mediaValue', fmt.format(mediaValue));
-      setRt('pipeline', fmt.format(pipelineValue));
       setRt('revenue', fmt.format(directRevenue));
       setRt('ltv', fmt.format(ltvCaptured));
-      setRt('brandValue', fmt.format(brandValue));
-      setRt('scale5000', formatShort(totalPilotValue * 50 * 13));
+      setRt('scale5000', formatShort(retainedValue * 50 * 13));
     }
 
     // Initialize values on page load (Wait for user action)
