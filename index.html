@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
   <title data-proposal-title>Nike Family Channel | Pitch</title>
   <!-- Premium Fonts: Inter & Roboto Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -661,10 +662,206 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Background art is 1080×1920 (9:16); matching aspect ratio keeps the iframe aligned with the phone bezel under cover. */
+    .proposal-magnet-panel {
+      /*
+       * Calibrated against pics/visual_play_sample.png (1080×1920). The
+       * phone's bottom bezel is noticeably thicker than the top, so we end
+       * the screen at ~90% (top 8% + height 82%) — the previous bottom of
+       * 93% was spilling into the bottom bezel by ~3%.
+       */
+      --magnet-screen-top: 10%;
+      --magnet-screen-left: 16%;
+      --magnet-screen-width: 68%;
+      --magnet-screen-height: 80%;
+      --magnet-screen-radius: 7%;
+      --magnet-screen-radius-bottom: 7%;
+      --magnet-max-h: min(72vh, 720px);
+      position: relative;
+      /*
+       * Drive the width from BOTH the column width and the height cap so the
+       * 9:16 aspect-ratio is never broken by `max-height` (which would cause
+       * `background-size: cover` to crop the phone bezel while the absolutely
+       * positioned screen kept using container-percent coordinates and
+       * spilled past the bezel).
+       */
+      width: min(100%, 420px, calc(var(--magnet-max-h) * 9 / 16));
+      margin: 0 auto;
+      aspect-ratio: 9 / 16;
+      height: auto;
+      background: #111 url('pics/visual_play_sample.png') center / 100% 100% no-repeat;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .proposal-magnet-screen {
+      position: absolute;
+      top: var(--magnet-screen-top);
+      left: var(--magnet-screen-left);
+      width: var(--magnet-screen-width);
+      height: var(--magnet-screen-height);
+      border-radius: var(--magnet-screen-radius) var(--magnet-screen-radius) var(--magnet-screen-radius-bottom) var(--magnet-screen-radius-bottom);
+      overflow: hidden;
+      z-index: 2;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .proposal-magnet-screen.is-active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .proposal-magnet-screen iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      border: 0;
+      background: #fff;
+    }
+
+    .proposal-magnet-screen iframe:not(.is-loaded) {
+      display: none;
+    }
+
+    .proposal-magnet-placeholder {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(0, 0, 0, 0.5);
+      pointer-events: none;
+    }
+
+    .proposal-magnet-placeholder[hidden] {
+      display: none;
+    }
+
+    .proposal-magnet-placeholder code {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.85em;
+      color: var(--nike-volt);
+    }
+
+    .proposal-loading-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: var(--bg-dark, #050505);
+      color: #fff;
+      text-align: center;
+    }
+
+    .proposal-loading-overlay[hidden] {
+      display: none;
+    }
+
+    .proposal-loading-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .proposal-loading-spinner {
+      width: 2.75rem;
+      height: 2.75rem;
+      border: 3px solid rgba(255, 255, 255, 0.12);
+      border-top-color: var(--nike-volt, #D8FF2F);
+      border-radius: 50%;
+      animation: proposal-spin 0.75s linear infinite;
+    }
+
+    @keyframes proposal-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .proposal-loading-label {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--text-muted, #888);
+      letter-spacing: 0.02em;
+    }
+
+    .proposal-not-found-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: rgba(5, 5, 5, 0.92);
+      color: #fff;
+      text-align: center;
+    }
+
+    .proposal-not-found-overlay[hidden] {
+      display: none;
+    }
+
+    .proposal-not-found-dialog {
+      max-width: 28rem;
+      line-height: 1.6;
+    }
+
+    .proposal-not-found-dialog h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .proposal-not-found-dialog code {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.85em;
+      color: var(--nike-volt, #D8FF2F);
+      word-break: break-all;
+    }
+
+    .proposal-not-found-dialog a {
+      color: var(--nike-orange, #FF5A1F);
+      font-weight: 600;
+    }
   </style>
 </head>
 
 <body>
+  <div id="proposal-loading-overlay" class="proposal-loading-overlay" role="status" aria-live="polite"
+    aria-busy="true">
+    <div class="proposal-loading-inner">
+      <div class="proposal-loading-spinner" aria-hidden="true"></div>
+      <p class="proposal-loading-label">Loading proposal…</p>
+    </div>
+  </div>
+  <div id="proposal-not-found-overlay" class="proposal-not-found-overlay" hidden>
+    <div class="proposal-not-found-dialog">
+      <h1>Proposal not found</h1>
+      <p>Requested ID: <code data-not-found-id></code></p>
+      <p data-not-found-detail style="color:#aaa;font-size:0.95rem;"></p>
+      <p style="margin-top:1.5rem;"><a href="./">Open default home (no id parameter)</a></p>
+    </div>
+  </div>
   <!-- Global SVG Definitions -->
   <svg width="0" height="0" style="position:absolute">
     <defs>
@@ -730,7 +927,7 @@
             data-proposal-text="brand_channel_name">Nike Family Channel</span> Solution</h2>
       </div>
 
-      <!-- 3.1 设备 -->
+      <!-- 3.1 Device -->
       <div class="grid-2" style="margin-bottom: 6rem; align-items: center;">
         <div class="reveal">
           <div style="background: #111; border-radius: 12px; overflow: hidden;">
@@ -937,14 +1134,19 @@
           </div>
         </div>
         <div class="reveal delay-1" style="position: relative;">
-          <div style="background: #111; border-radius: 12px; overflow: hidden; height: 100%;">
-            <img src="pics/visual_play_sample.png" alt="Visual: Playback Sample"
-              style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <div class="proposal-magnet-panel">
+            <p class="proposal-magnet-placeholder">
+              No usable <code>magnet_tap</code> link (empty API value or not an http(s) URL). In Notion, set a full URL on that brand row; column names <code>magnet_tap</code>, <code>Magnet Tap</code>, or <code>MagnetTap</code> are supported.
+            </p>
+            <div class="proposal-magnet-screen">
+              <iframe title="Magnet tap preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                data-proposal-embed="magnet_tap"></iframe>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- 3.3 数据闭环 -->
+      <!-- 3.3 Data loop -->
       <div class="grid-2 insights-grid" style="align-items: center;">
         <div class="reveal">
           <div style="background: #111; border-radius: 12px; overflow: hidden;">
@@ -992,7 +1194,7 @@
           // The ROI & Pilot</span>
       </div>
 
-      <!-- 3.1 试点方案及价格 -->
+      <!-- 3.1 Pilot plan and pricing -->
       <div class="reveal" style="margin-bottom: 6rem;">
         <div class="calculator-box"
           style="background: #FFF; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 24px 70px rgba(0,0,0,0.08);">
@@ -1276,7 +1478,7 @@
 
       <!-- ROI Details moved into Dashboard above -->
 
-      <!-- 图表 1 & 2 Removed in favor of interactive calculator layout -->
+      <!-- Charts 1 & 2 removed in favor of interactive calculator layout -->
 
     </div>
   </section>
@@ -1314,12 +1516,109 @@
       content_pillar_5_body: 'Mindset shorts, game day reminders, new signings',
       content_pillar_6_title: 'Seasonal Campaigns',
       content_pillar_6_body: 'Back to School, Holiday gifting, Marathon season specials',
+      magnet_tap: '',
+      id: 'nike',
       footer_button_url: '#'
     };
 
-    function getRequestedBrand() {
+    const PROPOSAL_PATH_RE = /^\/proposal\/([^/?#]+)\/?$/;
+
+    function getIdFromPath() {
+      const m = PROPOSAL_PATH_RE.exec(window.location.pathname || '');
+      if (!m) return '';
+      try {
+        return decodeURIComponent(m[1] || '').trim();
+      } catch (_) {
+        return String(m[1] || '').trim();
+      }
+    }
+
+    function getIdFromQuery() {
       const params = new URLSearchParams(window.location.search);
-      return params.get('brand');
+      const id = params.get('id');
+      return id === null ? '' : String(id).trim();
+    }
+
+    function getProposalQueryString() {
+      const id = getIdFromPath() || getIdFromQuery();
+      if (id) {
+        return `?id=${encodeURIComponent(id)}`;
+      }
+      const brand = new URLSearchParams(window.location.search).get('brand');
+      if (brand !== null && String(brand).trim() !== '') {
+        return `?brand=${encodeURIComponent(String(brand).trim())}`;
+      }
+      return '';
+    }
+
+    function hasExplicitProposalIdParam() {
+      return Boolean(getIdFromPath() || getIdFromQuery());
+    }
+
+    function getExplicitProposalId() {
+      return getIdFromPath() || getIdFromQuery();
+    }
+
+    // If the user landed via the legacy ?id=... URL, rewrite the address bar
+    // to the clean /proposal/{id} form without reloading.
+    function maybeRewriteToPrettyUrl() {
+      if (getIdFromPath()) return;
+      const id = getIdFromQuery();
+      if (!id) return;
+      try {
+        const next = `/proposal/${encodeURIComponent(id)}${window.location.hash || ''}`;
+        window.history.replaceState(null, '', next);
+      } catch (_) {
+        // History API not available (file:// etc.) — silently ignore.
+      }
+    }
+    maybeRewriteToPrettyUrl();
+
+    function hideProposalLoading() {
+      const overlay = document.getElementById('proposal-loading-overlay');
+      if (overlay) {
+        overlay.hidden = true;
+        overlay.setAttribute('aria-busy', 'false');
+      }
+    }
+
+    function showProposalLoading() {
+      const overlay = document.getElementById('proposal-loading-overlay');
+      if (overlay) {
+        overlay.hidden = false;
+        overlay.setAttribute('aria-busy', 'true');
+      }
+    }
+
+    function hideProposalNotFoundOverlay() {
+      const overlay = document.getElementById('proposal-not-found-overlay');
+      if (overlay) overlay.hidden = true;
+    }
+
+    function showProposalIdNotFound(idValue, detail) {
+      hideProposalLoading();
+      const overlay = document.getElementById('proposal-not-found-overlay');
+      if (!overlay) return;
+      const idEl = overlay.querySelector('[data-not-found-id]');
+      const detailEl = overlay.querySelector('[data-not-found-detail]');
+      if (idEl) idEl.textContent = idValue || '';
+      if (detailEl) {
+        detailEl.textContent =
+          detail ||
+          'No matching proposal for this ID in Notion or under data/proposals. The default Nike deck is not used when id is specified.';
+      }
+      overlay.hidden = false;
+    }
+
+    function normalizeEmbedUrl(raw) {
+      const s = typeof raw === 'string' ? raw.trim() : '';
+      if (!s) return '';
+      if (/^https?:\/\//i.test(s)) return s;
+      if (/^\/\//.test(s)) return `https:${s}`;
+      if (/^[a-z0-9][a-z0-9.-]*\.[a-z]{2,}([/?#]|$)/i.test(s)) {
+        return `https://${s.replace(/^\/+/, '')}`;
+      }
+      return '';
     }
 
     function setText(field, value) {
@@ -1329,7 +1628,8 @@
     }
 
     function renderProposal(proposal) {
-      const data = proposal || fallbackProposal;
+      if (!proposal || typeof proposal !== 'object') return;
+      const data = proposal;
 
       Object.entries(data).forEach(([field, value]) => setText(field, value));
 
@@ -1361,18 +1661,71 @@
         }
       });
 
+      document.querySelectorAll('[data-proposal-embed]').forEach(iframe => {
+        const field = iframe.dataset.proposalEmbed;
+        const url = normalizeEmbedUrl(data[field]);
+        const panel = iframe.closest('.proposal-magnet-panel');
+        const screen = iframe.closest('.proposal-magnet-screen');
+        const placeholder = panel ? panel.querySelector('.proposal-magnet-placeholder') : null;
+        if (url) {
+          iframe.src = url;
+          iframe.classList.add('is-loaded');
+          if (screen) screen.classList.add('is-active');
+          if (placeholder) placeholder.hidden = true;
+        } else {
+          iframe.removeAttribute('src');
+          iframe.classList.remove('is-loaded');
+          if (screen) screen.classList.remove('is-active');
+          if (placeholder) placeholder.hidden = false;
+        }
+      });
+
       document.title = data.brand_channel_name ? `${data.brand_channel_name} | Pitch` : 'FridgeChannel Proposal';
     }
 
     async function loadProposal() {
-      const requestedBrand = getRequestedBrand();
-      const brandQuery = requestedBrand ? `?brand=${encodeURIComponent(requestedBrand)}` : '';
+      showProposalLoading();
+      hideProposalNotFoundOverlay();
+
+      const query = getProposalQueryString();
+      const strictId = hasExplicitProposalIdParam();
+      const idValue = getExplicitProposalId();
+
       try {
-        const response = await fetch(`/api/proposal${brandQuery}`);
-        if (!response.ok) throw new Error(`Proposal API returned ${response.status}`);
-        const proposal = await response.json();
-        renderProposal(proposal);
+        const response = await fetch(`/api/proposal${query}`);
+        let payload = {};
+        try {
+          payload = await response.json();
+        } catch (parseErr) {
+          payload = {};
+        }
+
+        if (!response.ok || payload.error) {
+          if (strictId) {
+            const detailParts = [];
+            if (typeof payload.error === 'string') detailParts.push(payload.error);
+            if (Array.isArray(payload.reasons) && payload.reasons.length) {
+              detailParts.push(`Reasons: ${payload.reasons.join(' | ')}`);
+            }
+            if (typeof payload.hint === 'string' && payload.hint) detailParts.push(payload.hint);
+            showProposalIdNotFound(idValue, detailParts.join(' — '));
+            document.title = 'Proposal not found';
+            return;
+          }
+          throw new Error(`Proposal API returned ${response.status}`);
+        }
+
+        hideProposalNotFoundOverlay();
+        hideProposalLoading();
+        renderProposal(payload);
       } catch (error) {
+        if (strictId) {
+          showProposalIdNotFound(idValue, 'Network or server error. Please try again later.');
+          document.title = 'Proposal not found';
+          return;
+        }
+        hideProposalNotFoundOverlay();
+        hideProposalLoading();
         renderProposal(fallbackProposal);
       }
     }

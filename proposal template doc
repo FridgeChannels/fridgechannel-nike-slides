@@ -1,210 +1,197 @@
 # FridgeChannel × Nike
 
-## 试点合作提案
+## Pilot partnership proposal
 
-`[视觉 — 封面：Nike Family Channel 安装在真实家庭冰箱上。柔和厨房氛围。设备屏幕上显示一帧可播放的 Nike 内容画面，带播放按钮和 CTA。]`
+`[Visual — cover: Nike Family Channel on a real household fridge. Warm kitchen mood. Screen shows one playable Nike frame with play control and CTA.]`
 
-**保密文件** · 为 Nike, Inc. 准备 · [日期]
-
----
-
-# 1 · 执行摘要
-
-> ### 美国家庭中最后一个尚未被占领的高频触点
-
-**机会。** FridgeChannel 是一个直接进入家庭场景的媒体渠道，不受算法影响，不受广告拦截影响，也不容易被 AI 信息摘要稀释。每个家庭每天可产生 25+ 次家庭成员曝光，同时触达孩子、父母和祖辈。目前还没有任何媒体平台真正占领这个空间。
-
-**提案。** Nike 成为 FridgeChannel 的 **试点合作伙伴**。第一阶段：在 100–500 个符合条件的美国运动家庭中，部署定制 Nike Family Channel，试点周期为 8–12 周。第二阶段：根据激活率、播放率、CTA 互动、产品兴趣信号和购买意向提升，再决定是否扩大规模。
-
-**价值。** Nike 将获得一个可量化的家庭增长试点：100–500 户、8–12 周内预计产生 **14 万–105 万次家庭触点**，并追踪从内容播放、CTA 点击 / 扫码、产品兴趣、会员注册、下单到复购的完整路径。试点结束后，Nike 可以直接评估每次家庭触点成本、每次 CTA 成本、每个下单成本和后续复购潜力。
-
-**下一步。** 进行一次 45 分钟工作会议，确定试点家庭、优先运动 / 产品类别、首批 60 条内容、CTA 目的地、试点价格和成功指标。
+**Confidential** · Prepared for Nike, Inc. · [Date]
 
 ---
 
-# 2 · 机会
+# 1 · Executive summary
 
-`[视觉：单一强数据图。建议方向：“25 次冰箱开启 / 天 × 0 个品牌占领”，或厨房注意力热区图，突出冰箱作为家庭高频注意力区域。]`
+> ### The last high-frequency household surface not yet owned by media
 
-只有 FridgeChannel 能同时做到三件事：
+**Opportunity.** FridgeChannel is a household media channel with no algorithm, no ad blockers, and no AI summaries diluting brand context. Each home can generate 25+ household impressions per day across kids, parents, and grandparents. No platform truly owns this surface today.
 
-**01 — 不受算法影响，不受 AI 影响，不受广告拦截影响**
-它是一个基于硬件、直接进入家庭的触点。Nike 与家庭之间没有平台中介：没有 Meta 算法变化，没有 Google 政策调整，没有会剥离品牌语境的 AI 摘要，也没有广告拦截器。这是一个 Nike 可以真正掌控的家庭触点。
+**Proposal.** Nike becomes FridgeChannel’s **pilot partner**. Phase 1: deploy a custom Nike Family Channel across 100–500 qualified US sports households for 8–12 weeks. Phase 2: scale based on activation, plays, CTA engagement, product interest, and purchase intent lift.
 
-**02 — 每天 25+ 次家庭曝光且不打扰任何生活状态**
-美国家庭每天打开冰箱约 20–40 次。每一次打开冰箱，都是一次可见的品牌时刻。按每户计算，年化家庭成员曝光约 25,000 次。它提供数字渠道很难以同等成本达到的频次，也提供 App 无法复制的实体存在感。
+**Value.** Nike gets a measurable household growth pilot: **140k–1.05M household touches** across 100–500 homes in 8–12 weeks, with full-path tracking from plays through CTA taps/scans, interest, membership, orders, and repeat. After the pilot, Nike can evaluate cost per household touch, cost per CTA, cost per order, and repeat potential.
 
-**03 — 家庭级触达，跨代影响**
-不同于手机或耳机，冰箱是家庭共享界面。一个装置可以同时触达正在选择运动的孩子、负责购买决策的父母，以及持续吸收品牌信息的祖辈。这是一种“以家庭为单位”的触达方式，而目前几乎没有其他渠道可以做到。
-
-> **FridgeChannel 是唯一一个家庭级媒体渠道：它无法被过滤，无法被跳过，也很难被复制。Nike 有机会在竞争对手看到之前，先测试并占领这个家庭日常媒体表面。**
+**Next step.** A 45-minute working session to align households, priority sports/categories, first 60 content modules, CTA destinations, pilot pricing, and success metrics.
 
 ---
 
-# 3 · Nike Family Channel Solution
+# 2 · Opportunity
 
-`[视觉：设备渲染图或 mockup。Nike Family Channel 吸附在冰箱上，屏幕显示 Nike 内容画面，带播放按钮、短时长标记和 CTA。]`
+`[Visual: one bold data graphic. Suggested angle: “25 fridge opens / day × 0 brands owned,” or kitchen attention heat map highlighting the fridge as a high-frequency attention zone.]`
 
-## 3.1 设备
+Only FridgeChannel does all three at once:
 
-一个为 Nike 定制专属外观与品牌设计系统的 Nike Family Channel 设备，安装在家庭冰箱上，成为 Nike 在厨房场景中的长期品牌触点。
+**01 — No algorithm, no AI summary, no ad blockers**
+A hardware-native, in-home touchpoint. No Meta volatility, no Google policy whiplash, no AI stripping context, no blockers. Nike controls the surface.
 
-* **Nike 专属定制设计**：设备外观、屏幕视觉、品牌色彩、图形语言和内容 UI 都可以围绕 Nike 的品牌系统定制
-* **在厨房中持续可见**：成为家庭日常动线中的高频品牌存在
-* **磁吸安装，设置成本低**：适合快速进入试点家庭并规模化部署
+**02 — 25+ daily household impressions without interrupting life**
+US homes open the fridge ~20–40 times per day. Each open is a visible brand moment—~25,000 annualized impressions per household. Frequency digital rarely matches at this cost; physical presence apps cannot copy.
 
-`[视觉：细节图 — 正面图、与手的尺寸对比、冰箱安装状态、Nike 品牌屏幕状态。]`
+**03 — Household reach, cross-generational**
+Unlike a phone or earbuds, the fridge is shared. One device reaches kids choosing sports, parents buying gear, and grandparents absorbing brand cues. Few channels are truly “household-native.”
 
----
-
-## 3.2 每日内容 + 播放引擎
-
-`[视觉：左右分屏。左侧：内容支柱。右侧：设备上的播放画面，包含“播放”按钮、进度条和 CTA。]`
-
-FridgeChannel 让 Nike 通过持续更新的定制内容，在家庭日常中建立一种可重复观看、可持续互动的运动习惯。
-
-
-
-### 内容支柱
-
-| 内容方向            | 示例方向                                                                  |
-| --------------- | --------------------------------------------------------------------- |
-| **篮球文化**        | 车道投篮挑战、NBA Finals 倒计时、青少年篮球信心提示                                       |
-| **跑步与天气**       | 本地跑步指数、本周最佳训练日、轻松跑提醒                                                  |
-| **家庭训练**        | 5 分钟家庭运动挑战、亲子训练、晚间拉伸 reset                                            |
-| **Nike 产品故事**   | Pegasus、Vomero、Sabrina、Ja、GT Cut、Air Max、儿童鞋、季节性必备款                   |
-| **运动员时刻**       | 运动员心态短片、比赛日提醒、新签约运动员发布                                                |
-| **季节 campaign** | Back to School、节日礼赠、夏季训练、季后赛、马拉松季                                     |
-| **商城 CTA**      | 购买 featured product、探索 Nike Basketball、加入 Nike Membership、打开 Nike App |
-
-`[现场 Demo：直接在设备 / 屏幕上播放一段 10–30 秒的 Nike 内容样片。不要在 slide 上展示完整脚本，让听众直接感受动效、节奏、声音和 CTA。]`
+> **FridgeChannel is the only household-scale media surface: it can’t be filtered, skipped, or easily cloned. Nike can test and own this daily media surface before competitors notice.**
 
 ---
 
-## 3.4 品牌数据面板
+# 3 · Nike Family Channel solution
 
-`[视觉：简洁 dashboard mockup，显示激活、播放、CTA 互动、表现最佳内容和产品兴趣信号。]`
+`[Visual: device render or mockup. Nike Family Channel on a fridge; screen shows Nike content with play control, short-duration cue, and CTA.]`
 
-Nike 可以看到试点表现数据：
+## 3.1 Device
 
-| 信号         | Nike 可以了解什么              |
-| ---------- | ------------------------ |
-| **激活**     | 有多少家庭成功安装并使用这个 channel   |
-| **播放**     | 哪些内容形式真正获得了家庭注意力         |
-| **CTA 互动** | 哪些内容带来了商城访问、会员兴趣或产品页流量   |
-| **内容表现**   | 哪些运动、产品或 campaign 主题表现最好 |
-| **品牌提升信号** | 品牌认知、记忆度、考虑度和购买意向的变化     |
+A Nike Family Channel device with Nike-specific industrial and brand systems, mounted on the household fridge—Nike’s long-term brand surface in the kitchen.
 
-这个 dashboard 可以帮助 Nike 持续优化内容，让内容更接近真正重要的结果：产品发现、商城流量、会员增长和购买意向。
+* **Bespoke Nike design:** chassis, UI, color, graphics, and content UI aligned to Nike’s system  
+* **Always visible in the kitchen:** high-frequency presence along daily routines  
+* **Magnetic install, low setup cost:** fast pilot installs and scalable rollout  
+
+`[Visual: detail shots — front, hand scale, on-fridge install, Nike-branded screen state.]`
 
 ---
 
-# 4 · 试点计划：成本与回报
+## 3.2 Daily content + playback engine
 
+`[Visual: split screen. Left: content pillars. Right: playback UI with play, scrubber, CTA.]`
 
+FridgeChannel lets Nike build repeatable, habit-forming motion moments through always-on custom content in daily life.
 
-## 试点方案及价格
+### Content pillars
 
-| 试点周期       | 试点家庭数量    | 试点价格           | 价格构成                                                             | 包含服务                                                                |
-| ---------- | --------- | -------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------- |
-| **8 周**    | **100 户** | **$[XX,XXX]**  | **硬件：$[XXX] / 台 × 100 台 = $[XX,XXX]****内容运维：$[XX,XXX] / 8 周**    | Nike 专属设备外观设计、设备生产与部署、60+ 内容单元、日常内容维护、CTA 路径配置、每周数据报告 |
-| **8–12 周** | **250 户** | **$[XX,XXX]**  | **硬件：$[XXX] / 台 × 250 台 = $[XX,XXX]****内容运维：$[XX,XXX] / 8–12 周** | Nike 专属设备外观设计、设备生产与部署、60+ 内容单元、日常内容维护、CTA 路径配置、每周数据报告 |
-| **12 周**   | **500 户** | **$[XXX,XXX]** | **硬件：$[XXX] / 台 × 500 台 = $[XXX,XXX]****内容运维：$[XX,XXX] / 12 周**  | Nike 专属设备外观设计、设备生产与部署、60+ 内容单元、日常内容维护、CTA 路径配置、每周数据报告 |
+| Theme | Example directions |
+| ----- | ------------------ |
+| **Basketball culture** | Driveway challenges, Finals countdown, youth confidence cues |
+| **Running & weather** | Local run index, best training days, easy-run nudges |
+| **Home training** | 5-minute family challenges, parent–kid drills, evening reset stretches |
+| **Nike product stories** | Pegasus, Vomero, Sabrina, Ja, GT Cut, Air Max, kids footwear, seasonal essentials |
+| **Athlete moments** | Mindset shorts, game-day reminders, new signings |
+| **Seasonal campaigns** | Back to school, holiday gifting, summer training, playoffs, marathon season |
+| **Commerce CTAs** | Buy featured product, explore Nike Basketball, join Nike Membership, open Nike App |
 
----
-
-## 试点商业回报预估
-
-**测算说明：** 以上数据为 pilot 阶段测算模型，用于评估不同试点规模下的曝光、播放、CTA、下单和复购潜力。实际数据将在试点过程中通过专属链接、二维码、UTM、会员 ID 和试点家庭 cohort 持续校准。
-
----
-
-### 试点价值总览
-
-| 试点方案             | 家庭触点          | 内容播放       | CTA 点击 / 扫码 | 产品兴趣 / 会员线索 | 下单      | 复购信号               |
-| ---------------- | ------------- | ---------- | ----------- | ----------- | ------- | ------- | ------------------------- |
-| **100 户 / 8 周**  | **140,000**   | **9,800**  | **980**     | **294**     | **88**  | **26**  |
-| **250 户 / 10 周** | **437,500**   | **30,625** | **3,063**   | **919**     | **276** | **83**  | 
-| **500 户 / 12 周** | **1,050,000** | **73,500** | **7,350**   | **2,205**   | **662** | **199** | 
-
-
- 可以看到一条完整的商业路径：家庭触点 → 内容播放 → CTA 点击 / 扫码 → 产品兴趣 / 会员线索 → 下单 → 复购信号。
- 同时放一个漏斗模型
+`[Live demo: play a 10–30s Nike sample on device/screen. Avoid full script on slides—let motion, rhythm, audio, and CTA land.]`
 
 ---
 
-### 图表 1｜不同试点规模的预估
+## 3.4 Brand data dashboard
 
-`[图表类型：柱状图]`
+`[Visual: simple dashboard mockup with activation, plays, CTA engagement, top content, and product interest signals.]`
 
-**横轴：** 试点方案
-**纵轴：** 曝光次数（次）
+Nike sees pilot performance:
 
-| 试点方案         | 曝光次数（次）     |
-| ------------ | --------- |
-| 100 户 / 8 周  | 140,000   |
-| 250 户 / 10 周 | 437,500   |
-| 500 户 / 12 周 | 1,050,000 |
+| Signal | What Nike learns |
+| ------ | ---------------- |
+| **Activation** | How many homes installed and use the channel |
+| **Playback** | Which formats actually earn attention |
+| **CTA engagement** | What drives traffic to commerce, membership, or PDPs |
+| **Content performance** | Which sports, products, or campaign themes win |
+| **Brand lift signals** | Shifts in awareness, recall, consideration, and intent |
 
-
-
-**图表说明：** （小字说明）
-曝光次数（次） = 试点家庭数量 × 每天 25 次家庭曝光 × 试点天数。
-
---
-
-### 图表 2｜不同试点规模的 CTA 点击与下单预估
-
-`[图表类型：分组柱状图]`
-
-**横轴：** 试点方案
-**纵轴：** 次数（次）
-
-| 试点方案         | CTA 点击 / 扫码 | 下单  |
-| ------------ | ----------- | --- |
-| 100 户 / 8 周  | 980         | 88  |
-| 250 户 / 10 周 | 3,063       | 276 |
-| 500 户 / 12 周 | 7,350       | 662 |
-
-
-
-**图表说明：**
-CTA 点击 / 扫码可通过二维码、短链、Nike App deep link 或 Nike.com 路径追踪；下单可通过专属链接、UTM、会员 ID 或试点家庭 cohort 追踪。
+The dashboard helps Nike tune content toward product discovery, commerce traffic, membership growth, and purchase intent.
 
 ---
 
-### 图表 3｜250 户试点转化路径预估（10 周）
+# 4 · Pilot plan: cost and return
 
-`[图表类型：漏斗图]`
+## Pilot options and pricing
 
-| 转化层级          | 预估数据    | 说明          |
-| ------------- | ------- | ----------- |
-| 家庭触点          | 437,500 | 100%        |
-| 内容播放          | 30,625  | 播放率 7.0%    |
-| CTA 点击 / 扫码   | 3,063   | 点击率 10.0%   |
-| 会员注册 / 产品兴趣线索 | 919     | 线索率 30.0%   |
-| 下单            | 276     | 下单转化率 30.0% |
-| 复购            | 83      | 复购率 30.0%   |
-
-**图表说明：**
-这张图展示 FridgeChannel 从家庭曝光到播放、点击、线索、下单和复购的完整转化路径，帮助 Nike 评估试点的真实商业价值。
-
-## 建议下一步
-
-进行一次 45 分钟工作会议，确定：
-
-* 启动试点
-* 讨论品牌视觉及CTA走向以及定位 
-* 上线时间线
-
-**目标：** 对齐一个轻量试点，验证 FridgeChannel 是否可以帮助 Nike 提升家庭注意力、产品发现、商城流量和购买意向。
+| Duration | Households | Pilot price | Cost structure | Included |
+| -------- | ---------- | ----------- | -------------- | -------- |
+| **8 weeks** | **100** | **$[XX,XXX]** | **Hardware: $[XXX] / unit × 100 = $[XX,XXX]****Ops: $[XX,XXX] / 8 weeks** | Nike industrial design, production & deployment, 60+ content units, daily ops, CTA routing, weekly reporting |
+| **8–12 weeks** | **250** | **$[XX,XXX]** | **Hardware: $[XXX] / unit × 250 = $[XX,XXX]****Ops: $[XX,XXX] / 8–12 weeks** | Same as above |
+| **12 weeks** | **500** | **$[XXX,XXX]** | **Hardware: $[XXX] / unit × 500 = $[XXX,XXX]****Ops: $[XX,XXX] / 12 weeks** | Same as above |
 
 ---
 
-`[视觉 — 结尾：Nike 内容正在冰箱设备上播放，家庭成员在厨房中自然移动，屏幕上可见 CTA。]`
+## Pilot commercial return (illustrative)
 
-> **Nike 需要一个能把家庭注意力转化为行动的日常媒体表面。**
+**Model note:** figures are directional pilot math to compare scale scenarios across impressions, plays, CTAs, orders, and repeat. Actuals will be calibrated via dedicated links, QR, UTM, membership IDs, and pilot cohorts.
 
 ---
 
-**FridgeChannel** · 保密文件 · 仅供 Nike 内部讨论
+### Pilot value summary
+
+| Pilot | Household touches | Plays | CTA taps/scans | Interest / leads | Orders | Repeat signal |
+| ----- | ----------------- | ----- | -------------- | ---------------- | ------ | ------------- |
+| **100 HH / 8 wk** | **140,000** | **9,800** | **980** | **294** | **88** | **26** |
+| **250 HH / 10 wk** | **437,500** | **30,625** | **3,063** | **919** | **276** | **83** |
+| **500 HH / 12 wk** | **1,050,000** | **73,500** | **7,350** | **2,205** | **662** | **199** |
+
+You can narrate the full path: household touches → plays → CTA taps/scans → interest/leads → orders → repeat. Pair with a funnel visual.
+
+---
+
+### Chart 1 · Scale scenarios (impressions)
+
+`[Chart: column]`
+
+**X-axis:** pilot scenario  
+**Y-axis:** impressions
+
+| Pilot | Impressions |
+| ----- | ----------- |
+| 100 HH / 8 wk | 140,000 |
+| 250 HH / 10 wk | 437,500 |
+| 500 HH / 12 wk | 1,050,000 |
+
+**Footnote:** impressions = households × 25 touches/day × pilot days.
+
+---
+
+### Chart 2 · CTA taps and orders by scenario
+
+`[Chart: grouped column]`
+
+**X-axis:** pilot scenario  
+**Y-axis:** count
+
+| Pilot | CTA taps/scans | Orders |
+| ----- | -------------- | ------ |
+| 100 HH / 8 wk | 980 | 88 |
+| 250 HH / 10 wk | 3,063 | 276 |
+| 500 HH / 12 wk | 7,350 | 662 |
+
+**Footnote:** CTAs via QR, short links, Nike App deep links, or Nike.com paths; orders via dedicated links, UTM, membership ID, or cohort tagging.
+
+---
+
+### Chart 3 · 250-household pilot funnel (10 weeks)
+
+`[Chart: funnel]`
+
+| Stage | Estimate | Note |
+| ----- | -------- | ---- |
+| Household touches | 437,500 | 100% |
+| Plays | 30,625 | 7.0% play rate |
+| CTA taps/scans | 3,063 | 10.0% tap rate |
+| Membership / product interest | 919 | 30.0% lead rate |
+| Orders | 276 | 30.0% order conversion |
+| Repeat | 83 | 30.0% repeat rate |
+
+**Footnote:** illustrates the full path from exposure through plays, taps, leads, orders, and repeat to quantify pilot value.
+
+## Recommended next steps
+
+Hold a 45-minute working session to align on:
+
+* Pilot kickoff  
+* Brand visual system, CTA destinations, and positioning  
+* Launch timeline  
+
+**Goal:** align on a lightweight pilot that validates whether FridgeChannel lifts household attention, product discovery, commerce traffic, and purchase intent.
+
+---
+
+`[Visual — close: Nike content playing on the fridge; family moves naturally in kitchen; CTA visible on screen.]`
+
+> **Nike needs a daily media surface that turns household attention into action.**
+
+---
+
+**FridgeChannel** · Confidential · For internal Nike discussion only

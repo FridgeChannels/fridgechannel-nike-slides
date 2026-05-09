@@ -1,8 +1,8 @@
 # FridgeChannel Brand Proposal Template
 
-用途：作为同一套页面展示方式下，为不同品牌快速替换文案与视觉素材的 proposal 内容模板。
+Purpose: content template for swapping copy and visuals per brand while keeping the same page layout.
 
-使用方式：保留页面结构、模块顺序、交互方式和展示形式；替换 `{...}` 占位符、品牌相关案例、内容支柱、CTA、产品线、视觉素材和 ROI 参数。
+How to use: keep structure, module order, interactions, and presentation; replace `{...}` placeholders, brand examples, content pillars, CTAs, product lines, visuals, and ROI inputs.
 
 ---
 
