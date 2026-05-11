@@ -671,10 +671,11 @@
        * the screen at ~90% (top 8% + height 82%) — the previous bottom of
        * 93% was spilling into the bottom bezel by ~3%.
        */
-      --magnet-screen-top: 10%;
+      --magnet-screen-top: 8.5%;
       --magnet-screen-left: 16%;
-      --magnet-screen-width: 68%;
-      --magnet-screen-height: 80%;
+      /* +1px nudges the right edge over the bezel to hide a subpixel sliver. */
+      --magnet-screen-width: calc(68% + 1px);
+      --magnet-screen-height: 81.5%;
       --magnet-screen-radius: 7%;
       --magnet-screen-radius-bottom: 7%;
       --magnet-max-h: min(72vh, 720px);
@@ -723,7 +724,12 @@
       height: 100%;
       min-height: 0;
       border: 0;
-      background: #fff;
+      /*
+       * Keep iframe background transparent so any subpixel rounding on the
+       * right edge falls back to the phone-screen gradient underneath,
+       * instead of revealing a 1px white sliver.
+       */
+      background: transparent;
     }
 
     .proposal-magnet-screen iframe:not(.is-loaded) {
