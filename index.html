@@ -20,6 +20,8 @@
       --bg-light: #F7F7F7;
       --nike-volt: #D8FF2F;
       --nike-orange: #FF5A1F;
+      --on-nike-volt: #000000;
+      --on-nike-orange: #000000;
       --text-main: #FFFFFF;
       --text-muted: #888888;
       --border-color: rgba(255, 255, 255, 0.1);
@@ -354,13 +356,13 @@
       text-align: center;
       padding: 10rem 5%;
       background: var(--nike-volt);
-      color: #000;
+      color: var(--on-nike-volt);
     }
 
     .btn {
       display: inline-block;
       background: #000;
-      color: var(--nike-volt);
+      color: #FFF;
       padding: 1.25rem 3rem;
       font-size: 1.25rem;
       font-weight: 800;
@@ -374,7 +376,7 @@
 
     .btn:hover {
       background: #222;
-      color: #FFF;
+      color: #FFF !important;
       transform: scale(1.05);
     }
 
@@ -394,6 +396,11 @@
       border-color: rgba(255, 90, 31, 0.45) !important;
       box-shadow: 0 18px 42px rgba(0, 0, 0, 0.14) !important;
       background: #FFF !important;
+    }
+
+    .total-price-box.roi-hover-card:hover {
+      background: var(--nike-volt) !important;
+      border-color: var(--nike-volt) !important;
     }
 
     .calc-input-group {
@@ -437,7 +444,7 @@
 
     .calc-btn {
       background: var(--nike-volt);
-      color: #000;
+      color: var(--on-nike-volt);
       border: none;
       padding: 1.25rem 3rem;
       font-size: 1.25rem;
@@ -445,15 +452,16 @@
       text-transform: uppercase;
       border-radius: 50px;
       cursor: pointer;
-      transition: transform 0.2s, background 0.2s;
+      transition: transform 0.2s, filter 0.2s;
       white-space: nowrap;
       height: fit-content;
     }
 
     .calc-btn:hover {
       transform: scale(1.05);
-      background: #111;
-      color: #FFF;
+      background: var(--nike-volt);
+      color: var(--on-nike-volt) !important;
+      filter: brightness(0.92);
     }
 
     .calc-results {
@@ -568,7 +576,7 @@
     }
 
     .story-act-card {
-      background: var(--story-accent-bg, rgba(255, 255, 255, 0.05));
+      background: transparent;
       padding: 1.5rem;
       border: 1px solid var(--story-accent-border, rgba(255, 255, 255, 0.08));
       border-radius: 12px;
@@ -579,7 +587,7 @@
     }
 
     .story-act-card:hover {
-      background: var(--story-accent-bg-hover, rgba(255, 255, 255, 0.09));
+      background: transparent;
       transform: translateY(-3px);
     }
 
@@ -975,47 +983,45 @@
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
             <div class="story-act-card story-accent-hook" data-story-trigger="hook" tabindex="0">
               <div
-                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
-                Act 1 · 0–10 s</div>
-              <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Earn attention with a familiar Nike
-                voice</h4>
+                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                Hook 0-10s</div>
+              <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Earn attention with a familiar <span
+                  data-proposal-text="brand_name">Nike</span> voice</h4>
             </div>
             <div class="story-act-card story-accent-themes" data-story-trigger="themes" tabindex="0">
               <div
-                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
-                Act 2 · 10–45 s</div>
+                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                Content 10-45s</div>
               <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Deliver something the listener
                 actually wants</h4>
             </div>
             <div class="story-act-card story-accent-commerce" data-story-trigger="commerce" tabindex="0">
               <div
-                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
-                Act 3 · 45–60 s</div>
+                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                Commerce action 45-60s</div>
               <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Convert listening into commercial
                 actions</h4>
             </div>
           </div>
 
           <div class="story-switch-panel story-accent-hook" data-story-panel="hook">
-            <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem; font-size: 0.75rem;">HOOK EXAMPLE
-            </div>
             <div style="display: grid; gap: 0.9rem;">
-              <div
+              <div data-proposal-card-fields="hook1_example_1"
                 style="background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <p data-proposal-text="act1_example_1"
+                <p data-proposal-text="hook1_example_1"
                   style="font-size: 1.05rem; color: #ddd; margin: 0; line-height: 1.55; font-style: italic;">
                   "Hey, this is Nike. 30 seconds before your morning run…"</p>
               </div>
-              <div
+              <div data-proposal-card-fields="hook1_example_2"
                 style="background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <p data-proposal-text="act1_example_2"
+                <p data-proposal-text="hook1_example_2"
                   style="font-size: 1.05rem; color: #ddd; margin: 0; line-height: 1.55; font-style: italic;">"Hey,
                   this is Nike. Game's tonight — and there's a 60-second story your kid's gonna want to hear before
                   school."</p>
               </div>
-              <div
+              <div data-proposal-card-fields="hook1_example_3"
                 style="background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <p data-proposal-text="act1_example_3"
+                <p data-proposal-text="hook1_example_3"
                   style="font-size: 1.05rem; color: #ddd; margin: 0; line-height: 1.55; font-style: italic;">"Hey,
                   this is Nike. It's 62°F, zero wind — that's a Pegasus kind of morning."</p>
               </div>
@@ -1024,10 +1030,8 @@
 
           <div class="story-switch-panel story-accent-themes is-active" data-story-panel="themes">
             <!-- Content Themes for Nike -->
-            <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem; font-size: 0.75rem;">CONTENT THEMES
-              FOR NIKE</div>
             <div class="story-theme-grid">
-              <div
+              <div data-proposal-card-fields="content_pillar_1_title content_pillar_1_body"
                 style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
                   data-proposal-text="content_pillar_1_title">Basketball Culture</h4>
@@ -1035,7 +1039,7 @@
                   data-proposal-text="content_pillar_1_body">Hoop challenges, finals countdown, youth confidence tips
                 </p>
               </div>
-              <div
+              <div data-proposal-card-fields="content_pillar_2_title content_pillar_2_body"
                 style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
                   data-proposal-text="content_pillar_2_title">Running & Weather</h4>
@@ -1043,7 +1047,7 @@
                   data-proposal-text="content_pillar_2_body">Local running index, best training days, easy run reminders
                 </p>
               </div>
-              <div
+              <div data-proposal-card-fields="content_pillar_3_title content_pillar_3_body"
                 style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
                   data-proposal-text="content_pillar_3_title">Home Training</h4>
@@ -1051,21 +1055,21 @@
                   data-proposal-text="content_pillar_3_body">5-min family challenges, parent-child drills, evening
                   stretching</p>
               </div>
-              <div
+              <div data-proposal-card-fields="content_pillar_4_title content_pillar_4_body"
                 style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
                   data-proposal-text="content_pillar_4_title">Nike Product Stories</h4>
                 <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 0; line-height: 1.5;"
                   data-proposal-text="content_pillar_4_body">Pegasus, Vomero, Air Max series heritage</p>
               </div>
-              <div
+              <div data-proposal-card-fields="content_pillar_5_title content_pillar_5_body"
                 style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
                   data-proposal-text="content_pillar_5_title">Athlete Moments</h4>
                 <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 0; line-height: 1.5;"
                   data-proposal-text="content_pillar_5_body">Mindset shorts, game day reminders, new signings</p>
               </div>
-              <div
+              <div data-proposal-card-fields="content_pillar_6_title content_pillar_6_body"
                 style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 800;"
                   data-proposal-text="content_pillar_6_title">Seasonal Campaigns</h4>
@@ -1077,63 +1081,37 @@
           </div>
 
           <div class="story-switch-panel story-accent-commerce" data-story-panel="commerce">
-            <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem;">COMMERCE // 8 WAYS THE LAST 15
-              SECONDS BECOME REVENUE</div>
             <div class="story-commerce-grid">
               <div
                 style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                <div
-                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
-                  01</div>
                 <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Boost Product Usage</h4>
               </div>
               <div
                 style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                <div
-                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
-                  02</div>
                 <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Trigger Repurchase</h4>
               </div>
               <div
                 style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                <div
-                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
-                  03</div>
                 <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Replenishment Cues</h4>
               </div>
               <div
                 style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                <div
-                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
-                  04</div>
                 <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Membership Onboarding</h4>
               </div>
               <div
                 style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                <div
-                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
-                  05</div>
                 <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Flash Drops</h4>
               </div>
               <div
                 style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                <div
-                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
-                  06</div>
                 <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Cart Recovery</h4>
               </div>
               <div
                 style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                <div
-                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
-                  07</div>
                 <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">New Launch Drops</h4>
               </div>
               <div
                 style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--story-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                <div
-                  style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: #bbb; margin-bottom: 0.5rem;">
-                  08</div>
                 <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 0;">Habit Reminders</h4>
               </div>
             </div>
@@ -1161,27 +1139,27 @@
           </div>
         </div>
         <div class="solution-text reveal delay-1">
-          <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem;">INSIGHTS // DATA</div>
+          <div class="mono" style="color: #FF5A1F; margin-bottom: 1rem;">INSIGHTS // DATA</div>
           <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 900;">Full-Funnel Behavioral Insights</h3>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div
               style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
-              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Installation & Activation
+              <strong style="color: #FF5A1F; font-size: 1rem; line-height: 1.4;">Installation & Activation
                 Rate</strong>
             </div>
             <div
               style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
-              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Playback & CTA
+              <strong style="color: #FF5A1F; font-size: 1rem; line-height: 1.4;">Playback & CTA
                 Engagement</strong>
             </div>
             <div
               style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
-              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Product / Campaign Heat
+              <strong style="color: #FF5A1F; font-size: 1rem; line-height: 1.4;">Product / Campaign Heat
                 Analysis</strong>
             </div>
             <div
               style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
-              <strong style="color: var(--nike-orange); font-size: 1rem; line-height: 1.4;">Consideration & Purchase
+              <strong style="color: #FF5A1F; font-size: 1rem; line-height: 1.4;">Consideration & Purchase
                 Intent Tracking</strong>
             </div>
           </div>
@@ -1251,8 +1229,8 @@
 
             <!-- 1. Financials (Full Width Row) -->
             <div class="result-grid" style="grid-template-columns: 1fr 2fr; margin-bottom: 5rem;">
-              <div class="total-price-box roi-hover-card" style="background: #FFF; border: 1px solid var(--nike-orange);">
-                <p style="color: #888; font-family: 'Roboto Mono', monospace; margin-bottom: 1rem; font-size: 0.85rem;">
+              <div class="total-price-box roi-hover-card" style="background: var(--nike-volt); border: 1px solid var(--nike-volt);">
+                <p style="color: var(--on-nike-volt); opacity: 0.68; font-family: 'Roboto Mono', monospace; margin-bottom: 1rem; font-size: 0.85rem;">
                   ESTIMATED TOTAL INVESTMENT</p>
                 <div style="font-size: 3.5rem; font-weight: 900; color: var(--nike-orange); line-height: 1;"
                   id="res-total">$190,000</div>
@@ -1492,8 +1470,8 @@
   <!-- FOOTER CTA -->
   <section class="cta-footer">
     <div class="container reveal">
-      <h2 style="font-size: clamp(2rem, 6vw, 5rem); color: #000;">SECURE THE SURFACE.</h2>
-      <p style="font-size: 1.5rem; color: #333; margin: 2rem 0;">45-minute working session to align on the pilot scope.
+      <h2 style="font-size: clamp(2rem, 6vw, 5rem); color: var(--on-nike-volt);">SECURE THE SURFACE.</h2>
+      <p style="font-size: 1.5rem; color: var(--on-nike-volt); opacity: 0.72; margin: 2rem 0;">45-minute working session to align on the pilot scope.
       </p>
       <a href="#" class="btn" data-proposal-link="footer_button_url">Schedule Alignment</a>
     </div>
@@ -1507,9 +1485,9 @@
       brand_channel_name: 'Nike Family Channel',
       hero_image_url: 'pics/hero_pic.png',
       device_rendering_image_url: 'pics/visual_pic.png',
-      act1_example_1: '"Hey, this is Nike. 30 seconds before your morning run…"',
-      act1_example_2: '"Hey, this is Nike. Game\'s tonight — and there\'s a 60-second story your kid\'s gonna want to hear before school."',
-      act1_example_3: '"Hey, this is Nike. It\'s 62°F, zero wind — that\'s a Pegasus kind of morning."',
+      hook1_example_1: '"Hey, this is Nike. 30 seconds before your morning run…"',
+      hook1_example_2: '"Hey, this is Nike. Game\'s tonight — and there\'s a 60-second story your kid\'s gonna want to hear before school."',
+      hook1_example_3: '"Hey, this is Nike. It\'s 62°F, zero wind — that\'s a Pegasus kind of morning."',
       content_pillar_1_title: 'Basketball Culture',
       content_pillar_1_body: 'Hoop challenges, finals countdown, youth confidence tips',
       content_pillar_2_title: 'Running & Weather',
@@ -1633,11 +1611,62 @@
       });
     }
 
+    function hasProposalValue(data, field) {
+      return String(data[field] ?? '').trim() !== '';
+    }
+
+    function updateProposalCardVisibility(data) {
+      document.querySelectorAll('[data-proposal-card-fields]').forEach(card => {
+        const fields = card.dataset.proposalCardFields.split(/\s+/).filter(Boolean);
+        card.hidden = !fields.some(field => hasProposalValue(data, field));
+      });
+    }
+
+    function updateProposalTextVisibility() {
+      document.querySelectorAll('[data-proposal-text]').forEach(el => {
+        el.hidden = String(el.textContent || '').trim() === '';
+      });
+    }
+
+    function getReadableTextColor(hexColor) {
+      const raw = String(hexColor || '').trim().replace(/^#/, '');
+      const normalized = raw.length === 3
+        ? raw.split('').map(char => char + char).join('')
+        : raw;
+
+      if (!/^[0-9a-f]{6}$/i.test(normalized)) return '#000000';
+
+      const red = parseInt(normalized.slice(0, 2), 16) / 255;
+      const green = parseInt(normalized.slice(2, 4), 16) / 255;
+      const blue = parseInt(normalized.slice(4, 6), 16) / 255;
+      const linear = [red, green, blue].map(channel => (
+        channel <= 0.03928
+          ? channel / 12.92
+          : Math.pow((channel + 0.055) / 1.055, 2.4)
+      ));
+      const luminance = 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
+      const contrastWithBlack = (luminance + 0.05) / 0.05;
+      const contrastWithWhite = 1.05 / (luminance + 0.05);
+
+      return contrastWithBlack >= contrastWithWhite ? '#000000' : '#FFFFFF';
+    }
+
+    function updateBrandContrastColors(data) {
+      const styles = document.documentElement.style;
+      const primaryColor = data.brand_primary_color || getComputedStyle(document.documentElement).getPropertyValue('--nike-volt');
+      const secondColor = data.brand_second_color || getComputedStyle(document.documentElement).getPropertyValue('--nike-orange');
+
+      styles.setProperty('--on-nike-volt', getReadableTextColor(primaryColor));
+      styles.setProperty('--on-nike-orange', getReadableTextColor(secondColor));
+    }
+
     function renderProposal(proposal) {
       if (!proposal || typeof proposal !== 'object') return;
       const data = proposal;
 
       Object.entries(data).forEach(([field, value]) => setText(field, value));
+      updateProposalCardVisibility(data);
+      updateProposalTextVisibility();
 
       if (data.brand_primary_color) {
         document.documentElement.style.setProperty('--nike-volt', data.brand_primary_color);
@@ -1646,6 +1675,8 @@
       if (data.brand_second_color) {
         document.documentElement.style.setProperty('--nike-orange', data.brand_second_color);
       }
+
+      updateBrandContrastColors(data);
 
       document.querySelectorAll('[data-proposal-image]').forEach(img => {
         const field = img.dataset.proposalImage;
