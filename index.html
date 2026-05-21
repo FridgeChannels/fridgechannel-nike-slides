@@ -438,6 +438,26 @@
       transition: border-color 0.3s;
     }
 
+    .money-input {
+      position: relative;
+    }
+
+    .money-input::before {
+      content: '$';
+      position: absolute;
+      left: 0;
+      bottom: 0.5rem;
+      color: #000;
+      font-size: 2.5rem;
+      font-weight: bold;
+      line-height: 1.5;
+      pointer-events: none;
+    }
+
+    .money-input input {
+      padding-left: 1.6rem;
+    }
+
     .calc-input input:focus {
       border-bottom-color: var(--nike-orange);
     }
@@ -462,6 +482,269 @@
       background: var(--nike-volt);
       color: var(--on-nike-volt) !important;
       filter: brightness(0.92);
+    }
+
+    .package-pricing {
+      margin-bottom: 6rem;
+    }
+
+    .package-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .package-header h3 {
+      max-width: 760px;
+      margin: 0;
+      color: #111;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 900;
+      line-height: 1.05;
+    }
+
+    .package-header p {
+      max-width: 460px;
+      margin: 0;
+      color: #5F6673;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .package-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 520px;
+      padding: 1.5rem;
+      background: #FFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 18px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .package-card:hover,
+    .package-card.is-active {
+      transform: translateY(-4px);
+      border-color: var(--nike-orange);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.12);
+    }
+
+    .package-eyebrow {
+      margin-bottom: 1rem;
+      color: var(--nike-orange);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .package-card h4 {
+      margin: 0 0 0.75rem;
+      color: #111;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .package-positioning {
+      min-height: 5.5rem;
+      margin: 0 0 1.25rem;
+      color: #4B5563;
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+
+    .package-fit {
+      padding: 1rem;
+      background: #F7F7F7;
+      border: 1px solid #ECEFF3;
+      border-radius: 12px;
+      color: #374151;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .package-kpis {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.25rem 0 1.5rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .package-kpis li {
+      padding: 0.45rem 0.65rem;
+      background: rgba(255, 90, 31, 0.08);
+      border: 1px solid rgba(255, 90, 31, 0.18);
+      border-radius: 999px;
+      color: #1F2937;
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .package-callouts {
+      display: grid;
+      gap: 0.6rem;
+      margin: 0 0 1.5rem;
+    }
+
+    .package-callout {
+      padding: 0.85rem 0.9rem;
+      background: #FCFCFC;
+      border: 1px solid #E5E7EB;
+      border-left: 3px solid var(--nike-orange);
+      border-radius: 10px;
+    }
+
+    .package-callout strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #111;
+      font-size: 0.86rem;
+      line-height: 1.3;
+    }
+
+    .package-callout span {
+      display: block;
+      color: #5F6673;
+      font-size: 0.8rem;
+      line-height: 1.42;
+    }
+
+    .package-feature-btn {
+      margin-top: auto;
+      align-self: flex-start;
+      border: 0;
+      background: transparent;
+      color: #111;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      cursor: pointer;
+    }
+
+    .package-feature-btn:hover {
+      color: var(--nike-orange);
+    }
+
+    .package-feature-panel {
+      margin-top: 1.25rem;
+      padding: 1.5rem;
+      background: #FFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 18px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    .package-feature-panel[hidden] {
+      display: none;
+    }
+
+    .package-feature-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .package-feature-panel h4 {
+      margin: 0;
+      color: #111;
+      font-size: 1.35rem;
+      font-weight: 900;
+    }
+
+    .package-close {
+      border: 1px solid #D1D5DB;
+      background: #FFF;
+      color: #111;
+      border-radius: 999px;
+      padding: 0.5rem 0.85rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .package-feature-table {
+      display: grid;
+      grid-template-columns: 1.35fr repeat(3, 1fr);
+      overflow: hidden;
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+    }
+
+    .package-feature-table>div {
+      padding: 0.85rem 1rem;
+      border-right: 1px solid #E5E7EB;
+      border-bottom: 1px solid #E5E7EB;
+      color: #374151;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .package-feature-table>div:nth-child(4n) {
+      border-right: 0;
+    }
+
+    .package-feature-table>div:nth-last-child(-n + 4) {
+      border-bottom: 0;
+    }
+
+    .package-feature-table .feature-heading {
+      background: #F7F7F7;
+      color: #111;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .package-feature-table .feature-check {
+      color: #111;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    @media(max-width: 900px) {
+      .package-header {
+        display: block;
+      }
+
+      .package-header h3 {
+        margin-bottom: 1rem;
+      }
+
+      .package-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .package-card {
+        min-height: auto;
+      }
+
+      .package-feature-table {
+        grid-template-columns: 1fr;
+      }
+
+      .package-feature-table>div,
+      .package-feature-table>div:nth-child(4n),
+      .package-feature-table>div:nth-last-child(-n + 4) {
+        border-right: 0;
+        border-bottom: 1px solid #E5E7EB;
+      }
     }
 
     .calc-results {
@@ -499,12 +782,6 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
-
-    .breakdown-box {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
     }
 
     .breakdown-item {
@@ -915,9 +1192,9 @@
             fully control.</p>
         </div>
         <div class="card reveal delay-2">
-          <div class="big-number">25+</div>
+          <div class="big-number">10+</div>
           <h3>Daily Family Impressions</h3>
-          <p>US households open the fridge 20-40 times daily. 25,000+ annualized impressions per household without
+          <p>US households open the fridge 10+ times daily. 3,650+ annualized impressions per household without
             disrupting daily life.</p>
         </div>
         <div class="card reveal delay-3">
@@ -959,7 +1236,7 @@
                 industrial design, UI, and brand identity.</span>
             </li>
             <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-              <span><strong>High-Frequency Context:</strong> Dominate 25+ daily household interactions at the
+              <span><strong>High-Frequency Context:</strong> Dominate 10+ daily household interactions at the
                 fridge.</span>
             </li>
             <li style="display: flex; align-items: center; gap: 1rem;">
@@ -977,7 +1254,8 @@
           <h3 style="font-size: 2rem; margin-bottom: 1rem; font-weight: 900;">Every 60 seconds is a three-act story.
           </h3>
           <p style="font-size: 1rem; color: #aaa; margin-bottom: 2.5rem; font-style: italic;">Earn the ear. Deliver the
-            value. Guide the action. — No interruption, no ad fatigue, just a story Nike fans choose to play.</p>
+            value. Guide the action. — No interruption, no ad fatigue, just a story <span
+              data-proposal-text="brand_name">Nike</span> fans choose to play.</p>
 
           <!-- 60-Second Arc: Three-Act Timeline -->
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
@@ -987,6 +1265,8 @@
                 Hook 0-10s</div>
               <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Earn attention with a familiar <span
                   data-proposal-text="brand_name">Nike</span> voice</h4>
+              <p style="font-size: 0.88rem; color: #666; margin: 0.75rem 0 0; line-height: 1.45;">
+                Greet your fans in a fresh way every day.</p>
             </div>
             <div class="story-act-card story-accent-themes" data-story-trigger="themes" tabindex="0">
               <div
@@ -1175,7 +1455,198 @@
       <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
         <span class="mono"
           style="color: var(--nike-orange); border: 1px solid var(--nike-orange); padding: 0.5rem 1rem; border-radius: 50px;">03
-          // The ROI & Pilot</span>
+          // The ROAS & Pilot</span>
+      </div>
+
+      <!-- 3.0 Package tiers -->
+      <div class="package-pricing reveal">
+        <div class="package-header">
+          <div>
+            <div class="mono" style="color: var(--nike-orange); margin-bottom: 1rem;">PACKAGES // FC V2.0</div>
+            <h3>Three ways to turn the fridge into a retention channel.</h3>
+          </div>
+          <p>Pick the operating depth that matches the brand's growth goal. Each tier starts with a concise outcome
+            summary, then opens into the full feature set when needed.</p>
+        </div>
+
+        <div class="package-grid" aria-label="Fridge Channel package tiers">
+          <article class="package-card" data-package-card="presence">
+            <div class="package-eyebrow">Package 01</div>
+            <h4>Presence</h4>
+            <p class="package-positioning">Enter the customer's home environment and build long-term brand presence.</p>
+            <div class="package-fit"><strong>Best fit:</strong> Brands that want to enter the home first and build
+              brand presence and customer affinity.</div>
+            <ul class="package-kpis" aria-label="Presence core KPIs">
+              <li>In-Home Brand Reach ↑</li>
+              <li>NPS ↑</li>
+              <li>LTV ↑</li>
+            </ul>
+            <div class="package-callouts" aria-label="Presence included dimensions">
+              <div class="package-callout">
+                <strong>Content Pillars</strong>
+                <span>Seven reusable content capabilities: brand voice, product education, tips, lifestyle scenarios,
+                  social proof, and refresh moments.</span>
+              </div>
+              <div class="package-callout">
+                <strong>Data Foundation</strong>
+                <span>Basic listening and usage dashboard to understand in-home exposure and content engagement.</span>
+              </div>
+            </div>
+            <button class="package-feature-btn" type="button" data-package-toggle="presence">View all features</button>
+          </article>
+
+          <article class="package-card" data-package-card="ltv">
+            <div class="package-eyebrow">Package 02</div>
+            <h4>LTV Lift</h4>
+            <p class="package-positioning">Bring customers back repeatedly, improve repeat purchase behavior and LTV.
+            </p>
+            <div class="package-fit"><strong>Best fit:</strong> Brands that want customers to come back repeatedly,
+              build an interaction habit, and drive repeat purchase behavior.</div>
+            <ul class="package-kpis" aria-label="LTV Lift core KPIs">
+              <li>Purchase Frequency ↑</li>
+              <li>Repeat Purchase ↑</li>
+              <li>Time Between Orders ↓</li>
+              <li>Coupon Redeem Rate ↑</li>
+            </ul>
+            <div class="package-callouts" aria-label="LTV Lift included dimensions">
+              <div class="package-callout">
+                <strong>Content Pillars</strong>
+                <span>All seven content capabilities tuned for repeat purchase and ongoing customer education.</span>
+              </div>
+              <div class="package-callout">
+                <strong>Habit & Rewards</strong>
+                <span>Check-in entry points, interactive tasks, benefit rules, and lifecycle prompts that bring
+                  customers back.</span>
+              </div>
+              <div class="package-callout">
+                <strong>Segment Insights</strong>
+                <span>Behavior reports that show which segments are forming habits and redeeming benefits.</span>
+              </div>
+            </div>
+            <button class="package-feature-btn" type="button" data-package-toggle="ltv">View all features</button>
+          </article>
+
+          <article class="package-card" data-package-card="moat">
+            <div class="package-eyebrow">Package 03</div>
+            <h4>Retention Moat</h4>
+            <p class="package-positioning">Cover the full customer lifecycle and systematically improve retention and
+              long-term LTV.</p>
+            <div class="package-fit"><strong>Best fit:</strong> Brands that want to operate across the full lifecycle
+              and build long-term retention capability.</div>
+            <ul class="package-kpis" aria-label="Retention Moat core KPIs">
+              <li>Retention Rate ↑</li>
+              <li>Winback Rate ↑</li>
+              <li>Churn Rate ↓</li>
+              <li>Lifecycle CTA Conversion ↑</li>
+            </ul>
+            <div class="package-callouts" aria-label="Retention Moat included dimensions">
+              <div class="package-callout">
+                <strong>Content Pillars</strong>
+                <span>All seven content capabilities adapted across the full lifecycle and refresh cadence.</span>
+              </div>
+              <div class="package-callout">
+                <strong>Habit & Rewards</strong>
+                <span>Interactive check-ins and reward rules that convert passive exposure into repeat behavior.</span>
+              </div>
+              <div class="package-callout">
+                <strong>Lifecycle Personalization</strong>
+                <span>D0-7 welcome, onboarding, routine building, replenishment, winback, seasonal care, and loyalty
+                  anniversary moments.</span>
+              </div>
+              <div class="package-callout">
+                <strong>Personalized CTA</strong>
+                <span>Lifecycle-aware CTA targeting with AI-assisted copy designed for higher click intent.</span>
+              </div>
+              <div class="package-callout">
+                <strong>Data & Strategy</strong>
+                <span>Usage dashboards plus segment behavior insights to guide retention optimization.</span>
+              </div>
+            </div>
+            <button class="package-feature-btn" type="button" data-package-toggle="moat">View all features</button>
+          </article>
+        </div>
+
+        <div class="package-feature-panel" id="package-feature-panel" hidden>
+          <div class="package-feature-panel-header">
+            <div>
+              <div class="mono" style="color: var(--nike-orange); margin-bottom: 0.4rem;">FULL FEATURE COMPARISON</div>
+              <h4 id="package-feature-title">Package features</h4>
+            </div>
+            <button class="package-close" type="button" data-package-close>Close</button>
+          </div>
+
+          <div class="package-feature-table" role="table" aria-label="Fridge Channel package feature comparison">
+            <div class="feature-heading" role="columnheader">Dimension / Feature</div>
+            <div class="feature-heading" role="columnheader">Presence</div>
+            <div class="feature-heading" role="columnheader">LTV Lift</div>
+            <div class="feature-heading" role="columnheader">Retention Moat</div>
+
+            <div>A | Content Pillars: 7 transferable content capabilities</div>
+            <div class="feature-check">7/7</div>
+            <div class="feature-check">7/7</div>
+            <div class="feature-check">7/7</div>
+
+            <div>A1 Brand Voice</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+
+            <div>A2 Product Education</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+
+            <div>A3 Interesting Tips</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+
+            <div>A4 Problem / Symptom to Solution</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+
+            <div>A5 Lifestyle and Usage Scenarios</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+
+            <div>A6 Social Proof and Word of Mouth</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+
+            <div>A7 Newness and Refresh</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+
+            <div>B | Habit and Rewards: check-ins, interactive tasks, benefits, reward rules</div>
+            <div class="feature-check">—</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+
+            <div>C | Lifecycle-based Personalization: D0-7 welcome through loyalty anniversary</div>
+            <div class="feature-check">—</div>
+            <div class="feature-check">—</div>
+            <div class="feature-check">✓</div>
+
+            <div>D | Personalized CTA: lifecycle-aware targeting and AI-assisted high-click CTA copy</div>
+            <div class="feature-check">—</div>
+            <div class="feature-check">—</div>
+            <div class="feature-check">✓</div>
+
+            <div>E1 Basic listening and usage dashboard</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+
+            <div>E2 Segment behavior insights report</div>
+            <div class="feature-check">—</div>
+            <div class="feature-check">✓</div>
+            <div class="feature-check">✓</div>
+          </div>
+        </div>
       </div>
 
       <!-- 3.1 Pilot plan and pricing -->
@@ -1184,10 +1655,10 @@
           style="background: #FFF; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 24px 70px rgba(0,0,0,0.08);">
           <!-- Initial Guide: Precisely Aligned Arrows -->
           <div id="calc-guide" class="calc-guide">
-            <div class="handdrawn-text">Enter parameters (min 4 weeks / 100 households) to unlock ROI estimation</div>
+            <div class="handdrawn-text">Enter AOV and pilot households to unlock ROAS estimation</div>
             <div class="arrows-row">
               <div class="arrow-box">
-                <!-- Points to Weeks -->
+                <!-- Points to AOV -->
                 <svg width="40" height="50" viewBox="0 0 100 100" fill="none">
                   <path d="M50 10C55 30 45 50 50 85M50 85L40 70M50 85L60 70" stroke="var(--nike-orange)"
                     stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
@@ -1206,15 +1677,15 @@
           </div>
 
           <div class="calc-input-group">
-            <div class="calc-input">
-              <label>Pilot Duration (4 weeks min)</label>
-              <input type="number" id="calc-weeks" min="4" value="4" placeholder="Min 4 weeks">
+            <div class="calc-input money-input">
+              <label>Average order value</label>
+              <input type="number" id="calc-aov" min="1" value="120" step="10" placeholder="Average order value">
             </div>
             <div class="calc-input">
               <label>Pilot Households (100 min)</label>
               <input type="number" id="calc-hh" min="100" value="100" step="50" placeholder="Min 100 households">
             </div>
-            <button class="calc-btn" onclick="calculateROI()">Calculate Pricing & ROI</button>
+            <button class="calc-btn" onclick="calculateROI()">Calculate Pricing & ROAS</button>
           </div>
 
           <div class="calc-results" id="calc-results" style="display: none;">
@@ -1228,43 +1699,12 @@
             </div>
 
             <!-- 1. Financials (Full Width Row) -->
-            <div class="result-grid" style="grid-template-columns: 1fr 2fr; margin-bottom: 5rem;">
+            <div class="result-grid" style="grid-template-columns: minmax(280px, 420px); margin-bottom: 5rem;">
               <div class="total-price-box roi-hover-card" style="background: var(--nike-volt); border: 1px solid var(--nike-volt);">
                 <p style="color: var(--on-nike-volt); opacity: 0.68; font-family: 'Roboto Mono', monospace; margin-bottom: 1rem; font-size: 0.85rem;">
                   ESTIMATED TOTAL INVESTMENT</p>
                 <div style="font-size: 3.5rem; font-weight: 900; color: var(--nike-orange); line-height: 1;"
                   id="res-total">$190,000</div>
-              </div>
-              <div class="breakdown-box">
-                <!-- Sum Relationship Row -->
-                <div
-                  style="display: flex; align-items: center; gap: 2rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2rem; margin-bottom: 2rem;">
-                  <!-- Hardware -->
-                  <div class="roi-hover-card" style="flex: 1; background: #FFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 1rem;">
-                    <div class="breakdown-label" style="margin-bottom: 0.5rem;">HARDWARE FEES</div>
-                    <strong style="font-size: 1.5rem; display: block; color: #000;" id="res-hw-total">$150,000</strong>
-                    <span style="color: #666; font-size: 0.85rem;" id="res-hw-math">($1,500 / unit × 100 units)</span>
-                  </div>
-
-                  <!-- Plus Sign -->
-                  <div style="font-size: 2rem; color: var(--nike-orange); font-weight: 900; opacity: 0.5;">+</div>
-
-                  <!-- Ops -->
-                  <div class="roi-hover-card" style="flex: 1; background: #FFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 1rem;">
-                    <div class="breakdown-label" style="margin-bottom: 0.5rem;">CONTENT & OPS</div>
-                    <strong style="font-size: 1.5rem; display: block; color: #000;" id="res-ops-total">$40,000</strong>
-                    <span style="color: #666; font-size: 0.85rem;" id="res-ops-math">($5,000 / week × 8 weeks)</span>
-                  </div>
-                </div>
-
-                <!-- Included Services Row -->
-                <div class="roi-hover-card" style="padding: 1rem; background: #FFF; border: 1px solid #E5E7EB; border-radius: 14px;">
-                  <div class="breakdown-label" style="margin-bottom: 0.5rem;">INCLUDED SERVICES</div>
-                  <div style="color: #555; font-size: 0.9rem; line-height: 1.5; font-style: italic;">
-                    Exclusive <span data-proposal-text="brand_name">Nike</span> device industrial design, production &
-                    deployment, 60+ content modules, daily operations, weekly insights reports
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -1296,7 +1736,7 @@
                     <div style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #111;" data-rt="revenue">
                       $5,280</div>
                     <div style="font-size: 13px; color: #6B7280; margin-top: 8px;"><span data-rt="orders">44</span>
-                      orders × $120 AOV</div>
+                      orders × <span data-rt="aov">$120</span> AOV</div>
                   </div>
                   <div class="roi-hover-card"
                     style="background: #FFF; padding: 2rem; border-radius: 16px; border: 1px solid #E5E7EB; border-left: 4px solid var(--nike-orange);">
@@ -1375,70 +1815,6 @@
                   </div>
                 </div>
 
-                <!-- ChannelComparison: vs SMS/Email -->
-                <div style="margin-top: 2rem;">
-                  <div
-                    style="font-size: 12px; color: #6B7280; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px;">
-                    Incremental Cost per Re-Engagement</div>
-                  <p style="font-size: 14px; color: #444; margin-bottom: 1.25rem; max-width: 640px;">How much it costs
-                    to make an existing customer take action again</p>
-                  <div style="border-radius: 20px; border: 1px solid #E5E7EB;">
-                    <div
-                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; background: #FAFAFA; padding: 20px 24px; border-bottom: 1px solid #E5E7EB;">
-                      <div></div>
-                      <div style="font-size: 13px; color: #6B7280;">SMS / Email</div>
-                      <div
-                        style="font-size: 13px; font-weight: 800; color: var(--nike-orange); background: rgba(255,90,31,0.08); padding: 6px 12px; border-radius: 8px; text-align: center;">
-                        FridgeChannel</div>
-                    </div>
-                    <div class="roi-hover-card"
-                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 18px 24px; border-bottom: 1px solid #F3F4F6; align-items: center;">
-                      <div style="font-size: 14px; color: #111; font-weight: 600;">Cost per re-engagement</div>
-                      <div style="font-size: 14px; color: #6B7280;">$5.00</div>
-                      <div style="font-size: 14px; font-weight: 700; color: var(--nike-orange); text-align: center;">
-                        $1.20</div>
-                    </div>
-                    <div class="roi-hover-card"
-                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 18px 24px; border-bottom: 1px solid #F3F4F6; align-items: center;">
-                      <div style="font-size: 14px; color: #111; font-weight: 600;">Audience decay</div>
-                      <div style="font-size: 14px; color: #6B7280;">−25% / year</div>
-                      <div style="font-size: 14px; font-weight: 700; color: var(--nike-orange); text-align: center;">0%
-                      </div>
-                    </div>
-                    <div class="roi-hover-card"
-                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 18px 24px; border-bottom: 1px solid #F3F4F6; align-items: center;">
-                      <div style="font-size: 14px; color: #111; font-weight: 600;">Saturation risk</div>
-                      <div style="font-size: 14px; color: #6B7280;">High (7+ touches/wk → fatigue)</div>
-                      <div style="font-size: 14px; font-weight: 700; color: var(--nike-orange); text-align: center;">Low
-                        (passive, in-context)</div>
-                    </div>
-                    <div class="roi-hover-card"
-                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 18px 24px; border-bottom: 1px solid #F3F4F6; align-items: center;">
-                      <div style="font-size: 14px; color: #111; font-weight: 600;">iOS / Privacy exposure</div>
-                      <div style="font-size: 14px; color: #6B7280;">High (open-rate broken)</div>
-                      <div style="font-size: 14px; font-weight: 700; color: var(--nike-orange); text-align: center;">
-                        None (hardware-owned)</div>
-                    </div>
-                    <div class="roi-hover-card"
-                      style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 18px 24px; align-items: center;">
-                      <div style="font-size: 14px; color: #111; font-weight: 600;">Cross-generational reach</div>
-                      <div style="font-size: 14px; color: #6B7280;">1 phone = 1 person</div>
-                      <div style="font-size: 14px; font-weight: 700; color: var(--nike-orange); text-align: center;">1
-                        fridge = whole household</div>
-                    </div>
-                  </div>
-                  <div
-                    style="margin-top: 2rem; text-align: center; max-width: 720px; margin-left: auto; margin-right: auto;">
-                    <span style="font-size: 2.5rem; color: #D1D5DB; line-height: 1; vertical-align: top;">&ldquo;</span>
-                    <p
-                      style="display: inline; font-size: 1.1rem; color: #374151; font-style: italic; line-height: 1.7;">
-                      SMS/Email costs $5 per send to a list that's losing 25% of itself every year. FridgeChannel costs
-                      $1.20 per engaged moment to a household that doesn't unsubscribe.</p>
-                    <span
-                      style="font-size: 2.5rem; color: #D1D5DB; line-height: 1; vertical-align: bottom;">&rdquo;</span>
-                  </div>
-                </div>
-
                 <!-- ClosingTagline -->
                 <div
                   style="margin-top: 2.5rem; text-align: center; max-width: 720px; margin-left: auto; margin-right: auto;">
@@ -1460,7 +1836,7 @@
         </div>
       </div>
 
-      <!-- ROI Details moved into Dashboard above -->
+      <!-- ROAS details moved into dashboard above -->
 
       <!-- Charts 1 & 2 removed in favor of interactive calculator layout -->
 
@@ -1813,16 +2189,48 @@
       panel.addEventListener('mouseenter', () => showStoryPanel(panel.dataset.storyPanel));
     });
 
-    // ROI Calculator Logic
+    const packageFeaturePanel = document.getElementById('package-feature-panel');
+    const packageFeatureTitle = document.getElementById('package-feature-title');
+    const packageLabels = {
+      presence: 'Presence full feature set',
+      ltv: 'LTV Lift full feature set',
+      moat: 'Retention Moat full feature set'
+    };
+
+    document.querySelectorAll('[data-package-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        const packageName = button.dataset.packageToggle;
+        document.querySelectorAll('[data-package-card]').forEach(card => {
+          card.classList.toggle('is-active', card.dataset.packageCard === packageName);
+        });
+        if (packageFeatureTitle) {
+          packageFeatureTitle.textContent = packageLabels[packageName] || 'Package features';
+        }
+        if (packageFeaturePanel) {
+          packageFeaturePanel.hidden = false;
+          packageFeaturePanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-package-close]').forEach(button => {
+      button.addEventListener('click', () => {
+        if (packageFeaturePanel) packageFeaturePanel.hidden = true;
+        document.querySelectorAll('[data-package-card]').forEach(card => card.classList.remove('is-active'));
+      });
+    });
+
+    // ROAS Calculator Logic
     function calculateROI() {
-      const weeksInput = document.getElementById('calc-weeks');
+      const aovInput = document.getElementById('calc-aov');
       const hhInput = document.getElementById('calc-hh');
 
-      let weeks = parseInt(weeksInput.value) || 4;
+      let aov = parseFloat(aovInput.value) || 120;
       let hh = parseInt(hhInput.value) || 100;
+      const weeks = 4;
 
       // enforce minimums
-      if (weeks < 4) { weeks = 4; weeksInput.value = 4; }
+      if (aov < 1) { aov = 1; aovInput.value = 1; }
       if (hh < 100) { hh = 100; hhInput.value = 100; }
 
       // --- 4.1 Pricing Constants ---
@@ -1842,10 +2250,6 @@
 
       // Update 4.1 DOM
       document.getElementById('res-total').innerText = fmt.format(grandTotal);
-      document.getElementById('res-hw-total').innerText = fmt.format(hwTotal);
-      document.getElementById('res-hw-math').innerText = `(${fmt.format(hwPerUnit)} / unit × ${hh} units)`;
-      document.getElementById('res-ops-total').innerText = fmt.format(opsTotal);
-      document.getElementById('res-ops-math').innerText = `(${fmt.format(opsPerWeek)} / week × ${weeks} weeks)`;
 
       const resultsDiv = document.getElementById('calc-results');
       const guideDiv = document.getElementById('calc-guide');
@@ -1866,7 +2270,6 @@
       const repeats = orders * 0.30;
 
       // Dollar values
-      const aov = 120;
       const ltvPerCustomer = 450;
       const directRevenue = orders * aov;
       const ltvCaptured = Math.round(repeats) * ltvPerCustomer;
@@ -1885,12 +2288,13 @@
         });
       };
 
-      setRt('plan', `${hh} households · ${weeks} weeks`);
+      setRt('plan', `${hh} households · ${fmt.format(aov)} AOV`);
       setRt('impressions', numFmt.format(impressions));
       setRt('impressionsShort', countShort(impressions));
       setRt('plays', numFmt.format(plays));
       setRt('leads', numFmt.format(leads));
       setRt('orders', numFmt.format(orders));
+      setRt('aov', fmt.format(aov));
       setRt('retained', numFmt.format(Math.round(repeats)));
       setRt('revenue', fmt.format(directRevenue));
       setRt('ltv', fmt.format(ltvCaptured));
