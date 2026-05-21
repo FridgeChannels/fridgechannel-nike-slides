@@ -442,24 +442,49 @@
       position: relative;
     }
 
-    .money-input::before {
+    .piece-input {
+      position: relative;
+    }
+
+    .piece-input::after {
+      content: 'piece';
+      position: absolute;
+      right: 0;
+      bottom: 0.9rem;
+      color: #888;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      pointer-events: none;
+    }
+
+    .piece-input input {
+      padding-right: 3rem;
+    }
+
+    .money-input::after {
       content: '$';
       position: absolute;
-      left: 0;
-      bottom: 0.5rem;
-      color: #000;
-      font-size: 2.5rem;
-      font-weight: bold;
-      line-height: 1.5;
+      right: 0;
+      bottom: 0.9rem;
+      color: #888;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
       pointer-events: none;
     }
 
     .money-input input {
-      padding-left: 1.6rem;
+      padding-right: 1.2rem;
     }
 
     .calc-input input:focus {
       border-bottom-color: var(--nike-orange);
+    }
+
+    .calc-input input::placeholder {
+      color: #C8C8C8;
+      font-weight: 400;
     }
 
     .calc-btn {
@@ -1863,11 +1888,11 @@
           <div class="calc-input-group">
             <div class="calc-input money-input">
               <label>Average Order Value</label>
-              <input type="number" id="calc-aov" min="1" value="120" step="10">
+              <input type="text" id="calc-aov" inputmode="numeric" placeholder="120">
             </div>
-            <div class="calc-input">
+            <div class="calc-input piece-input">
               <label>Households</label>
-              <input type="number" id="calc-hh" min="1" value="100" step="50">
+              <input type="text" id="calc-hh" inputmode="numeric" placeholder="10,000">
             </div>
             <button class="calc-btn" onclick="runCalc()">Calculate ROAS</button>
           </div>
@@ -1969,7 +1994,7 @@
             <summary>How we calculate this ›</summary>
             <div class="calc-methodology-body">
               ROAS = Annual orders per unit × AOV ÷ FC unit price<br>
-              Annual orders per unit = 3,650 impressions × C1 (content engagement) × C2 (click-through) × C3 (purchase conversion) × C4 (repeat rate) × C5 (retention)<br>
+              Annual orders per unit = 3,650 impressions × C1 (Sticking Rate) × C2 (Habit Formation Rate) × C3 (Weekly Tap Frequency) × C4 (CTA Click Rate) × C5 (CTA Take-rate)<br>
               Pilot Investment = Households × unit price
             </div>
           </details>
@@ -2411,8 +2436,8 @@
     let selectedPackage = null;
 
     function calcAll() {
-      const aov = parseFloat(document.getElementById('calc-aov').value) || 0;
-      const hh  = parseInt(document.getElementById('calc-hh').value)   || 0;
+      const aov = parseFloat(document.getElementById('calc-aov').value.replace(/,/g, '')) || 0;
+      const hh  = parseInt(document.getElementById('calc-hh').value.replace(/,/g, ''))   || 0;
       if (!aov || !hh) return;
 
       const summary = document.getElementById('calc-summary');
@@ -2459,8 +2484,18 @@
 
       if (!calcInitialized) {
         calcInitialized = true;
-        document.getElementById('calc-aov').addEventListener('input', calcAll);
-        document.getElementById('calc-hh').addEventListener('input', calcAll);
+        function fmtInput(el, isFloat) {
+          const raw = el.value.replace(/,/g, '');
+          const num = isFloat ? parseFloat(raw) : parseInt(raw);
+          if (!isNaN(num) && raw !== '') {
+            const pos = el.selectionStart;
+            const oldLen = el.value.length;
+            el.value = num.toLocaleString('en-US');
+            el.selectionStart = el.selectionEnd = pos + (el.value.length - oldLen);
+          }
+        }
+        document.getElementById('calc-aov').addEventListener('input', function() { fmtInput(this, true);  calcAll(); });
+        document.getElementById('calc-hh').addEventListener('input',  function() { fmtInput(this, false); calcAll(); });
       }
     }
 
