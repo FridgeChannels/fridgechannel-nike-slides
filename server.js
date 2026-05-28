@@ -3,6 +3,7 @@ const fs = require('fs/promises');
 const path = require('path');
 
 const ROOT = __dirname;
+const DASHBOARD2_ROOT = path.join(require('os').homedir(), 'Downloads', 'DTC-dashboard-2');
 const NOTION_VERSION = '2025-09-03';
 
 // Cache the discovered data source id so we don't re-fetch on every request.
@@ -473,6 +474,23 @@ async function serveIndex(res) {
 async function serveStatic(req, res) {
   const requestUrl = new URL(req.url, `http://${req.headers.host}`);
   const pathname = requestUrl.pathname === '/' ? '/index.html' : decodeURIComponent(requestUrl.pathname);
+
+  // Serve /dashboard2/* directly from DTC-dashboard-2 folder (no copy needed)
+  if (pathname.startsWith('/dashboard2')) {
+    let subPath = pathname === '/dashboard2' || pathname === '/dashboard2/' || pathname === '/dashboard2/index.html'
+      ? '/FC Brand Dashboard.html'
+      : pathname.slice('/dashboard2'.length);
+    const filePath = path.normalize(path.join(DASHBOARD2_ROOT, subPath));
+    if (!filePath.startsWith(DASHBOARD2_ROOT)) { res.writeHead(403); res.end('Forbidden'); return; }
+    try {
+      const body = await fs.readFile(filePath);
+      const ext = path.extname(filePath);
+      res.writeHead(200, { 'Content-Type': MIME_TYPES[ext] || 'application/octet-stream' });
+      res.end(body);
+    } catch { res.writeHead(404); res.end('Not found'); }
+    return;
+  }
+
   const filePath = path.normalize(path.join(ROOT, pathname));
 
   if (!filePath.startsWith(ROOT)) {

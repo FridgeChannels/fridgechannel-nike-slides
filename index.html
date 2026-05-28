@@ -254,7 +254,7 @@
       margin-right: 1rem;
     }
 
-    /* --- Data & Pilot Section --- */
+    /* --- Data & ROAS Section --- */
     .data-section {
       background: #000;
     }
@@ -1358,7 +1358,7 @@
       </div>
       <div class="hero-content reveal">
         <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem);">FridgeChannel<br>× <span style="color:var(--nike-volt)"
-            data-proposal-text="brand_name">Nike</span><br>Pilot Proposal</h1>
+            data-proposal-text="brand_name">Nike</span><br>Growth Proposal</h1>
 
       </div>
     </div>
@@ -1444,30 +1444,19 @@
             value. Guide the action. — No interruption, no ad fatigue, just a story <span
               data-proposal-text="brand_name">Nike</span> fans choose to play.</p>
 
-          <!-- 60-Second Arc: Three-Act Timeline -->
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
             <div class="story-act-card story-accent-hook" data-story-trigger="hook" tabindex="0">
-              <div
-                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); letter-spacing: 0.05em; margin-bottom: 0.75rem;">
-                Hook 0-10s</div>
-              <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Earn attention with a familiar <span
-                  data-proposal-text="brand_name">Nike</span> voice</h4>
-              <p style="font-size: 0.88rem; color: #666; margin: 0.75rem 0 0; line-height: 1.45;">
-                Greet your fans in a fresh way every day.</p>
+              <div style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); letter-spacing: 0.05em; margin-bottom: 0.75rem;">Hook 0-10s</div>
+              <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Earn attention with a familiar <span data-proposal-text="brand_name">Nike</span> voice</h4>
+              <p style="font-size: 0.88rem; color: #666; margin: 0.75rem 0 0; line-height: 1.45;">Greet your fans in a fresh way every day.</p>
             </div>
             <div class="story-act-card story-accent-themes" data-story-trigger="themes" tabindex="0">
-              <div
-                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); letter-spacing: 0.05em; margin-bottom: 0.75rem;">
-                Content 10-45s</div>
-              <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Deliver something the listener
-                actually wants</h4>
+              <div style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); letter-spacing: 0.05em; margin-bottom: 0.75rem;">Content 10-45s</div>
+              <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Deliver something the listener actually wants</h4>
             </div>
             <div class="story-act-card story-accent-commerce" data-story-trigger="commerce" tabindex="0">
-              <div
-                style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); letter-spacing: 0.05em; margin-bottom: 0.75rem;">
-                Commerce action 45-60s</div>
-              <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Convert listening into commercial
-                actions</h4>
+              <div style="font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--nike-orange); letter-spacing: 0.05em; margin-bottom: 0.75rem;">Commerce action 45-60s</div>
+              <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0;">Convert listening into commercial actions</h4>
             </div>
           </div>
 
@@ -1600,34 +1589,40 @@
       <!-- 3.3 Data loop -->
       <div class="grid-2 insights-grid" style="align-items: center;">
         <div class="reveal">
-          <div style="background: #111; border-radius: 12px; overflow: hidden;">
-            <img src="pics/dashboard_pic.jpeg" alt="Visual: Data Dashboard"
-              style="width: 100%; height: auto; display: block;">
+          <div style="background: #111; border-radius: 12px; overflow: hidden; position: relative;">
+            <!-- Sample badge -->
+            <div style="position: absolute; top: 12px; left: 12px; z-index: 10; background: rgba(0,0,0,0.55); backdrop-filter: blur(6px); color: #fff; font-family: 'Roboto Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 20px; text-transform: uppercase;">Sample</div>
+            <!-- Dashboard screenshot -->
+            <div style="max-height: 420px; overflow: hidden;">
+              <img src="pics/dashboard_preview.png" alt="FC Brand Dashboard Sample"
+                style="width: 100%; height: auto; display: block;">
+            </div>
+            <!-- View link -->
+            <div style="padding: 0.75rem 1.25rem; display: flex; justify-content: flex-end;">
+              <a href="/dashboard2/index.html" target="_blank"
+                style="font-family: 'Roboto Mono', monospace; font-size: 0.72rem; color: var(--nike-orange); text-decoration: none; letter-spacing: 0.05em;">View full dashboard ↗</a>
+            </div>
           </div>
         </div>
         <div class="solution-text reveal delay-1">
           <div class="mono" style="color: #FF5A1F; margin-bottom: 1rem;">INSIGHTS // DATA</div>
           <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 900;">Full-Funnel Behavioral Insights</h3>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <div
-              style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
-              <strong style="color: #FF5A1F; font-size: 1rem; line-height: 1.4;">Installation & Activation
-                Rate</strong>
+            <div style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; min-height: 80px;">
+              <strong style="color: #FF5A1F; font-size: 0.85rem; line-height: 1.3; display: block; margin-bottom: 0.35rem;">Attribute Revenue</strong>
+              <span style="color: rgba(255,255,255,0.65); font-size: 0.82rem; line-height: 1.4;">to in-home brand engagement.</span>
             </div>
-            <div
-              style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
-              <strong style="color: #FF5A1F; font-size: 1rem; line-height: 1.4;">Playback & CTA
-                Engagement</strong>
+            <div style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; min-height: 80px;">
+              <strong style="color: #FF5A1F; font-size: 0.85rem; line-height: 1.3; display: block; margin-bottom: 0.35rem;">Track Lifecycle</strong>
+              <span style="color: rgba(255,255,255,0.65); font-size: 0.82rem; line-height: 1.4;">from first order to winback.</span>
             </div>
-            <div
-              style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
-              <strong style="color: #FF5A1F; font-size: 1rem; line-height: 1.4;">Product / Campaign Heat
-                Analysis</strong>
+            <div style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; min-height: 80px;">
+              <strong style="color: #FF5A1F; font-size: 0.85rem; line-height: 1.3; display: block; margin-bottom: 0.35rem;">Measure Engagement</strong>
+              <span style="color: rgba(255,255,255,0.65); font-size: 0.82rem; line-height: 1.4;">across daily in-home interactions.</span>
             </div>
-            <div
-              style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; display: flex; align-items: center; justify-content: flex-start; min-height: 80px;">
-              <strong style="color: #FF5A1F; font-size: 1rem; line-height: 1.4;">Consideration & Purchase
-                Intent Tracking</strong>
+            <div style="border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem 1rem; border-radius: 8px; text-align: left; min-height: 80px;">
+              <strong style="color: #FF5A1F; font-size: 0.85rem; line-height: 1.3; display: block; margin-bottom: 0.35rem;">Unlock Insights</strong>
+              <span style="color: rgba(255,255,255,0.65); font-size: 0.82rem; line-height: 1.4;">into segment retention and LTV.</span>
             </div>
           </div>
         </div>
@@ -1636,13 +1631,13 @@
     </div>
   </section>
 
-  <!-- DATA & PILOT SECTION -->
+  <!-- DATA & ROAS SECTION -->
   <section class="data-section" style="background: #F7F7F7; padding: 8rem 5%; color: #000;">
     <div class="container">
       <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
         <span class="mono"
           style="color: var(--nike-orange); border: 1px solid var(--nike-orange); padding: 0.5rem 1rem; border-radius: 50px;">03
-          // The ROAS & Pilot</span>
+          // THE ROAS</span>
       </div>
 
       <!-- 3.0 Package tiers -->
@@ -1654,7 +1649,7 @@
             <div class="package-price">$4.99<span class="price-unit">/piece</span></div>
             <div class="package-fit">Brands that want to enter the home first and build brand presence and customer
               affinity.</div>
-            <button class="package-choose-btn" type="button" onclick="choosePlan('presence')">Choose Plan</button>
+            <button class="package-choose-btn" type="button" onclick="choosePlan('presence')">Get Your Proposal</button>
             <div class="package-bottom">
               <div class="package-callouts" aria-label="Presence included dimensions">
                 <div class="package-callout-title">Features</div>
@@ -1674,7 +1669,7 @@
             <div class="package-price">$5.99<span class="price-unit">/piece</span></div>
             <div class="package-fit">Brands that want customers to come back repeatedly, build an interaction habit,
               and drive repeat purchase.</div>
-            <button class="package-choose-btn" type="button" onclick="choosePlan('ltv')">Choose Plan</button>
+            <button class="package-choose-btn" type="button" onclick="choosePlan('ltv')">Get Your Proposal</button>
             <div class="package-bottom">
               <div class="package-callouts" aria-label="LTV Lift included dimensions">
                 <div class="package-callout-title">Features</div>
@@ -1696,7 +1691,7 @@
             <div class="package-price">$6.99<span class="price-unit">/piece</span></div>
             <div class="package-fit">Brands that want to operate across the full lifecycle and build long-term
               retention capability.</div>
-            <button class="package-choose-btn" type="button" onclick="choosePlan('moat')">Choose Plan</button>
+            <button class="package-choose-btn" type="button" onclick="choosePlan('moat')">Get Your Proposal</button>
             <div class="package-bottom">
               <div class="package-callouts" aria-label="Retention Moat included dimensions">
                 <div class="package-callout-title">Features</div>
@@ -1921,7 +1916,7 @@
                 <span class="roas-metric-value" id="rev-val-presence">—</span>
               </div>
               <div class="roas-metric is-secondary">
-                <span class="roas-metric-label">Pilot Investment</span>
+                <span class="roas-metric-label">FC Investment</span>
                 <span class="roas-metric-value" id="inv-val-presence">—</span>
               </div>
               <div class="roas-metric is-secondary">
@@ -1948,7 +1943,7 @@
                 <span class="roas-metric-value" id="rev-val-ltv">—</span>
               </div>
               <div class="roas-metric is-secondary">
-                <span class="roas-metric-label">Pilot Investment</span>
+                <span class="roas-metric-label">FC Investment</span>
                 <span class="roas-metric-value" id="inv-val-ltv">—</span>
               </div>
               <div class="roas-metric is-secondary">
@@ -1975,7 +1970,7 @@
                 <span class="roas-metric-value" id="rev-val-moat">—</span>
               </div>
               <div class="roas-metric is-secondary">
-                <span class="roas-metric-label">Pilot Investment</span>
+                <span class="roas-metric-label">FC Investment</span>
                 <span class="roas-metric-value" id="inv-val-moat">—</span>
               </div>
               <div class="roas-metric is-secondary">
@@ -1995,7 +1990,7 @@
             <div class="calc-methodology-body">
               ROAS = Annual orders per unit × AOV ÷ FC unit price<br>
               Annual orders per unit = 3,650 impressions × C1 (Sticking Rate) × C2 (Habit Formation Rate) × C3 (Weekly Tap Frequency) × C4 (CTA Click Rate) × C5 (CTA Take-rate)<br>
-              Pilot Investment = Households × unit price
+              FC Investment = Households × unit price
             </div>
           </details>
 
@@ -2016,7 +2011,7 @@
   <section class="cta-footer">
     <div class="container reveal">
       <h2 style="font-size: clamp(2rem, 6vw, 5rem); color: var(--on-nike-volt);">SECURE THE SURFACE.</h2>
-      <p style="font-size: 1.5rem; color: var(--on-nike-volt); opacity: 0.72; margin: 2rem 0;">45-minute working session to align on the pilot scope.
+      <p style="font-size: 1.5rem; color: var(--on-nike-volt); opacity: 0.72; margin: 2rem 0;">45-minute working session to align on campaign scope.
       </p>
       <a href="#" class="btn" data-proposal-link="footer_button_url">Schedule Alignment</a>
     </div>

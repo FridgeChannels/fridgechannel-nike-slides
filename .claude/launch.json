@@ -5,6 +5,7 @@
       "name": "Proposal Server",
       "runtimeExecutable": "node",
       "runtimeArgs": ["server.js"],
-      "port": 4173
+      "port": 4173,
+      "autoPort": true
     }  ]
 }
