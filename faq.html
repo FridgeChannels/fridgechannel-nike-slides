@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Brand FAQs — everything your growth, e-commerce, CRM, and operations teams might want to know before launching a first pilot.">
+  <title>Brand FAQs — Reward Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream:#f6f0e6; --paper:#fffaf2; --ink:#251b16; --muted:#74675e;
+      --rust:#c6633c; --gold:#e8b847; --forest:#17382b; --line:rgba(37,27,22,.14);
+      --shadow:0 28px 80px rgba(68,44,26,.14);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:"Inter",sans-serif;line-height:1.55}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
+    a{color:inherit}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .eyebrow{font-size:.72rem;letter-spacing:.19em;text-transform:uppercase;font-weight:700;color:var(--rust)}
+    h1,h2,h3{font-family:"Inter",sans-serif;line-height:1.04;margin:0}
+    h1{font-size:clamp(2.6rem,6vw,5rem);letter-spacing:-.04em;font-weight:900}
+    h2{font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-.02em;font-weight:800}
+    p{margin:0}
+
+    .topnav{position:sticky;top:0;z-index:20;background:rgba(246,240,230,.9);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .topnav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;font-size:1.05rem;text-decoration:none}
+    .backlink{font-family:"Roboto Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;font-weight:700;color:var(--rust);text-decoration:none}
+    .backlink:hover{color:var(--forest)}
+
+    .head{padding:88px 0 46px}
+    .head .eyebrow{margin-bottom:22px}
+    .head p{max-width:720px;color:var(--muted);font-size:1.08rem;margin-top:22px}
+
+
+    .cat{padding:64px 0;border-top:1px solid var(--line)}
+    .cat-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
+    .cat-head .num{font-family:"Roboto Mono",monospace;font-size:.9rem;font-weight:700;color:var(--rust)}
+
+    .faq-list{border-top:1px solid rgba(0,0,0,.1)}
+    .faq-item{border-bottom:1px solid rgba(0,0,0,.1)}
+    .faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 2px;font-weight:400;font-size:1.02rem;color:var(--ink)}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary:after{content:"+";font-family:"Roboto Mono",monospace;font-size:1.5rem;line-height:1;color:var(--rust);flex-shrink:0}
+    .faq-item[open] summary:after{content:"–"}
+    .faq-item summary:hover{color:var(--rust)}
+    .faq-answer{margin:0 2px;padding:0 40px 24px 2px;color:#5f5f5f;font-size:.95rem;line-height:1.65}
+
+    .footer{padding:80px 0 40px;border-top:1px solid var(--line);text-align:center}
+    .footer .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 24px;border-radius:999px;text-decoration:none;font-weight:700;background:var(--forest);color:#fff;border:1px solid var(--forest);transition:.2s ease}
+    .footer .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(37,27,22,.13)}
+    .footer p{color:var(--muted);margin-bottom:22px;font-size:.95rem}
+
+    @media(max-width:560px){.wrap{width:min(100% - 24px,1180px)}.head{padding:56px 0 34px}.cat{padding:48px 0}}
+  </style>
+</head>
+<body>
+  <header class="topnav">
+    <div class="wrap topnav-inner">
+      <a class="brand" href="gift-challenge.html">Reward Challenge</a>
+      <a class="backlink" href="gift-challenge.html#faq">← Back to proposal</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="head">
+      <div class="wrap">
+        <div class="eyebrow">FAQ</div>
+        <h1>Brand FAQs</h1>
+        <p>Everything your growth, e-commerce, CRM, and operations teams might want to know before launching their first pilot.</p>
+      </div>
+    </section>
+
+    <section class="cat" id="a">
+      <div class="wrap">
+        <div class="cat-head"><span class="num">A</span><h2>Customer experience</h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>What will customers actually receive?</summary><div class="faq-answer">Customers receive an NFC fridge magnet featuring your brand logo, either inside their order or included with it.</div></details>
+          <details class="faq-item"><summary>How will customers use it?</summary><div class="faq-answer">They attach it to their refrigerator, tap the magnet with their phone, complete simple challenges, earn points, and unlock rewards for their next purchase.</div></details>
+          <details class="faq-item"><summary>Do customers need to download an app?</summary><div class="faq-answer">No. The experience can be accessed directly in a mobile browser.</div></details>
+          <details class="faq-item"><summary>Do customers need to scan a QR code?</summary><div class="faq-answer">No. The core experience is based on NFC tap functionality.</div></details>
+          <details class="faq-item"><summary>Do customers need to register for an account?</summary><div class="faq-answer">Not necessarily. The pilot can be configured for low-barrier access, requiring customers to log in or link an account only when they need to use coupons, verify eligibility, or customize settings.</div></details>
+          <details class="faq-item"><summary>What happens if a customer taps multiple times?</summary><div class="faq-answer">Repeated taps can continue the rewards process, display current progress, show available rewards, or guide customers back to a call-to-action for their next purchase.</div></details>
+          <details class="faq-item"><summary>What happens if a customer shares the link?</summary><div class="faq-answer">Reward and coupon rules can include usage limits, expiration dates, customer eligibility requirements, or Shopify-side controls for coupon usage.</div></details>
+          <details class="faq-item"><summary>Is this experience too complicated for regular customers?</summary><div class="faq-answer">No. The customer flow stays brief: tap, play a game or answer a question, earn a reward, unlock it, and use the promo code. During the pilot we evaluate whether customers understand and complete the entire process.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cat" id="b">
+      <div class="wrap">
+        <div class="cat-head"><span class="num">B</span><h2>NFC, devices &amp; the physical magnet</h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>Does NFC work properly on most phones?</summary><div class="faq-answer">This experience is designed for NFC-enabled iPhone and Android devices. FC verifies common device behavior during the pilot setup process.</div></details>
+          <details class="faq-item"><summary>Where should customers tap?</summary><div class="faq-answer">Brief tap instructions can be included in the magnet’s design or a packaging insert, depending on how much guidance you wish to provide.</div></details>
+          <details class="faq-item"><summary>What if a customer’s NFC isn’t working?</summary><div class="faq-answer">Alternate links or support channels can be provided if necessary, but the core process is designed around the NFC tap.</div></details>
+          <details class="faq-item"><summary>Is the magnet durable enough for kitchen use?</summary><div class="faq-answer">The magnet is designed as a long-term touchpoint in the kitchen rather than a single-use insert. Materials, surface finish, dimensions, and print quality are all verified prior to production.</div></details>
+          <details class="faq-item"><summary>Can we review the physical design before production?</summary><div class="faq-answer">Yes. You can review and approve the design draft before production begins.</div></details>
+          <details class="faq-item"><summary>Can the magnet be customized to match our brand style?</summary><div class="faq-answer">Yes. The front and back designs, color schemes, font styles, and mobile reward pages can all be tailored to match your brand’s official website.</div></details>
+          <details class="faq-item"><summary>Will it look like a cheap promotional item?</summary><div class="faq-answer">No. The goal is to make this a brand asset customers want to display on their refrigerator, rather than a one-time coupon card.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cat" id="c">
+      <div class="wrap">
+        <div class="cat-head"><span class="num">C</span><h2>Rewards, coupons &amp; reward packs</h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>What types of rewards can customers unlock?</summary><div class="faq-answer">Rewards can include coupons, reward packs, free samples, bundle deals, restock offers, survey rewards, or incentives for the next order. Any reward that can be distributed as a promo code is acceptable.</div></details>
+          <details class="faq-item"><summary>Can we use our own Shopify promo codes?</summary><div class="faq-answer">Yes. Depending on your selected plan and integration scope, coupon rules can be synchronized with your Shopify coupon settings.</div></details>
+          <details class="faq-item"><summary>Can we control the discount amount and usage restrictions?</summary><div class="faq-answer">Yes. You can define the coupon value, validity period, usage limits, eligibility criteria, and usage rules.</div></details>
+          <details class="faq-item"><summary>Can we set different rewards for different customer segments?</summary><div class="faq-answer">Yes. You can configure rewards by segment — such as new, active, repeat, returning, and VIP customers.</div></details>
+          <details class="faq-item"><summary>Can I prevent excessive discounts?</summary><div class="faq-answer">Yes. You can set safeguards including discount caps, validity periods, usage limits, and rules to prevent customers from stacking offers or abusing promotions.</div></details>
+          <details class="faq-item"><summary>Can rewards be gifts instead of discounts?</summary><div class="faq-answer">Yes. Any reward that can be distributed in the form of a promo code is acceptable.</div></details>
+          <details class="faq-item"><summary>Can rewards be changed after the challenge goes live?</summary><div class="faq-answer">No. Once a round of the challenge goes live, the reward rules cannot be adjusted.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cat" id="d">
+      <div class="wrap">
+        <div class="cat-head"><span class="num">D</span><h2>Brand control &amp; customization</h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>How many brand elements can be incorporated into the mobile experience?</summary><div class="faq-answer">The mobile experience can include your brand’s color scheme, tone of voice, campaign visuals, reward copy, and product-specific information. Brand elements are incorporated into both the home screen and the in-game interfaces.</div></details>
+          <details class="faq-item"><summary>Can the campaign reflect our brand rather than feel like a generic game?</summary><div class="faq-answer">Yes. The challenge’s copy, visuals, question design, and reward descriptions are all designed around the visual elements of your official website.</div></details>
+          <details class="faq-item"><summary>Can we run seasonal campaigns?</summary><div class="faq-answer">Yes. Campaigns can be tailored to scenarios such as new product launches, holidays, restocking windows, gift-giving seasons, subscription promotions, or limited-edition products.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cat" id="e">
+      <div class="wrap">
+        <div class="cat-head"><span class="num">E</span><h2>Dashboard, data &amp; performance</h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>What information can be viewed in the dashboard?</summary><div class="faq-answer">The dashboard displays active magnets, click-throughs, challenge participation, unlocked promo codes, redeemed promo codes, orders, attributed revenue, repeat purchases, and revenue per active magnet.</div></details>
+          <details class="faq-item"><summary>Can I see how offline interactions convert to revenue?</summary><div class="faq-answer">Yes. The conversion funnel links offline touchpoint activity to promo code redemptions, orders, and attributed revenue.</div></details>
+          <details class="faq-item"><summary>What is an active magnet?</summary><div class="faq-answer">An active magnet is a touchpoint that has generated at least one trackable interaction during the selected time period.</div></details>
+          <details class="faq-item"><summary>What is “attributed revenue per active magnet”?</summary><div class="faq-answer">It shows the amount of attributed revenue generated by magnets that actually produced interactions.</div></details>
+          <details class="faq-item"><summary>Can I compare different customer segments?</summary><div class="faq-answer">Yes, depending on your plan and settings. Segment-level metrics can show how different audiences respond to different offers.</div></details>
+          <details class="faq-item"><summary>Can we determine whether this increases the repeat purchase rate?</summary><div class="faq-answer">The pilot is designed to measure metrics such as repeat orders, promo code usage, restocking behavior, and revenue attributed to campaigns.</div></details>
+          <details class="faq-item"><summary>Is ROAS guaranteed?</summary><div class="faq-answer">No. ROAS estimates are planning assumptions and do not constitute guaranteed results. The pilot validates actual customer behavior before a large-scale rollout.</div></details>
+          <details class="faq-item"><summary>What are the most critical metrics for the pilot?</summary><div class="faq-answer">For the initial pilot: active magnets, click-through rate, repeat clicks, unlocked promo codes, redeemed promo codes, repeat orders, attributed revenue, and revenue per active magnet.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cat" id="f">
+      <div class="wrap">
+        <div class="cat-head"><span class="num">F</span><h2>Setup, operations &amp; responsibilities</h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>How long does setup take?</summary><div class="faq-answer">Setup time depends on design draft approval, coupon rules, dashboard scope, Klaviyo audience segmentation, Shopify configuration, and the production schedule. The first step is to confirm the pilot scope and go-live checklist.</div></details>
+          <details class="faq-item"><summary>What information does FC need before launch?</summary><div class="faq-answer">Brand assets, the number of trial units, the target customer segment, reward rules, Shopify account or coupon settings, Klaviyo account or audience segmentation settings, shipping times, and success metrics.</div></details>
+          <details class="faq-item"><summary>What do we need to complete internally?</summary><div class="faq-answer">Confirm the campaign objectives, review the lead magnet and mobile experience, establish coupon or reward rules, provide Shopify and Klaviyo setup details, and coordinate shipping of the lead magnet.</div></details>
+          <details class="faq-item"><summary>Who adds the freebies to customer orders?</summary><div class="faq-answer">This depends on your fulfillment setup. Giveaways can be added to orders by your fulfillment team, a third-party logistics (3PL) provider, or your campaign operations partner.</div></details>
+          <details class="faq-item"><summary>Can we run a small-scale pilot first?</summary><div class="faq-answer">Yes. We recommend a small-scale pilot before scaling up, to validate click-through rates, reward conversion, and the impact on repeat purchases.</div></details>
+          <details class="faq-item"><summary>What pilot size do you recommend?</summary><div class="faq-answer">For the initial test, choose a sample large enough to observe the behavior of a representative customer group, yet small enough to keep costs and fulfillment complexity under control.</div></details>
+          <details class="faq-item"><summary>What happens after the pilot ends?</summary><div class="faq-answer">FC and your team jointly evaluate performance, identify the best-performing segments or reward schemes, and decide whether to scale up, adjust the program, renew for a second year, or conclude the project.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cat" id="g">
+      <div class="wrap">
+        <div class="cat-head"><span class="num">G</span><h2>Pricing, plans &amp; scaling</h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>Which plan is best for us?</summary><div class="faq-answer">For brands with repeat purchase potential, “Retention Moat” can be an ideal starting point, as segment-based incentives directly drive restocking and retention.</div></details>
+          <details class="faq-item"><summary>What is included in the first-year setup fee?</summary><div class="faq-answer">The first year includes the initial batch of physical fridge magnets plus system setup and launch services. The exact scope depends on the selected package and confirmed pilot requirements.</div></details>
+          <details class="faq-item"><summary>Why is a second-year renewal required?</summary><div class="faq-answer">Renewal keeps the tap experience, reward tiers, dashboard, and campaign infrastructure fully operational after the first year.</div></details>
+          <details class="faq-item"><summary>Can I upgrade after the initial pilot ends?</summary><div class="faq-answer">Yes. You can start with a simpler plan and upgrade later as campaigns move from brand awareness toward segment-based LTV growth or retention analysis.</div></details>
+          <details class="faq-item"><summary>Can I run multiple campaigns using the same magnet?</summary><div class="faq-answer">In principle, yes. The same physical magnet can serve as an ongoing touchpoint for new reward rounds, seasonal promotions, surveys, and restocking campaigns.</div></details>
+          <details class="faq-item"><summary>How is this different from email or text messages?</summary><div class="faq-answer">Emails and texts compete for attention in crowded digital channels. A magnet creates a physical reminder in the home that encourages customers to return when they’re in the kitchen or need to restock.</div></details>
+          <details class="faq-item"><summary>How is this different from a regular coupon insert?</summary><div class="faq-answer">Standard inserts are usually discarded after a single use. NFC magnets are designed to stay visible, generate repeat interactions, and link those interactions to measurable revenue.</div></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Still have a question that isn’t covered here?</p>
+      <a class="btn" href="gift-challenge.html#faq">← Back to the proposal</a>
+    </div>
+  </footer>
+</body>
+</html>

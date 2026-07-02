@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Uncle’s Coffee Bean Reward Challenge proposal">
+  <title>Reward Challenge Proposal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream:#f6f0e6; --paper:#fffaf2; --ink:#251b16; --muted:#74675e;
+      --rust:#c6633c; --gold:#e8b847; --forest:#17382b; --line:rgba(37,27,22,.14);
+      --shadow:0 28px 80px rgba(68,44,26,.14);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.55}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
+    a{color:inherit}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(246,240,230,.9);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-family:"Playfair Display",serif;font-size:1.18rem;font-weight:700}
+    .nav-links{display:flex;align-items:center;gap:24px;font-size:.82rem;font-weight:700}
+    .nav-links a{text-decoration:none}.eyebrow{font-size:.72rem;letter-spacing:.19em;text-transform:uppercase;font-weight:700;color:var(--rust)}
+    h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.02;margin:0}
+    h1{font-size:clamp(3.1rem,7.2vw,7rem);letter-spacing:-.055em}
+    h2{font-size:clamp(2.5rem,5vw,5rem);letter-spacing:-.045em}
+    h3{font-size:clamp(1.45rem,2.6vw,2.2rem)}
+    p{margin:0}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 22px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid var(--ink);transition:.2s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(37,27,22,.13)}
+    .btn-primary{background:var(--forest);color:white;border-color:var(--forest)}.btn-ghost{background:transparent}
+    section{padding:110px 0;border-bottom:1px solid var(--line)}.section-head{display:grid;grid-template-columns:.65fr 1.35fr;gap:40px;margin-bottom:58px}
+    .section-head p{max-width:620px;color:var(--muted);font-size:1.05rem;margin-top:18px}
+    .hero{min-height:calc(100vh - 72px);padding:42px 0 72px;display:flex;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:32px;align-items:center}
+    .hero-copy{padding:30px 0}.hero-copy .eyebrow{margin-bottom:26px}.hero-copy h1 em{font-weight:600;color:var(--rust)}
+    .hero-sub{font-family:"Playfair Display",serif;font-size:clamp(1.25rem,2vw,1.7rem);margin:26px 0 18px;max-width:650px}
+    .hero-body{color:var(--muted);max-width:620px}.flow{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0}
+    .flow span{padding:9px 12px;background:rgba(255,255,255,.65);border:1px solid var(--line);border-radius:999px;font-size:.79rem;font-weight:700}
+    .flow i{font-style:normal;align-self:center;color:var(--rust)}.actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-visual{position:relative;min-height:650px;border-radius:34px;overflow:hidden;background:#d9c6aa}
+    .hero-visual img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+    .hero-note{position:absolute;left:28px;bottom:28px;background:rgba(255,250,242,.93);padding:16px 18px;border-radius:16px;max-width:260px;font-size:.85rem;box-shadow:0 14px 36px rgba(0,0,0,.12)}
+    .image-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.image-card{position:relative;overflow:hidden;border-radius:28px;background:#ddd;min-height:520px}
+    .image-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.image-card .caption{position:absolute;left:22px;right:22px;bottom:22px;background:rgba(255,250,242,.94);padding:16px 18px;border-radius:16px}
+    .caption strong{display:block}.caption small{color:var(--muted)}.statement{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3vw,3rem);text-align:center;max-width:900px;margin:54px auto 0}
+    .journey{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}.steps{display:grid;gap:10px;position:sticky;top:100px}
+    .step{display:grid;grid-template-columns:48px 1fr;gap:14px;padding:18px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.42);cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+    .step b{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--forest);color:white}
+    .step p{color:var(--muted);font-size:.9rem}.journey-gallery{position:relative}
+    .journey-gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:22px;transition:opacity .22s ease}
+    .journey-single{overflow:hidden;border-radius:20px}
+    .journey-single img{display:block;width:100%;height:auto}
+    .experience-cta{display:grid;justify-items:start;gap:12px;margin-top:26px}
+    .experience-cta p{margin:0;color:#fff;font-family:"Inter",sans-serif;font-size:1rem;font-weight:700}
+    .experience-cta .btn{background:var(--gold);border-color:var(--gold);color:#000}
+    .demo-card{margin-top:26px;background:var(--forest);color:white;border-radius:24px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .demo-card p{opacity:.7;margin-top:5px}.demo-card .btn{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+    .reward-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}.gift-card{padding:38px;border-radius:28px;background:var(--forest);color:white;min-height:520px;display:flex;flex-direction:column}
+    .timer{align-self:flex-start;padding:8px 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;font-size:.76rem}
+    .gift-icon{font-size:5rem;margin:36px 0 10px}.gift-card h3{font-size:2.5rem}.gift-card>p{opacity:.72;margin-top:12px}
+    .rewards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:28px 0}.reward{padding:16px;border-radius:14px;background:rgba(255,255,255,.1);font-weight:700}
+    .progress{margin-top:auto}.progress-label{display:flex;justify-content:space-between;font-weight:700;margin-bottom:10px}.track{height:12px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden}.track i{display:block;width:10%;height:100%;background:var(--gold);border-radius:99px}
+    .control-stack{display:grid;gap:22px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:28px}
+    .panel h3{font-size:1.65rem;margin-bottom:16px}.coupon-row,.segment-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:13px 0;border-top:1px solid var(--line);align-items:center}.coupon-row small,.segment-row small{display:block;color:var(--muted)}.status{font-size:.7rem;font-weight:700;color:var(--forest);padding:6px 8px;background:#dbe9df;border-radius:999px}
+    .config-intro{display:block;margin:-18px 0 32px;padding:0;background:transparent;border:0}
+    .config-intro .btn{display:flex;width:100%;height:72px;align-items:center;justify-content:center;margin:0;font-size:.9rem}
+    .config-carousel{background:#fff;border:1px solid #e5e7eb;border-radius:20px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.09)}
+    .config-carousel-head{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 28px;border-bottom:1px solid #e5e7eb}
+    .config-copy h3{color:#111;margin:0}.config-copy p{color:#6b7280;margin:5px 0 0}
+    .config-tabs{display:flex;gap:8px}.config-tab{height:auto;padding:9px 14px;border:1px solid #d1d5db;background:#fff;color:#6b7280;border-radius:999px;font-size:.72rem}
+    .config-tab.is-active{background:var(--brand-dark);border-color:var(--brand-dark);color:#fff}
+    .config-stage{position:relative;background:#f3f4f6;aspect-ratio:16/8;overflow:hidden}
+    .config-stage img{display:block;width:100%;height:100%;object-fit:contain;transition:opacity .18s ease}
+    .config-arrow{position:absolute;top:50%;width:46px;height:46px;padding:0;border-radius:50%;background:rgba(5,5,5,.82);color:#fff;transform:translateY(-50%);z-index:2}
+    .config-arrow.prev{left:18px}.config-arrow.next{right:18px}
+    .config-walkthrough{display:block}
+    .config-steps{display:grid}
+    .config-step{display:flex;flex-direction:column;padding:48px 0;border-top:1px solid rgba(32,23,18,.16)}
+    .config-step:first-child{border-top:0;padding-top:0}
+    .config-step span{color:var(--rust);font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .config-step h3{margin-top:14px;color:#201712;font-size:clamp(1.8rem,3vw,3.2rem);line-height:1.08}
+    .config-step p{margin-top:16px;color:#6b7280;font-size:1rem;line-height:1.65}
+    .config-sticky{display:none}
+    .config-step-mobile{display:block;width:100%;height:auto;margin-top:26px;border-radius:16px}
+    .dashboard-carousel{background:#fff;border:1px solid #e5e7eb;border-radius:20px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.09)}
+    .dashboard-carousel-head{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 28px;border-bottom:1px solid #e5e7eb}
+    .dashboard-carousel-copy h3{color:#111;margin:0}.dashboard-carousel-copy p{color:#6b7280;margin:5px 0 0}
+    .dashboard-tabs{display:flex;gap:8px}.dashboard-tab{height:auto;padding:9px 14px;border:1px solid #d1d5db;background:#fff;color:#6b7280;border-radius:999px;font-size:.72rem}
+    .dashboard-tab.is-active{background:var(--brand-dark);border-color:var(--brand-dark);color:#fff}
+    .dashboard-stage{position:relative;display:grid;place-items:center;background:#f3f4f6;aspect-ratio:2/1;overflow:hidden}
+    .dashboard-stage img{display:block;width:100%;height:100%;object-fit:contain;transition:opacity .18s ease}
+    .dashboard-arrow{position:absolute;top:50%;width:46px;height:46px;padding:0;border-radius:50%;background:rgba(5,5,5,.82);color:#fff;transform:translateY(-50%);z-index:2}
+    .dashboard-arrow.prev{left:18px}.dashboard-arrow.next{right:18px}
+    .dashboard-walkthrough{display:block}
+    .dashboard-steps{display:grid}
+    .dashboard-step{display:flex;flex-direction:column;padding:48px 0;border-top:1px solid rgba(32,23,18,.16)}
+    .dashboard-step:first-child{border-top:0;padding-top:0}
+    .dashboard-step span{color:var(--rust);font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .dashboard-step h3{margin-top:14px;color:#201712;font-size:clamp(1.8rem,3vw,3.2rem);line-height:1.08}
+    .dashboard-step p{margin-top:16px;color:#6b7280;font-size:1rem;line-height:1.65}
+    .dashboard-sticky{display:none}
+    .dashboard-step-mobile{display:block;width:100%;height:auto;margin-top:26px;border-radius:16px}
+    .dashboard-shell{background:#201914;border-radius:30px;padding:18px;box-shadow:var(--shadow)}.dash-top{color:white;display:flex;justify-content:space-between;align-items:center;padding:12px 8px 22px}.dash-top span{opacity:.55;font-size:.8rem}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.metric{background:var(--paper);padding:22px;border-radius:16px}.metric small{display:block;color:var(--muted);min-height:42px}.metric strong{font-family:"Playfair Display",serif;font-size:2.1rem}.metric em{display:block;font-style:normal;color:var(--forest);font-size:.72rem;margin-top:4px}
+    .dash-lower{display:grid;grid-template-columns:.7fr 1.3fr;gap:10px;margin-top:10px}.physical,.funnel{background:var(--paper);padding:24px;border-radius:18px}
+    .physical-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}.physical-grid div{background:#f1e9de;padding:14px;border-radius:12px}.physical-grid strong{display:block;font-size:1.35rem}
+    .funnel-row{display:grid;grid-template-columns:140px 1fr 54px;gap:10px;align-items:center;margin-top:12px;font-size:.78rem}.bar{height:15px;border-radius:99px;background:#eee5dc;overflow:hidden}.bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--rust),#d88d58)}
+    .dash-cta{margin-top:24px;display:flex;justify-content:space-between;align-items:center;gap:24px}.dash-cta p{color:var(--muted)}
+    .pricing{background:var(--forest);color:white}.pricing .eyebrow{color:var(--gold)}.pricing .section-head p{color:rgba(255,255,255,.62)}
+    .packages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.package{border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:26px;background:rgba(255,255,255,.06)}
+    .package.featured{background:var(--paper);color:var(--ink);transform:translateY(-12px)}.package h3{font-size:2rem}.pkg-price{font-size:2.3rem;font-weight:700;margin:18px 0 2px}.pkg-price span{font-size:.85rem;font-weight:500;opacity:.62}
+    .package ul{list-style:none;padding:0;margin:22px 0 0}.package li{padding:8px 0;border-top:1px solid currentColor;border-color:rgba(128,128,128,.25);font-size:.85rem}
+    .calculator{margin-top:32px;background:var(--paper);color:var(--ink);border-radius:26px;padding:30px}.calc-inputs{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
+    label{display:grid;gap:7px;font-size:.76rem;font-weight:700}input{width:100%;height:52px;border:1px solid var(--line);border-radius:12px;background:white;padding:0 14px;font:inherit;font-weight:700}
+    button{height:52px;border:0;border-radius:12px;background:var(--rust);color:white;padding:0 22px;font:inherit;font-weight:700;cursor:pointer}.results{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+    .result{padding:18px;border:1px solid var(--line);border-radius:16px}.result b{display:block}.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.result-grid span{font-size:.69rem;color:var(--muted)}.result-grid strong{display:block;font-size:1.12rem}
+    .footer{padding:90px 0 36px}.footer-box{background:var(--rust);color:white;padding:50px;border-radius:30px;display:flex;justify-content:space-between;align-items:end;gap:30px}.footer-box h2{font-size:clamp(2.5rem,5vw,5.2rem);max-width:700px}.footer-box .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+    .fineprint{font-size:.7rem;color:var(--muted);margin:24px auto 0;max-width:980px;text-align:center}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:900px){.nav-links a:not(.btn){display:none}.hero-grid,.section-head,.journey,.reward-layout{grid-template-columns:1fr}.hero-visual{min-height:500px}.image-grid{grid-template-columns:1fr}.steps{position:static}.metrics{grid-template-columns:1fr 1fr}.dash-lower{grid-template-columns:1fr}.packages{grid-template-columns:1fr}.package.featured{transform:none}.calc-inputs,.results{grid-template-columns:1fr}.footer-box{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.wrap{width:min(100% - 24px,1180px)}section{padding:74px 0}.hero{padding-top:24px}.hero-visual{min-height:420px}.journey-gallery img{aspect-ratio:4/3}.demo-card,.dash-cta,.config-intro,.config-carousel-head,.dashboard-carousel-head{align-items:flex-start;flex-direction:column}.config-tabs,.dashboard-tabs{width:100%;overflow:auto}.config-stage,.dashboard-stage{aspect-ratio:4/3}.rewards,.metrics,.physical-grid{grid-template-columns:1fr}.funnel-row{grid-template-columns:95px 1fr 40px}.footer-box{padding:30px}}
+
+    /* FridgeChannel proposal visual system — shared with the original Nike deck */
+    :root{
+      --cream:#050505;--paper:#fff;--ink:#fff;--muted:#888;
+      --rust:#ff5a1f;--gold:#d8ff2f;--forest:#050505;
+      --brand-dark:#050505;--brand-light:#f7f7f7;
+      --line:rgba(255,255,255,.1);--shadow:0 30px 60px rgba(0,0,0,.42)
+    }
+    body{background:var(--brand-dark);color:#fff;font-family:"Inter",-apple-system,sans-serif}
+    body:before{display:none}
+    h1,h2,h3,.brand{font-family:"Inter",-apple-system,sans-serif}
+    h1{font-weight:900;line-height:1.06;letter-spacing:-.045em}
+    h2{font-weight:800;line-height:1.08;letter-spacing:-.035em}
+    h3{font-weight:800}
+    .eyebrow{font-family:"Roboto Mono",monospace;color:var(--rust)}
+    .nav{background:color-mix(in srgb,var(--brand-dark) 90%,transparent);border-color:rgba(255,255,255,.1)}
+    .nav-inner{height:76px}.brand{font-weight:900}.nav-links{font-family:"Roboto Mono",monospace;text-transform:uppercase;font-size:.72rem}
+    .btn{border-color:#fff;border-radius:999px;text-transform:uppercase;letter-spacing:.045em;font-size:.82rem}
+    .btn-primary{background:var(--gold);border-color:var(--gold);color:#000}
+    section{min-height:100vh;padding:8rem 0;border-color:rgba(255,255,255,.1)}
+    .section-head{grid-template-columns:1fr;gap:18px}
+    .section-head>div:last-child{width:100%}
+    .section-head h2{max-width:none}
+    .section-kicker-row{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .section-kicker-row .btn{flex-shrink:0;padding:0 18px;font-size:.72rem}
+    .hero{background:radial-gradient(circle at 78% 45%,color-mix(in srgb,var(--gold) 12%,transparent),transparent 46%),var(--brand-dark);padding-top:4rem}
+    .hero-grid{grid-template-columns:1fr;gap:3rem}
+    .hero-copy{max-width:none;padding-bottom:0}
+    .hero-copy h1{max-width:none;font-size:clamp(2.25rem,3.2vw,3.6rem);line-height:1.04;letter-spacing:-.04em}
+    .hero-copy .hero-sub,.hero-copy .hero-body{max-width:650px}
+    .hero-copy h1 em{font-style:normal;color:var(--gold)}
+    .hero-sub{font-family:"Inter",sans-serif;font-weight:700;color:#fff}
+    .hero-body{margin-top:28px;color:#888;line-height:1.65}.section-head p{color:#888}.flow span{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}.flow i{color:var(--rust)}
+    .hero-visual{min-height:0;border-radius:24px;transform:none}
+    .hero-visual:hover{transform:none}
+    .hero-visual img{position:static;display:block;width:100%;height:auto;object-fit:contain}
+    .hero-note{background:rgba(5,5,5,.92);color:#fff;border:1px solid rgba(255,255,255,.12)}
+    #touchpoint,#experience{background:var(--brand-dark);color:#fff}
+    #touchpoint .section-head p,#experience .section-head p{color:#888}
+    #touchpoint{border-bottom:0;padding-bottom:5rem}
+    #experience{padding-top:5rem}
+    #rewards,#results{background:var(--brand-light);color:#201712}
+    #rewards .section-head p,#results .section-head p{color:#777}
+    #rewards{border-bottom:0;padding-bottom:5rem}
+    #results{padding-top:5rem}
+    .touchpoint-story{display:grid;gap:7rem}
+    .touchpoint-part{display:grid;gap:28px}
+    .touchpoint-part-copy{max-width:920px}
+    .touchpoint-part-copy span{display:block;margin-bottom:10px;color:var(--rust);font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .touchpoint-part-copy h3{font-size:clamp(1.8rem,3vw,3.2rem);line-height:1.08}
+    .touchpoint-part-copy>p{max-width:720px;margin-top:20px;color:#a8b5af;font-size:1rem;line-height:1.65}
+    .touchpoint-part img{position:static;display:block;width:100%;height:auto;border-radius:18px;object-fit:contain}
+    .touchpoint-part.is-overview{grid-template-columns:minmax(320px,.78fr) minmax(0,1.22fr);align-items:center;gap:clamp(40px,6vw,88px)}
+    .touchpoint-attributes{display:grid;margin-top:34px}
+    .touchpoint-attribute{display:grid;grid-template-columns:170px 1fr;gap:22px;padding:18px 0;border-top:1px solid rgba(255,255,255,.16)}
+    .touchpoint-attribute strong{font-size:.9rem}.touchpoint-attribute p{color:#a8b5af;line-height:1.5}
+    .caption{font-family:"Inter",sans-serif}
+    .statement{font-family:"Inter",sans-serif;font-weight:900;letter-spacing:-.035em}
+    .step{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.1);border-radius:16px}
+    .step b{background:var(--gold);color:#000}.step p{color:#888}
+    .step:hover,.step:focus-visible,.step.is-active{background:color-mix(in srgb,var(--gold) 9%,transparent);border-color:var(--gold);transform:translateX(4px);outline:none}
+    .journey-gallery img{border-radius:16px}.demo-card{background:var(--brand-dark);border:1px solid rgba(255,255,255,.1);border-radius:16px}.demo-card .btn{background:var(--gold);border-color:var(--gold)}
+    .gift-card{background:var(--brand-dark);border-radius:18px}.reward{border:1px solid rgba(255,255,255,.12);border-radius:10px}
+    .panel{background:#fff;border-color:#e5e7eb;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.06)}.panel h3{color:#111}.coupon-row,.segment-row{border-color:#e5e7eb;color:#111}
+    .dashboard-shell{background:#fff;border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:1.4rem}
+    .dash-top{color:#111}.dash-top span{color:#6b7280;opacity:1}
+    .metric,.physical,.funnel{background:#f7f7f7;border:1px solid #e5e7eb;color:#111;border-radius:12px}
+    .metric small{color:#6b7280}.metric em{color:#16a34a}.physical-grid div{background:#fff;border:1px solid #e5e7eb}
+    .bar{background:#e5e7eb}.bar i{background:linear-gradient(90deg,var(--rust),var(--gold))}
+    .dash-cta p{color:#888}
+    .pricing{background:var(--brand-light);color:#201712}.pricing .eyebrow{color:var(--rust)}.pricing .section-head p{color:#777}
+    .packages{gap:2rem}.package{background:#fff;color:#111;border:0;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.06);padding:1.5rem}
+    .package.featured{transform:none}.package:hover{transform:translateY(-4px);box-shadow:0 24px 70px rgba(0,0,0,.14)}
+    .pkg-price{color:var(--rust)}.package li{border-color:#e5e7eb}.package li:before{content:"—";color:var(--rust);margin-right:.5rem}
+    .calculator{background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.07)}
+    label{font-family:"Roboto Mono",monospace;color:var(--rust);text-transform:uppercase}
+    input{border:0;border-bottom:2px solid #d1d5db;border-radius:0;font-size:2rem;height:58px;padding:0;background:transparent}
+    button{background:var(--gold);color:#000;border-radius:999px;text-transform:uppercase;letter-spacing:.04em}
+    .result{border-color:#e5e7eb;border-radius:14px}.result-grid span{color:#6b7280}
+    .footer{background:var(--brand-dark)}.footer-box{background:transparent;color:#fff;border-radius:0;text-align:center;align-items:center;flex-direction:column;padding:30px 0}
+    .footer-box h2{max-width:900px}.footer-box .eyebrow{color:var(--gold)!important}.footer-box .btn{background:var(--gold);color:#000;border-color:var(--gold)}.fineprint{color:#777}
+    .pricing-host{display:block;min-height:0;padding:0;background:var(--brand-light)}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.section-head{grid-template-columns:1fr}.nav-links a:not(.btn){display:none}.touchpoint-story{gap:5rem}.touchpoint-part.is-overview{grid-template-columns:1fr}.touchpoint-attribute{grid-template-columns:1fr;gap:7px}.config-walkthrough,.dashboard-walkthrough{grid-template-columns:1fr}.config-step,.dashboard-step{min-height:0;opacity:1;padding:42px 0}.config-sticky,.dashboard-sticky{display:none}.config-step-mobile,.dashboard-step-mobile{display:block;width:100%;height:auto;margin-top:28px}}
+
+    /* How We Work Together — swimlane */
+    #process{background:var(--brand-light);color:#201712}
+    #process .section-head p{color:#5f5f5f}
+    .swimlane{margin-top:8px}
+    .swim-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);margin-bottom:26px}
+    .lane-label{font-family:"Roboto Mono",monospace;font-size:1.02rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding-bottom:14px;border-bottom:2px solid rgba(0,0,0,.16)}
+    .lane-fc{color:var(--rust)}
+    .lane-brand{color:var(--forest);text-align:right}
+    .swim-steps{position:relative;display:grid;gap:22px}
+    .swim-steps:before{content:"";position:absolute;top:6px;bottom:6px;left:50%;width:2px;background:rgba(0,0,0,.14);transform:translateX(-50%)}
+    .swim-row{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px)}
+    .swim-row:before{content:"";position:absolute;left:50%;top:34px;width:13px;height:13px;border-radius:50%;background:var(--rust);transform:translate(-50%,-50%);box-shadow:0 0 0 5px var(--brand-light);z-index:2}
+    .swim-row.is-fc .swim-card{grid-column:1}
+    .swim-row.is-brand .swim-card{grid-column:2}
+    .swim-row.is-joint .swim-card{grid-column:1 / -1;background:rgba(23,56,43,.07)}
+    .swim-row.is-joint:before{top:auto;bottom:0;transform:translate(-50%,50%)}
+    .swim-row.is-joint:last-child:before{top:0;bottom:auto;transform:translate(-50%,-50%)}
+    .swim-card{background:var(--paper);border:1px solid rgba(0,0,0,.1);border-radius:16px;padding:20px 22px}
+    .swim-card-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .swim-num{font-family:"Roboto Mono",monospace;font-size:.74rem;font-weight:700;color:var(--rust)}
+    .swim-days{margin-left:auto;font-family:"Roboto Mono",monospace;font-size:.66rem;font-weight:700;letter-spacing:.05em;color:#5f5f5f;padding:4px 10px;border:1px solid rgba(0,0,0,.18);border-radius:999px}
+    .swim-card h4{font-size:1.08rem;font-weight:800;margin:0 0 8px}
+    .swim-card p{color:#5f5f5f;font-size:.9rem;line-height:1.55;margin:0}
+    .swim-note{margin-top:10px;color:#7a7268;font-size:.76rem;font-style:italic}
+    .swim-output{margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,0,0,.1);font-family:"Roboto Mono",monospace;font-size:.72rem;letter-spacing:.04em;color:#5f5f5f}
+    .swim-output b{color:var(--rust);font-weight:700}
+    @media(max-width:760px){
+      .swim-head{display:none}
+      .swim-steps:before{left:7px}
+      .swim-row{grid-template-columns:1fr;padding-left:30px}
+      .swim-row:before{left:7px;top:26px}
+      .swim-row.is-joint:before,.swim-row.is-joint:last-child:before{top:26px;bottom:auto;transform:translate(-50%,-50%)}
+      .swim-row.is-fc .swim-card,.swim-row.is-brand .swim-card,.swim-row.is-joint .swim-card{grid-column:1}
+    }
+
+    /* FAQ */
+    #faq{background:var(--brand-dark);color:#fff}
+    #faq .section-head p{color:#a8b5af}
+    .faq-list{border-top:1px solid rgba(255,255,255,.14)}
+    .faq-item{border-bottom:1px solid rgba(255,255,255,.14)}
+    .faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 2px;font-weight:700;font-size:1.02rem;color:#fff}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary:after{content:"+";font-family:"Roboto Mono",monospace;font-size:1.5rem;line-height:1;color:var(--rust);flex-shrink:0}
+    .faq-item[open] summary:after{content:"–"}
+    .faq-item summary:hover{color:var(--rust)}
+    .faq-answer{margin:0 2px;padding:0 40px 24px 2px;color:#a8b5af;font-size:.95rem;line-height:1.65}
+    .faq-viewall{display:inline-flex;align-items:center;gap:8px;margin-top:34px;font-family:"Roboto Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px;transition:.2s ease}
+    .faq-viewall:hover{color:#fff;border-color:#fff}
+
+    /* Section palette: warm cream throughout, with a forest-green final section. */
+    main>section{background:#f6f0e6!important;color:#201712!important}
+    main>section .section-head p,
+    main>section .hero-body{color:#6b625c}
+    main>section .hero-sub,
+    main>section .experience-cta p{color:#201712}
+    main>section .flow span{background:rgba(255,255,255,.72);border-color:rgba(32,23,18,.14)}
+    main>section .touchpoint-part-copy>p,
+    main>section .touchpoint-attribute p{color:#6b625c}
+    main>section .touchpoint-attribute{border-color:rgba(32,23,18,.14)}
+    #faq .section-head p,
+    #faq .faq-answer{color:#6b625c}
+    #faq .faq-list,
+    #faq .faq-item{border-color:rgba(32,23,18,.14)}
+    #faq .faq-item summary{color:#201712}
+    #faq .faq-viewall{color:var(--rust);border-color:var(--rust)}
+    main>section.hero{background:#17382b!important;color:#fff!important}
+    main>section.hero h1{text-align:center}
+    main>section.hero .hero-sub{max-width:none;color:#f6f0e6;font-weight:400;text-align:center}
+    .section-kicker-row .btn,
+    .section-kicker-row .btn-primary{background:#17382b;border-color:#17382b;color:#fff}
+    .footer{background:#17382b}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <h1 data-field="hero_title">Uncle’s Coffee Bean Reward Challenge Pilot Proposal</h1>
+          <p class="hero-sub" data-field="hero_subtitle">Turn every delivered order into a post-purchase growth surface</p>
+        </div>
+        <div class="hero-visual reveal"><img data-image="hero_image_url" alt="Uncle’s Coffee Bean reward box and NFC magnet"></div>
+      </div>
+    </section>
+
+    <section id="touchpoint">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">01 — Physical touchpoint</div><div><h2>Designed to live in the kitchen.</h2></div></div>
+        <div class="touchpoint-story">
+          <article class="touchpoint-part is-overview reveal">
+            <img data-image="physical_image_url" alt="Front and back of the Uncle’s Coffee Bean magnet">
+            <div class="touchpoint-part-copy">
+              <span>01 — Product Specs</span>
+              <h3>Product Specs</h3>
+              <div class="touchpoint-attributes">
+                <div class="touchpoint-attribute"><strong>Format</strong><p>Double-sided branded NFC fridge magnet</p></div>
+                <div class="touchpoint-attribute"><strong>Size</strong><p>11.4 × 6.4 cm</p></div>
+                <div class="touchpoint-attribute"><strong>Surface</strong><p>Creator-selected matte printed medium</p></div>
+                <div class="touchpoint-attribute"><strong>Interaction</strong><p>Tap-activated NFC</p></div>
+                <div class="touchpoint-attribute"><strong>Experience</strong><p>Opens a branded web reward page</p></div>
+                <div class="touchpoint-attribute"><strong>App required</strong><p>No</p></div>
+                <div class="touchpoint-attribute"><strong>Mobile compatibility</strong><p>Works on NFC-enabled iPhone and Android devices</p></div>
+                <div class="touchpoint-attribute"><strong>Placement</strong><p>Designed for fridge-door visibility and everyday kitchen presence</p></div>
+                <div class="touchpoint-attribute"><strong>Design</strong><p>Brand-matched front and back artwork</p></div>
+                <div class="touchpoint-attribute"><strong>Brand fit</strong><p>Mobile reward page matched to your brand theme, copy, and visual tone</p></div>
+                <div class="touchpoint-attribute"><strong>Use case</strong><p>Reward unlocks, coupon claims, surveys, loyalty actions, and repeat-purchase flows</p></div>
+              </div>
+            </div>
+          </article>
+          <article class="touchpoint-part reveal">
+            <div class="touchpoint-part-copy"><span>02 — Place &amp; tap</span><h3>Customer place it on the fridge, and it’s instantly ready to use with a single tap.</h3></div>
+            <img data-image="tap_image_url" alt="Uncle’s Coffee Bean magnet being placed on a refrigerator">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">02 — Customer experience</div><div><h2>Five simple moments. One clear reward.</h2><div class="section-kicker-row"><p>A frictionless journey from package arrival to the next purchase.</p><a class="btn" data-link="customer_demo_url" target="_blank" rel="noopener">Open Mobile Experience ↗</a></div></div></div>
+        <div class="journey-single reveal">
+          <img data-image="journey_image_1_url" alt="Uncle’s Coffee Bean customer experience">
+        </div>
+      </div>
+    </section>
+
+    <section id="rewards">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">03 — Campaign configuration</div><div><h2>Control the campaign without adding complexity.</h2><div class="section-kicker-row"><p>Coupon rules, customer segments, and challenge surveys can all be configured from one brand workspace.</p><a class="btn btn-primary" data-link="dashboard_url" target="_blank" rel="noopener">Open Campaign Dashboard ↗</a></div></div></div>
+        <div class="config-walkthrough reveal">
+          <div class="config-steps">
+            <article class="config-step is-active" data-config-step="config_coupon_image_url" data-config-alt="Coupon configuration screen" tabindex="0">
+              <span>01 — Configure coupons</span>
+              <h3>Define the reward.</h3>
+              <p>Set the coupon type, value, code inventory, usage limits, and Shopify sync rules.</p>
+              <img class="config-step-mobile" data-image="config_coupon_image_url" alt="Coupon configuration screen">
+            </article>
+            <article class="config-step" data-config-step="config_segment_image_url" data-config-alt="Segment coupon assignment screen" tabindex="0">
+              <span>02 — Assign segments</span>
+              <h3>Match the right offer to the right customer.</h3>
+              <p>Connect coupons and reward strategies to lifecycle segments such as new, active, winback, and VIP customers.</p>
+              <img class="config-step-mobile" data-image="config_segment_image_url" alt="Segment coupon assignment screen">
+            </article>
+            <article class="config-step" data-config-step="config_survey_image_url" data-config-alt="Survey configuration screen" tabindex="0">
+              <span>03 — Build the interaction</span>
+              <h3>Turn customer feedback into a game.</h3>
+              <p>Create branded questions and challenge flows that earn points while capturing useful customer signals.</p>
+              <img class="config-step-mobile" data-image="config_survey_image_url" alt="Survey configuration screen">
+            </article>
+          </div>
+          <div class="config-sticky">
+            <div class="config-sticky-stage">
+              <img data-config-image data-image="config_coupon_image_url" alt="Coupon configuration screen">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">04 — Dashboard & results</div><div><h2>From physical tap to measurable revenue.</h2><p>A focused, read-only view connects in-home engagement with reward usage, orders, and campaign-attributed revenue.</p></div></div>
+        <div class="dashboard-walkthrough reveal">
+          <div class="dashboard-steps">
+            <article class="dashboard-step is-active" data-dashboard-step="dashboard_revenue_image_url" data-dashboard-alt="Revenue overview dashboard" tabindex="0">
+              <span>01 — Revenue overview</span>
+              <h3>See the business result.</h3>
+              <p>Track attributed revenue, repeat purchases, retention, revenue growth, and revenue per active magnet.</p>
+              <img class="dashboard-step-mobile" data-image="dashboard_revenue_image_url" alt="Revenue overview dashboard">
+            </article>
+            <article class="dashboard-step" data-dashboard-step="dashboard_funnel_image_url" data-dashboard-alt="Physical touchpoint and coupon revenue funnel dashboard" tabindex="0">
+              <span>02 — Touchpoint &amp; funnel</span>
+              <h3>See how engagement becomes revenue.</h3>
+              <p>Follow the journey from active devices and participants through coupons earned, coupons used, orders, and revenue.</p>
+              <img class="dashboard-step-mobile" data-image="dashboard_funnel_image_url" alt="Physical touchpoint and coupon revenue funnel dashboard">
+            </article>
+          </div>
+          <div class="dashboard-sticky">
+            <div class="dashboard-sticky-stage">
+              <img data-dashboard-image data-image="dashboard_revenue_image_url" alt="Revenue overview dashboard">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-host" id="pilot">
+      <div id="pricing-shadow-host" aria-live="polite"></div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">05 — How we work together</div><div><h2>How We Work Together</h2><p>From signed agreement to live customer engagement, each step has a clear owner, output, and next action.</p></div></div>
+        <div class="swimlane reveal">
+          <div class="swim-head"><div class="lane-label lane-fc">FC</div><div class="lane-label lane-brand" data-field="brand_name">Uncle’s Coffee Bean</div></div>
+          <div class="swim-steps">
+            <div class="swim-row is-joint">
+              <div class="swim-card">
+                <div class="swim-card-top"><span class="swim-num">01</span></div>
+                <h4>Agreement &amp; kickoff</h4>
+                <div class="swim-output"><b>Output:</b> Pilot officially starts.</div>
+              </div>
+            </div>
+            <div class="swim-row is-brand">
+              <div class="swim-card">
+                <div class="swim-card-top"><span class="swim-num">02</span><span class="swim-days">~1 day</span></div>
+                <h4>Brand inputs &amp; campaign rules</h4>
+                <p>Brand provides logo, colors, product references, target audience, reward rules, and Shopify / Klaviyo requirements. FC translates them into setup requirements.</p>
+                <div class="swim-output"><b>Output:</b> Campaign setup brief confirmed.</div>
+              </div>
+            </div>
+            <div class="swim-row is-fc">
+              <div class="swim-card">
+                <div class="swim-card-top"><span class="swim-num">03</span><span class="swim-days">~2 days</span></div>
+                <h4>NFC magnet design</h4>
+                <p>FC designs the front and back of the branded NFC fridge magnet and prepares production files. Brand approves — two standard revision rounds included.</p>
+                <div class="swim-output"><b>Output:</b> Final magnet artwork approved.</div>
+              </div>
+            </div>
+            <div class="swim-row is-fc">
+              <div class="swim-card">
+                <div class="swim-card-top"><span class="swim-num">04</span><span class="swim-days">~1 day</span></div>
+                <h4>Mobile reward experience &amp; dashboard setup</h4>
+                <p>FC configures the branded reward page, challenge flow, points and unlock logic, tracking events, and the campaign dashboard. Brand confirms key rules.</p>
+                <div class="swim-output"><b>Output:</b> Tap experience and dashboard ready.</div>
+              </div>
+            </div>
+            <div class="swim-row is-brand">
+              <div class="swim-card">
+                <div class="swim-card-top"><span class="swim-num">05</span><span class="swim-days">~1 day</span></div>
+                <h4>Shopify &amp; Klaviyo connection</h4>
+                <p>Brand connects Shopify and Klaviyo through its own secure authorization. FC assists with coupon rules, segment logic, reward setup, and measurement.</p>
+                <div class="swim-output"><b>Output:</b> Brand systems connected for launch.</div>
+              </div>
+            </div>
+            <div class="swim-row is-fc">
+              <div class="swim-card">
+                <div class="swim-card-top"><span class="swim-num">06</span><span class="swim-days">7–10 days</span></div>
+                <h4>Production, QA &amp; delivery</h4>
+                <p>FC produces the magnets, sets the NFC destination, runs tap tests, verifies reward logic, and ships to the agreed location. Brand confirms the delivery address.</p>
+                <div class="swim-note">After final artwork approval — depending on quantity and destination.</div>
+                <div class="swim-output"><b>Output:</b> Finished NFC magnets delivered.</div>
+              </div>
+            </div>
+            <div class="swim-row is-brand">
+              <div class="swim-card">
+                <div class="swim-card-top"><span class="swim-num">07</span></div>
+                <h4>Fulfillment launch</h4>
+                <p>Brand decides which customers receive magnets and includes them in selected orders via its warehouse, fulfillment team, or 3PL. FC keeps the experience live.</p>
+                <div class="swim-output"><b>Output:</b> Magnets enter customer homes through real shipments.</div>
+              </div>
+            </div>
+            <div class="swim-row is-joint">
+              <div class="swim-card">
+                <div class="swim-card-top"><span class="swim-num">08</span></div>
+                <h4>Results review &amp; next step</h4>
+                <p>Brand reviews active magnets, taps, challenge participation, rewards unlocked, coupons redeemed, repeat orders, and attributed revenue. FC provides the pilot readout, insights, and scale recommendation.</p>
+                <div class="swim-output"><b>Output:</b> Decide whether to scale, adjust, or stop.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">06 — FAQ</div><div><h2>Brand FAQs</h2><p>Everything your growth, e-commerce, CRM, and operations teams might want to know before launching a first pilot.</p></div></div>
+        <div class="faq-list reveal">
+          <details class="faq-item"><summary>Do customers need to download an app?</summary><div class="faq-answer">No. Customers simply tap the NFC fridge magnet to open your brand’s mobile rewards page directly in their browser.</div></details>
+          <details class="faq-item"><summary>Do customers need to scan a QR code?</summary><div class="faq-answer">No. The feature is activated by NFC touch, so customers do not need to open their camera or scan a QR code.</div></details>
+          <details class="faq-item"><summary>Is this feature supported on iPhone and Android devices?</summary><div class="faq-answer">Yes, this experience is designed for NFC-enabled iPhone and Android devices. During the pilot deployment, FC will verify that tap-to-activate works properly on common devices before the official launch.</div></details>
+          <details class="faq-item"><summary>What specific content do you need to provide?</summary><div class="faq-answer">Brand assets, logos, and color schemes; campaign rules; target audience demographics; terms for coupons or reward packs; Shopify account or coupon settings; Klaviyo account or audience segmentation settings; shipping times; and success-rate metrics.</div></details>
+          <details class="faq-item"><summary>What is FC responsible for?</summary><div class="faq-answer">FC prepares the brand magnet settings, mobile rewards experience, campaign configuration, coupon logic, dashboards, pilot checklists, and reporting structures.</div></details>
+          <details class="faq-item"><summary>How do customers redeem rewards?</summary><div class="faq-answer">Customers tap the “Magnet” button, complete the challenge, and unlock a coupon or reward pack. The system then redirects them back to your checkout, where they can apply the promo code on their next order.</div></details>
+          <details class="faq-item"><summary>How can I determine if the campaign is effective?</summary><div class="faq-answer">The dashboard tracks active magnets, click-throughs, challenge participation, unlocked promo codes, redeemed promo codes, repeat orders, attributed revenue, and revenue generated per active magnet.</div></details>
+          <details class="faq-item"><summary>Can rewards be customized for different customer segments?</summary><div class="faq-answer">Yes. Depending on your selected plan, you can assign offers to segments based on lifecycle stage — such as new, active, returning, repeat, and VIP customers.</div></details>
+          <details class="faq-item"><summary>What happens if a customer doesn’t tap?</summary><div class="faq-answer">This is exactly what the pilot is designed to measure. The initial pilot validates the magnet’s activation rate, click-through behavior, coupon usage, repurchase rate, and whether this channel is worth scaling.</div></details>
+          <details class="faq-item"><summary>What is the recommended next step?</summary><div class="faq-answer">Start with a limited-scope pilot: define the target audience, volume, reward rules, shipping windows, Shopify settings, Klaviyo segmentation, and success metrics. FC will prepare the pilot experience and dashboard before launch.</div></details>
+        </div>
+        <a class="faq-viewall" href="/faq.html">View all the questions brands commonly ask ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap"><div class="footer-box reveal"><div><div class="eyebrow" style="color:#fff">Ready for the next step?</div><h2>Turn the next shipment into the next order.</h2></div><a class="btn" data-link="footer_button_url">Schedule a Pilot Planning Call ↗</a></div><p class="fineprint">Sample data shown for demonstration only. Final coupon terms, quantities, Shopify setup, and campaign rules will be confirmed during pilot setup.</p></div>
+  </footer>
+
+  <script>
+    const pathMatch = /^\/gift-proposal\/([^/?#]+)\/?$/.exec(location.pathname);
+    const proposalId = pathMatch ? decodeURIComponent(pathMatch[1]) : new URLSearchParams(location.search).get('id');
+    const fallbackId = proposalId || 'UCB-GIFT-001';
+    let proposalData = {};
+
+    function applyData(data) {
+      proposalData = data;
+      if (data.brand_primary_color) document.documentElement.style.setProperty('--rust', data.brand_primary_color);
+      if (data.brand_second_color) document.documentElement.style.setProperty('--gold', data.brand_second_color);
+      if (data.brand_dark_color) {
+        document.documentElement.style.setProperty('--forest', data.brand_dark_color);
+        document.documentElement.style.setProperty('--brand-dark', data.brand_dark_color);
+      }
+      if (data.brand_light_color) document.documentElement.style.setProperty('--brand-light', data.brand_light_color);
+      const pricingHost = document.getElementById('pricing-shadow-host');
+      if (pricingHost) {
+        if (data.brand_primary_color) pricingHost.style.setProperty('--proposal-primary', data.brand_primary_color);
+        if (data.brand_second_color) pricingHost.style.setProperty('--proposal-secondary', data.brand_second_color);
+      }
+      document.querySelectorAll('[data-field]').forEach(el => { const value=data[el.dataset.field]; if(value) el.textContent=value; });
+      document.querySelectorAll('[data-image]').forEach(el => { const value=data[el.dataset.image]; if(value) el.src=value; });
+      document.querySelectorAll('[data-link]').forEach(el => { const value=data[el.dataset.link]; if(value) el.href=value; });
+      document.title = `${data.campaign_name || data.brand_name || 'Reward Challenge'} | Proposal`;
+    }
+
+    function showJourneyStep(step) {
+      const image = document.querySelector('[data-journey-image]');
+      const field = step && step.dataset.journeyStep;
+      const nextSrc = field && proposalData[field];
+      if (!image || !nextSrc) return;
+      document.querySelectorAll('[data-journey-step]').forEach(item => item.classList.toggle('is-active', item === step));
+      image.style.opacity = '0';
+      window.setTimeout(() => {
+        image.src = nextSrc;
+        image.style.opacity = '1';
+      }, 120);
+    }
+
+    document.querySelectorAll('[data-journey-step]').forEach(step => {
+      step.addEventListener('mouseenter', () => showJourneyStep(step));
+      step.addEventListener('focus', () => showJourneyStep(step));
+      step.addEventListener('click', () => showJourneyStep(step));
+      step.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          showJourneyStep(step);
+        }
+      });
+    });
+
+    function showConfigStep(step) {
+      const image = document.querySelector('[data-config-image]');
+      const field = step?.dataset.configStep;
+      const nextSrc = field && proposalData[field];
+      document.querySelectorAll('[data-config-step]').forEach(item => item.classList.toggle('is-active', item === step));
+      if (nextSrc && image) {
+        image.style.opacity = '0';
+        window.setTimeout(() => {
+          image.src = nextSrc;
+          image.alt = step.dataset.configAlt || '';
+          image.style.opacity = '1';
+        }, 120);
+      }
+    }
+    document.querySelectorAll('[data-config-step]').forEach(step => {
+      step.addEventListener('mouseenter', () => showConfigStep(step));
+      step.addEventListener('focus', () => showConfigStep(step));
+      step.addEventListener('click', () => showConfigStep(step));
+    });
+    const configStepObserver = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) showConfigStep(visible.target);
+    },{rootMargin:'-30% 0px -30% 0px',threshold:[.2,.5,.8]});
+    document.querySelectorAll('[data-config-step]').forEach(step => configStepObserver.observe(step));
+
+    function showDashboardStep(step) {
+      const image = document.querySelector('[data-dashboard-image]');
+      const field = step?.dataset.dashboardStep;
+      const nextSrc = field && proposalData[field];
+      document.querySelectorAll('[data-dashboard-step]').forEach(item => item.classList.toggle('is-active', item === step));
+      if (nextSrc && image) {
+        image.style.opacity = '0';
+        window.setTimeout(() => {
+          image.src = nextSrc;
+          image.alt = step.dataset.dashboardAlt || '';
+          image.style.opacity = '1';
+        }, 120);
+      }
+    }
+    document.querySelectorAll('[data-dashboard-step]').forEach(step => {
+      step.addEventListener('mouseenter', () => showDashboardStep(step));
+      step.addEventListener('focus', () => showDashboardStep(step));
+      step.addEventListener('click', () => showDashboardStep(step));
+    });
+    const dashboardStepObserver = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) showDashboardStep(visible.target);
+    },{rootMargin:'-30% 0px -30% 0px',threshold:[.2,.5,.8]});
+    document.querySelectorAll('[data-dashboard-step]').forEach(step => dashboardStepObserver.observe(step));
+
+    fetch(`/api/proposal?id=${encodeURIComponent(fallbackId)}`)
+      .then(async response => { const data=await response.json(); if(!response.ok) throw new Error(data.error||'Proposal not found'); return data; })
+      .then(applyData)
+      .catch(error => { console.error(error); document.body.dataset.loadError='true'; });
+
+    const packageData = {
+      presence:{name:'Presence',price:3.99,annualOrders:1.64},
+      ltv:{name:'LTV Lift',price:4.99,annualOrders:2.40},
+      moat:{name:'Retention Moat',price:5.49,annualOrders:3.49}
+    };
+
+    let pricingRoot;
+    const pricingMoney = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+    const pricingNumber = new Intl.NumberFormat('en-US',{maximumFractionDigits:0});
+    const pq = selector => pricingRoot && pricingRoot.querySelector(selector);
+
+    window.selectPackage = function(key) {
+      Object.keys(packageData).forEach(name => pq(`#roas-col-${name}`)?.classList.toggle('is-selected', name === key));
+    };
+
+    window.runCalc = function() {
+      const aov = parseFloat((pq('#calc-aov')?.value || '').replace(/,/g,'')) || 0;
+      const households = parseInt((pq('#calc-hh')?.value || '').replace(/,/g,''),10) || 0;
+      if (!aov || !households) return;
+      const guide = pq('#calc-guide');
+      const results = pq('#roas-results');
+      if (guide) guide.style.display = 'none';
+      if (results) results.style.display = 'block';
+      if (pq('#calc-summary')) pq('#calc-summary').textContent = `Based on AOV ${pricingMoney.format(aov)} · ${pricingNumber.format(households)} households`;
+      Object.entries(packageData).forEach(([key,pkg]) => {
+        const investment = households * pkg.price;
+        const annualOrders = households * pkg.annualOrders;
+        const revenue = annualOrders * aov;
+        const roas = revenue / investment;
+        pq(`#roas-val-${key}`).textContent = `${roas.toFixed(1)}x`;
+        pq(`#rev-val-${key}`).textContent = pricingMoney.format(revenue);
+        pq(`#inv-val-${key}`).textContent = pricingMoney.format(investment);
+        pq(`#orders-val-${key}`).innerHTML = `${(annualOrders/12).toFixed(1)} / mo <span class="lift-arrow">↑</span>`;
+        pq(`#annual-lift-val-${key}`).innerHTML = `${pricingNumber.format(annualOrders)} <span class="lift-arrow">↑</span>`;
+      });
+    };
+
+    window.choosePlan = function(key) {
+      const calculator = pq('#calculator-section');
+      if (!calculator) return;
+      calculator.style.display = 'block';
+      pq('#selected-pkg-label').textContent = packageData[key]?.name || '';
+      pq('#calc-aov').value = pq('#calc-aov').value || '65';
+      pq('#calc-hh').value = pq('#calc-hh').value || '1,500';
+      window.selectPackage(key);
+      calculator.scrollIntoView({behavior:'smooth',block:'start'});
+    };
+
+    async function mountOriginalPricing() {
+      const host = document.getElementById('pricing-shadow-host');
+      const html = await fetch('/index.html').then(response => response.text());
+      const source = new DOMParser().parseFromString(html,'text/html');
+      const originalSection = source.querySelector('section.data-section');
+      const originalStyle = source.querySelector('style');
+      if (!host || !originalSection || !originalStyle) throw new Error('Original pricing section unavailable');
+      pricingRoot = host.attachShadow({mode:'open'});
+      pricingRoot.innerHTML = `
+        <style>${originalStyle.textContent}</style>
+        <style>
+          :host{--nike-orange:var(--proposal-primary,#FF5A1F);--nike-volt:var(--proposal-secondary,#D8FF2F);--on-nike-volt:#000;display:block}
+          .reveal{opacity:1!important;transform:none!important}
+          section.data-section{min-height:0!important}
+        </style>
+        ${originalSection.outerHTML}
+      `;
+      const featureTable = pq('.package-feature-table');
+      if (featureTable) {
+        const columnNames = [null,'presence','ltv','moat'];
+        let columnIndex = 0;
+        [...featureTable.children].forEach(cell => {
+          if (cell.classList.contains('feature-section-header')) {
+            columnIndex = 0;
+            return;
+          }
+          if (columnIndex > 0) cell.dataset.col = columnNames[columnIndex];
+          columnIndex = (columnIndex + 1) % 4;
+        });
+      }
+      pricingRoot.addEventListener('click', event => {
+        const button = event.target.closest('[data-package-toggle]');
+        if (!button) return;
+        const key = button.dataset.packageToggle;
+        const table = pq('.package-feature-table');
+        if (table) table.dataset.active = key;
+        const panel = pq('#package-feature-panel');
+        if (panel) panel.removeAttribute('hidden');
+        pq('#package-feature-title').textContent = `${packageData[key]?.name || ''} full feature set`;
+        pricingRoot.querySelectorAll('[data-package-card]').forEach(card => card.classList.toggle('is-active',card.dataset.packageCard === key));
+      });
+      ['calc-aov','calc-hh'].forEach(id => pq(`#${id}`)?.addEventListener('input', window.runCalc));
+    }
+    mountOriginalPricing().catch(error => console.error(error));
+
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>

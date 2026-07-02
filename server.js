@@ -45,8 +45,11 @@ const MIME_TYPES = {
 };
 
 const FIELD_NAMES = [
+  'template_type',
   'brand_primary_color',
   'brand_second_color',
+  'brand_dark_color',
+  'brand_light_color',
   'brand_name',
   'id',
   'brand_channel_name',
@@ -68,7 +71,28 @@ const FIELD_NAMES = [
   'content_pillar_6_title',
   'content_pillar_6_body',
   'magnet_tap',
-  'footer_button_url'
+  'footer_button_url',
+  'campaign_name',
+  'hero_title',
+  'hero_subtitle',
+  'hero_body',
+  'hero_image_url',
+  'physical_image_url',
+  'tap_image_url',
+  'journey_image_1_url',
+  'journey_image_2_url',
+  'journey_image_3_url',
+  'journey_image_4_url',
+  'journey_image_5_url',
+  'customer_demo_url',
+  'dashboard_url',
+  'dashboard_revenue_image_url',
+  'dashboard_funnel_image_url',
+  'config_coupon_image_url',
+  'config_segment_image_url',
+  'config_survey_image_url',
+  'contact_name',
+  'contact_email'
 ];
 
 function slugify(value) {
@@ -516,12 +540,25 @@ async function serveStatic(req, res) {
  * calls /api/proposal?id=... internally.
  */
 const PROPOSAL_ROUTE_RE = /^\/proposal(?:\/([^/?#]+))?\/?$/;
+const GIFT_PROPOSAL_ROUTE_RE = /^\/gift-proposal(?:\/([^/?#]+))?\/?$/;
 
 async function handleRequest(req, res) {
   const requestUrl = new URL(req.url, `http://${req.headers.host}`);
 
   if (PROPOSAL_ROUTE_RE.test(requestUrl.pathname)) {
     await serveIndex(res);
+    return;
+  }
+
+  if (GIFT_PROPOSAL_ROUTE_RE.test(requestUrl.pathname)) {
+    try {
+      const body = await fs.readFile(path.join(ROOT, 'gift-challenge.html'));
+      res.writeHead(200, { 'Content-Type': MIME_TYPES['.html'] });
+      res.end(body);
+    } catch (error) {
+      res.writeHead(500);
+      res.end('Failed to load gift challenge proposal');
+    }
     return;
   }
 

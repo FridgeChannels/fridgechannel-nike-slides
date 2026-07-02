@@ -510,47 +510,67 @@
     }
 
     /* ── ROAS 3-col results ── */
+    /* ── Estimated Returns results panel ── */
+    #roas-results {
+      background: transparent;
+      border-radius: 20px;
+      padding: 2.5rem 0 2.5rem;
+      margin-top: 2rem;
+    }
+
     .roas-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-      margin-bottom: 1.25rem;
+      gap: 1.25rem;
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
     .roas-col {
       border-radius: 14px;
-      border: 2px solid #E5E7EB;
+      border: 1.5px solid #E5E7EB;
+      background: #fff;
       overflow: hidden;
-      transition: border-color 0.2s ease;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
+    }
+
+    .roas-col:hover {
+      border-color: #D1D5DB;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
     }
 
     .roas-col.is-selected {
       border-color: var(--nike-orange);
+      box-shadow: 0 4px 20px rgba(242,106,33,0.15);
     }
 
     .roas-col-header {
-      padding: 0.9rem 1.25rem;
-      background: #F7F7F7;
-      transition: background 0.2s ease, color 0.2s ease;
+      padding: 1.1rem 1.5rem 1rem;
+      border-bottom: 1px solid #F3F4F6;
     }
 
     .roas-col.is-selected .roas-col-header {
-      background: var(--nike-orange);
-      color: #FFF;
+      border-bottom-color: rgba(242,106,33,0.2);
     }
 
     .roas-col-name {
       font-size: 1rem;
-      font-weight: 900;
+      font-weight: 800;
+      color: #111827;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .roas-col.is-selected .roas-col-name {
+      color: var(--nike-orange);
     }
 
     .roas-col-price {
-      font-size: 0.72rem;
+      font-size: 0.82rem;
       font-family: 'Roboto Mono', monospace;
-      letter-spacing: 0.04em;
-      opacity: 0.7;
+      letter-spacing: 0.03em;
+      color: #6B7280;
       margin-top: 0.2rem;
     }
 
@@ -558,54 +578,84 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 0.7rem 1.25rem;
-      border-top: 1px solid #F0F0F0;
+      padding: 0.75rem 1.5rem;
+      border-top: 1px solid #F3F4F6;
     }
 
     .roas-metric-label {
-      font-size: 0.7rem;
+      font-size: 0.78rem;
       font-family: 'Roboto Mono', monospace;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #111;
+      letter-spacing: 0.05em;
+      color: #6B7280;
     }
 
     .roas-metric-value {
       font-size: 1.05rem;
-      font-weight: 800;
-      color: #111;
+      font-weight: 700;
+      color: #111827;
       transition: color 0.2s ease;
     }
 
     .roas-col.is-selected .roas-metric-value {
-      color: var(--nike-orange);
+      color: #111827;
     }
 
-    /* Hero metrics */
+    /* Hero metrics — ROAS big number */
     .roas-metric.is-hero {
-      padding: 0.9rem 1.25rem;
-      background: #FAFAFA;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding: 1.25rem 1.5rem;
+      border-top: none;
+      background: transparent;
+    }
+
+    .roas-metric.is-hero .roas-metric-label {
+      font-size: 0.78rem;
+      color: #6B7280;
+      letter-spacing: 0.08em;
     }
 
     .roas-metric.is-hero .roas-metric-value {
-      font-size: 1.5rem;
+      font-size: clamp(2.2rem, 3vw, 3rem);
+      font-weight: 900;
+      line-height: 1;
+      color: #111827;
+      letter-spacing: -0.02em;
+    }
+
+    .roas-col.is-selected .roas-metric.is-hero .roas-metric-value {
+      color: var(--nike-orange);
+    }
+
+    /* First hero = ROAS, make it largest */
+    .roas-metric.is-hero:first-of-type .roas-metric-value {
+      font-size: clamp(2.75rem, 4.5vw, 3.75rem);
     }
 
     /* Secondary metrics */
+    .roas-metric.is-secondary {
+      padding: 0.65rem 1.5rem;
+    }
 
-    .roas-metric.is-secondary .roas-metric-value {
-      font-size: 0.88rem;
-      font-weight: 600;
+    .roas-metric.is-secondary .roas-metric-label {
+      font-size: 0.75rem;
       color: #9CA3AF;
     }
 
+    .roas-metric.is-secondary .roas-metric-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
     .roas-col.is-selected .roas-metric.is-secondary .roas-metric-value {
-      color: #C4813A;
+      color: #111827;
     }
 
     .lift-arrow {
-      font-size: 0.75em;
-      color: #22a05a;
+      font-size: 0.8em;
+      color: #16a34a;
       font-weight: 700;
       vertical-align: middle;
     }
@@ -648,9 +698,8 @@
     }
 
     .package-card {
-      display: grid;
-      grid-row: span 6;
-      grid-template-rows: subgrid;
+      display: flex;
+      flex-direction: column;
       padding: 1.5rem;
       background: #FFF;
       border: none;
@@ -682,6 +731,15 @@
       letter-spacing: 0;
     }
 
+    .package-subtitle {
+      min-height: 2.6em;
+      margin: 0 0 1rem;
+      color: #6B7280;
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
     .package-price {
       display: block;
       margin: 0 0 1.25rem;
@@ -699,6 +757,105 @@
       letter-spacing: 0;
     }
 
+    .package-price-table {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin: 0 0 1.25rem;
+    }
+
+    .package-price-cell {
+      padding: 1rem;
+      background: #F7F7F7;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+    }
+
+    .package-price-cell.is-primary {
+      position: relative;
+      padding: 1.1rem 1rem 1rem;
+      background: #111;
+      border-color: #111;
+      overflow: hidden;
+    }
+
+    .package-price-cell.is-primary::after {
+      content: "";
+      position: absolute;
+      inset: auto -18px -34px auto;
+      width: 96px;
+      height: 96px;
+      border: 18px solid rgba(255, 90, 31, 0.2);
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .package-price-cell.is-renewal {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      padding: 0.7rem 0.85rem;
+      background: #FFF;
+      border-style: dashed;
+    }
+
+    .package-price-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: #6B7280;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .package-price-cell.is-primary .package-price-label {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .package-price-copy {
+      display: block;
+      margin-top: 0.4rem;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.76rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .package-price-value {
+      display: block;
+      color: var(--nike-orange);
+      font-size: 2.65rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .package-price-cell.is-primary .package-price-value {
+      color: #FFF;
+    }
+
+    .package-price-cell.is-renewal .package-price-value {
+      color: var(--nike-orange);
+      font-size: 1.45rem;
+      flex-shrink: 0;
+    }
+
+    .package-price-unit {
+      display: block;
+      margin-top: 0.35rem;
+      color: #9CA3AF;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .package-price-cell.is-primary .package-price-unit {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
     .package-fit {
       padding: 0 0 0 0.85rem;
       background: none;
@@ -713,7 +870,7 @@
     .package-callouts {
       display: grid;
       gap: 0;
-      margin: 0 0 1.5rem;
+      margin: 0;
     }
 
     .package-callout-title {
@@ -759,8 +916,9 @@
     .package-choose-btn {
       display: block;
       width: 100%;
-      margin-top: 0;
-      margin-bottom: 1.25rem;
+      order: 7;
+      margin-top: 1.15rem;
+      margin-bottom: 0;
       padding: 0.85rem 1.25rem;
       background: #111;
       color: #FFF;
@@ -782,11 +940,19 @@
     .package-bottom {
       display: flex;
       flex-direction: column;
+      order: 6;
+      flex: 1;
+      min-height: 160px;
+      padding: 1rem;
+      background: #F7F7F7;
+      border: 1px solid #E5E7EB;
+      border-radius: 10px;
     }
 
     .package-feature-btn {
       align-self: center;
       margin-top: auto;
+      padding-top: 0.9rem;
       border: 0;
       background: transparent;
       color: #9CA3AF;
@@ -847,6 +1013,11 @@
       border-radius: 14px;
     }
 
+    .package-feature-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
     .package-feature-table>div {
       padding: 0.85rem 1rem;
       border-right: 1px solid #E5E7EB;
@@ -858,6 +1029,10 @@
 
     .package-feature-table>div:nth-child(4n) {
       border-right: 0;
+    }
+
+    .package-feature-table>div[data-col="moat"] {
+      border-right: 1px solid #E5E7EB;
     }
 
     .package-feature-table>div:nth-last-child(-n + 4) {
@@ -876,6 +1051,12 @@
 
     .package-feature-table .feature-check {
       color: #111;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .package-feature-table .feature-miss {
+      color: #9CA3AF;
       font-weight: 800;
       text-align: center;
     }
@@ -917,6 +1098,7 @@
     @media(max-width: 900px) {
       .package-grid {
         grid-template-columns: 1fr;
+        row-gap: 1rem;
       }
 
       .package-card {
@@ -924,14 +1106,19 @@
       }
 
       .package-feature-table {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(120px, 1fr));
+        min-width: 680px;
       }
 
       .package-feature-table>div,
       .package-feature-table>div:nth-child(4n),
       .package-feature-table>div:nth-last-child(-n + 4) {
-        border-right: 0;
+        border-right: 1px solid #E5E7EB;
         border-bottom: 1px solid #E5E7EB;
+      }
+
+      .package-price-value {
+        font-size: 1.8rem;
       }
     }
 
@@ -1354,7 +1541,7 @@
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-img-wrapper reveal delay-2">
-        <img data-proposal-image="hero_image_url" src="pics/hero_pic.png" alt="Nike Fridge Channel Hero">
+        <img data-proposal-image="hero_image_url" src="data:," alt="Brand Hero">
       </div>
       <div class="hero-content reveal">
         <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem);">FridgeChannel<br>× <span style="color:var(--nike-volt)"
@@ -1646,7 +1833,19 @@
           <article class="package-card" data-package-card="presence">
             <div class="package-eyebrow">Package 01</div>
             <h4>Presence</h4>
-            <div class="package-price">$4.99<span class="price-unit">/piece</span></div>
+            <div class="package-subtitle">Play &amp; Reward</div>
+            <div class="package-price-table" aria-label="Presence pricing per card per year">
+              <div class="package-price-cell is-primary">
+                <span class="package-price-label">Year 1 launch rate</span>
+                <span class="package-price-value">$3.99</span>
+                <span class="package-price-unit">per card / year</span>
+                <span class="package-price-copy">Includes first-year setup and activation.</span>
+              </div>
+              <div class="package-price-cell is-renewal">
+                <span class="package-price-label">Year 2+ renewal</span>
+                <span class="package-price-value">$0.99</span>
+              </div>
+            </div>
             <div class="package-fit">Brands that want to enter the home first and build brand presence and customer
               affinity.</div>
             <button class="package-choose-btn" type="button" onclick="choosePlan('presence')">Get Your Proposal</button>
@@ -1655,18 +1854,32 @@
                 <div class="package-callout-title">Features</div>
                 <div class="package-callout">
                   <div class="package-callout-lines">
-                    <span>7 category-tailored content pillars</span>
+                    <span>Tap-to-play reward experience</span>
+                    <span>Out-of-the-box games</span>
+                    <span>Points, progression, and guardrails</span>
                   </div>
                 </div>
               </div>
-              <button class="package-feature-btn" type="button" data-package-toggle="presence">View all features</button>
+              <button class="package-feature-btn" type="button" data-package-toggle="presence" onclick="this.getRootNode().querySelector('#package-feature-panel').hidden=false">Highlight comparison</button>
             </div>
           </article>
 
           <article class="package-card" data-package-card="ltv">
             <div class="package-eyebrow">Package 02</div>
             <h4>LTV Lift</h4>
-            <div class="package-price">$5.99<span class="price-unit">/piece</span></div>
+            <div class="package-subtitle">Segment &amp; Integrate</div>
+            <div class="package-price-table" aria-label="LTV Lift pricing per card per year">
+              <div class="package-price-cell is-primary">
+                <span class="package-price-label">Year 1 launch rate</span>
+                <span class="package-price-value">$4.99</span>
+                <span class="package-price-unit">per card / year</span>
+                <span class="package-price-copy">Includes first-year setup and activation.</span>
+              </div>
+              <div class="package-price-cell is-renewal">
+                <span class="package-price-label">Year 2+ renewal</span>
+                <span class="package-price-value">$1.49</span>
+              </div>
+            </div>
             <div class="package-fit">Brands that want customers to come back repeatedly, build an interaction habit,
               and drive repeat purchase.</div>
             <button class="package-choose-btn" type="button" onclick="choosePlan('ltv')">Get Your Proposal</button>
@@ -1675,20 +1888,32 @@
                 <div class="package-callout-title">Features</div>
                 <div class="package-callout">
                   <div class="package-callout-lines">
-                    <span>7 category-tailored content pillars</span>
-                    <span>Rich check-in experiences</span>
-                    <span>Usage dashboard and periodic analytics reports</span>
+                    <span>Everything in Presence</span>
+                    <span>Segment-based offers and reward rules</span>
+                    <span>Shopify, Klaviyo, and segment measurement</span>
                   </div>
                 </div>
               </div>
-              <button class="package-feature-btn" type="button" data-package-toggle="ltv">View all features</button>
+              <button class="package-feature-btn" type="button" data-package-toggle="ltv" onclick="this.getRootNode().querySelector('#package-feature-panel').hidden=false">Highlight comparison</button>
             </div>
           </article>
 
           <article class="package-card" data-package-card="moat">
             <div class="package-eyebrow">Package 03</div>
             <h4>Retention Moat</h4>
-            <div class="package-price">$6.99<span class="price-unit">/piece</span></div>
+            <div class="package-subtitle">Brand-native Intelligence</div>
+            <div class="package-price-table" aria-label="Retention Moat pricing per card per year">
+              <div class="package-price-cell is-primary">
+                <span class="package-price-label">Year 1 launch rate</span>
+                <span class="package-price-value">$5.49</span>
+                <span class="package-price-unit">per card / year</span>
+                <span class="package-price-copy">Includes first-year setup and activation.</span>
+              </div>
+              <div class="package-price-cell is-renewal">
+                <span class="package-price-label">Year 2+ renewal</span>
+                <span class="package-price-value">$1.99</span>
+              </div>
+            </div>
             <div class="package-fit">Brands that want to operate across the full lifecycle and build long-term
               retention capability.</div>
             <button class="package-choose-btn" type="button" onclick="choosePlan('moat')">Get Your Proposal</button>
@@ -1697,15 +1922,13 @@
                 <div class="package-callout-title">Features</div>
                 <div class="package-callout">
                   <div class="package-callout-lines">
-                    <span>7 category-tailored content pillars</span>
-                    <span>Rich check-in experiences</span>
-                    <span>Lifecycle-based personalized content delivery</span>
-                    <span>Lifecycle-based AI CTA generation</span>
-                    <span>Usage dashboard and periodic analytics reports</span>
+                    <span>Everything in LTV Lift</span>
+                    <span>Brand-native visuals and game generation</span>
+                    <span>Discount Strategy Autopilot</span>
                   </div>
                 </div>
               </div>
-              <button class="package-feature-btn" type="button" data-package-toggle="moat">View all features</button>
+              <button class="package-feature-btn" type="button" data-package-toggle="moat" onclick="this.getRootNode().querySelector('#package-feature-panel').hidden=false">Highlight comparison</button>
             </div>
           </article>
         </div>
@@ -1713,140 +1936,106 @@
         <div class="package-feature-panel" id="package-feature-panel" hidden>
           <div class="package-feature-panel-header">
             <div>
-              <div class="mono" style="color: var(--nike-orange); margin-bottom: 0.4rem;">FULL FEATURE COMPARISON</div>
-              <h4 id="package-feature-title">Package features</h4>
+              <div class="mono" style="color: var(--nike-orange); margin-bottom: 0.4rem;">FEATURE COMPARISON</div>
+              <h4 id="package-feature-title">Full plan details</h4>
             </div>
-            <button class="package-close" type="button" data-package-close>Close</button>
           </div>
 
-          <div class="package-feature-table" role="table" aria-label="Fridge Channel package feature comparison">
-            <div class="feature-heading" role="columnheader">Dimension / Feature</div>
-            <div class="feature-heading" role="columnheader">Presence</div>
-            <div class="feature-heading" role="columnheader">LTV Lift</div>
-            <div class="feature-heading" role="columnheader">Retention Moat</div>
+          <div class="package-feature-table-wrap">
+            <div class="package-feature-table" role="table" aria-label="Fridge Channel package feature comparison">
+              <div class="feature-heading" role="columnheader">Feature</div>
+              <div class="feature-heading" role="columnheader">Presence</div>
+              <div class="feature-heading" role="columnheader">LTV Lift</div>
+              <div class="feature-heading" role="columnheader">Retention Moat</div>
 
-            <!-- A | Content Pillars -->
-            <div>A | Content Pillars: 7 items</div>
-            <div class="feature-check">7/7</div>
-            <div class="feature-check">7/7</div>
-            <div class="feature-check">7/7</div>
+              <div class="feature-section-header">Engagement &amp; Rewards Engine</div>
 
-            <div>A1 Brand Voice</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
+              <div>Tap → play experience</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>A2 Product Education</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
+              <div>Out-of-the-box games</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>A3 Interesting Tips</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
+              <div>Play unlocks the next reward/discount package</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>A4 Problem to Solution</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
+              <div>Points/coins + earning rules</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>A5 Lifestyle and Usage Scenarios</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
+              <div>Progression (milestones/streaks/bonus events)</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>A6 Social Proof and Word of Mouth</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
+              <div>Guardrails (caps/expiry/anti-abuse)</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>A7 Newness and Refresh</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
+              <div class="feature-section-header">Identity &amp; segmentation</div>
 
-            <!-- B | Habit and Rewards -->
-            <div class="feature-section-header">B | Habit and Rewards</div>
+              <div>Segment-based starting offer</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>B1 Check-in entry point and interactive tasks</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
+              <div>Segment-based reward rules</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>B2 Benefit and reward rules</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
+              <div>Lifecycle targeting (new/active/replenishment/winback/VIP)</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>B3 Lifecycle-based personalized check-ins</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
+              <div class="feature-section-header">Integrations &amp; automation</div>
 
-            <!-- C | Lifecycle-based Personalization -->
-            <div class="feature-section-header">C | Lifecycle-based Personalization</div>
+              <div>Shopify integration</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>C1 New Customer Welcome: D0-7</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
+              <div>Klaviyo integration</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>C2 Product Onboarding: D7-30</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
+              <div>Segment-level measurement</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-check">✓</div>
+              <div class="feature-check">✓</div>
 
-            <div>C3 Routine Building: D30-60</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
+              <div class="feature-section-header">Brand-native intelligence</div>
 
-            <div>C4 Replenishment Window: D45-60</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
+              <div>Brand-native visuals (UI/theme)</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-check">✓</div>
 
-            <div>C5 Winback: D70+</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
+              <div>Brand-specific game generation</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-check">✓</div>
 
-            <div>C6 Seasonal Care</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
+              <div>Brand-configurable survey in form of game</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-check">✓</div>
 
-            <div>C7 Loyalty Anniversary</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
-
-            <!-- D | Personalized CTA -->
-            <div class="feature-section-header">D | Personalized CTA</div>
-
-            <div>D1 Lifecycle-aware CTA targeting</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
-
-            <div>D2 AI-assisted high-click CTA copy generation</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
-
-            <!-- E | Data and Strategy -->
-            <div class="feature-section-header">E | Data and Strategy</div>
-
-            <div>E1 Basic listening and usage dashboard</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
-
-            <div>E2 Segment behavior insights report</div>
-            <div class="feature-check">—</div>
-            <div class="feature-check">✓</div>
-            <div class="feature-check">✓</div>
+              <div>Discount Strategy Autopilot (household signals + continuous optimization)</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-miss">—</div>
+              <div class="feature-check">✓</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1896,7 +2085,7 @@
           <div id="roas-results" style="display: none;">
 
           <div style="margin: 4rem 0 2.5rem; text-align: center;">
-            <h2 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; color: #111; margin: 0 0 0.5rem; line-height: 1.1;">Estimated Returns</h2>
+            <h2 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; color: #111827; margin: 0 0 0.5rem; line-height: 1.1;">Estimated Returns</h2>
             <p id="calc-summary" style="font-size: 0.9rem; color: #6B7280; margin: 0;">Based on AOV $120 · 100 households</p>
           </div>
 
@@ -1905,7 +2094,7 @@
             <div class="roas-col" id="roas-col-presence" onclick="selectPackage('presence')">
               <div class="roas-col-header">
                 <div class="roas-col-name">Presence</div>
-                <div class="roas-col-price">$4.99 / piece</div>
+                <div class="roas-col-price">$3.99 / card / year</div>
               </div>
               <div class="roas-metric is-hero">
                 <span class="roas-metric-label">ROAS</span>
@@ -1932,7 +2121,7 @@
             <div class="roas-col" id="roas-col-ltv" onclick="selectPackage('ltv')">
               <div class="roas-col-header">
                 <div class="roas-col-name">LTV Lift</div>
-                <div class="roas-col-price">$5.99 / piece</div>
+                <div class="roas-col-price">$4.99 / card / year</div>
               </div>
               <div class="roas-metric is-hero">
                 <span class="roas-metric-label">ROAS</span>
@@ -1959,7 +2148,7 @@
             <div class="roas-col" id="roas-col-moat" onclick="selectPackage('moat')">
               <div class="roas-col-header">
                 <div class="roas-col-name">Retention Moat</div>
-                <div class="roas-col-price">$6.99 / piece</div>
+                <div class="roas-col-price">$5.49 / card / year</div>
               </div>
               <div class="roas-metric is-hero">
                 <span class="roas-metric-label">ROAS</span>
@@ -2293,8 +2482,8 @@
         }
 
         hideProposalNotFoundOverlay();
-        hideProposalLoading();
         renderProposal(payload);
+        hideProposalLoading();
       } catch (error) {
         if (strictId) {
           showProposalIdNotFound(idValue, 'Network or server error. Please try again later.');
@@ -2302,8 +2491,8 @@
           return;
         }
         hideProposalNotFoundOverlay();
-        hideProposalLoading();
         renderProposal(fallbackProposal);
+        hideProposalLoading();
       }
     }
 
@@ -2423,9 +2612,9 @@
 
     // ── ROAS Calculator ──
     const PACKAGES = {
-      presence: { name: 'Presence',       price: 4.99, annualOrders: 1.64 },
-      ltv:      { name: 'LTV Lift',       price: 5.99, annualOrders: 2.40 },
-      moat:     { name: 'Retention Moat', price: 6.99, annualOrders: 3.49 }
+      presence: { name: 'Presence',       price: 3.99, annualOrders: 1.64 },
+      ltv:      { name: 'LTV Lift',       price: 4.99, annualOrders: 2.40 },
+      moat:     { name: 'Retention Moat', price: 5.49, annualOrders: 3.49 }
     };
 
     let selectedPackage = null;
@@ -2471,6 +2660,32 @@
     let calcInitialized = false;
 
     function runCalc() {
+      const aovEl = document.getElementById('calc-aov');
+      const hhEl  = document.getElementById('calc-hh');
+      const aovEmpty = !aovEl.value.trim();
+      const hhEmpty  = !hhEl.value.trim();
+
+      // clear previous hints
+      ['calc-aov','calc-hh'].forEach(id => {
+        const el = document.getElementById(id);
+        el.style.borderColor = '';
+        const hint = el.parentElement.querySelector('.calc-input-hint');
+        if (hint) hint.remove();
+      });
+
+      if (aovEmpty || hhEmpty) {
+        [{ el: aovEl, empty: aovEmpty }, { el: hhEl, empty: hhEmpty }].forEach(({ el, empty }) => {
+          if (!empty) return;
+          el.style.borderColor = '#FF5A1F';
+          const hint = document.createElement('span');
+          hint.className = 'calc-input-hint';
+          hint.textContent = 'Please enter a value';
+          hint.style.cssText = 'display:block;font-size:0.72rem;color:#FF5A1F;margin-top:4px;';
+          el.parentElement.appendChild(hint);
+        });
+        return;
+      }
+
       const resultsDiv = document.getElementById('roas-results');
       const guideDiv   = document.getElementById('calc-guide');
       if (guideDiv)   guideDiv.style.display = 'none';
