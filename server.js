@@ -545,6 +545,12 @@ const GIFT_PROPOSAL_ROUTE_RE = /^\/gift-proposal(?:\/([^/?#]+))?\/?$/;
 async function handleRequest(req, res) {
   const requestUrl = new URL(req.url, `http://${req.headers.host}`);
 
+  if (requestUrl.pathname === '/') {
+    res.writeHead(302, { Location: '/gift-challenge.html' });
+    res.end();
+    return;
+  }
+
   if (PROPOSAL_ROUTE_RE.test(requestUrl.pathname)) {
     await serveIndex(res);
     return;
