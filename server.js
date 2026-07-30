@@ -41,7 +41,8 @@ const MIME_TYPES = {
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.webp': 'image/webp',
-  '.svg': 'image/svg+xml'
+  '.svg': 'image/svg+xml',
+  '.mp4': 'video/mp4'
 };
 
 const FIELD_NAMES = [
@@ -79,6 +80,7 @@ const FIELD_NAMES = [
   'hero_image_url',
   'physical_image_url',
   'tap_image_url',
+  'tap_video_url',
   'journey_image_1_url',
   'journey_image_2_url',
   'journey_image_3_url',
@@ -92,7 +94,24 @@ const FIELD_NAMES = [
   'config_segment_image_url',
   'config_survey_image_url',
   'contact_name',
-  'contact_email'
+  'contact_email',
+  'pilot_created_date',
+  'pilot_package_name',
+  'pilot_package_reason',
+  'pilot_package_price',
+  'pilot_discount',
+  'pilot_quantity',
+  'pilot_package_deliverables',
+  'pilot_total',
+  'pilot_shipment',
+  'pilot_tax',
+  'pilot_duration_days',
+  'pilot_segment',
+  'pilot_kpi',
+  'pilot_kpi_baseline',
+  'pilot_replenishment_cycle',
+  'pilot_values_status',
+  'pilot_target_start_date'
 ];
 
 function slugify(value) {
@@ -302,6 +321,72 @@ async function loadFallbackProposalById(proposalId) {
     }
   }
   throw new Error('Proposal not found');
+}
+
+async function findFallbackProposalPathById(proposalId) {
+  const target = String(proposalId || '').trim();
+  if (!target) throw new Error('Missing proposal id');
+  const dir = path.join(ROOT, 'data', 'proposals');
+  const files = await fs.readdir(dir);
+  for (const file of files) {
+    if (!file.endsWith('.json')) continue;
+    const filePath = path.join(dir, file);
+    const data = JSON.parse(await fs.readFile(filePath, 'utf8'));
+    if (String(data.id || '').trim() === target) return filePath;
+  }
+  throw new Error('Proposal not found');
+}
+
+async function readJsonBody(req, limit = 64 * 1024) {
+  let size = 0;
+  const chunks = [];
+  for await (const chunk of req) {
+    size += chunk.length;
+    if (size > limit) throw new Error('Request body is too large');
+    chunks.push(chunk);
+  }
+  const raw = Buffer.concat(chunks).toString('utf8');
+  return raw ? JSON.parse(raw) : {};
+}
+
+const PILOT_INPUT_FIELDS = [
+  'pilot_segment',
+  'pilot_kpi',
+  'pilot_kpi_baseline',
+  'pilot_replenishment_cycle',
+  'pilot_values_status'
+];
+
+function calculatePilotDuration(replenishmentCycle) {
+  const match = /^(\d+(?:\.\d+)?)\s*(?:-|\s)?\s*(day|week|month)s?$/i.exec(String(replenishmentCycle || '').trim());
+  if (!match) throw new Error('Use a replenishment cycle such as 30 days or 4 weeks');
+  const value = Number(match[1]);
+  const multiplier = {day: 1, week: 7, month: 30}[match[2].toLowerCase()];
+  const replenishmentDays = Math.round(value * multiplier);
+  if (!Number.isFinite(replenishmentDays) || replenishmentDays < 1) {
+    throw new Error('Replenishment cycle must be greater than zero');
+  }
+  return `${replenishmentDays + 15}-day`;
+}
+
+async function saveFallbackPilotInputs(proposalId, answers) {
+  const filePath = await findFallbackProposalPathById(proposalId);
+  const proposal = JSON.parse(await fs.readFile(filePath, 'utf8'));
+  const nextAnswers = {};
+
+  for (const field of PILOT_INPUT_FIELDS) {
+    const value = String(answers && answers[field] || '').trim();
+    if (!value) throw new Error(`Missing ${field}`);
+    if (value.length > 1000) throw new Error(`${field} is too long`);
+    nextAnswers[field] = value;
+  }
+  nextAnswers.pilot_duration_days = calculatePilotDuration(nextAnswers.pilot_replenishment_cycle);
+
+  const updated = {...proposal, ...nextAnswers};
+  const tempPath = `${filePath}.tmp`;
+  await fs.writeFile(tempPath, `${JSON.stringify(updated, null, 2)}\n`, 'utf8');
+  await fs.rename(tempPath, filePath);
+  return updated;
 }
 
 async function queryNotionProposalRows() {
@@ -564,6 +649,23 @@ async function handleRequest(req, res) {
     } catch (error) {
       res.writeHead(500);
       res.end('Failed to load gift challenge proposal');
+    }
+    return;
+  }
+
+  if (requestUrl.pathname === '/api/pilot-plan') {
+    if (req.method !== 'POST') {
+      res.setHeader('Allow', 'POST');
+      await sendJson(res, 405, {error: 'Method not allowed'});
+      return;
+    }
+    try {
+      const body = await readJsonBody(req);
+      const proposal = await saveFallbackPilotInputs(body.id, body.answers);
+      await sendJson(res, 200, {proposal});
+    } catch (error) {
+      const status = error instanceof SyntaxError ? 400 : /not found/i.test(error.message) ? 404 : 400;
+      await sendJson(res, status, {error:error.message});
     }
     return;
   }

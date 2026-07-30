@@ -11,6 +11,8 @@
           "pics/**",
           "assets/**",
           "dashboard-return.html",
+          "gift-challenge.html",
+          "packages.html",
           "proposal-template.md",
           "proposal template doc"
         ]
