@@ -260,14 +260,32 @@
     .pilot-question{display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;align-items:start;text-align:left}
     .pilot-question-num{padding-top:2px;font-family:"Roboto Mono",monospace;font-size:1rem;font-weight:800;line-height:1.4;letter-spacing:.08em;color:var(--rust)}
     .pilot-question-body{display:grid;gap:16px}
+    .pilot-question-body>.pilot-question-prompt,
     .pilot-question-body>label{display:block;max-width:820px;margin:0;color:#201712;font-family:"Inter",sans-serif;font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:800;line-height:1.4}
     .pilot-answer{width:100%;min-height:52px;padding:14px 16px;border:0;border-radius:14px;outline:0;background:rgba(255,255,255,.66);color:#201712;font-family:"Inter",sans-serif;font-size:1rem;font-weight:600;line-height:1.45;box-shadow:inset 0 0 0 1px transparent;transition:box-shadow .2s ease,background .2s ease}
-    textarea.pilot-answer{width:min(100%,520px);min-height:84px;justify-self:start;resize:vertical}
     .pilot-answer:focus{background:#fff;box-shadow:inset 0 0 0 2px var(--rust)}
     .pilot-answer::placeholder{color:#928980}
-    .pilot-kpi-inputs{display:grid;grid-template-columns:minmax(260px,420px) 160px;justify-content:start;gap:12px}
-    .pilot-field{display:grid;gap:8px;text-align:left}
-    .pilot-field span{font-family:"Roboto Mono",monospace;font-size:.68rem;font-weight:700;letter-spacing:.04em;color:#6b625c}
+    .pilot-multiselect{position:relative;width:min(100%,620px)}
+    .pilot-multiselect>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:52px;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.66);color:#201712;font-family:"Inter",sans-serif;font-size:1rem;line-height:1.35;list-style:none;cursor:pointer}
+    .pilot-multiselect>summary::-webkit-details-marker{display:none}
+    .pilot-multiselect-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .pilot-multiselect-arrow{width:9px;height:9px;flex:0 0 9px;border-right:2px solid #6b625c;border-bottom:2px solid #6b625c;transform:rotate(45deg) translateY(-2px);transition:transform .16s ease}
+    .pilot-multiselect[open]>summary{background:#fff;box-shadow:inset 0 0 0 2px var(--rust)}
+    .pilot-multiselect[open] .pilot-multiselect-arrow{transform:rotate(225deg) translate(-2px,-2px)}
+    .pilot-choice-list{position:absolute;top:calc(100% + 6px);right:0;left:0;z-index:20;display:grid;gap:4px;max-height:min(42vh,340px);padding:6px;overflow:auto;border-radius:14px;background:#fff;box-shadow:0 18px 50px rgba(32,23,18,.16)}
+    .pilot-choice{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;padding:10px 10px 10px 12px;border-radius:10px;background:transparent;color:#201712;font-family:"Inter",sans-serif;font-size:.95rem;line-height:1.35;cursor:pointer;transition:background .16s ease,transform .1s ease}
+    .pilot-choice:active{transform:scale(.99)}
+    .pilot-choice input{position:absolute;width:1px;height:1px;margin:0;opacity:0;pointer-events:none}
+    .pilot-choice-badge{margin-left:auto;padding:4px 8px;border-radius:999px;background:color-mix(in srgb,var(--rust) 14%,#fff);color:var(--rust);font-size:.68rem;font-weight:800;line-height:1;white-space:nowrap}
+    .pilot-choice-mark{width:22px;height:22px;flex:0 0 22px;border-radius:50%;box-shadow:inset 0 0 0 2px #b4bab6;transition:background .16s ease,box-shadow .16s ease}
+    .pilot-choice:has(input:checked){background:color-mix(in srgb,var(--rust) 12%,#fff)}
+    .pilot-choice:has(input:checked) .pilot-choice-mark{background:var(--rust);box-shadow:inset 0 0 0 5px #fff,0 0 0 2px var(--rust)}
+    .pilot-choice:has(input:focus-visible){box-shadow:inset 0 0 0 2px var(--rust)}
+    .pilot-other-input{width:100%;height:44px;border:0;border-radius:10px;outline:0;background:#f7f3ef;padding:0 12px;color:#201712;font-family:"Inter",sans-serif;font-size:.95rem;font-weight:500;box-shadow:inset 0 0 0 1px transparent}
+    .pilot-other-input:focus{background:#fff;box-shadow:inset 0 0 0 2px var(--rust)}
+    .pilot-other-input::placeholder{color:#6b625c}
+    .pilot-choice-confirm{position:sticky;bottom:0;width:100%;height:44px;margin-top:4px;border-radius:10px;background:var(--brand-dark);color:#fff;font-size:.9rem;box-shadow:0 -8px 16px rgba(255,255,255,.9)}
+    .pilot-choice-confirm:active{transform:scale(.99)}
     .pilot-answer-unit{position:relative;width:100%}
     .pilot-question-body>.pilot-answer-unit{width:220px}
     .pilot-answer-unit .pilot-answer{padding-right:64px}
@@ -280,8 +298,6 @@
     .pilot-plan-output{padding:0}
     .pilot-summary-slide[hidden]{display:none!important}
     .pilot-summary-slide{padding:var(--slide-pad) 0}
-    .pilot-summary-slide[data-dashboard-href]{cursor:pointer}
-    .pilot-summary-slide[data-dashboard-href]:focus-visible{outline:3px solid var(--rust);outline-offset:-3px}
     .pilot-summary-slide.demo-slide{padding:40px 0}
     .pilot-summary-slide.demo-slide .slide-title{font-size:clamp(2.3rem,4vw,3.75rem)!important}
     .pilot-summary-slide.demo-slide .pilot-meta{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 48px;margin-top:20px}
@@ -317,10 +333,10 @@
       .pilot-form{margin-top:28px}
       .pilot-questions{gap:28px}
       .pilot-question{grid-template-columns:32px minmax(0,1fr);gap:12px;text-align:left}
+      .pilot-question-body>.pilot-question-prompt,
       .pilot-question-body>label{margin:0}
-      .pilot-kpi-inputs{grid-template-columns:1fr}
+      .pilot-multiselect{width:100%}
       .pilot-question-body>.pilot-answer-unit{width:100%}
-      .pilot-field{text-align:left}
       .pilot-form-actions{display:grid;gap:12px;margin:32px 0 0}
       .pilot-generate-btn{width:100%;min-height:52px}
       .pilot-form-status{text-align:center}
@@ -458,6 +474,30 @@
     .meeting-outcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;width:100%;margin:72px 0 0;padding:0;list-style:none;text-align:left}
     .meeting-outcomes li{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;color:#f6f0e6;font-size:1rem;line-height:1.5}
     .meeting-outcomes span{font-family:"Roboto Mono",monospace;color:var(--rust)}
+    .sample-recap{min-height:100svh;padding:56px 0;display:flex;align-items:center;overflow:hidden}
+    .sample-recap .wrap{width:min(1460px,calc(100% - 48px))}
+    .sample-recap-title{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+    .sample-recap-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(52px,8vh,76px) 24px;width:100%}
+    .sample-recap-metric{min-width:0;opacity:0;translate:0 22px;transition:opacity .65s cubic-bezier(.16,1,.3,1),translate .75s cubic-bezier(.16,1,.3,1)}
+    .sample-recap-metric strong{display:block;color:var(--rust);font-size:clamp(2.35rem,10vw,3.8rem);line-height:.92;letter-spacing:-.065em;white-space:nowrap}
+    .sample-recap-metric--wide strong{font-size:clamp(1.7rem,7.5vw,3.8rem)}
+    .sample-recap-metric p{max-width:18rem;margin-top:18px;color:#6b6f72;font-size:clamp(.9rem,3.8vw,1.05rem);line-height:1.42}
+    .sample-recap-metric [data-effort-count]{display:inline;color:inherit;font:inherit;line-height:inherit}
+    .sample-recap.is-active .sample-recap-metric{opacity:1;translate:0 0}
+    .sample-recap.is-active .sample-recap-metric:nth-child(1){transition-delay:.05s}
+    .sample-recap.is-active .sample-recap-metric:nth-child(2){transition-delay:.18s}
+    .sample-recap.is-active .sample-recap-metric:nth-child(3){transition-delay:.31s}
+    .sample-recap.is-active .sample-recap-metric:nth-child(4){transition-delay:.44s}
+    @media(min-width:760px){
+      .sample-recap{padding:clamp(72px,9vh,104px) 0}
+      .sample-recap-metrics{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,52px)}
+      .sample-recap-metric strong{font-size:clamp(1.9rem,4vw,4.3rem)}
+      .sample-recap-metric--wide strong{font-size:clamp(1.65rem,3.4vw,4.3rem)}
+      .sample-recap-metric p{margin-top:20px;font-size:clamp(.82rem,1.4vw,1.05rem)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .sample-recap-metric{opacity:1;translate:0 0;transition:none}
+    }
     .working-slide{min-height:100svh;padding:var(--slide-pad) 0;display:flex;align-items:center}
     .working-slide .wrap{width:min(980px,calc(100% - 40px))}
     .working-head{text-align:center;margin-bottom:40px}
@@ -479,7 +519,7 @@
     .package-option-index{font-family:"Roboto Mono",monospace;font-size:.72rem;letter-spacing:.04em;color:var(--rust)}
     .package-title-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
     .package-option h3{margin-top:12px;font-size:clamp(1.35rem,2.2vw,1.9rem);line-height:1.15}
-    .package-status{font-family:"Roboto Mono",monospace;font-size:.68rem;letter-spacing:.04em;color:var(--rust)}
+    body .package-status:not(#fc-font-weight-reset){position:absolute;top:-10px;right:-12px;z-index:2;display:inline-flex;align-items:center;min-height:34px;padding:7px 18px;background:var(--rust);color:#fff;font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:800!important;line-height:1;letter-spacing:.03em;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transform:rotate(4deg);transform-origin:center;filter:drop-shadow(0 6px 8px rgba(91,36,20,.2))}
     .package-option-purpose{margin-top:16px;color:#5f5751;line-height:1.55}
     .package-option-features{display:grid;gap:10px;margin:24px 0 0;padding:0;list-style:none;color:#201712}
     .package-option-features li{display:grid;grid-template-columns:14px 1fr;gap:8px;line-height:1.45}
@@ -497,19 +537,34 @@
     .package-feature-table .feature-check{color:var(--rust)}
     .package-feature-table .feature-miss{color:#aaa19a}
     body .package-feature-table .feature-section-header:not(#fc-font-weight-reset){grid-column:1/-1;color:#201712;font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:800!important;letter-spacing:.03em;background:#fff;border-right:0}
-    .pilot-kpi-select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#6b625c 50%),linear-gradient(135deg,#6b625c 50%,transparent 50%);background-position:calc(100% - 19px) 50%,calc(100% - 13px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat}
     .pilot-summary-slide.demo-slide{padding:var(--slide-pad) 0}
     .pilot-summary-head{width:min(960px,100%);margin:0 auto 32px;text-align:center}
-    .pilot-summary-head .slide-label{margin:0;font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;letter-spacing:.02em}
+    .pilot-summary-head .slide-label{margin:0;font-size:clamp(2.75rem,6vw,4.5rem);line-height:1.05;letter-spacing:.01em}
+    .pilot-summary-date{display:flex;justify-content:center;gap:10px;margin:12px 0 0;color:#817870;font-size:.78rem}
+    .pilot-summary-date-label{font-family:"Roboto Mono",monospace;font-size:.82rem;font-weight:700;color:var(--rust);letter-spacing:.035em}
     .pilot-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px;width:min(960px,100%);margin:auto}
     .pilot-summary-item{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:12px;align-items:baseline;padding:15px 0}
-    .pilot-summary-item dt{font-family:"Roboto Mono",monospace;font-size:.7rem;color:var(--rust);letter-spacing:.04em}
+    .pilot-summary-item dt{font-family:"Roboto Mono",monospace;font-size:.82rem;font-weight:700;color:var(--rust);letter-spacing:.035em}
     .pilot-summary-item dd{min-width:0;margin:0;color:#201712;font-size:1rem;overflow-wrap:anywhere}
-    .pilot-summary-item.pilot-package-details{grid-column:1/-1}
-    .pilot-summary-item.pilot-commercial-summary{grid-column:1/-1}
-    .pilot-commercial-values{display:flex;align-items:baseline;gap:8px 28px;flex-wrap:wrap}
+    .pilot-summary-recommendation{grid-column:1/-1;display:block;padding:22px 0 34px}
+    .pilot-summary-recommendation dt{margin-bottom:10px}
+    .pilot-summary-recommendation dd{margin:0}
+    .pilot-recommended-package{display:block;color:#201712;font-size:clamp(1.75rem,3.2vw,2.65rem);font-weight:700;line-height:1.12;letter-spacing:-.025em}
+    .pilot-recommendation-label{display:block;margin-top:20px;font-family:"Roboto Mono",monospace;font-size:.68rem;color:var(--rust);letter-spacing:.04em}
+    .pilot-recommendation-reason{max-width:720px;margin:7px 0 0;color:#6b625c;font-size:.94rem;line-height:1.65}
+    .pilot-summary-item.pilot-package-details{grid-column:1/-1;margin-top:10px}
+    .pilot-summary-item.pilot-commercial-summary{grid-column:1/-1;margin-top:12px;padding-top:24px}
+    .pilot-commercial-values{display:grid;align-items:start;gap:12px}
+    .pilot-commercial-values>span{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
     .pilot-commercial-values span{white-space:nowrap}
-    .pilot-commercial-values .pilot-inline-label{font-family:"Roboto Mono",monospace;font-size:.7rem;color:var(--rust);letter-spacing:.04em}
+    .pilot-commercial-values .pilot-inline-label{min-width:104px;font-family:"Roboto Mono",monospace;font-size:.82rem;font-weight:700;color:var(--rust);letter-spacing:.035em}
+    .pilot-limited-badge{padding:5px 9px;border-radius:999px;background:var(--rust);color:#fff;font-size:.68rem;font-weight:800;line-height:1}
+    .pilot-shipment-control{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .pilot-shipping-options{display:inline-flex;gap:3px;padding:3px;border-radius:999px;background:#f0ece8}
+    .pilot-shipping-option{height:32px;padding:0 12px;border-radius:999px;background:transparent;color:#5f5751;font-family:"Inter",sans-serif;font-size:.78rem;font-weight:700;transition:background .16s ease,color .16s ease,transform .1s ease}
+    .pilot-shipping-option[aria-pressed="true"]{background:var(--brand-dark);color:#fff}
+    .pilot-shipping-option:active{transform:scale(.97)}
+    .pilot-total-value{font-size:1.3rem;font-weight:800;letter-spacing:-.02em}
     .timeline-plan{scroll-snap-stop:normal!important;scroll-margin-top:0}
     .timeline-head{margin-bottom:48px;text-align:center}
     .timeline-head .slide-label{margin-top:0}
@@ -533,8 +588,12 @@
       .package-options-head{margin-bottom:48px;text-align:left}
       .package-options-grid{grid-template-columns:1fr;gap:48px}
       .package-option:nth-child(n+2)::before{top:-24px;right:0;bottom:auto;left:0;width:auto;height:1px}
+      body .package-status:not(#fc-font-weight-reset){top:-4px;right:4px;min-height:32px;padding:7px 16px;font-size:.68rem}
       .package-feature-table-wrap{margin-top:56px}
+      .pilot-summary-head{text-align:left}
+      .pilot-summary-date{justify-content:flex-start}
       .pilot-summary-grid{grid-template-columns:1fr}
+      .pilot-summary-recommendation{padding:14px 0 28px}
       .pilot-summary-item{grid-template-columns:112px minmax(0,1fr)}
       .pilot-commercial-values{display:grid;gap:8px}
       .timeline-head{text-align:left}
@@ -566,11 +625,36 @@
           <div class="eyebrow">Pilot Design Meeting</div>
           <h1>Configure your pilot. Leave with a live plan.</h1>
           <ol class="meeting-outcomes">
-            <li><span>01</span><p>How to configure?</p></li>
+            <li><span>01</span><p>How to configure</p></li>
             <li><span>02</span><p>Brand-specific live page</p></li>
             <li><span>03</span><p>Pilot Plan</p></li>
           </ol>
         </div>
+      </div>
+    </section>
+
+    <section class="sample-recap demo-slide" id="sample-recap" aria-labelledby="sample-recap-title">
+      <div class="wrap">
+        <h2 class="sample-recap-title" id="sample-recap-title">Brand effort and pilot cost</h2>
+        <div class="sample-recap-metrics">
+          <article class="sample-recap-metric">
+            <strong aria-label="15 minutes"><span data-effort-count="15">0</span> min</strong>
+            <p>Guided campaign setup after audience, assets, and access are approved.</p>
+          </article>
+          <article class="sample-recap-metric">
+            <strong>&lt;2 hrs</strong>
+            <p>Weekly brand oversight while the pilot is live.</p>
+          </article>
+          <article class="sample-recap-metric sample-recap-metric--wide">
+            <strong>0 engineers</strong>
+            <p>No custom build and no dedicated developer required.</p>
+          </article>
+          <article class="sample-recap-metric">
+            <strong>$5.5+</strong>
+            <p>Per magnet, per year, with no hidden fees.</p>
+          </article>
+        </div>
+
       </div>
     </section>
 
@@ -631,7 +715,7 @@
           <article class="package-option">
             <div class="package-option-index">Package 01</div>
             <h3>Presence</h3>
-            <p class="package-option-price"><span class="package-option-price-value">$3,990</span><span class="package-option-price-unit">/ 1,000 pieces</span></p>
+            <p class="package-option-price"><span class="package-option-price-value">$4,990</span><span class="package-option-price-unit">/ 1,000 pieces</span></p>
             <p class="package-option-purpose">For brands that want a simple in-home touchpoint with a universal customer offer.</p>
             <ul class="package-option-features">
               <li>Branded NFC fridge magnet</li>
@@ -643,7 +727,7 @@
           <article class="package-option">
             <div class="package-option-index">Package 02</div>
             <h3>In-Home Retention Asset</h3>
-            <p class="package-option-price"><span class="package-option-price-value">$4,990</span><span class="package-option-price-unit">/ 1,000 pieces</span></p>
+            <p class="package-option-price"><span class="package-option-price-value">$5,490</span><span class="package-option-price-unit">/ 1,000 pieces</span></p>
             <p class="package-option-purpose">For teams targeting measurable repeat purchase and win-back results through lifecycle segmentation.</p>
             <ul class="package-option-features">
               <li>Dynamic customer segment recognition</li>
@@ -655,7 +739,7 @@
           <article class="package-option">
             <div class="package-option-index">Package 03</div>
             <div class="package-title-row"><h3>Post-Purchase Moat</h3><span class="package-status">Coming soon</span></div>
-            <p class="package-option-price"><span class="package-option-price-value">$5,490</span><span class="package-option-price-unit">/ 1,000 pieces</span></p>
+            <p class="package-option-price"><span class="package-option-price-value">$6,490</span><span class="package-option-price-unit">/ 1,000 pieces</span></p>
             <p class="package-option-purpose">For teams building a broader post-purchase channel for engagement, customer intelligence, and optimization.</p>
             <ul class="package-option-features">
               <li>Dynamic lifecycle experience</li>
@@ -726,33 +810,36 @@
               <div class="pilot-question">
                 <div class="pilot-question-num">01</div>
                 <div class="pilot-question-body">
-                  <label for="pilot-segment-input">Which customer segment would you like to test first?</label>
-                  <textarea class="pilot-answer" id="pilot-segment-input" name="pilot_segment" data-pilot-input="pilot_segment" rows="2" required placeholder="Describe the segment and its eligibility rules."></textarea>
+                  <div class="pilot-question-prompt" id="pilot-segment-label">Which customer segments would you like to test first?</div>
+                  <details class="pilot-multiselect" data-multiselect data-placeholder="Select customer segments">
+                    <summary><span class="pilot-multiselect-label" data-multiselect-label>Select customer segments</span><span class="pilot-multiselect-arrow" aria-hidden="true"></span></summary>
+                    <div class="pilot-choice-list" role="group" aria-labelledby="pilot-segment-label" data-choice-group="segment">
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_segment" value="First order → second"><span class="pilot-choice-text">First order → second</span><span class="pilot-choice-badge">Chosen by 78%</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_segment" value="Subscriber → renewal"><span class="pilot-choice-text">Subscriber → renewal</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_segment" value="Cooling → warm"><span class="pilot-choice-text">Cooling → warm</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_segment" value="Gift recipient → repeat buyer"><span class="pilot-choice-text">Gift recipient → repeat buyer</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_segment" value="Another lifecycle segment"><span class="pilot-choice-text">Another lifecycle segment</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <input class="pilot-other-input" type="text" name="pilot_segment" placeholder="Others" aria-label="Other customer segment">
+                      <button class="pilot-choice-confirm" type="button" data-multiselect-confirm>Confirm</button>
+                    </div>
+                  </details>
                 </div>
               </div>
               <div class="pilot-question">
                 <div class="pilot-question-num">02</div>
                 <div class="pilot-question-body">
-                  <label for="pilot-kpi-input">What is the single most important KPI, and what is the current baseline?</label>
-                  <div class="pilot-kpi-inputs">
-                    <label class="pilot-field"><span>KPI</span>
-                      <select class="pilot-answer pilot-kpi-select" id="pilot-kpi-input" name="pilot_kpi" data-pilot-input="pilot_kpi" required>
-                        <option value="" selected disabled>Select a KPI</option>
-                        <option>Repeat purchase rate</option>
-                        <option>Purchase frequency</option>
-                        <option>Time between orders</option>
-                        <option>Win-back rate</option>
-                        <option>Reward redemption rate</option>
-                      </select>
-                    </label>
-                    <label class="pilot-field">
-                      <span>Baseline</span>
-                      <span class="pilot-answer-unit">
-                        <input class="pilot-answer" name="pilot_kpi_baseline" data-pilot-input="pilot_kpi_baseline" type="number" inputmode="decimal" min="0" step="any" required placeholder="18">
-                        <span class="pilot-unit" aria-hidden="true">%</span>
-                      </span>
-                    </label>
-                  </div>
+                  <div class="pilot-question-prompt" id="pilot-metric-label">Which metrics matter most for this pilot?</div>
+                  <details class="pilot-multiselect" data-multiselect data-placeholder="Select metrics">
+                    <summary><span class="pilot-multiselect-label" data-multiselect-label>Select metrics</span><span class="pilot-multiselect-arrow" aria-hidden="true"></span></summary>
+                    <div class="pilot-choice-list" role="group" aria-labelledby="pilot-metric-label" data-choice-group="metric">
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Repeat purchase rate"><span class="pilot-choice-text">Repeat purchase rate</span><span class="pilot-choice-badge">Chosen by 75%</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Purchase frequency"><span class="pilot-choice-text">Purchase frequency</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Time between orders"><span class="pilot-choice-text">Time between orders</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Win-back rate"><span class="pilot-choice-text">Win-back rate</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Reward redemption rate"><span class="pilot-choice-text">Reward redemption rate</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <button class="pilot-choice-confirm" type="button" data-multiselect-confirm>Confirm</button>
+                    </div>
+                  </details>
                 </div>
               </div>
               <div class="pilot-question">
@@ -776,28 +863,39 @@
 
       <div class="pilot-plan-output">
         <div class="wrap">
-          <div class="pilot-summary-slide demo-slide" data-dashboard-href="https://dtc-dashboard.fridgechannels.com/" role="link" tabindex="0" aria-label="Open dashboard" hidden>
-            <header class="pilot-summary-head reveal"><div class="slide-label">Pilot Plan</div></header>
+          <div class="pilot-summary-slide demo-slide" hidden>
+            <header class="pilot-summary-head reveal">
+              <div class="slide-label">Pilot Plan</div>
+              <p class="pilot-summary-date"><span class="pilot-summary-date-label">Created date:</span><span data-field="pilot_created_date">July 30, 2026</span></p>
+            </header>
             <dl class="pilot-summary-grid reveal">
-              <div class="pilot-summary-item"><dt>Brand:</dt><dd data-field="brand_name">Uncle’s Coffee Bean</dd></div>
-              <div class="pilot-summary-item"><dt>Created date:</dt><dd data-field="pilot_created_date">July 30, 2026</dd></div>
+              <div class="pilot-summary-item pilot-summary-recommendation">
+                <dt>Recommended package:</dt>
+                <dd>
+                  <strong class="pilot-recommended-package" data-field="pilot_package_name">In-Home Retention Asset</strong>
+                  <span class="pilot-recommendation-label">Why recommended:</span>
+                  <p class="pilot-recommendation-reason" data-field="pilot_package_reason">Recommended for a measurable retention pilot focused on repeat purchase and win-back behavior.</p>
+                </dd>
+              </div>
               <div class="pilot-summary-item"><dt>Target segment:</dt><dd data-field="pilot_segment">Second-order customers</dd></div>
               <div class="pilot-summary-item"><dt>Success metric:</dt><dd data-field="pilot_kpi">Repeat purchase rate</dd></div>
-              <div class="pilot-summary-item"><dt>Baseline:</dt><dd data-field="pilot_kpi_baseline">18%</dd></div>
               <div class="pilot-summary-item"><dt>Pilot duration:</dt><dd><span data-field="pilot_duration_days">45-day</span> test window</dd></div>
               <div class="pilot-summary-item"><dt>Test method:</dt><dd>Pilot group vs. holdout group</dd></div>
-              <div class="pilot-summary-item"><dt>Recommended package:</dt><dd data-field="pilot_package_name">In-Home Retention Asset</dd></div>
-              <div class="pilot-summary-item"><dt>Why recommended:</dt><dd data-field="pilot_package_reason">Recommended for a measurable retention pilot focused on repeat purchase and win-back behavior.</dd></div>
               <div class="pilot-summary-item pilot-package-details"><dt>Package includes:</dt><dd data-field="pilot_package_deliverables">Branded NFC magnets; lifecycle targeting; Shopify and Klaviyo integration; repeat-purchase reporting.</dd></div>
               <div class="pilot-summary-item"><dt>Quantity:</dt><dd><span data-field="pilot_quantity">1,000</span> pieces</dd></div>
               <div class="pilot-summary-item pilot-commercial-summary">
                 <dt>Commercial terms:</dt>
                 <dd class="pilot-commercial-values">
-                  <span><span class="pilot-inline-label">Package price:</span> <span data-field="pilot_package_price">$4,990</span></span>
-                  <span><span class="pilot-inline-label">Discount:</span> <span data-field="pilot_discount">$0</span></span>
-                  <span><span class="pilot-inline-label">Shipment:</span> <span data-field="pilot_shipment">$0</span></span>
-                  <span><span class="pilot-inline-label">Tax:</span> <span data-field="pilot_tax">$0</span></span>
-                  <span><span class="pilot-inline-label">Total:</span> <span data-field="pilot_total">$4,990</span></span>
+                  <span><span class="pilot-inline-label">Package price:</span> <span data-field="pilot_package_price">$5,490</span></span>
+                  <span><span class="pilot-inline-label">Discount:</span> <span data-field="pilot_discount">20% (−$1,098)</span><span class="pilot-limited-badge" data-discount-deadline>Ends Aug 7, 2026</span></span>
+                  <span class="pilot-shipment-control">
+                    <span class="pilot-inline-label">Shipment:</span>
+                    <span class="pilot-shipping-options" role="group" aria-label="Shipping method">
+                      <button class="pilot-shipping-option" type="button" data-shipping-method="sea" data-shipping-price="200" aria-pressed="true">Sea · $200</button>
+                      <button class="pilot-shipping-option" type="button" data-shipping-method="air" data-shipping-price="800" aria-pressed="false">Air · $800</button>
+                    </span>
+                  </span>
+                  <span><span class="pilot-inline-label">Total:</span> <span class="pilot-total-value" data-field="pilot_total">$4,592</span></span>
                 </dd>
               </div>
             </dl>
@@ -900,6 +998,50 @@
     const fallbackId = proposalId || 'UCB-GIFT-001';
     let proposalData = {};
     let pilotPlanGeneratedThisSession = false;
+    let pilotShippingMethod = 'sea';
+
+    function parsePilotCurrency(value) {
+      const amount = Number(String(value || '').replace(/[^0-9.-]/g, ''));
+      return Number.isFinite(amount) ? amount : 0;
+    }
+
+    function formatPilotCurrency(value) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0
+      }).format(value);
+    }
+
+    function updatePilotCommercialTerms() {
+      const packagePriceElement = document.querySelector('[data-field="pilot_package_price"]');
+      const discountElement = document.querySelector('[data-field="pilot_discount"]');
+      const totalElement = document.querySelector('[data-field="pilot_total"]');
+      const shippingOption = document.querySelector(`[data-shipping-method="${pilotShippingMethod}"]`);
+      const packagePrice = parsePilotCurrency(packagePriceElement?.textContent);
+      const discountAmount = Math.round(packagePrice * 0.2);
+      const shipmentAmount = Number(shippingOption?.dataset.shippingPrice || 0);
+      const total = packagePrice - discountAmount + shipmentAmount;
+
+      document.querySelectorAll('[data-shipping-method]').forEach(option => {
+        option.setAttribute('aria-pressed', String(option.dataset.shippingMethod === pilotShippingMethod));
+      });
+      if (discountElement) discountElement.textContent = `20% (−${formatPilotCurrency(discountAmount)})`;
+      if (totalElement) totalElement.textContent = formatPilotCurrency(total);
+    }
+
+    function updatePilotDiscountDeadline(createdDateValue) {
+      const badge = document.querySelector('[data-discount-deadline]');
+      const createdDate = new Date(`${String(createdDateValue || '').trim()} 00:00:00`);
+      if (!badge || Number.isNaN(createdDate.getTime())) return;
+      createdDate.setDate(createdDate.getDate() + 8);
+      const deadline = new Intl.DateTimeFormat('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+      }).format(createdDate);
+      badge.textContent = `Ends ${deadline}`;
+    }
 
     function applyData(data) {
       if (data.template_type && data.template_type !== 'gift_challenge') {
@@ -914,10 +1056,11 @@
       }
       if (data.brand_light_color) document.documentElement.style.setProperty('--brand-light', data.brand_light_color);
       document.querySelectorAll('[data-field]').forEach(el => { const value=data[el.dataset.field]; if(value) el.textContent=value; });
+      pilotShippingMethod = parsePilotCurrency(data.pilot_shipment) === 800 ? 'air' : 'sea';
+      updatePilotCommercialTerms();
+      updatePilotDiscountDeadline(data.pilot_created_date);
       const pilotPlanOutput = document.querySelector('.pilot-summary-slide');
       if (pilotPlanOutput) pilotPlanOutput.hidden = !pilotPlanGeneratedThisSession;
-      const baselineLabel = document.querySelector('[data-pilot-baseline-label]');
-      if (baselineLabel) baselineLabel.textContent = 'Baseline:';
       const brandName = data.brand_name || 'Brand';
       const imageAltByField = {
         hero_image_url: `${brandName} branded NFC fridge magnet`,
@@ -1051,35 +1194,82 @@
     const pilotPlanForm = document.getElementById('pilot-plan-form');
     const pilotPlanOutput = document.querySelector('.pilot-summary-slide');
 
-    function openPilotDashboard() {
-      const dashboardUrl = pilotPlanOutput?.dataset.dashboardHref;
-      if (dashboardUrl) window.location.href = dashboardUrl;
+    function updatePilotMultiselect(multiselect) {
+      const selected = [
+        ...[...multiselect.querySelectorAll('input:checked')].map(input => input.value),
+        ...[...multiselect.querySelectorAll('.pilot-other-input')]
+          .map(input => input.value.trim())
+          .filter(Boolean)
+      ];
+      const label = multiselect.querySelector('[data-multiselect-label]');
+      if (!label) return;
+      label.textContent = selected.length === 0
+        ? multiselect.dataset.placeholder
+        : selected.length <= 2
+          ? selected.join(', ')
+          : `${selected.length} selected`;
     }
 
-    pilotPlanOutput?.addEventListener('click', event => {
-      if (event.target.closest('a')) return;
-      openPilotDashboard();
+    document.querySelectorAll('[data-multiselect]').forEach(multiselect => {
+      updatePilotMultiselect(multiselect);
+      multiselect.addEventListener('change', () => updatePilotMultiselect(multiselect));
+      multiselect.addEventListener('input', () => updatePilotMultiselect(multiselect));
+      multiselect.addEventListener('toggle', () => {
+        if (!multiselect.open) return;
+        document.querySelectorAll('[data-multiselect][open]').forEach(other => {
+          if (other !== multiselect) other.open = false;
+        });
+      });
+      multiselect.querySelector('[data-multiselect-confirm]')?.addEventListener('click', () => {
+        updatePilotMultiselect(multiselect);
+        multiselect.open = false;
+      });
+      multiselect.querySelector('.pilot-other-input')?.addEventListener('keydown', event => {
+        if (event.key !== 'Enter') return;
+        event.preventDefault();
+        updatePilotMultiselect(multiselect);
+        multiselect.open = false;
+      });
     });
-    pilotPlanOutput?.addEventListener('keydown', event => {
-      if (event.target.closest('a')) return;
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      openPilotDashboard();
+
+    document.addEventListener('click', event => {
+      document.querySelectorAll('[data-multiselect][open]').forEach(multiselect => {
+        if (!multiselect.contains(event.target)) multiselect.open = false;
+      });
+    });
+
+    document.querySelectorAll('[data-shipping-method]').forEach(option => {
+      option.addEventListener('click', () => {
+        pilotShippingMethod = option.dataset.shippingMethod;
+        updatePilotCommercialTerms();
+      });
     });
 
     pilotPlanForm?.addEventListener('submit', async event => {
       event.preventDefault();
-      if (!pilotPlanForm.reportValidity()) return;
-
       const button = pilotPlanForm.querySelector('.pilot-generate-btn');
       const status = pilotPlanForm.querySelector('.pilot-form-status');
+      if (!pilotPlanForm.reportValidity()) return;
+
       const formData = new FormData(pilotPlanForm);
-      const baseline = String(formData.get('pilot_kpi_baseline') || '').trim();
+      const selectedSegments = formData.getAll('pilot_segment').map(value => String(value).trim()).filter(Boolean);
+      const selectedMetrics = formData.getAll('pilot_kpi').map(value => String(value).trim()).filter(Boolean);
+      if (!selectedSegments.length || !selectedMetrics.length) {
+        status.classList.add('is-error');
+        status.textContent = 'Select at least one customer segment and one metric.';
+        const emptyGroup = !selectedSegments.length
+          ? pilotPlanForm.querySelector('[data-choice-group="segment"]')
+          : pilotPlanForm.querySelector('[data-choice-group="metric"]');
+        const multiselect = emptyGroup?.closest('[data-multiselect]');
+        if (multiselect) multiselect.open = true;
+        window.requestAnimationFrame(() => emptyGroup?.querySelector('input')?.focus());
+        return;
+      }
+
       const replenishmentDays = String(formData.get('pilot_replenishment_cycle') || '').trim();
       const answers = {
-        pilot_segment: String(formData.get('pilot_segment') || '').trim(),
-        pilot_kpi: String(formData.get('pilot_kpi') || '').trim(),
-        pilot_kpi_baseline: baseline ? `${baseline}%` : '',
+        pilot_segment: selectedSegments.join('; '),
+        pilot_kpi: selectedMetrics.join('; '),
         pilot_replenishment_cycle: normalizePilotCycle(`${replenishmentDays} days`),
         pilot_values_status: 'confirmed'
       };
@@ -1117,6 +1307,36 @@
       .then(async response => { const data=await response.json(); if(!response.ok) throw new Error(data.error||'Proposal not found'); return data; })
       .then(applyData)
       .catch(error => { console.error(error); document.body.dataset.loadError='true'; });
+
+    const sampleRecap = document.getElementById('sample-recap');
+    const sampleRecapCount = sampleRecap?.querySelector('[data-effort-count]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function activateSampleRecap() {
+      if (!sampleRecap || sampleRecap.classList.contains('is-active')) return;
+      sampleRecap.classList.add('is-active');
+      if (!sampleRecapCount) return;
+      const target = Number(sampleRecapCount.dataset.effortCount) || 15;
+      if (reducedMotion.matches) {
+        sampleRecapCount.textContent = String(target);
+        return;
+      }
+      const startedAt = performance.now();
+      const duration = 520;
+      function updateRecapCount(now) {
+        const progress = Math.min(1, (now - startedAt) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        sampleRecapCount.textContent = String(Math.round(target * eased));
+        if (progress < 1) requestAnimationFrame(updateRecapCount);
+      }
+      requestAnimationFrame(updateRecapCount);
+    }
+    const sampleRecapObserver = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        activateSampleRecap();
+        sampleRecapObserver.disconnect();
+      }
+    }, {threshold:.35});
+    if (sampleRecap) sampleRecapObserver.observe(sampleRecap);
 
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));

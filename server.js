@@ -104,11 +104,9 @@ const FIELD_NAMES = [
   'pilot_package_deliverables',
   'pilot_total',
   'pilot_shipment',
-  'pilot_tax',
   'pilot_duration_days',
   'pilot_segment',
   'pilot_kpi',
-  'pilot_kpi_baseline',
   'pilot_replenishment_cycle',
   'pilot_values_status',
   'pilot_target_start_date'
@@ -352,7 +350,6 @@ async function readJsonBody(req, limit = 64 * 1024) {
 const PILOT_INPUT_FIELDS = [
   'pilot_segment',
   'pilot_kpi',
-  'pilot_kpi_baseline',
   'pilot_replenishment_cycle',
   'pilot_values_status'
 ];
