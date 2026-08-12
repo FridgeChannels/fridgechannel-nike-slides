@@ -559,11 +559,6 @@
     .pilot-commercial-values span{white-space:nowrap}
     .pilot-commercial-values .pilot-inline-label{min-width:104px;font-family:"Roboto Mono",monospace;font-size:.82rem;font-weight:700;color:var(--rust);letter-spacing:.035em}
     .pilot-limited-badge{padding:5px 9px;border-radius:999px;background:var(--rust);color:#fff;font-size:.68rem;font-weight:800;line-height:1}
-    .pilot-shipment-control{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}
-    .pilot-shipping-options{display:inline-flex;gap:3px;padding:3px;border-radius:999px;background:#f0ece8}
-    .pilot-shipping-option{height:32px;padding:0 12px;border-radius:999px;background:transparent;color:#5f5751;font-family:"Inter",sans-serif;font-size:.78rem;font-weight:700;transition:background .16s ease,color .16s ease,transform .1s ease}
-    .pilot-shipping-option[aria-pressed="true"]{background:var(--brand-dark);color:#fff}
-    .pilot-shipping-option:active{transform:scale(.97)}
     .pilot-total-value{font-size:1.3rem;font-weight:800;letter-spacing:-.02em}
     .timeline-plan{scroll-snap-stop:normal!important;scroll-margin-top:0}
     .timeline-head{margin-bottom:48px;text-align:center}
@@ -810,16 +805,14 @@
               <div class="pilot-question">
                 <div class="pilot-question-num">01</div>
                 <div class="pilot-question-body">
-                  <div class="pilot-question-prompt" id="pilot-segment-label">Which customer segments would you like to test first?</div>
-                  <details class="pilot-multiselect" data-multiselect data-placeholder="Select customer segments">
-                    <summary><span class="pilot-multiselect-label" data-multiselect-label>Select customer segments</span><span class="pilot-multiselect-arrow" aria-hidden="true"></span></summary>
-                    <div class="pilot-choice-list" role="group" aria-labelledby="pilot-segment-label" data-choice-group="segment">
-                      <label class="pilot-choice"><input type="checkbox" name="pilot_segment" value="First order → second"><span class="pilot-choice-text">First order → second</span><span class="pilot-choice-badge">Chosen by 78%</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
-                      <label class="pilot-choice"><input type="checkbox" name="pilot_segment" value="Subscriber → renewal"><span class="pilot-choice-text">Subscriber → renewal</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
-                      <label class="pilot-choice"><input type="checkbox" name="pilot_segment" value="Cooling → warm"><span class="pilot-choice-text">Cooling → warm</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
-                      <label class="pilot-choice"><input type="checkbox" name="pilot_segment" value="Gift recipient → repeat buyer"><span class="pilot-choice-text">Gift recipient → repeat buyer</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
-                      <label class="pilot-choice"><input type="checkbox" name="pilot_segment" value="Another lifecycle segment"><span class="pilot-choice-text">Another lifecycle segment</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
-                      <input class="pilot-other-input" type="text" name="pilot_segment" placeholder="Others" aria-label="Other customer segment">
+                  <div class="pilot-question-prompt" id="pilot-metric-label">Which metrics matter most for this pilot?</div>
+                  <details class="pilot-multiselect" data-multiselect data-placeholder="Select metrics">
+                    <summary><span class="pilot-multiselect-label" data-multiselect-label>Select metrics</span><span class="pilot-multiselect-arrow" aria-hidden="true"></span></summary>
+                    <div class="pilot-choice-list" role="group" aria-labelledby="pilot-metric-label" data-choice-group="metric">
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="30-Day Repeat Engaged Household Rate"><span class="pilot-choice-text">30-Day Repeat Engaged Household Rate</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Zero-Party Data Capture Rate"><span class="pilot-choice-text">Zero-Party Data Capture Rate</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="First-to-Second Order Conversion"><span class="pilot-choice-text">First-to-Second Order Conversion</span><span class="pilot-choice-badge">If full order data</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Coupon Redemption Rate"><span class="pilot-choice-text">Coupon Redemption Rate</span><span class="pilot-choice-badge">If coupon data only</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
                       <button class="pilot-choice-confirm" type="button" data-multiselect-confirm>Confirm</button>
                     </div>
                   </details>
@@ -827,23 +820,6 @@
               </div>
               <div class="pilot-question">
                 <div class="pilot-question-num">02</div>
-                <div class="pilot-question-body">
-                  <div class="pilot-question-prompt" id="pilot-metric-label">Which metrics matter most for this pilot?</div>
-                  <details class="pilot-multiselect" data-multiselect data-placeholder="Select metrics">
-                    <summary><span class="pilot-multiselect-label" data-multiselect-label>Select metrics</span><span class="pilot-multiselect-arrow" aria-hidden="true"></span></summary>
-                    <div class="pilot-choice-list" role="group" aria-labelledby="pilot-metric-label" data-choice-group="metric">
-                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Repeat purchase rate"><span class="pilot-choice-text">Repeat purchase rate</span><span class="pilot-choice-badge">Chosen by 75%</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
-                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Purchase frequency"><span class="pilot-choice-text">Purchase frequency</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
-                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Time between orders"><span class="pilot-choice-text">Time between orders</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
-                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Win-back rate"><span class="pilot-choice-text">Win-back rate</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
-                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Reward redemption rate"><span class="pilot-choice-text">Reward redemption rate</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
-                      <button class="pilot-choice-confirm" type="button" data-multiselect-confirm>Confirm</button>
-                    </div>
-                  </details>
-                </div>
-              </div>
-              <div class="pilot-question">
-                <div class="pilot-question-num">03</div>
                 <div class="pilot-question-body">
                   <label for="pilot-cycle-input">What is the average replenishment or repeat-purchase cycle for this product?</label>
                   <div class="pilot-answer-unit">
@@ -874,28 +850,25 @@
                 <dd>
                   <strong class="pilot-recommended-package" data-field="pilot_package_name">In-Home Retention Asset</strong>
                   <span class="pilot-recommendation-label">Why recommended:</span>
-                  <p class="pilot-recommendation-reason" data-field="pilot_package_reason">Recommended for a measurable retention pilot focused on repeat purchase and win-back behavior.</p>
+                  <p class="pilot-recommendation-reason" data-field="pilot_package_reason">For teams targeting measurable repeat purchase and win-back results through lifecycle segmentation.</p>
                 </dd>
               </div>
-              <div class="pilot-summary-item"><dt>Target segment:</dt><dd data-field="pilot_segment">Second-order customers</dd></div>
-              <div class="pilot-summary-item"><dt>Success metric:</dt><dd data-field="pilot_kpi">Repeat purchase rate</dd></div>
+              <div class="pilot-summary-item"><dt>Target segment:</dt><dd data-field="pilot_segment">First order → second</dd></div>
+              <div class="pilot-summary-item"><dt>Success metric:</dt><dd data-field="pilot_kpi">30-Day Repeat Engaged Household Rate</dd></div>
               <div class="pilot-summary-item"><dt>Pilot duration:</dt><dd><span data-field="pilot_duration_days">45-day</span> test window</dd></div>
-              <div class="pilot-summary-item"><dt>Test method:</dt><dd>Pilot group vs. holdout group</dd></div>
-              <div class="pilot-summary-item pilot-package-details"><dt>Package includes:</dt><dd data-field="pilot_package_deliverables">Branded NFC magnets; lifecycle targeting; Shopify and Klaviyo integration; repeat-purchase reporting.</dd></div>
+              <div class="pilot-summary-item"><dt>Test method:</dt><dd>Place 1,000 units in first-order customer packages so they enter the home with the shipment, then measure impact through data attribution.</dd></div>
+              <div class="pilot-summary-item pilot-package-details"><dt>Package includes:</dt><dd data-field="pilot_package_deliverables">Branded NFC magnets; lifecycle targeting; Shopify and Klaviyo integration; attribution data only.</dd></div>
               <div class="pilot-summary-item"><dt>Quantity:</dt><dd><span data-field="pilot_quantity">1,000</span> pieces</dd></div>
               <div class="pilot-summary-item pilot-commercial-summary">
                 <dt>Commercial terms:</dt>
                 <dd class="pilot-commercial-values">
                   <span><span class="pilot-inline-label">Package price:</span> <span data-field="pilot_package_price">$5,490</span></span>
                   <span><span class="pilot-inline-label">Discount:</span> <span data-field="pilot_discount">20% (−$1,098)</span><span class="pilot-limited-badge" data-discount-deadline>Ends Aug 7, 2026</span></span>
-                  <span class="pilot-shipment-control">
-                    <span class="pilot-inline-label">Shipment:</span>
-                    <span class="pilot-shipping-options" role="group" aria-label="Shipping method">
-                      <button class="pilot-shipping-option" type="button" data-shipping-method="sea" data-shipping-price="200" aria-pressed="true">Sea · $200</button>
-                      <button class="pilot-shipping-option" type="button" data-shipping-method="air" data-shipping-price="800" aria-pressed="false">Air · $800</button>
-                    </span>
+                  <span>
+                    <span class="pilot-inline-label">Door-to-Door Cross-Border Fulfillment Service:</span>
+                    <span data-shipping-method="air" data-shipping-price="800">Air · $800</span>
                   </span>
-                  <span><span class="pilot-inline-label">Total:</span> <span class="pilot-total-value" data-field="pilot_total">$4,592</span></span>
+                  <span><span class="pilot-inline-label">Total:</span> <span class="pilot-total-value" data-field="pilot_total">$5,192</span></span>
                 </dd>
               </div>
             </dl>
@@ -998,7 +971,7 @@
     const fallbackId = proposalId || 'UCB-GIFT-001';
     let proposalData = {};
     let pilotPlanGeneratedThisSession = false;
-    let pilotShippingMethod = 'sea';
+    let pilotShippingMethod = 'air';
 
     function parsePilotCurrency(value) {
       const amount = Number(String(value || '').replace(/[^0-9.-]/g, ''));
@@ -1023,23 +996,21 @@
       const shipmentAmount = Number(shippingOption?.dataset.shippingPrice || 0);
       const total = packagePrice - discountAmount + shipmentAmount;
 
-      document.querySelectorAll('[data-shipping-method]').forEach(option => {
-        option.setAttribute('aria-pressed', String(option.dataset.shippingMethod === pilotShippingMethod));
-      });
       if (discountElement) discountElement.textContent = `20% (−${formatPilotCurrency(discountAmount)})`;
       if (totalElement) totalElement.textContent = formatPilotCurrency(total);
     }
 
-    function updatePilotDiscountDeadline(createdDateValue) {
+    function updatePilotDiscountDeadline() {
       const badge = document.querySelector('[data-discount-deadline]');
-      const createdDate = new Date(`${String(createdDateValue || '').trim()} 00:00:00`);
-      if (!badge || Number.isNaN(createdDate.getTime())) return;
-      createdDate.setDate(createdDate.getDate() + 8);
+      if (!badge) return;
+      const deadlineDate = new Date();
+      deadlineDate.setHours(0, 0, 0, 0);
+      deadlineDate.setDate(deadlineDate.getDate() + 7);
       const deadline = new Intl.DateTimeFormat('en-US', {
         month: 'short',
         day: 'numeric',
         year: 'numeric'
-      }).format(createdDate);
+      }).format(deadlineDate);
       badge.textContent = `Ends ${deadline}`;
     }
 
@@ -1056,9 +1027,11 @@
       }
       if (data.brand_light_color) document.documentElement.style.setProperty('--brand-light', data.brand_light_color);
       document.querySelectorAll('[data-field]').forEach(el => { const value=data[el.dataset.field]; if(value) el.textContent=value; });
-      pilotShippingMethod = parsePilotCurrency(data.pilot_shipment) === 800 ? 'air' : 'sea';
+      const segmentField = document.querySelector('[data-field="pilot_segment"]');
+      if (segmentField) segmentField.textContent = 'First order → second';
+      pilotShippingMethod = 'air';
       updatePilotCommercialTerms();
-      updatePilotDiscountDeadline(data.pilot_created_date);
+      updatePilotDiscountDeadline();
       const pilotPlanOutput = document.querySelector('.pilot-summary-slide');
       if (pilotPlanOutput) pilotPlanOutput.hidden = !pilotPlanGeneratedThisSession;
       const brandName = data.brand_name || 'Brand';
@@ -1238,13 +1211,6 @@
       });
     });
 
-    document.querySelectorAll('[data-shipping-method]').forEach(option => {
-      option.addEventListener('click', () => {
-        pilotShippingMethod = option.dataset.shippingMethod;
-        updatePilotCommercialTerms();
-      });
-    });
-
     pilotPlanForm?.addEventListener('submit', async event => {
       event.preventDefault();
       const button = pilotPlanForm.querySelector('.pilot-generate-btn');
@@ -1252,14 +1218,11 @@
       if (!pilotPlanForm.reportValidity()) return;
 
       const formData = new FormData(pilotPlanForm);
-      const selectedSegments = formData.getAll('pilot_segment').map(value => String(value).trim()).filter(Boolean);
       const selectedMetrics = formData.getAll('pilot_kpi').map(value => String(value).trim()).filter(Boolean);
-      if (!selectedSegments.length || !selectedMetrics.length) {
+      if (!selectedMetrics.length) {
         status.classList.add('is-error');
-        status.textContent = 'Select at least one customer segment and one metric.';
-        const emptyGroup = !selectedSegments.length
-          ? pilotPlanForm.querySelector('[data-choice-group="segment"]')
-          : pilotPlanForm.querySelector('[data-choice-group="metric"]');
+        status.textContent = 'Select at least one metric.';
+        const emptyGroup = pilotPlanForm.querySelector('[data-choice-group="metric"]');
         const multiselect = emptyGroup?.closest('[data-multiselect]');
         if (multiselect) multiselect.open = true;
         window.requestAnimationFrame(() => emptyGroup?.querySelector('input')?.focus());
@@ -1268,7 +1231,7 @@
 
       const replenishmentDays = String(formData.get('pilot_replenishment_cycle') || '').trim();
       const answers = {
-        pilot_segment: selectedSegments.join('; '),
+        pilot_segment: 'First order → second',
         pilot_kpi: selectedMetrics.join('; '),
         pilot_replenishment_cycle: normalizePilotCycle(`${replenishmentDays} days`),
         pilot_values_status: 'confirmed'
@@ -1337,6 +1300,8 @@
       }
     }, {threshold:.35});
     if (sampleRecap) sampleRecapObserver.observe(sampleRecap);
+
+    updatePilotDiscountDeadline();
 
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
