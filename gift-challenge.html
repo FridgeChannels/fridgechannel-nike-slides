@@ -23,7 +23,7 @@
     .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
     .brand{font-family:"Playfair Display",serif;font-size:1.18rem;font-weight:700}
     .nav-links{display:flex;align-items:center;gap:24px;font-size:.82rem;font-weight:700}
-    .nav-links a{text-decoration:none}.eyebrow{font-size:.72rem;letter-spacing:.19em;text-transform:uppercase;font-weight:700;color:var(--rust)}
+    .nav-links a{text-decoration:none}.eyebrow{font-size:.72rem;letter-spacing:.08em;font-weight:700;color:var(--rust)}
     h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.02;margin:0}
     h1{font-size:clamp(3.1rem,7.2vw,7rem);letter-spacing:-.055em}
     h2{font-size:clamp(2.5rem,5vw,5rem);letter-spacing:-.045em}
@@ -41,7 +41,7 @@
     .flow span{padding:9px 12px;background:rgba(255,255,255,.65);border:1px solid var(--line);border-radius:999px;font-size:.79rem;font-weight:700}
     .flow i{font-style:normal;align-self:center;color:var(--rust)}.actions{display:flex;gap:12px;flex-wrap:wrap}
     .hero-visual{position:relative;min-height:650px;border-radius:34px;overflow:hidden;background:#d9c6aa}
-    .hero-visual img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+    .hero-visual img,.hero-visual video{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
     .hero-note{position:absolute;left:28px;bottom:28px;background:rgba(255,250,242,.93);padding:16px 18px;border-radius:16px;max-width:260px;font-size:.85rem;box-shadow:0 14px 36px rgba(0,0,0,.12)}
     .image-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.image-card{position:relative;overflow:hidden;border-radius:28px;background:#ddd;min-height:520px}
     .image-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.image-card .caption{position:absolute;left:22px;right:22px;bottom:22px;background:rgba(255,250,242,.94);padding:16px 18px;border-radius:16px}
@@ -80,9 +80,16 @@
     .config-steps{display:grid}
     .config-step{display:flex;flex-direction:column;padding:48px 0;border-top:1px solid rgba(32,23,18,.16)}
     .config-step:first-child{border-top:0;padding-top:0}
-    .config-step span{color:var(--rust);font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .config-step span{color:var(--rust);font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.04em}
     .config-step h3{margin-top:14px;color:#201712;font-size:clamp(1.8rem,3vw,3.2rem);line-height:1.08}
     .config-step p{margin-top:16px;color:#6b7280;font-size:1rem;line-height:1.65}
+    #rewards .config-walkthrough{width:100%}
+    #rewards .config-steps{grid-template-columns:1fr;gap:64px}
+    #rewards .config-step,#rewards .config-step:first-child{width:100%;max-width:720px;align-items:center;margin:0 auto;padding:0;border:0;text-align:center}
+    #rewards .config-step .slide-label{margin-top:0}
+    #rewards .config-step .content-title{margin-top:16px;font-size:clamp(1.35rem,2vw,1.8rem)}
+    #rewards .config-step .config-summary{max-width:600px;margin-top:16px;color:#5f5751;font-size:1rem;line-height:1.65}
+    #rewards .config-dashboard-link{display:flex;width:max-content;margin:48px auto 0}
     .config-sticky{display:none}
     .config-step-mobile{display:block;width:100%;height:auto;margin-top:26px;border-radius:16px}
     .dashboard-carousel{background:#fff;border:1px solid #e5e7eb;border-radius:20px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.09)}
@@ -98,9 +105,16 @@
     .dashboard-steps{display:grid}
     .dashboard-step{display:flex;flex-direction:column;padding:48px 0;border-top:1px solid rgba(32,23,18,.16)}
     .dashboard-step:first-child{border-top:0;padding-top:0}
-    .dashboard-step span{color:var(--rust);font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .dashboard-step span{color:var(--rust);font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.04em}
     .dashboard-step h3{margin-top:14px;color:#201712;font-size:clamp(1.8rem,3vw,3.2rem);line-height:1.08}
     .dashboard-step p{margin-top:16px;color:#6b7280;font-size:1rem;line-height:1.65}
+    #results .dashboard-walkthrough{width:100%}
+    #results .dashboard-steps{grid-template-columns:1fr;gap:64px}
+    #results .dashboard-step,#results .dashboard-step:first-child{width:100%;max-width:720px;align-items:center;margin:0 auto;padding:0;border:0;text-align:center}
+    #results .dashboard-step .slide-label{margin-top:0}
+    #results .dashboard-step .content-title{margin-top:16px;font-size:clamp(1.35rem,2vw,1.8rem)}
+    #results .dashboard-step .dashboard-summary{max-width:600px;margin-top:16px;color:#5f5751;font-size:1rem;line-height:1.65}
+    #results .results-dashboard-link{display:flex;width:max-content;margin:48px auto 0}
     .dashboard-sticky{display:none}
     .dashboard-step-mobile{display:block;width:100%;height:auto;margin-top:26px;border-radius:16px}
     .dashboard-shell{background:#201914;border-radius:30px;padding:18px;box-shadow:var(--shadow)}.dash-top{color:white;display:flex;justify-content:space-between;align-items:center;padding:12px 8px 22px}.dash-top span{opacity:.55;font-size:.8rem}
@@ -138,8 +152,8 @@
     h3{font-weight:800}
     .eyebrow{font-family:"Roboto Mono",monospace;color:var(--rust)}
     .nav{background:color-mix(in srgb,var(--brand-dark) 90%,transparent);border-color:rgba(255,255,255,.1)}
-    .nav-inner{height:76px}.brand{font-weight:900}.nav-links{font-family:"Roboto Mono",monospace;text-transform:uppercase;font-size:.72rem}
-    .btn{border-color:#fff;border-radius:999px;text-transform:uppercase;letter-spacing:.045em;font-size:.82rem}
+    .nav-inner{height:76px}.brand{font-weight:900}.nav-links{font-family:"Roboto Mono",monospace;font-size:.72rem}
+    .btn{border-color:#fff;border-radius:999px;letter-spacing:.02em;font-size:.82rem}
     .btn-primary{background:var(--gold);border-color:var(--gold);color:#000}
     section{min-height:100vh;padding:8rem 0;border-color:rgba(255,255,255,.1)}
     .section-head{grid-template-columns:1fr;gap:18px}
@@ -157,7 +171,7 @@
     .hero-body{margin-top:28px;color:#888;line-height:1.65}.section-head p{color:#888}.flow span{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}.flow i{color:var(--rust)}
     .hero-visual{min-height:0;border-radius:24px;transform:none}
     .hero-visual:hover{transform:none}
-    .hero-visual img{position:static;display:block;width:100%;height:auto;object-fit:contain}
+    .hero-visual img,.hero-visual video{position:static;display:block;width:100%;height:auto;object-fit:contain}
     .hero-note{background:rgba(5,5,5,.92);color:#fff;border:1px solid rgba(255,255,255,.12)}
     #touchpoint,#experience{background:var(--brand-dark);color:#fff}
     #touchpoint .section-head p,#experience .section-head p{color:#888}
@@ -170,10 +184,10 @@
     .touchpoint-story{display:grid;gap:7rem}
     .touchpoint-part{display:grid;gap:28px}
     .touchpoint-part-copy{max-width:920px}
-    .touchpoint-part-copy span{display:block;margin-bottom:10px;color:var(--rust);font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .touchpoint-part-copy span{display:block;margin-bottom:10px;color:var(--rust);font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.04em}
     .touchpoint-part-copy h3{font-size:clamp(1.8rem,3vw,3.2rem);line-height:1.08}
     .touchpoint-part-copy>p{max-width:720px;margin-top:20px;color:#a8b5af;font-size:1rem;line-height:1.65}
-    .touchpoint-part img{position:static;display:block;width:100%;height:auto;border-radius:18px;object-fit:contain}
+    .touchpoint-part img,.touchpoint-part video{position:static;display:block;width:100%;height:auto;border-radius:18px;object-fit:contain}
     .touchpoint-part.is-overview{grid-template-columns:minmax(320px,.78fr) minmax(0,1.22fr);align-items:center;gap:clamp(40px,6vw,88px)}
     .touchpoint-attributes{display:grid;margin-top:34px}
     .touchpoint-attribute{display:grid;grid-template-columns:170px 1fr;gap:22px;padding:18px 0;border-top:1px solid rgba(255,255,255,.16)}
@@ -197,63 +211,144 @@
     .package.featured{transform:none}.package:hover{transform:translateY(-4px);box-shadow:0 24px 70px rgba(0,0,0,.14)}
     .pkg-price{color:var(--rust)}.package li{border-color:#e5e7eb}.package li:before{content:"—";color:var(--rust);margin-right:.5rem}
     .calculator{background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.07)}
-    label{font-family:"Roboto Mono",monospace;color:var(--rust);text-transform:uppercase}
+    label{font-family:"Roboto Mono",monospace;color:var(--rust)}
     input{border:0;border-bottom:2px solid #d1d5db;border-radius:0;font-size:2rem;height:58px;padding:0;background:transparent}
-    button{background:var(--gold);color:#000;border-radius:999px;text-transform:uppercase;letter-spacing:.04em}
+    button{background:var(--gold);color:#000;border-radius:999px;letter-spacing:.02em}
     .result{border-color:#e5e7eb;border-radius:14px}.result-grid span{color:#6b7280}
     .footer{background:var(--brand-dark)}.footer-box{background:transparent;color:#fff;border-radius:0;text-align:center;align-items:center;flex-direction:column;padding:30px 0}
     .footer-box h2{max-width:900px}.footer-box .eyebrow{color:var(--gold)!important}.footer-box .btn{background:var(--gold);color:#000;border-color:var(--gold)}.fineprint{color:#777}
-    .pricing-host{display:block;min-height:0;padding:0;background:var(--brand-light)}
     @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.section-head{grid-template-columns:1fr}.nav-links a:not(.btn){display:none}.touchpoint-story{gap:5rem}.touchpoint-part.is-overview{grid-template-columns:1fr}.touchpoint-attribute{grid-template-columns:1fr;gap:7px}.config-walkthrough,.dashboard-walkthrough{grid-template-columns:1fr}.config-step,.dashboard-step{min-height:0;opacity:1;padding:42px 0}.config-sticky,.dashboard-sticky{display:none}.config-step-mobile,.dashboard-step-mobile{display:block;width:100%;height:auto;margin-top:28px}}
 
-    /* How We Work Together — swimlane */
-    #process{background:var(--brand-light);color:#201712}
+    /* Timeline — one continuous path with numbered stops */
+    #process,#timeline{background:var(--brand-light);color:#201712}
     #process .section-head p{color:#5f5f5f}
-    .swimlane{margin-top:8px}
-    .swim-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);margin-bottom:26px}
-    .lane-label{font-family:"Roboto Mono",monospace;font-size:1.02rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding-bottom:14px;border-bottom:2px solid rgba(0,0,0,.16)}
-    .lane-fc{color:var(--rust)}
-    .lane-brand{color:var(--forest);text-align:right}
-    .swim-steps{position:relative;display:grid;gap:22px}
-    .swim-steps:before{content:"";position:absolute;top:6px;bottom:6px;left:50%;width:2px;background:rgba(0,0,0,.14);transform:translateX(-50%)}
-    .swim-row{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px)}
-    .swim-row:before{content:"";position:absolute;left:50%;top:34px;width:13px;height:13px;border-radius:50%;background:var(--rust);transform:translate(-50%,-50%);box-shadow:0 0 0 5px var(--brand-light);z-index:2}
-    .swim-row.is-fc .swim-card{grid-column:1}
-    .swim-row.is-brand .swim-card{grid-column:2}
-    .swim-row.is-joint .swim-card{grid-column:1 / -1;background:color-mix(in srgb,var(--brand-light) 93%,var(--forest))}
-    .swim-row.is-joint:before{top:auto;bottom:0;transform:translate(-50%,50%)}
-    .swim-row.is-joint:last-child:before{top:0;bottom:auto;transform:translate(-50%,-50%)}
-    .swim-card{background:var(--paper);border:1px solid rgba(0,0,0,.1);border-radius:16px;padding:20px 22px}
-    .swim-card-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-    .swim-num{font-family:"Roboto Mono",monospace;font-size:.74rem;font-weight:700;color:var(--rust)}
-    .swim-days{margin-left:auto;font-family:"Roboto Mono",monospace;font-size:.66rem;font-weight:700;letter-spacing:.05em;color:#5f5f5f;padding:4px 10px;border:1px solid rgba(0,0,0,.18);border-radius:999px}
-    .swim-card h4{font-size:1.08rem;font-weight:800;margin:0 0 8px}
-    .swim-card p{color:#5f5f5f;font-size:.9rem;line-height:1.55;margin:0}
-    .swim-note{margin-top:10px;color:#7a7268;font-size:.76rem;font-style:italic}
-    .swim-output{margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,0,0,.1);font-family:"Roboto Mono",monospace;font-size:.72rem;letter-spacing:.04em;color:#5f5f5f}
-    .swim-output b{color:var(--rust);font-weight:700}
+    .swimlane{width:min(980px,100%);margin:0 auto}
+    .swim-head{display:none}
+    .swim-steps{position:relative;display:grid;gap:0}
+    .swim-steps:before{content:"";position:absolute;top:22px;bottom:22px;left:35px;width:2px;background:rgba(32,23,18,.16)}
+    .swim-row{position:relative;display:grid;grid-template-columns:72px minmax(0,1fr);gap:28px;padding:0 0 48px}
+    .swim-row:last-child{padding-bottom:0}
+    .swim-row:before{content:"";position:absolute;top:20px;left:29px;width:14px;height:14px;border-radius:50%;background:var(--rust);box-shadow:0 0 0 7px #fff;z-index:2}
+    .swim-card{grid-column:2;display:grid;grid-template-columns:minmax(200px,.8fr) minmax(280px,1.2fr);gap:20px 48px;padding:0;background:transparent;border:0;border-radius:0}
+    .swim-card-top{grid-column:1/-1;display:flex;align-items:baseline;gap:18px;margin:0}
+    .swim-num{position:absolute;top:6px;left:0;width:22px;font-family:"Roboto Mono",monospace;font-size:.78rem;color:var(--rust)}
+    .swim-days{order:2;margin:0;font-family:"Roboto Mono",monospace;font-size:.7rem;letter-spacing:.03em;color:#6b625c}
+    .swim-card-top:before{content:"FC";order:1;font-family:"Roboto Mono",monospace;font-size:.78rem;letter-spacing:.06em;color:var(--rust)}
+    .swim-row.is-brand .swim-card-top:before{content:"Brand";color:var(--forest)}
+    .swim-card h4{grid-column:1;margin:0;font-size:clamp(1.25rem,2.2vw,1.8rem);line-height:1.18}
+    .swim-card p{grid-column:2;grid-row:2;margin:0;color:#5f5751;font-size:.98rem;line-height:1.55}
+    .swim-output{grid-column:2;margin:0;font-family:"Roboto Mono",monospace;font-size:.72rem;letter-spacing:.02em;color:#5f5751}
+    .swim-output b{margin-right:8px;color:var(--rust)}
     @media(max-width:760px){
-      .swim-head{display:none}
-      .swim-steps:before{left:7px}
-      .swim-row{grid-template-columns:1fr;padding-left:30px}
-      .swim-row:before{left:7px;top:26px}
-      .swim-row.is-joint:before,.swim-row.is-joint:last-child:before{top:26px;bottom:auto;transform:translate(-50%,-50%)}
-      .swim-row.is-fc .swim-card,.swim-row.is-brand .swim-card,.swim-row.is-joint .swim-card{grid-column:1}
+      .swim-steps:before{left:15px}
+      .swim-row{grid-template-columns:34px minmax(0,1fr);gap:16px;padding-bottom:42px}
+      .swim-row:before{top:17px;left:9px;width:13px;height:13px;box-shadow:0 0 0 6px #fff}
+      .swim-card{grid-template-columns:1fr;gap:10px}
+      .swim-card-top{grid-column:1;gap:12px}
+      .swim-num{top:3px;left:-4px;transform:translateX(-100%)}
+      .swim-card h4,.swim-card p,.swim-output{grid-column:1;grid-row:auto}
+      .swim-card p{font-size:.94rem}
     }
 
-    /* FAQ */
-    #faq{background:var(--brand-dark);color:#fff}
-    #faq .section-head p{color:#a8b5af}
-    .faq-list{border-top:1px solid rgba(255,255,255,.14)}
-    .faq-item{border-bottom:1px solid rgba(255,255,255,.14)}
-    .faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 2px;font-weight:700;font-size:1.02rem;color:#fff}
-    .faq-item summary::-webkit-details-marker{display:none}
-    .faq-item summary:after{content:"+";font-family:"Roboto Mono",monospace;font-size:1.5rem;line-height:1;color:var(--rust);flex-shrink:0}
-    .faq-item[open] summary:after{content:"–"}
-    .faq-item summary:hover{color:var(--rust)}
-    .faq-answer{margin:0 2px;padding:0 40px 24px 2px;color:#a8b5af;font-size:.95rem;line-height:1.65}
-    .faq-viewall{display:inline-flex;align-items:center;gap:8px;margin-top:34px;font-family:"Roboto Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px;transition:.2s ease}
-    .faq-viewall:hover{color:#fff;border-color:#fff}
+    /* Pilot plan inputs and generated output */
+    .pilot-plan{padding:0}
+    .pilot-intake{background:var(--brand-light)}
+    .pilot-intake>.wrap{max-width:980px}
+    .pilot-intake-head{max-width:920px;margin:0 auto;text-align:center}
+    .pilot-form{max-width:840px;margin:32px auto 0}
+    .pilot-questions{display:grid;gap:28px}
+    .pilot-question{display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;align-items:start;text-align:left}
+    .pilot-question-num{padding-top:2px;font-family:"Roboto Mono",monospace;font-size:1rem;font-weight:800;line-height:1.4;letter-spacing:.08em;color:var(--rust)}
+    .pilot-question-body{display:grid;gap:16px}
+    .pilot-question-body>.pilot-question-prompt,
+    .pilot-question-body>label{display:block;max-width:820px;margin:0;color:#201712;font-family:"Inter",sans-serif;font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:800;line-height:1.4}
+    .pilot-answer{width:100%;min-height:52px;padding:14px 16px;border:0;border-radius:14px;outline:0;background:rgba(255,255,255,.66);color:#201712;font-family:"Inter",sans-serif;font-size:1rem;font-weight:600;line-height:1.45;box-shadow:inset 0 0 0 1px transparent;transition:box-shadow .2s ease,background .2s ease}
+    .pilot-answer:focus{background:#fff;box-shadow:inset 0 0 0 2px var(--rust)}
+    .pilot-answer::placeholder{color:#928980}
+    .pilot-multiselect{position:relative;width:min(100%,620px)}
+    .pilot-multiselect>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:52px;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.66);color:#201712;font-family:"Inter",sans-serif;font-size:1rem;line-height:1.35;list-style:none;cursor:pointer}
+    .pilot-multiselect>summary::-webkit-details-marker{display:none}
+    .pilot-multiselect-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .pilot-multiselect-arrow{width:9px;height:9px;flex:0 0 9px;border-right:2px solid #6b625c;border-bottom:2px solid #6b625c;transform:rotate(45deg) translateY(-2px);transition:transform .16s ease}
+    .pilot-multiselect[open]>summary{background:#fff;box-shadow:inset 0 0 0 2px var(--rust)}
+    .pilot-multiselect[open] .pilot-multiselect-arrow{transform:rotate(225deg) translate(-2px,-2px)}
+    .pilot-choice-list{position:absolute;top:calc(100% + 6px);right:0;left:0;z-index:20;display:grid;gap:4px;max-height:min(42vh,340px);padding:6px;overflow:auto;border-radius:14px;background:#fff;box-shadow:0 18px 50px rgba(32,23,18,.16)}
+    .pilot-choice{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;padding:10px 10px 10px 12px;border-radius:10px;background:transparent;color:#201712;font-family:"Inter",sans-serif;font-size:.95rem;line-height:1.35;cursor:pointer;transition:background .16s ease,transform .1s ease}
+    .pilot-choice:active{transform:scale(.99)}
+    .pilot-choice input{position:absolute;width:1px;height:1px;margin:0;opacity:0;pointer-events:none}
+    .pilot-choice-badge{margin-left:auto;padding:4px 8px;border-radius:999px;background:color-mix(in srgb,var(--rust) 14%,#fff);color:var(--rust);font-size:.68rem;font-weight:800;line-height:1;white-space:nowrap}
+    .pilot-choice-mark{width:22px;height:22px;flex:0 0 22px;border-radius:50%;box-shadow:inset 0 0 0 2px #b4bab6;transition:background .16s ease,box-shadow .16s ease}
+    .pilot-choice:has(input:checked){background:color-mix(in srgb,var(--rust) 12%,#fff)}
+    .pilot-choice:has(input:checked) .pilot-choice-mark{background:var(--rust);box-shadow:inset 0 0 0 5px #fff,0 0 0 2px var(--rust)}
+    .pilot-choice:has(input:focus-visible){box-shadow:inset 0 0 0 2px var(--rust)}
+    .pilot-other-input{width:100%;height:44px;border:0;border-radius:10px;outline:0;background:#f7f3ef;padding:0 12px;color:#201712;font-family:"Inter",sans-serif;font-size:.95rem;font-weight:500;box-shadow:inset 0 0 0 1px transparent}
+    .pilot-other-input:focus{background:#fff;box-shadow:inset 0 0 0 2px var(--rust)}
+    .pilot-other-input::placeholder{color:#6b625c}
+    .pilot-choice-confirm{position:sticky;bottom:0;width:100%;height:44px;margin-top:4px;border-radius:10px;background:var(--brand-dark);color:#fff;font-size:.9rem;box-shadow:0 -8px 16px rgba(255,255,255,.9)}
+    .pilot-choice-confirm:active{transform:scale(.99)}
+    .pilot-answer-unit{position:relative;width:100%}
+    .pilot-question-body>.pilot-answer-unit{width:220px}
+    .pilot-answer-unit .pilot-answer{padding-right:64px}
+    .pilot-answer-unit .pilot-unit{position:absolute;top:50%;right:16px;transform:translateY(-50%);color:#6b625c;font-family:"Inter",sans-serif;font-size:1rem;letter-spacing:0;pointer-events:none}
+    .pilot-form-actions{display:grid;justify-items:center;gap:12px;margin:36px 0 0}
+    .pilot-generate-btn{min-width:220px;background:var(--brand-dark);border-color:var(--brand-dark);color:#fff}
+    .pilot-generate-btn:disabled{cursor:wait;opacity:.65}
+    .pilot-form-status{min-height:24px;color:#5f5751;font-size:.88rem;text-align:center}
+    .pilot-form-status.is-error{color:#9d2f20}
+    .pilot-plan-output{padding:0}
+    .pilot-summary-slide[hidden]{display:none!important}
+    .pilot-summary-slide{padding:var(--slide-pad) 0}
+    .pilot-summary-slide.demo-slide{padding:40px 0}
+    .pilot-summary-slide.demo-slide .slide-title{font-size:clamp(2.3rem,4vw,3.75rem)!important}
+    .pilot-summary-slide.demo-slide .pilot-meta{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 48px;margin-top:20px}
+    .pilot-summary-slide.demo-slide .pilot-facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 48px;margin-top:28px}
+    .pilot-summary-slide .pilot-plan-header,
+    .pilot-summary-slide .pilot-facts{width:min(960px,100%);margin-left:auto;margin-right:auto}
+    .pilot-plan-header{max-width:none}
+    .pilot-meta{display:grid;grid-template-columns:1fr;gap:28px;margin-top:44px}
+    .pilot-summary-slide .pilot-meta>div{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+    .pilot-meta dt,.pilot-fact-label,.pilot-owner-label{font-family:"Roboto Mono",monospace;font-size:.7rem;font-weight:700;letter-spacing:.04em;color:var(--rust)}
+    .pilot-meta dd{margin:8px 0 0;font-size:1.05rem;font-weight:800}
+    .pilot-facts{display:grid;grid-template-columns:1fr;gap:40px;margin-top:64px}
+    .pilot-fact h3,.pilot-section h3{margin-top:12px;font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.2}
+    .pilot-fact p{margin-top:14px;color:#5f5751;line-height:1.65}
+    .pilot-commercial{display:grid;grid-template-columns:1fr;gap:12px;margin-top:20px;color:#5f5751}
+    .pilot-summary-slide .pilot-meta dd{margin:0}
+    .pilot-summary-slide .pilot-field-row{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:baseline;gap:12px}
+    .pilot-summary-slide .pilot-field-row h3,
+    .pilot-summary-slide .pilot-field-row p{margin:0}
+    .pilot-summary-slide .pilot-commercial{gap:6px;margin-top:12px}
+    .pilot-summary-slide .pilot-facts>.pilot-fact:nth-child(4){grid-column:1}
+    .pilot-section{margin-top:88px}
+    .timeline-plan{padding:clamp(64px,8vw,112px) 0}
+    .timeline-plan .pilot-section:first-child{margin-top:0}
+    .pilot-day-zero{margin-top:28px;font-size:1.05rem;line-height:1.65}
+    .pilot-payment-list{display:grid;gap:16px;margin:28px 0 0;padding:0;list-style:none}
+    .pilot-payment-list li{font-size:1.02rem;line-height:1.55}
+    .pilot-payment-list li:before{content:"—";margin-right:12px;color:var(--rust)}
+    @media(max-width:760px){
+      #rewards .config-steps,.pilot-meta,.pilot-facts{grid-template-columns:1fr}
+      #rewards .config-steps{gap:48px}
+      #results .dashboard-steps{gap:48px}
+      .pilot-form{margin-top:28px}
+      .pilot-questions{gap:28px}
+      .pilot-question{grid-template-columns:32px minmax(0,1fr);gap:12px;text-align:left}
+      .pilot-question-body>.pilot-question-prompt,
+      .pilot-question-body>label{margin:0}
+      .pilot-multiselect{width:100%}
+      .pilot-question-body>.pilot-answer-unit{width:100%}
+      .pilot-form-actions{display:grid;gap:12px;margin:32px 0 0}
+      .pilot-generate-btn{width:100%;min-height:52px}
+      .pilot-form-status{text-align:center}
+      .pilot-summary-slide.demo-slide .pilot-meta,
+      .pilot-summary-slide.demo-slide .pilot-facts{grid-template-columns:1fr}
+      .pilot-summary-slide .pilot-field-row{grid-template-columns:104px minmax(0,1fr)}
+      .pilot-summary-slide .pilot-facts>.pilot-fact:nth-child(4){grid-column:auto}
+      .pilot-meta{gap:24px}
+      .pilot-facts{gap:44px;margin-top:52px}
+      .pilot-section{margin-top:64px}
+    }
+
 
     /* Section palette: warm cream throughout, with a forest-green final section. */
     main>section{background:var(--brand-light)!important;color:#201712!important}
@@ -265,12 +360,6 @@
     main>section .touchpoint-part-copy>p,
     main>section .touchpoint-attribute p{color:#6b625c}
     main>section .touchpoint-attribute{border-color:rgba(32,23,18,.14)}
-    #faq .section-head p,
-    #faq .faq-answer{color:#6b625c}
-    #faq .faq-list,
-    #faq .faq-item{border-color:rgba(32,23,18,.14)}
-    #faq .faq-item summary{color:#201712}
-    #faq .faq-viewall{color:var(--rust);border-color:var(--rust)}
     main>section.hero{background:var(--brand-dark)!important;color:#fff!important}
     main>section.hero h1{text-align:center}
     main>section.hero .hero-sub{max-width:none;color:#f6f0e6;font-weight:400;text-align:center}
@@ -294,15 +383,15 @@
     .goal-label h2{margin-top:16px;font-size:clamp(2.8rem,5vw,5.2rem)}
     .goal-copy h3{font-size:clamp(2rem,3.8vw,4rem);line-height:1.04}
     .goal-lead{margin-top:22px;font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.65;color:#5f5751}
-    .goal-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:30px 0 0;padding:0;list-style:none}
-    .goal-points li{min-height:96px;padding:18px;border:1px solid rgba(32,23,18,.14);border-radius:14px;background:rgba(255,255,255,.46);font-weight:700}
+    .goal-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 32px;margin:30px 0 0;padding:0;list-style:none}
+    .goal-points li{font-weight:700}
     .goal-note{margin-top:30px;padding:24px 26px;border-left:4px solid var(--rust);background:rgba(255,255,255,.5);font-size:1.04rem;line-height:1.65}
     .north-star{padding-top:72px;border-top:1px solid rgba(32,23,18,.16)}
     .definition{margin-top:28px;padding:28px;border-radius:18px;background:var(--brand-dark);color:#fff;font-size:1.08rem;line-height:1.65}
     .north-star-benefits{display:grid;gap:12px;margin:26px 0 0;padding-left:20px;color:#5f5751}
     .goal-table{width:100%;margin-top:34px;border-collapse:collapse;background:rgba(255,255,255,.55);border-radius:16px;overflow:hidden}
     .goal-table th,.goal-table td{padding:18px;text-align:left;border-bottom:1px solid rgba(32,23,18,.12)}
-    .goal-table th{font-family:"Roboto Mono",monospace;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:#6b625c}
+    .goal-table th{font-family:"Roboto Mono",monospace;font-size:.7rem;letter-spacing:.03em;color:#6b625c}
     .goal-table tr:last-child td{border-bottom:0}
     .goal-table .north-row{background:color-mix(in srgb,var(--gold) 22%,transparent)}
     .questions-section{min-height:100vh!important;background:var(--brand-dark)!important;color:#fff!important}
@@ -323,8 +412,9 @@
     }
     main>section.slide-group{min-height:0;padding:0!important}
     .demo-slide{min-height:100svh;padding:var(--slide-pad) 0;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid rgba(32,23,18,.14)}
-    .hero,.agenda-section,.demo-slide,#pilot,#process{scroll-snap-align:start;scroll-snap-stop:always}
-    .chapter-label,.slide-label,.step-label{font-family:"Roboto Mono",monospace;font-weight:700;text-transform:uppercase}
+    .hero,.agenda-section,.demo-slide,#pilot,#process,#timeline{scroll-snap-align:start;scroll-snap-stop:always}
+    .timeline-plan .pilot-section{scroll-snap-align:start;scroll-snap-stop:normal;scroll-margin-top:24px}
+    .chapter-label,.slide-label,.step-label{font-family:"Roboto Mono",monospace;font-weight:700}
     .chapter-label{color:var(--rust);font-size:1rem;line-height:1.5;letter-spacing:.12em}
     .slide-label{margin-top:14px;color:var(--rust);font-size:1rem;line-height:1.5;letter-spacing:.08em}
     .hero-copy>.eyebrow,.agenda-title>.eyebrow,#process>.wrap>.section-head>.eyebrow{font-size:1rem;line-height:1.5}
@@ -346,7 +436,7 @@
     .goal-block.north-star{padding-top:var(--slide-pad)}
     .goal-block.demo-slide{padding:64px 0}
     .goal-block .goal-points{margin-top:22px}
-    .goal-block .goal-points li{min-height:76px;padding:14px}
+    .goal-block .goal-points li{min-height:0;padding:0}
     .goal-block .goal-note{margin-top:20px;padding:18px 20px}
     .goal-block .definition{margin-top:20px;padding:20px}
     .goal-block .north-star-benefits{margin-top:18px;gap:8px}
@@ -355,14 +445,14 @@
     .goal-label{position:static}
     .touchpoint-part.demo-slide{display:flex}
     .touchpoint-slide-grid{display:grid;grid-template-columns:minmax(280px,.65fr) minmax(0,1.35fr);align-items:center;gap:clamp(32px,5vw,64px)}
-    .touchpoint-part.demo-slide>img{width:100%}
+    .touchpoint-part.demo-slide>img,.touchpoint-part.demo-slide>video{width:100%}
     .touchpoint-part.demo-slide .touchpoint-part-copy>span{margin-bottom:14px}
     .touchpoint-part.demo-slide .touchpoint-part-copy h2{max-width:900px}
     .touchpoint-part.demo-slide .slide-head{margin-bottom:30px}
     .touchpoint-part.demo-slide .touchpoint-attributes{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 18px;margin-top:20px}
     .touchpoint-part.demo-slide .touchpoint-attribute{display:block;padding:10px 0}
     .touchpoint-part.demo-slide .touchpoint-attribute p{margin-top:4px;font-size:.88rem}
-    .touchpoint-part.demo-slide>img{max-height:56svh;object-fit:contain}
+    .touchpoint-part.demo-slide>img,.touchpoint-part.demo-slide>video{max-height:56svh;object-fit:contain}
     #experience.demo-slide{padding:64px 0}
     #experience .section-head{margin-bottom:32px}
     #experience .journey-single img{max-height:58svh;object-fit:contain}
@@ -370,275 +460,504 @@
     .config-step.demo-slide h2,.dashboard-step.demo-slide h2{margin-top:18px}
     .config-step.demo-slide>p,.dashboard-step.demo-slide>p{max-width:760px;margin-top:18px;color:#6b7280;font-size:1rem;line-height:1.65}
     .config-step.demo-slide .config-step-mobile,.dashboard-step.demo-slide .dashboard-step-mobile{width:100%;max-height:49svh;margin-top:clamp(24px,4vh,38px);object-fit:contain;border-radius:16px}
-    #faq.demo-slide{padding:var(--slide-pad) 0}
-    #faq .section-head h2{font-size:var(--slide-title)}
-    #faq .faq-item:nth-of-type(n+6){display:none}
-    main>section.footer-slide{background:var(--brand-dark)!important;color:#fff!important}
-    .footer-slide .footer-box{width:100%}
     .questions-section.demo-slide{padding:var(--slide-pad) 0;display:flex;align-items:center;justify-content:center}
     .questions-section .wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
     .questions-section .slide-title{margin-top:0;color:var(--rust)}
     .questions-section .questions-rule{max-width:720px}
+
+    /* Meeting flow — sample content has already explained the product. */
+    html{scroll-snap-type:y proximity}
+    .meeting-hero{padding:var(--slide-pad) 0!important}
+    .meeting-hero .hero-copy{max-width:980px;margin:auto}
+    .meeting-hero h1{font-size:clamp(2.65rem,6.2vw,6rem)}
+    .meeting-hero .hero-sub{max-width:760px!important;margin-top:28px}
+    .meeting-outcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;width:100%;margin:72px 0 0;padding:0;list-style:none;text-align:left}
+    .meeting-outcomes li{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;color:#f6f0e6;font-size:1rem;line-height:1.5}
+    .meeting-outcomes span{font-family:"Roboto Mono",monospace;color:var(--rust)}
+    .sample-recap{min-height:100svh;padding:56px 0;display:flex;align-items:center;overflow:hidden}
+    .sample-recap .wrap{width:min(1460px,calc(100% - 48px))}
+    .sample-recap-title{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+    .sample-recap-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(52px,8vh,76px) 24px;width:100%}
+    .sample-recap-metric{min-width:0;opacity:0;translate:0 22px;transition:opacity .65s cubic-bezier(.16,1,.3,1),translate .75s cubic-bezier(.16,1,.3,1)}
+    .sample-recap-metric strong{display:block;color:var(--rust);font-size:clamp(2.35rem,10vw,3.8rem);line-height:.92;letter-spacing:-.065em;white-space:nowrap}
+    .sample-recap-metric--wide strong{font-size:clamp(1.7rem,7.5vw,3.8rem)}
+    .sample-recap-metric p{max-width:18rem;margin-top:18px;color:#6b6f72;font-size:clamp(.9rem,3.8vw,1.05rem);line-height:1.42}
+    .sample-recap-metric [data-effort-count]{display:inline;color:inherit;font:inherit;line-height:inherit}
+    .sample-recap.is-active .sample-recap-metric{opacity:1;translate:0 0}
+    .sample-recap.is-active .sample-recap-metric:nth-child(1){transition-delay:.05s}
+    .sample-recap.is-active .sample-recap-metric:nth-child(2){transition-delay:.18s}
+    .sample-recap.is-active .sample-recap-metric:nth-child(3){transition-delay:.31s}
+    .sample-recap.is-active .sample-recap-metric:nth-child(4){transition-delay:.44s}
+    @media(min-width:760px){
+      .sample-recap{padding:clamp(72px,9vh,104px) 0}
+      .sample-recap-metrics{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,52px)}
+      .sample-recap-metric strong{font-size:clamp(1.9rem,4vw,4.3rem)}
+      .sample-recap-metric--wide strong{font-size:clamp(1.65rem,3.4vw,4.3rem)}
+      .sample-recap-metric p{margin-top:20px;font-size:clamp(.82rem,1.4vw,1.05rem)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .sample-recap-metric{opacity:1;translate:0 0;transition:none}
+    }
+    .working-slide{min-height:100svh;padding:var(--slide-pad) 0;display:flex;align-items:center}
+    .working-slide .wrap{width:min(980px,calc(100% - 40px))}
+    .working-head{text-align:center;margin-bottom:40px}
+    .working-head .slide-label{margin-top:0}
+    .working-head h2{margin-top:18px;font-size:var(--slide-title)}
+    .simple-steps,.dashboard-capabilities{display:grid;gap:28px}
+    .simple-step,.dashboard-capability{display:grid;justify-items:center;text-align:center}
+    .simple-step .step-label,.dashboard-capability .step-label{margin-bottom:12px}
+    .simple-step h3,.dashboard-capability h3{font-size:var(--content-title)}
+    .simple-step p,.dashboard-capability p{max-width:620px;margin-top:12px;color:#5f5751}
+    .dashboard-link{display:flex;width:max-content;margin:24px auto 0}
+    .package-options{min-height:100svh;padding:var(--slide-pad) 0;display:flex;align-items:center}
+    .package-options .wrap{width:min(1080px,calc(100% - 40px))}
+    .package-options-head{margin-bottom:56px;text-align:center}
+    .package-options-head h2{font-size:var(--slide-title)}
+    .package-options-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}
+    .package-option{position:relative;display:grid;align-content:start}
+    .package-option:nth-child(n+2)::before{content:"";position:absolute;top:0;bottom:0;left:-24px;width:1px;background:rgba(32,23,18,.2)}
+    .package-option-index{font-family:"Roboto Mono",monospace;font-size:.72rem;letter-spacing:.04em;color:var(--rust)}
+    .package-title-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+    .package-option h3{margin-top:12px;font-size:clamp(1.35rem,2.2vw,1.9rem);line-height:1.15}
+    body .package-status:not(#fc-font-weight-reset){position:absolute;top:-10px;right:-12px;z-index:2;display:inline-flex;align-items:center;min-height:34px;padding:7px 18px;background:var(--rust);color:#fff;font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:800!important;line-height:1;letter-spacing:.03em;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transform:rotate(4deg);transform-origin:center;filter:drop-shadow(0 6px 8px rgba(91,36,20,.2))}
+    .package-option-purpose{margin-top:16px;color:#5f5751;line-height:1.55}
+    .package-option-features{display:grid;gap:10px;margin:24px 0 0;padding:0;list-style:none;color:#201712}
+    .package-option-features li{display:grid;grid-template-columns:14px 1fr;gap:8px;line-height:1.45}
+    .package-option-features li:before{content:"—";color:var(--rust)}
+    .package-option-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:16px;font-family:"Roboto Mono",monospace;color:var(--rust);letter-spacing:.02em}
+    .package-option-price-value{font-size:clamp(1.65rem,2.4vw,2.15rem);line-height:1}
+    .package-option-price-unit{font-size:.78rem;color:#5f5751}
+    .package-details-toggle{display:flex;align-items:center;justify-content:center;min-height:44px;width:max-content;margin:48px auto 0}
+    .package-feature-table-wrap{margin-top:72px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .package-feature-table-wrap[hidden]{display:none}
+    .package-feature-table{display:grid;grid-template-columns:minmax(240px,1.45fr) repeat(3,minmax(170px,1fr));min-width:880px;gap:1px;padding:1px;background:rgba(32,23,18,.14)}
+    .package-feature-table>div{padding:13px 16px;background:#fff;color:#5f5751;font-size:.86rem;line-height:1.4}
+    .package-feature-table .feature-heading{color:#201712;font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.03em;background:color-mix(in srgb,var(--brand-light) 78%,#fff)}
+    .package-feature-table .feature-check,.package-feature-table .feature-miss{text-align:center;font-size:1rem}
+    .package-feature-table .feature-check{color:var(--rust)}
+    .package-feature-table .feature-miss{color:#aaa19a}
+    body .package-feature-table .feature-section-header:not(#fc-font-weight-reset){grid-column:1/-1;color:#201712;font-family:"Roboto Mono",monospace;font-size:.72rem;font-weight:800!important;letter-spacing:.03em;background:#fff;border-right:0}
+    .pilot-summary-slide.demo-slide{padding:var(--slide-pad) 0}
+    .pilot-summary-head{width:min(960px,100%);margin:0 auto 32px;text-align:center}
+    .pilot-summary-head .slide-label{margin:0;font-size:clamp(2.75rem,6vw,4.5rem);line-height:1.05;letter-spacing:.01em}
+    .pilot-summary-date{display:flex;justify-content:center;gap:10px;margin:12px 0 0;color:#817870;font-size:.78rem}
+    .pilot-summary-date-label{font-family:"Roboto Mono",monospace;font-size:.82rem;font-weight:700;color:var(--rust);letter-spacing:.035em}
+    .pilot-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px;width:min(960px,100%);margin:auto}
+    .pilot-summary-item{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:12px;align-items:baseline;padding:15px 0}
+    .pilot-summary-item dt{font-family:"Roboto Mono",monospace;font-size:.82rem;font-weight:700;color:var(--rust);letter-spacing:.035em}
+    .pilot-summary-item dd{min-width:0;margin:0;color:#201712;font-size:1rem;overflow-wrap:anywhere}
+    .pilot-summary-recommendation{grid-column:1/-1;display:block;padding:22px 0 34px}
+    .pilot-summary-recommendation dt{margin-bottom:10px}
+    .pilot-summary-recommendation dd{margin:0}
+    .pilot-recommended-package{display:block;color:#201712;font-size:clamp(1.75rem,3.2vw,2.65rem);font-weight:700;line-height:1.12;letter-spacing:-.025em}
+    .pilot-recommendation-label{display:block;margin-top:20px;font-family:"Roboto Mono",monospace;font-size:.68rem;color:var(--rust);letter-spacing:.04em}
+    .pilot-recommendation-reason{max-width:720px;margin:7px 0 0;color:#6b625c;font-size:.94rem;line-height:1.65}
+    .pilot-summary-item.pilot-package-details{grid-column:1/-1;margin-top:10px}
+    .pilot-summary-item.pilot-commercial-summary{grid-column:1/-1;margin-top:12px;padding-top:24px}
+    .pilot-commercial-values{display:grid;align-items:start;gap:12px}
+    .pilot-commercial-values>span{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .pilot-commercial-values span{white-space:nowrap}
+    .pilot-commercial-values .pilot-inline-label{min-width:104px;font-family:"Roboto Mono",monospace;font-size:.82rem;font-weight:700;color:var(--rust);letter-spacing:.035em}
+    .pilot-limited-badge{padding:5px 9px;border-radius:999px;background:var(--rust);color:#fff;font-size:.68rem;font-weight:800;line-height:1}
+    .pilot-total-value{font-size:1.3rem;font-weight:800;letter-spacing:-.02em}
+    .timeline-plan{scroll-snap-stop:normal!important;scroll-margin-top:0}
+    .timeline-head{margin-bottom:48px;text-align:center}
+    .timeline-head .slide-label{margin-top:0}
+    .timeline-head h2{margin-top:18px;font-size:var(--slide-title)}
     @media(max-width:900px){
       .demo-slide{min-height:100svh;height:auto}
       .goal-block,.touchpoint-slide-grid{grid-template-columns:1fr}
       .slide-head{margin-bottom:36px}
     }
+    @media(max-width:760px){
+      .meeting-hero{min-height:100svh!important;padding:72px 0 48px!important}
+      .meeting-hero .wrap,.working-slide .wrap{width:min(100% - 32px,980px)}
+      .meeting-outcomes{grid-template-columns:1fr;gap:20px;margin-top:48px}
+      .working-slide{min-height:100svh;padding:72px 0}
+      .working-head{margin-bottom:44px;text-align:left}
+      .simple-step,.dashboard-capability{justify-items:start;text-align:left}
+      .simple-steps,.dashboard-capabilities{gap:32px}
+      .dashboard-link{width:100%;margin-top:32px}
+      .package-options{min-height:0;padding:80px 0}
+      .package-options .wrap{width:min(100% - 32px,1080px)}
+      .package-options-head{margin-bottom:48px;text-align:left}
+      .package-options-grid{grid-template-columns:1fr;gap:48px}
+      .package-option:nth-child(n+2)::before{top:-24px;right:0;bottom:auto;left:0;width:auto;height:1px}
+      body .package-status:not(#fc-font-weight-reset){top:-4px;right:4px;min-height:32px;padding:7px 16px;font-size:.68rem}
+      .package-feature-table-wrap{margin-top:56px}
+      .pilot-summary-head{text-align:left}
+      .pilot-summary-date{justify-content:flex-start}
+      .pilot-summary-grid{grid-template-columns:1fr}
+      .pilot-summary-recommendation{padding:14px 0 28px}
+      .pilot-summary-item{grid-template-columns:112px minmax(0,1fr)}
+      .pilot-commercial-values{display:grid;gap:8px}
+      .timeline-head{text-align:left}
+    }
+    /* Alternate every top-level section between warm off-white and white. */
+    html,body{background:#FBFAF8}
+    main>section:nth-of-type(odd){background:#FBFAF8!important;color:#201712!important}
+    main>section:nth-of-type(even){background:#fff!important;color:#201712!important}
+    main>section.hero,
+    main>section.chapter-divider{color:#201712!important}
+    main>section.hero h1,
+    main>section.chapter-divider h2{color:#201712}
+    .meeting-outcomes li{color:#201712}
+    html:not(#fc-font-weight-reset),
+    body:not(#fc-font-weight-reset),
+    body *:not(#fc-font-weight-reset),
+    body *:not(#fc-font-weight-reset)::before,
+    body *:not(#fc-font-weight-reset)::after{font-weight:400!important}
+    :host *:not(#fc-font-weight-reset),
+    :host *:not(#fc-font-weight-reset)::before,
+    :host *:not(#fc-font-weight-reset)::after{font-weight:400!important}
   </style>
 </head>
 <body>
   <main>
-    <section class="hero">
+    <section class="hero meeting-hero" id="meeting-outcome">
       <div class="wrap hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow">Session 1 — Opening</div>
-          <h1>Turn every <span data-field="brand_name">Uncle’s Coffee Bean</span> delivered order into a physical retention channel.</h1>
-          <p class="hero-sub">FC (FridgeChannel) = a physical lifecycle AI-powered magnet that ships inside your package, sticks on the <span data-field="brand_name">Uncle’s Coffee Bean</span> client’s fridge door, and turns daily household moments into trackable repeat-purchase behavior.</p>
+          <div class="eyebrow">Pilot Design Meeting</div>
+          <h1>Configure your pilot. Leave with a live plan.</h1>
+          <ol class="meeting-outcomes">
+            <li><span>01</span><p>How to configure</p></li>
+            <li><span>02</span><p>Brand-specific live page</p></li>
+            <li><span>03</span><p>Pilot Plan</p></li>
+          </ol>
         </div>
-        <div class="hero-visual reveal"><img data-image="hero_image_url" alt="Uncle’s Coffee Bean reward box and NFC magnet"></div>
       </div>
     </section>
 
-    <section class="agenda-section" id="agenda">
-      <div class="wrap agenda-layout">
-        <div class="agenda-title reveal">
-          <div class="eyebrow">Overview</div>
-          <h2>What this covers</h2>
-        </div>
-        <ol class="agenda-list reveal">
-          <li>What goal we're solving for</li>
-          <li>How the household user experiences it</li>
-          <li>Easiest way to configure and launch</li>
-          <li>What the brand gets out of it</li>
-          <li>How we work together</li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="chapter-divider demo-slide" aria-labelledby="chapter-01-title">
-      <div class="wrap reveal"><div class="chapter-number">01</div><h2 id="chapter-01-title">What goal we're solving for</h2></div>
-    </section>
-
-    <section class="goal-section slide-group" id="goal">
-      <div class="wrap goal-layout">
-        <article class="goal-block demo-slide reveal">
-          <div class="goal-label">
-            <div class="slide-label">01.1 — Immediate win</div>
-            <h2 class="summary-line">Immediate, measurable win</h2>
-          </div>
-          <div class="goal-copy">
-            <h3 class="content-title">Increase repeated orders and refine retention for every customer who already received a package.</h3>
-            <ul class="goal-points">
-              <li>Increase repeat purchase rate</li>
-              <li>Increase purchase frequency</li>
-              <li>Decrease time between orders</li>
-              <li>Reduce churn / winback dormant customers</li>
-              <li>Improve reward redemption rate (coupon → purchase)</li>
-            </ul>
-            <p class="goal-note">This is the KPI the CRM / Lifecycle team owns. FC creates a new trigger point that lives in the home — between emails, between SMS blasts — and keeps the brand present at the exact moment a household is making a kitchen or fridge decision.</p>
-          </div>
-        </article>
-
-        <article class="goal-block north-star demo-slide reveal">
-          <div class="goal-label">
-            <div class="slide-label">01.2 — Strategic North Star</div>
-            <h2 class="summary-line">50%+ Household Active Client rate</h2>
-          </div>
-          <div class="goal-copy">
-            <h3 class="content-title">Grow Household Active Client rate to 50%+.</h3>
-            <p class="definition"><strong>Household Active Client</strong> = a customer whose FC card on the fridge is regularly engaged (tapping, playing, redeeming) — a physical signal that this household is alive to the brand.</p>
-            <ul class="north-star-benefits">
-              <li>The brand has a retention moat that competitors cannot copy digitally — it lives physically in the home</li>
-              <li>Repeat purchase becomes structurally more predictable</li>
-              <li>The household becomes an owned asset, not a paid-acquisition dependency</li>
-              <li>LTV/CAC improves without increasing ad spend</li>
-            </ul>
-            <table class="goal-table">
-              <thead><tr><th>Stage</th><th>Household Active Client Rate</th><th>What It Means</th></tr></thead>
-              <tbody>
-                <tr><td>Pilot</td><td>~5–15%</td><td>Proof of concept, measure incrementality</td></tr>
-                <tr><td>Early scale</td><td>~20–35%</td><td>Retention lift is measurable across cohorts</td></tr>
-                <tr class="north-row"><td><strong>North Star</strong></td><td><strong>50%+</strong></td><td>Half of all shipped households are active — this is the retention moat</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="chapter-divider demo-slide" aria-labelledby="chapter-02-title">
-      <div class="wrap reveal"><div class="chapter-number">02</div><h2 id="chapter-02-title">How the household user experiences it</h2></div>
-    </section>
-
-    <section class="slide-group" id="touchpoint">
+    <section class="sample-recap demo-slide" id="sample-recap" aria-labelledby="sample-recap-title">
       <div class="wrap">
-        <div class="touchpoint-story">
-          <article class="touchpoint-part demo-slide reveal">
-            <div class="slide-head">
-              <div class="slide-label">02.1 — Physical touchpoint</div>
-              <h2 class="summary-line">Designed to live in the kitchen.</h2>
-            </div>
-            <div class="touchpoint-slide-grid">
-              <img data-image="physical_image_url" alt="Front and back of the Uncle’s Coffee Bean magnet">
-              <div class="touchpoint-part-copy">
-                <span class="step-label">Product specs</span>
-                <div class="touchpoint-attributes">
-                  <div class="touchpoint-attribute"><strong>Format</strong><p>Double-sided branded NFC fridge magnet</p></div>
-                  <div class="touchpoint-attribute"><strong>Size</strong><p>11.4 × 6.4 cm</p></div>
-                  <div class="touchpoint-attribute"><strong>Surface</strong><p>Creator-selected matte printed medium</p></div>
-                  <div class="touchpoint-attribute"><strong>Interaction</strong><p>Tap-activated NFC</p></div>
-                  <div class="touchpoint-attribute"><strong>Experience</strong><p>Opens a branded web reward page</p></div>
-                  <div class="touchpoint-attribute"><strong>App required</strong><p>No</p></div>
-                  <div class="touchpoint-attribute"><strong>Mobile compatibility</strong><p>Works on NFC-enabled iPhone and Android devices</p></div>
-                  <div class="touchpoint-attribute"><strong>Placement</strong><p>Designed for fridge-door visibility and everyday kitchen presence</p></div>
-                  <div class="touchpoint-attribute"><strong>Design</strong><p>Brand-matched front and back artwork</p></div>
-                  <div class="touchpoint-attribute"><strong>Brand fit</strong><p>Mobile reward page matched to your brand theme, copy, and visual tone</p></div>
-                  <div class="touchpoint-attribute"><strong>Use case</strong><p>Reward unlocks, coupon claims, surveys, loyalty actions, and repeat-purchase flows</p></div>
+        <h2 class="sample-recap-title" id="sample-recap-title">Brand effort and pilot cost</h2>
+        <div class="sample-recap-metrics">
+          <article class="sample-recap-metric">
+            <strong aria-label="15 minutes"><span data-effort-count="15">0</span> min</strong>
+            <p>Guided campaign setup after audience, assets, and access are approved.</p>
+          </article>
+          <article class="sample-recap-metric">
+            <strong>&lt;2 hrs</strong>
+            <p>Weekly brand oversight while the pilot is live.</p>
+          </article>
+          <article class="sample-recap-metric sample-recap-metric--wide">
+            <strong>0 engineers</strong>
+            <p>No custom build and no dedicated developer required.</p>
+          </article>
+          <article class="sample-recap-metric">
+            <strong>$5.5+</strong>
+            <p>Per magnet, per year, with no hidden fees.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="working-slide demo-slide" id="rewards">
+      <div class="wrap">
+        <header class="working-head reveal">
+          <div class="slide-label">01 — Configure in 2 steps</div>
+          <h2>No development project required.</h2>
+        </header>
+        <div class="simple-steps reveal">
+          <article class="simple-step">
+            <div class="step-label">01.1</div>
+            <h3>Configure coupons</h3>
+            <p>Create and sync coupon types, values, codes, limits, and expiry rules with Shopify.</p>
+          </article>
+          <article class="simple-step">
+            <div class="step-label">01.2</div>
+            <h3>Assign segments</h3>
+            <p>Match lifecycle audiences with segment-specific rewards and eligibility rules.</p>
+          </article>
+          <article class="simple-step">
+            <div class="step-label">01.3</div>
+            <h3>Create customer surveys</h3>
+            <p>Launch branded surveys and quizzes to collect feedback, preferences, and first-party customer insights.</p>
+          </article>
+        </div>
+        <a class="btn dashboard-link reveal" href="https://dtc-dashboard.fridgechannels.com/" target="_blank" rel="noopener">Open dashboard ↗</a>
+      </div>
+    </section>
+
+    <section class="working-slide demo-slide" id="results">
+      <div class="wrap">
+        <header class="working-head reveal">
+          <div class="slide-label">02 — Manage and measure</div>
+        </header>
+        <div class="dashboard-capabilities reveal">
+          <article class="dashboard-capability">
+            <div class="step-label">02.1</div>
+            <h3>Measure commercial impact</h3>
+            <p>Track attributed revenue, repeat purchases, retention, revenue growth, and revenue per active magnet.</p>
+          </article>
+          <article class="dashboard-capability">
+            <div class="step-label">02.2</div>
+            <h3>Follow the conversion funnel</h3>
+            <p>See how active magnets and participants move through rewards, coupon use, orders, and revenue.</p>
+          </article>
+        </div>
+        <a class="btn dashboard-link reveal" data-link="dashboard_url" target="_blank" rel="noopener">Open dashboard ↗</a>
+      </div>
+    </section>
+
+    <section class="package-options demo-slide" id="package-options">
+      <div class="wrap">
+        <header class="package-options-head reveal">
+          <h2>Packages</h2>
+        </header>
+        <div class="package-options-grid reveal">
+          <article class="package-option">
+            <div class="package-option-index">Package 01</div>
+            <h3>Presence</h3>
+            <p class="package-option-price"><span class="package-option-price-value">$5,290</span><span class="package-option-price-unit">/ 1,000 pieces</span></p>
+            <p class="package-option-purpose">For brands that want a simple in-home touchpoint with a universal customer offer.</p>
+            <ul class="package-option-features">
+              <li>Branded NFC fridge magnet</li>
+              <li>Tap-to-open customer experience</li>
+              <li>Universal offer and branded landing page</li>
+              <li>Surveys and campaign reporting</li>
+            </ul>
+          </article>
+          <article class="package-option">
+            <div class="package-option-index">Package 02</div>
+            <h3>In-Home Retention Asset</h3>
+            <p class="package-option-price"><span class="package-option-price-value">$5,490</span><span class="package-option-price-unit">/ 1,000 pieces</span></p>
+            <p class="package-option-purpose">For teams targeting measurable repeat purchase and win-back results through lifecycle segmentation.</p>
+            <ul class="package-option-features">
+              <li>Dynamic customer segment recognition</li>
+              <li>Lifecycle offers and reward rules</li>
+              <li>Shopify and Klaviyo integration</li>
+              <li>Repeat-purchase and LTV reporting</li>
+            </ul>
+          </article>
+          <article class="package-option">
+            <div class="package-option-index">Package 03</div>
+            <div class="package-title-row"><h3>Post-Purchase Moat</h3><span class="package-status">Coming soon</span></div>
+            <p class="package-option-price"><span class="package-option-price-value">$6,490</span><span class="package-option-price-unit">/ 1,000 pieces</span></p>
+            <p class="package-option-purpose">For teams building a broader post-purchase channel for engagement, customer intelligence, and optimization.</p>
+            <ul class="package-option-features">
+              <li>Dynamic lifecycle experience</li>
+              <li>Product and brand education modules</li>
+              <li>Referral, review, and UGC actions</li>
+              <li>Challenges, content, and LTV modules</li>
+            </ul>
+          </article>
+        </div>
+        <button class="btn package-details-toggle reveal" type="button" aria-expanded="false" aria-controls="package-feature-table">View details</button>
+        <div class="package-feature-table-wrap reveal" id="package-feature-table" hidden>
+          <div class="package-feature-table" role="table" aria-label="Package feature comparison">
+            <div class="feature-heading" role="columnheader">Feature</div>
+            <div class="feature-heading" role="columnheader">Presence</div>
+            <div class="feature-heading" role="columnheader">In-Home Retention Asset</div>
+            <div class="feature-heading" role="columnheader">Post-Purchase Moat · Coming soon</div>
+
+            <div class="feature-section-header">In-Home Touchpoint</div>
+            <div>Branded NFC fridge magnet</div><div class="feature-check">✓</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Tap-to-open customer experience</div><div class="feature-check">✓</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>One branded landing page</div><div class="feature-check">✓</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>One universal customer CTA</div><div class="feature-check">✓</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>One universal Fresh Perk or offer</div><div class="feature-check">✓</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Surveys, quizzes, and preference capture</div><div class="feature-check">✓</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Basic tap and engagement tracking</div><div class="feature-check">✓</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Basic campaign report</div><div class="feature-check">✓</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+
+            <div class="feature-section-header">Lifecycle Purchase Activation</div>
+            <div>Dynamic, segment-based experience</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Customer segment recognition</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Lifecycle-based purchase CTA</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Segment-based starting offer</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Segment-based reward rules</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Replenishment-window logic</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Subscriber / non-subscriber logic</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Win-back logic</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Lifecycle targeting: new / active / replenishment / win-back / VIP</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+
+            <div class="feature-section-header">Integrations and Measurement</div>
+            <div>Shopify integration</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Klaviyo integration</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Segment-level measurement</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>Repeat-purchase measurement</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+            <div>60- and 90-day LTV reporting</div><div class="feature-miss">—</div><div class="feature-check">✓</div><div class="feature-check">✓</div>
+
+            <div class="feature-section-header">Post-Purchase Relationship Layer</div>
+            <div>Brand and product education modules</div><div class="feature-miss">—</div><div class="feature-miss">—</div><div class="feature-check">✓</div>
+            <div>Newsletter or community enrollment</div><div class="feature-miss">—</div><div class="feature-miss">—</div><div class="feature-check">✓</div>
+            <div>Referral and review actions</div><div class="feature-miss">—</div><div class="feature-miss">—</div><div class="feature-check">✓</div>
+            <div>UGC collection</div><div class="feature-miss">—</div><div class="feature-miss">—</div><div class="feature-check">✓</div>
+            <div>Challenges and customer missions</div><div class="feature-miss">—</div><div class="feature-miss">—</div><div class="feature-check">✓</div>
+            <div>Seasonal campaign modules</div><div class="feature-miss">—</div><div class="feature-miss">—</div><div class="feature-check">✓</div>
+            <div>New-product launch modules</div><div class="feature-miss">—</div><div class="feature-miss">—</div><div class="feature-check">✓</div>
+            <div>Recipe and content experiences</div><div class="feature-miss">—</div><div class="feature-miss">—</div><div class="feature-check">✓</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilot-plan" id="process">
+      <div class="pilot-intake demo-slide">
+        <div class="wrap">
+          <div class="pilot-intake-head reveal">
+            <div class="slide-label">03.1 — Pilot inputs</div>
+          </div>
+          <form class="pilot-form reveal" id="pilot-plan-form">
+            <div class="pilot-questions">
+              <div class="pilot-question">
+                <div class="pilot-question-num">01</div>
+                <div class="pilot-question-body">
+                  <div class="pilot-question-prompt" id="pilot-metric-label">Which metrics matter most for this pilot?</div>
+                  <details class="pilot-multiselect" data-multiselect data-placeholder="Select metrics">
+                    <summary><span class="pilot-multiselect-label" data-multiselect-label>Select metrics</span><span class="pilot-multiselect-arrow" aria-hidden="true"></span></summary>
+                    <div class="pilot-choice-list" role="group" aria-labelledby="pilot-metric-label" data-choice-group="metric">
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="30-Day Repeat Engaged Household Rate"><span class="pilot-choice-text">30-Day Repeat Engaged Household Rate</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Zero-Party Data Capture Rate"><span class="pilot-choice-text">Zero-Party Data Capture Rate</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="First-to-Second Order Conversion"><span class="pilot-choice-text">First-to-Second Order Conversion</span><span class="pilot-choice-badge">If full order data</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <label class="pilot-choice"><input type="checkbox" name="pilot_kpi" value="Coupon Redemption Rate"><span class="pilot-choice-text">Coupon Redemption Rate</span><span class="pilot-choice-badge">If coupon data only</span><span class="pilot-choice-mark" aria-hidden="true"></span></label>
+                      <button class="pilot-choice-confirm" type="button" data-multiselect-confirm>Confirm</button>
+                    </div>
+                  </details>
+                </div>
+              </div>
+              <div class="pilot-question">
+                <div class="pilot-question-num">02</div>
+                <div class="pilot-question-body">
+                  <label for="pilot-cycle-input">What is the average replenishment or repeat-purchase cycle for this product?</label>
+                  <div class="pilot-answer-unit">
+                    <input class="pilot-answer" id="pilot-cycle-input" name="pilot_replenishment_cycle" data-pilot-input="pilot_replenishment_cycle" type="number" inputmode="numeric" min="1" step="1" required placeholder="30">
+                    <span class="pilot-unit" aria-hidden="true">days</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </article>
-          <article class="touchpoint-part demo-slide reveal">
-            <div class="touchpoint-part-copy">
-              <div class="slide-label">02.2 — Place &amp; tap</div>
-              <h2 class="summary-line">Place it on the fridge. It’s ready with a single tap.</h2>
+            <div class="pilot-form-actions">
+              <button class="btn pilot-generate-btn" type="submit">Generate pilot plan</button>
+              <p class="pilot-form-status" role="status" aria-live="polite"></p>
             </div>
-            <img data-image="tap_image_url" alt="Uncle’s Coffee Bean magnet being placed on a refrigerator">
-          </article>
+          </form>
         </div>
       </div>
-    </section>
 
-    <section class="demo-slide" id="experience">
-      <div class="wrap">
-        <div class="section-head reveal"><div><div class="slide-label">02.3 — Customer journey</div></div><div><h2 class="summary-line">Five simple moments. One clear reward.</h2><div class="section-kicker-row"><p>A frictionless journey from package arrival to the next purchase.</p><a class="btn" data-link="customer_demo_url" target="_blank" rel="noopener">Open Mobile Experience ↗</a></div></div></div>
-        <div class="journey-single reveal">
-          <img data-image="journey_image_1_url" alt="Uncle’s Coffee Bean customer experience">
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter-divider demo-slide" aria-labelledby="chapter-03-title">
-      <div class="wrap reveal"><div class="chapter-number">03</div><h2 id="chapter-03-title">Easiest way to configure and launch</h2></div>
-    </section>
-
-    <section class="slide-group" id="rewards">
-      <div class="wrap">
-        <div class="config-walkthrough reveal">
-          <div class="config-steps">
-            <article class="config-step demo-slide is-active" data-config-step="config_coupon_image_url" data-config-alt="Coupon configuration screen" tabindex="0">
-              <div class="slide-label">03.1 — Configure coupons</div>
-              <h2 class="summary-line">Define the reward.</h2>
-              <p>Set the coupon type, value, code inventory, usage limits, and Shopify sync rules.</p>
-              <img class="config-step-mobile" data-image="config_coupon_image_url" alt="Coupon configuration screen">
-            </article>
-            <article class="config-step demo-slide" data-config-step="config_segment_image_url" data-config-alt="Segment coupon assignment screen" tabindex="0">
-              <div class="slide-label">03.2 — Assign segments</div>
-              <h2 class="summary-line">Match the right offer to the right customer.</h2>
-              <p>Connect coupons and reward strategies to lifecycle segments such as new, active, winback, and VIP customers.</p>
-              <img class="config-step-mobile" data-image="config_segment_image_url" alt="Segment coupon assignment screen">
-            </article>
-            <article class="config-step demo-slide" data-config-step="config_survey_image_url" data-config-alt="Survey configuration screen" tabindex="0">
-              <div class="slide-label">03.3 — Build the interaction</div>
-              <h2 class="summary-line">Turn customer feedback into a game.</h2>
-              <p>Create branded questions and challenge flows that earn points while capturing useful customer signals.</p>
-              <img class="config-step-mobile" data-image="config_survey_image_url" alt="Survey configuration screen">
-            </article>
+      <div class="pilot-plan-output">
+        <div class="wrap">
+          <div class="pilot-summary-slide demo-slide" hidden>
+            <header class="pilot-summary-head reveal">
+              <div class="slide-label">Pilot Plan</div>
+              <p class="pilot-summary-date"><span class="pilot-summary-date-label">Created date:</span><span data-field="pilot_created_date">July 30, 2026</span></p>
+            </header>
+            <dl class="pilot-summary-grid reveal">
+              <div class="pilot-summary-item pilot-summary-recommendation">
+                <dt>Recommended package:</dt>
+                <dd>
+                  <strong class="pilot-recommended-package" data-field="pilot_package_name">In-Home Retention Asset</strong>
+                  <span class="pilot-recommendation-label">Why recommended:</span>
+                  <p class="pilot-recommendation-reason" data-field="pilot_package_reason">For teams targeting measurable repeat purchase and win-back results through lifecycle segmentation.</p>
+                </dd>
+              </div>
+              <div class="pilot-summary-item"><dt>Target segment:</dt><dd data-field="pilot_segment">First order → second</dd></div>
+              <div class="pilot-summary-item"><dt>Success metric:</dt><dd data-field="pilot_kpi">30-Day Repeat Engaged Household Rate</dd></div>
+              <div class="pilot-summary-item"><dt>Pilot duration:</dt><dd><span data-field="pilot_duration_days">45-day</span> test window</dd></div>
+              <div class="pilot-summary-item"><dt>Test method:</dt><dd>Place 1,000 units in first-order customer packages so they enter the home with the shipment, then measure impact through data attribution.</dd></div>
+              <div class="pilot-summary-item pilot-package-details"><dt>Package includes:</dt><dd data-field="pilot_package_deliverables">Branded NFC magnets; lifecycle targeting; Shopify and Klaviyo integration; attribution data only.</dd></div>
+              <div class="pilot-summary-item"><dt>Quantity:</dt><dd><span data-field="pilot_quantity">1,000</span> pieces</dd></div>
+              <div class="pilot-summary-item pilot-commercial-summary">
+                <dt>Commercial terms:</dt>
+                <dd class="pilot-commercial-values">
+                  <span><span class="pilot-inline-label">Package price:</span> <span data-field="pilot_package_price">$5,490</span></span>
+                  <span><span class="pilot-inline-label">Discount:</span> <span data-field="pilot_discount">20% (−$1,098)</span><span class="pilot-limited-badge" data-discount-deadline>Ends Aug 7, 2026</span></span>
+                  <span>
+                    <span class="pilot-inline-label">Door-to-Door Cross-Border Fulfillment Service:</span>
+                    <span data-shipping-method="air" data-shipping-price="800">Air · $800</span>
+                  </span>
+                  <span><span class="pilot-inline-label">Total:</span> <span class="pilot-total-value" data-field="pilot_total">$5,192</span></span>
+                </dd>
+              </div>
+            </dl>
           </div>
-          <div class="config-sticky">
-            <div class="config-sticky-stage">
-              <img data-config-image data-image="config_coupon_image_url" alt="Coupon configuration screen">
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-plan" id="timeline">
+      <div class="wrap">
+        <header class="timeline-head reveal">
+          <div class="slide-label">06 — Timeline and responsibilities</div>
+        </header>
+        <div class="pilot-section reveal">
+          <div class="swimlane pilot-swimlane">
+            <div class="swim-head">
+              <div class="lane-label lane-fc">FC</div>
+              <div class="lane-label lane-brand">Brand</div>
+            </div>
+            <div class="swim-steps">
+              <div class="swim-row is-fc">
+                <div class="swim-card">
+                  <div class="swim-card-top"><span class="swim-num">01</span><span class="swim-days">Before expiry</span></div>
+                  <h4>Prepare the pilot order</h4>
+                  <p>FC prepares the pilot plan, live demo, dashboard access, order link, and invoice.</p>
+                  <div class="swim-output"><b>Deliverable:</b> Ready-to-approve pilot order</div>
+                </div>
+              </div>
+              <div class="swim-row is-brand">
+                <div class="swim-card">
+                  <div class="swim-card-top"><span class="swim-num">02</span><span class="swim-days">Day 0</span></div>
+                  <h4>Confirm and pay</h4>
+                  <p>Brand confirms the plan, provides the required data and permissions, accepts the terms, and completes payment.</p>
+                  <div class="swim-output"><b>Deliverable:</b> Approved and fully paid order</div>
+                </div>
+              </div>
+              <div class="swim-row is-fc">
+                <div class="swim-card">
+                  <div class="swim-card-top"><span class="swim-num">03</span><span class="swim-days">Day 1</span></div>
+                  <h4>Provide the production specification</h4>
+                  <p>FC provides magnet dimensions, design templates, and technical requirements, then checks production feasibility.</p>
+                  <div class="swim-output"><b>Deliverable:</b> Production-ready design pack</div>
+                </div>
+              </div>
+              <div class="swim-row is-brand">
+                <div class="swim-card">
+                  <div class="swim-card-top"><span class="swim-num">04</span><span class="swim-days">24-hour window</span></div>
+                  <h4>Submit and approve the artwork</h4>
+                  <p>Brand supplies print-ready CMYK front and back artwork and confirms the final version in writing.</p>
+                  <div class="swim-output"><b>Deliverable:</b> Design Lock</div>
+                </div>
+              </div>
+              <div class="swim-row is-fc">
+                <div class="swim-card">
+                  <div class="swim-card-top"><span class="swim-num">05</span><span class="swim-days">After Design Lock</span></div>
+                  <h4>Produce the final sample</h4>
+                  <p>FC produces and ships the first physical sample. If required, FC applies one consolidated feedback round and ships Round 2.</p>
+                  <div class="swim-output"><b>Deliverable:</b> Final physical sample</div>
+                </div>
+              </div>
+              <div class="swim-row is-brand">
+                <div class="swim-card">
+                  <div class="swim-card-top"><span class="swim-num">06</span><span class="swim-days">Within 7 business days</span></div>
+                  <h4>Inspect and approve the sample</h4>
+                  <p>Brand checks the product, color, size, tap behavior, and content, then approves it or returns one consolidated response.</p>
+                  <div class="swim-output"><b>Deliverable:</b> Written Final Sample approval</div>
+                </div>
+              </div>
+              <div class="swim-row is-fc">
+                <div class="swim-card">
+                  <div class="swim-card-top"><span class="swim-num">07</span><span class="swim-days">After approval</span></div>
+                  <h4>Produce and deliver</h4>
+                  <p>FC completes mass production and ships the full magnet quantity to the confirmed warehouse or 3PL.</p>
+                  <div class="swim-output"><b>Deliverable:</b> Full production quantity delivered</div>
+                </div>
+              </div>
+              <div class="swim-row is-brand">
+                <div class="swim-card">
+                  <div class="swim-card-top"><span class="swim-num">08</span><span class="swim-days">Launch</span></div>
+                  <h4>Insert magnets into target orders</h4>
+                  <p>Brand confirms receipt and instructs its warehouse or 3PL to place magnets into orders for the selected pilot segment.</p>
+                  <div class="swim-output"><b>Deliverable:</b> Pilot live in customer shipments</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
-    </section>
-
-    <section class="chapter-divider demo-slide" aria-labelledby="chapter-04-title">
-      <div class="wrap reveal"><div class="chapter-number">04</div><h2 id="chapter-04-title">What the brand gets out of it</h2></div>
-    </section>
-
-    <section class="slide-group" id="results">
-      <div class="wrap">
-        <div class="dashboard-walkthrough reveal">
-          <div class="dashboard-steps">
-            <article class="dashboard-step demo-slide is-active" data-dashboard-step="dashboard_revenue_image_url" data-dashboard-alt="Revenue overview dashboard" tabindex="0">
-              <div class="slide-label">04.1 — Dashboard overview</div>
-              <h2 class="summary-line">From physical tap to measurable revenue.</h2>
-              <p>Track attributed revenue, repeat purchases, retention, revenue growth, and revenue per active magnet.</p>
-              <img class="dashboard-step-mobile" data-image="dashboard_revenue_image_url" alt="Revenue overview dashboard">
-            </article>
-            <article class="dashboard-step demo-slide" data-dashboard-step="dashboard_funnel_image_url" data-dashboard-alt="Physical touchpoint and coupon revenue funnel dashboard" tabindex="0">
-              <div class="slide-label">04.2 — Touchpoint &amp; funnel</div>
-              <h2 class="summary-line">See how engagement becomes revenue.</h2>
-              <p>Follow the journey from active devices and participants through coupons earned, coupons used, orders, and revenue.</p>
-              <img class="dashboard-step-mobile" data-image="dashboard_funnel_image_url" alt="Physical touchpoint and coupon revenue funnel dashboard">
-            </article>
-          </div>
-          <div class="dashboard-sticky">
-            <div class="dashboard-sticky-stage">
-              <img data-dashboard-image data-image="dashboard_revenue_image_url" alt="Revenue overview dashboard">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="pricing-host" id="pilot">
-      <div id="pricing-shadow-host" aria-live="polite"></div>
-    </section>
-
-    <section class="chapter-divider demo-slide" aria-labelledby="chapter-05-title">
-      <div class="wrap reveal"><div class="chapter-number">05</div><h2 id="chapter-05-title">How we work together</h2></div>
-    </section>
-
-    <section id="process">
-      <div class="wrap">
-        <div class="section-head reveal"><div class="slide-label">05.1 — Delivery timeline</div><div><h2 class="summary-line">From kickoff to measurable results.</h2><p>From signed agreement to live customer engagement, each step has a clear owner, output, and next action.</p></div></div>
-        <div class="swimlane reveal">
-          <div class="swim-head"><div class="lane-label lane-fc">FC</div><div class="lane-label lane-brand" data-field="brand_name">Uncle’s Coffee Bean</div></div>
-          <div class="swim-steps">
-            <div class="swim-row is-joint"><div class="swim-card"><div class="swim-card-top"><span class="swim-num">01</span></div><h4>Agreement &amp; kickoff</h4><div class="swim-output"><b>Output:</b> Pilot officially starts.</div></div></div>
-            <div class="swim-row is-brand"><div class="swim-card"><div class="swim-card-top"><span class="swim-num">02</span><span class="swim-days">~1 day</span></div><h4>Brand inputs &amp; campaign rules</h4><p>Brand provides logo, colors, product references, target audience, reward rules, and Shopify / Klaviyo requirements. FC translates them into setup requirements.</p><div class="swim-output"><b>Output:</b> Campaign setup brief confirmed.</div></div></div>
-            <div class="swim-row is-fc"><div class="swim-card"><div class="swim-card-top"><span class="swim-num">03</span><span class="swim-days">~2 days</span></div><h4>NFC magnet design</h4><p>FC designs the front and back of the branded NFC fridge magnet and prepares production files. Brand approves — two standard revision rounds included.</p><div class="swim-output"><b>Output:</b> Final magnet artwork approved.</div></div></div>
-            <div class="swim-row is-fc"><div class="swim-card"><div class="swim-card-top"><span class="swim-num">04</span><span class="swim-days">~1 day</span></div><h4>Mobile reward experience &amp; dashboard setup</h4><p>FC configures the branded reward page, challenge flow, points and unlock logic, tracking events, and the campaign dashboard. Brand confirms key rules.</p><div class="swim-output"><b>Output:</b> Tap experience and dashboard ready.</div></div></div>
-            <div class="swim-row is-brand"><div class="swim-card"><div class="swim-card-top"><span class="swim-num">05</span><span class="swim-days">~1 day</span></div><h4>Shopify &amp; Klaviyo connection</h4><p>Brand connects Shopify and Klaviyo through its own secure authorization. FC assists with coupon rules, segment logic, reward setup, and measurement.</p><div class="swim-output"><b>Output:</b> Brand systems connected for launch.</div></div></div>
-            <div class="swim-row is-fc"><div class="swim-card"><div class="swim-card-top"><span class="swim-num">06</span><span class="swim-days">7–10 days</span></div><h4>Production, QA &amp; delivery</h4><p>FC produces the magnets, sets the NFC destination, runs tap tests, verifies reward logic, and ships to the agreed location. Brand confirms the delivery address.</p><div class="swim-note">After final artwork approval — depending on quantity and destination.</div><div class="swim-output"><b>Output:</b> Finished NFC magnets delivered.</div></div></div>
-            <div class="swim-row is-brand"><div class="swim-card"><div class="swim-card-top"><span class="swim-num">07</span></div><h4>Fulfillment launch</h4><p>Brand decides which customers receive magnets and includes them in selected orders via its warehouse, fulfillment team, or 3PL. FC keeps the experience live.</p><div class="swim-output"><b>Output:</b> Magnets enter customer homes through real shipments.</div></div></div>
-            <div class="swim-row is-joint"><div class="swim-card"><div class="swim-card-top"><span class="swim-num">08</span></div><h4>Results review &amp; next step</h4><p>Brand reviews active magnets, taps, challenge participation, rewards unlocked, coupons redeemed, repeat orders, and attributed revenue. FC provides the pilot readout, insights, and scale recommendation.</p><div class="swim-output"><b>Output:</b> Decide whether to scale, adjust, or stop.</div></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="questions-section demo-slide" id="questions">
-      <div class="wrap reveal">
-        <h2 class="slide-title">Discovery</h2>
-        <div class="questions-rule" aria-hidden="true"></div>
-      </div>
-    </section>
-
-    <section class="demo-slide" id="faq">
-      <div class="wrap">
-        <div class="section-head reveal"><div class="chapter-label">Appendix — FAQ</div><div><h2 class="slide-title">Brand FAQs</h2><p>Everything your growth, e-commerce, CRM, and operations teams might want to know before launching a first pilot.</p></div></div>
-        <div class="faq-list reveal">
-          <details class="faq-item"><summary>Do customers need to download an app?</summary><div class="faq-answer">No. Customers simply tap the NFC fridge magnet to open your brand’s mobile rewards page directly in their browser.</div></details>
-          <details class="faq-item"><summary>Do customers need to scan a QR code?</summary><div class="faq-answer">No. The feature is activated by NFC touch, so customers do not need to open their camera or scan a QR code.</div></details>
-          <details class="faq-item"><summary>Is this feature supported on iPhone and Android devices?</summary><div class="faq-answer">Yes, this experience is designed for NFC-enabled iPhone and Android devices. During the pilot deployment, FC will verify that tap-to-activate works properly on common devices before the official launch.</div></details>
-          <details class="faq-item"><summary>What specific content do you need to provide?</summary><div class="faq-answer">Brand assets, logos, and color schemes; campaign rules; target audience demographics; terms for coupons or reward packs; Shopify account or coupon settings; Klaviyo account or audience segmentation settings; shipping times; and success-rate metrics.</div></details>
-          <details class="faq-item"><summary>What is FC responsible for?</summary><div class="faq-answer">FC prepares the brand magnet settings, mobile rewards experience, campaign configuration, coupon logic, dashboards, pilot checklists, and reporting structures.</div></details>
-          <details class="faq-item"><summary>How do customers redeem rewards?</summary><div class="faq-answer">Customers tap the “Magnet” button, complete the challenge, and unlock a coupon or reward pack. The system then redirects them back to your checkout, where they can apply the promo code on their next order.</div></details>
-          <details class="faq-item"><summary>How can I determine if the campaign is effective?</summary><div class="faq-answer">The dashboard tracks active magnets, click-throughs, challenge participation, unlocked promo codes, redeemed promo codes, repeat orders, attributed revenue, and revenue generated per active magnet.</div></details>
-          <details class="faq-item"><summary>Can rewards be customized for different customer segments?</summary><div class="faq-answer">Yes. Depending on your selected plan, you can assign offers to segments based on lifecycle stage — such as new, active, returning, repeat, and VIP customers.</div></details>
-          <details class="faq-item"><summary>What happens if a customer doesn’t tap?</summary><div class="faq-answer">This is exactly what the pilot is designed to measure. The initial pilot validates the magnet’s activation rate, click-through behavior, coupon usage, repurchase rate, and whether this channel is worth scaling.</div></details>
-          <details class="faq-item"><summary>What is the recommended next step?</summary><div class="faq-answer">Start with a limited-scope pilot: define the target audience, volume, reward rules, shipping windows, Shopify settings, Klaviyo segmentation, and success metrics. FC will prepare the pilot experience and dashboard before launch.</div></details>
-        </div>
-        <a class="faq-viewall" href="/faq.html">View all the questions brands commonly ask ↗</a>
-      </div>
-    </section>
-
-    <section class="footer footer-slide demo-slide">
-      <div class="wrap"><div class="footer-box reveal"><div><div class="chapter-label">Next step</div><h2 class="slide-title">Turn the next shipment into the next order.</h2></div><a class="btn" data-link="footer_button_url">Schedule a Pilot Planning Call ↗</a></div><p class="fineprint">Sample data shown for demonstration only. Final coupon terms, quantities, Shopify setup, and campaign rules will be confirmed during pilot setup.</p></div>
     </section>
 
   </main>
@@ -651,6 +970,49 @@
       : (proposalParams.get('sn') || proposalParams.get('id'));
     const fallbackId = proposalId || 'UCB-GIFT-001';
     let proposalData = {};
+    let pilotPlanGeneratedThisSession = false;
+    let pilotShippingMethod = 'air';
+
+    function parsePilotCurrency(value) {
+      const amount = Number(String(value || '').replace(/[^0-9.-]/g, ''));
+      return Number.isFinite(amount) ? amount : 0;
+    }
+
+    function formatPilotCurrency(value) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0
+      }).format(value);
+    }
+
+    function updatePilotCommercialTerms() {
+      const packagePriceElement = document.querySelector('[data-field="pilot_package_price"]');
+      const discountElement = document.querySelector('[data-field="pilot_discount"]');
+      const totalElement = document.querySelector('[data-field="pilot_total"]');
+      const shippingOption = document.querySelector(`[data-shipping-method="${pilotShippingMethod}"]`);
+      const packagePrice = parsePilotCurrency(packagePriceElement?.textContent);
+      const discountAmount = Math.round(packagePrice * 0.2);
+      const shipmentAmount = Number(shippingOption?.dataset.shippingPrice || 0);
+      const total = packagePrice - discountAmount + shipmentAmount;
+
+      if (discountElement) discountElement.textContent = `20% (−${formatPilotCurrency(discountAmount)})`;
+      if (totalElement) totalElement.textContent = formatPilotCurrency(total);
+    }
+
+    function updatePilotDiscountDeadline() {
+      const badge = document.querySelector('[data-discount-deadline]');
+      if (!badge) return;
+      const deadlineDate = new Date();
+      deadlineDate.setHours(0, 0, 0, 0);
+      deadlineDate.setDate(deadlineDate.getDate() + 7);
+      const deadline = new Intl.DateTimeFormat('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+      }).format(deadlineDate);
+      badge.textContent = `Ends ${deadline}`;
+    }
 
     function applyData(data) {
       if (data.template_type && data.template_type !== 'gift_challenge') {
@@ -664,18 +1026,21 @@
         document.documentElement.style.setProperty('--brand-dark', data.brand_dark_color);
       }
       if (data.brand_light_color) document.documentElement.style.setProperty('--brand-light', data.brand_light_color);
-      const pricingHost = document.getElementById('pricing-shadow-host');
-      if (pricingHost) {
-        if (data.brand_primary_color) pricingHost.style.setProperty('--proposal-primary', data.brand_primary_color);
-        if (data.brand_second_color) pricingHost.style.setProperty('--proposal-secondary', data.brand_second_color);
-      }
       document.querySelectorAll('[data-field]').forEach(el => { const value=data[el.dataset.field]; if(value) el.textContent=value; });
+      const segmentField = document.querySelector('[data-field="pilot_segment"]');
+      if (segmentField) segmentField.textContent = 'First order → second';
+      pilotShippingMethod = 'air';
+      updatePilotCommercialTerms();
+      updatePilotDiscountDeadline();
+      const pilotPlanOutput = document.querySelector('.pilot-summary-slide');
+      if (pilotPlanOutput) pilotPlanOutput.hidden = !pilotPlanGeneratedThisSession;
       const brandName = data.brand_name || 'Brand';
       const imageAltByField = {
         hero_image_url: `${brandName} branded NFC fridge magnet`,
         physical_image_url: `Front and back of the ${brandName} NFC fridge magnet`,
         tap_image_url: `${brandName} NFC fridge magnet being placed on a refrigerator`,
         journey_image_1_url: `${brandName} mobile reward experience`,
+        journey_image_5_url: `${brandName} live reward page`,
         config_coupon_image_url: `${brandName} coupon configuration screen`,
         config_segment_image_url: `${brandName} segment assignment screen`,
         config_survey_image_url: `${brandName} survey configuration screen`,
@@ -687,6 +1052,19 @@
         const value = data[field];
         if (value) el.src = value;
         if (imageAltByField[field]) el.alt = imageAltByField[field];
+      });
+      document.querySelectorAll('[data-video]').forEach(el => {
+        const value = data[el.dataset.video];
+        if (value) {
+          const source = el.querySelector('source');
+          if (source) {
+            source.src = value;
+            el.load();
+            if (el.autoplay) el.play().catch(() => {});
+          }
+        }
+        const posterValue = data[el.dataset.poster];
+        if (posterValue) el.poster = posterValue;
       });
       document.querySelectorAll('[data-link]').forEach(el => { const value=data[el.dataset.link]; if(value) el.href=value; });
       document.title = `${data.campaign_name || data.brand_name || 'Reward Challenge'} | Proposal`;
@@ -769,106 +1147,161 @@
     },{rootMargin:'-30% 0px -30% 0px',threshold:[.2,.5,.8]});
     document.querySelectorAll('[data-dashboard-step]').forEach(step => dashboardStepObserver.observe(step));
 
+    const packageDetailsToggle = document.querySelector('.package-details-toggle');
+    const packageFeatureTable = document.getElementById('package-feature-table');
+    packageDetailsToggle?.addEventListener('click', () => {
+      const willExpand = packageDetailsToggle.getAttribute('aria-expanded') !== 'true';
+      packageDetailsToggle.setAttribute('aria-expanded', String(willExpand));
+      packageDetailsToggle.textContent = willExpand ? 'Hide details' : 'View details';
+      if (packageFeatureTable) packageFeatureTable.hidden = !willExpand;
+    });
+
+    function normalizePilotCycle(value) {
+      const trimmed = String(value || '').trim();
+      const match = /^(\d+)\s*(days?|weeks?|months?)$/i.exec(trimmed);
+      if (!match) return trimmed;
+      const unit = match[2].toLowerCase().replace(/s$/,'');
+      return `${match[1]}-${unit}`;
+    }
+
+    const pilotPlanForm = document.getElementById('pilot-plan-form');
+    const pilotPlanOutput = document.querySelector('.pilot-summary-slide');
+
+    function updatePilotMultiselect(multiselect) {
+      const selected = [
+        ...[...multiselect.querySelectorAll('input:checked')].map(input => input.value),
+        ...[...multiselect.querySelectorAll('.pilot-other-input')]
+          .map(input => input.value.trim())
+          .filter(Boolean)
+      ];
+      const label = multiselect.querySelector('[data-multiselect-label]');
+      if (!label) return;
+      label.textContent = selected.length === 0
+        ? multiselect.dataset.placeholder
+        : selected.length <= 2
+          ? selected.join(', ')
+          : `${selected.length} selected`;
+    }
+
+    document.querySelectorAll('[data-multiselect]').forEach(multiselect => {
+      updatePilotMultiselect(multiselect);
+      multiselect.addEventListener('change', () => updatePilotMultiselect(multiselect));
+      multiselect.addEventListener('input', () => updatePilotMultiselect(multiselect));
+      multiselect.addEventListener('toggle', () => {
+        if (!multiselect.open) return;
+        document.querySelectorAll('[data-multiselect][open]').forEach(other => {
+          if (other !== multiselect) other.open = false;
+        });
+      });
+      multiselect.querySelector('[data-multiselect-confirm]')?.addEventListener('click', () => {
+        updatePilotMultiselect(multiselect);
+        multiselect.open = false;
+      });
+      multiselect.querySelector('.pilot-other-input')?.addEventListener('keydown', event => {
+        if (event.key !== 'Enter') return;
+        event.preventDefault();
+        updatePilotMultiselect(multiselect);
+        multiselect.open = false;
+      });
+    });
+
+    document.addEventListener('click', event => {
+      document.querySelectorAll('[data-multiselect][open]').forEach(multiselect => {
+        if (!multiselect.contains(event.target)) multiselect.open = false;
+      });
+    });
+
+    pilotPlanForm?.addEventListener('submit', async event => {
+      event.preventDefault();
+      const button = pilotPlanForm.querySelector('.pilot-generate-btn');
+      const status = pilotPlanForm.querySelector('.pilot-form-status');
+      if (!pilotPlanForm.reportValidity()) return;
+
+      const formData = new FormData(pilotPlanForm);
+      const selectedMetrics = formData.getAll('pilot_kpi').map(value => String(value).trim()).filter(Boolean);
+      if (!selectedMetrics.length) {
+        status.classList.add('is-error');
+        status.textContent = 'Select at least one metric.';
+        const emptyGroup = pilotPlanForm.querySelector('[data-choice-group="metric"]');
+        const multiselect = emptyGroup?.closest('[data-multiselect]');
+        if (multiselect) multiselect.open = true;
+        window.requestAnimationFrame(() => emptyGroup?.querySelector('input')?.focus());
+        return;
+      }
+
+      const replenishmentDays = String(formData.get('pilot_replenishment_cycle') || '').trim();
+      const answers = {
+        pilot_segment: 'First order → second',
+        pilot_kpi: selectedMetrics.join('; '),
+        pilot_replenishment_cycle: normalizePilotCycle(`${replenishmentDays} days`),
+        pilot_values_status: 'confirmed'
+      };
+
+      button.disabled = true;
+      button.textContent = 'Generating…';
+      status.classList.remove('is-error');
+      status.textContent = 'Saving answers…';
+
+      try {
+        const response = await fetch('/api/pilot-plan', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({id:fallbackId,answers})
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || 'Unable to save the pilot plan');
+        pilotPlanGeneratedThisSession = true;
+        applyData(result.proposal);
+        status.textContent = 'Pilot plan generated.';
+        window.requestAnimationFrame(() => {
+          document.querySelector('.pilot-summary-slide')?.scrollIntoView({behavior:'smooth',block:'start'});
+        });
+      } catch (error) {
+        console.error(error);
+        status.classList.add('is-error');
+        status.textContent = 'Could not save the answers. Please try again.';
+      } finally {
+        button.disabled = false;
+        button.textContent = 'Generate pilot plan';
+      }
+    });
+
     fetch(`/api/proposal?id=${encodeURIComponent(fallbackId)}`)
       .then(async response => { const data=await response.json(); if(!response.ok) throw new Error(data.error||'Proposal not found'); return data; })
       .then(applyData)
       .catch(error => { console.error(error); document.body.dataset.loadError='true'; });
 
-    const packageData = {
-      presence:{name:'Presence',price:3.99,annualOrders:1.64},
-      ltv:{name:'LTV Lift',price:4.99,annualOrders:2.40},
-      moat:{name:'Retention Moat',price:5.49,annualOrders:3.49}
-    };
-
-    let pricingRoot;
-    const pricingMoney = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
-    const pricingNumber = new Intl.NumberFormat('en-US',{maximumFractionDigits:0});
-    const pq = selector => pricingRoot && pricingRoot.querySelector(selector);
-
-    window.selectPackage = function(key) {
-      Object.keys(packageData).forEach(name => pq(`#roas-col-${name}`)?.classList.toggle('is-selected', name === key));
-    };
-
-    window.runCalc = function() {
-      const aov = parseFloat((pq('#calc-aov')?.value || '').replace(/,/g,'')) || 0;
-      const households = parseInt((pq('#calc-hh')?.value || '').replace(/,/g,''),10) || 0;
-      if (!aov || !households) return;
-      const guide = pq('#calc-guide');
-      const results = pq('#roas-results');
-      if (guide) guide.style.display = 'none';
-      if (results) results.style.display = 'block';
-      if (pq('#calc-summary')) pq('#calc-summary').textContent = `Based on AOV ${pricingMoney.format(aov)} · ${pricingNumber.format(households)} households`;
-      Object.entries(packageData).forEach(([key,pkg]) => {
-        const investment = households * pkg.price;
-        const annualOrders = households * pkg.annualOrders;
-        const revenue = annualOrders * aov;
-        const roas = revenue / investment;
-        pq(`#roas-val-${key}`).textContent = `${roas.toFixed(1)}x`;
-        pq(`#rev-val-${key}`).textContent = pricingMoney.format(revenue);
-        pq(`#inv-val-${key}`).textContent = pricingMoney.format(investment);
-        pq(`#orders-val-${key}`).innerHTML = `${(annualOrders/12).toFixed(1)} / mo <span class="lift-arrow">↑</span>`;
-        pq(`#annual-lift-val-${key}`).innerHTML = `${pricingNumber.format(annualOrders)} <span class="lift-arrow">↑</span>`;
-      });
-    };
-
-    window.choosePlan = function(key) {
-      const calculator = pq('#calculator-section');
-      if (!calculator) return;
-      calculator.style.display = 'block';
-      pq('#selected-pkg-label').textContent = packageData[key]?.name || '';
-      pq('#calc-aov').value = pq('#calc-aov').value || '65';
-      pq('#calc-hh').value = pq('#calc-hh').value || '1,500';
-      window.selectPackage(key);
-      calculator.scrollIntoView({behavior:'smooth',block:'start'});
-    };
-
-    async function mountOriginalPricing() {
-      const host = document.getElementById('pricing-shadow-host');
-      const html = await fetch('/index.html').then(response => response.text());
-      const source = new DOMParser().parseFromString(html,'text/html');
-      const originalSection = source.querySelector('section.data-section');
-      const originalStyle = source.querySelector('style');
-      if (!host || !originalSection || !originalStyle) throw new Error('Original pricing section unavailable');
-      const packageEyebrow = originalSection.querySelector('.mono');
-      if (packageEyebrow) packageEyebrow.textContent = '04.3 // PACKAGE';
-      pricingRoot = host.attachShadow({mode:'open'});
-      pricingRoot.innerHTML = `
-        <style>${originalStyle.textContent}</style>
-        <style>
-          :host{--nike-orange:var(--proposal-primary,#FF5A1F);--nike-volt:var(--proposal-secondary,#D8FF2F);--on-nike-volt:#000;display:block}
-          .reveal{opacity:1!important;transform:none!important}
-          section.data-section{min-height:0!important}
-          section.data-section .mono{font-size:1rem!important;line-height:1.5!important}
-        </style>
-        ${originalSection.outerHTML}
-      `;
-      const featureTable = pq('.package-feature-table');
-      if (featureTable) {
-        const columnNames = [null,'presence','ltv','moat'];
-        let columnIndex = 0;
-        [...featureTable.children].forEach(cell => {
-          if (cell.classList.contains('feature-section-header')) {
-            columnIndex = 0;
-            return;
-          }
-          if (columnIndex > 0) cell.dataset.col = columnNames[columnIndex];
-          columnIndex = (columnIndex + 1) % 4;
-        });
+    const sampleRecap = document.getElementById('sample-recap');
+    const sampleRecapCount = sampleRecap?.querySelector('[data-effort-count]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function activateSampleRecap() {
+      if (!sampleRecap || sampleRecap.classList.contains('is-active')) return;
+      sampleRecap.classList.add('is-active');
+      if (!sampleRecapCount) return;
+      const target = Number(sampleRecapCount.dataset.effortCount) || 15;
+      if (reducedMotion.matches) {
+        sampleRecapCount.textContent = String(target);
+        return;
       }
-      pricingRoot.addEventListener('click', event => {
-        const button = event.target.closest('[data-package-toggle]');
-        if (!button) return;
-        const key = button.dataset.packageToggle;
-        const table = pq('.package-feature-table');
-        if (table) table.dataset.active = key;
-        const panel = pq('#package-feature-panel');
-        if (panel) panel.removeAttribute('hidden');
-        pq('#package-feature-title').textContent = `${packageData[key]?.name || ''} full feature set`;
-        pricingRoot.querySelectorAll('[data-package-card]').forEach(card => card.classList.toggle('is-active',card.dataset.packageCard === key));
-      });
-      ['calc-aov','calc-hh'].forEach(id => pq(`#${id}`)?.addEventListener('input', window.runCalc));
+      const startedAt = performance.now();
+      const duration = 520;
+      function updateRecapCount(now) {
+        const progress = Math.min(1, (now - startedAt) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        sampleRecapCount.textContent = String(Math.round(target * eased));
+        if (progress < 1) requestAnimationFrame(updateRecapCount);
+      }
+      requestAnimationFrame(updateRecapCount);
     }
-    mountOriginalPricing().catch(error => console.error(error));
+    const sampleRecapObserver = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        activateSampleRecap();
+        sampleRecapObserver.disconnect();
+      }
+    }, {threshold:.35});
+    if (sampleRecap) sampleRecapObserver.observe(sampleRecap);
+
+    updatePilotDiscountDeadline();
 
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));

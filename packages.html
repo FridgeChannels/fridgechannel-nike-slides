@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare the three Fridge Channel packages.">
+  <title>Compare packages | Fridge Channel</title>
+  <style>
+    :root{
+      --paper:#f5efe5;
+      --ink:#201712;
+      --muted:#655c56;
+      --accent:#c8562f;
+      --page-padding:clamp(20px,5vw,64px);
+    }
+    *{box-sizing:border-box}
+    html{background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body{margin:0;background:var(--paper);font-weight:400}
+    main{width:min(1440px,100%);margin:auto;padding:64px var(--page-padding) 96px}
+    h1,h2,p,ul{margin:0}
+    h1{font-size:clamp(2.5rem,10vw,4.75rem);font-weight:400;line-height:1.02;letter-spacing:-.04em;text-align:center}
+    .packages{display:grid;grid-template-columns:1fr;gap:72px;margin-top:72px}
+    .package{min-width:0}
+    .package-number,.price-label,.includes-title{
+      color:var(--accent);
+      font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+      font-size:.78rem;
+      letter-spacing:.04em;
+    }
+    .package-number{margin-bottom:16px}
+    .package h2{font-size:clamp(1.8rem,7vw,2.7rem);font-weight:400;line-height:1.08;letter-spacing:-.025em}
+    .package-subtitle{margin-top:8px;color:var(--muted);font-size:1rem;line-height:1.45}
+    .prices{display:flex;align-items:flex-end;gap:28px;margin-top:28px;flex-wrap:wrap}
+    .price{display:grid;gap:5px}
+    .price-value{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:clamp(1.65rem,7vw,2.4rem);line-height:1}
+    .price-unit{color:var(--muted);font-size:.8rem}
+    .best-fit{margin-top:28px;color:var(--muted);font-size:1rem;line-height:1.65}
+    .best-fit span{color:var(--ink)}
+    .includes{margin-top:32px}
+    .includes-title{margin-bottom:16px}
+    .includes ul{display:grid;gap:12px;padding:0;list-style:none}
+    .includes li{position:relative;padding-left:20px;color:var(--ink);font-size:.98rem;line-height:1.45}
+    .includes li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+    @media (min-width:900px){
+      main{padding-top:96px}
+      .packages{grid-template-columns:repeat(3,minmax(0,1fr));gap:56px;margin-top:96px}
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Compare packages</h1>
+
+    <section class="packages" aria-label="Fridge Channel package options">
+      <article class="package">
+        <div class="package-number">Package 01</div>
+        <h2>Presence</h2>
+        <p class="package-subtitle">In-Home Presence</p>
+        <div class="prices" aria-label="Presence pricing">
+          <div class="price">
+            <span class="price-label">Year 1</span>
+            <span class="price-value">$3.99</span>
+            <span class="price-unit">per card / year</span>
+          </div>
+          <div class="price">
+            <span class="price-label">Year 2+</span>
+            <span class="price-value">$0.99</span>
+          </div>
+        </div>
+        <p class="best-fit"><span>Best fit:</span> Brands in the MFR stage that want to increase repeat purchases without investing significant time or effort.</p>
+        <div class="includes">
+          <div class="includes-title">Package includes</div>
+          <ul>
+            <li>Branded NFC fridge magnet</li>
+            <li>Tap-to-open customer experience</li>
+            <li>Branded landing page</li>
+            <li>Universal CTA and customer offer</li>
+            <li>Surveys, quizzes, and preference capture</li>
+            <li>Engagement tracking and campaign report</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="package">
+        <div class="package-number">Package 02</div>
+        <h2>In-Home Retention Asset</h2>
+        <p class="package-subtitle">Lifecycle Purchase Activation</p>
+        <div class="prices" aria-label="In-Home Retention Asset pricing">
+          <div class="price">
+            <span class="price-label">Year 1</span>
+            <span class="price-value">$4.99</span>
+            <span class="price-unit">per card / year</span>
+          </div>
+          <div class="price">
+            <span class="price-label">Year 2+</span>
+            <span class="price-value">$1.49</span>
+          </div>
+        </div>
+        <p class="best-fit"><span>Best fit:</span> Teams that want measurable repeat-purchase lift through lifecycle segmentation and Shopify + Klaviyo integration.</p>
+        <div class="includes">
+          <div class="includes-title">Package includes</div>
+          <ul>
+            <li>Branded NFC magnet and tap experience</li>
+            <li>Dynamic customer segment recognition</li>
+            <li>Lifecycle CTA, offers, and reward rules</li>
+            <li>Shopify and Klaviyo integration</li>
+            <li>Replenishment, subscriber, and win-back logic</li>
+            <li>Repeat-purchase and LTV reporting</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="package">
+        <div class="package-number">Package 03</div>
+        <h2>Post-Purchase Moat</h2>
+        <p class="package-subtitle">Post-Purchase Relationship Layer</p>
+        <div class="prices" aria-label="Post-Purchase Moat pricing">
+          <div class="price">
+            <span class="price-label">Year 1</span>
+            <span class="price-value">$5.49</span>
+            <span class="price-unit">per card / year</span>
+          </div>
+          <div class="price">
+            <span class="price-label">Year 2+</span>
+            <span class="price-value">$1.99</span>
+          </div>
+        </div>
+        <p class="best-fit"><span>Best fit:</span> Teams that want a defensible post-purchase channel combining brand engagement, customer intelligence, and continuous optimization.</p>
+        <div class="includes">
+          <div class="includes-title">Package includes</div>
+          <ul>
+            <li>Branded NFC magnet and dynamic experience</li>
+            <li>Lifecycle targeting and integrations</li>
+            <li>Brand and product education modules</li>
+            <li>Referral, review, and UGC actions</li>
+            <li>Challenges, seasonal, and launch missions</li>
+            <li>Recipe, content, and LTV reporting modules</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
